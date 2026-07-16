@@ -1,64 +1,616 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Comfort One - New Website</title>
+  <title>Comfort One — HVAC Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    /* ============================================================
+       COMFORT ONE — DESIGN TOKENS
+       (fuente: design-system.html)
+       ============================================================ */
+    :root {
+      /* --- BRAND --- */
+      --brand-red: #951F21;
+      --brand-gold: #FFB300;
+      --brand-navy: #27316F;
 
+      /* --- RED SCALE --- */
+      --red-700: #6E1517; --red-600: #7C1A1B; --red-500: #951F21;
+      --red-400: #B8353A; --red-300: #D26468; --red-050: #F8EAEA;
+
+      /* --- GOLD SCALE --- */
+      --gold-600: #D99A00; --gold-500: #FFB300; --gold-400: #FFC63D;
+      --gold-300: #FFD873; --gold-050: #FFF6E0;
+
+      /* --- NAVY SCALE --- */
+      --navy-700: #151B3F; --navy-600: #1D2555; --navy-500: #27316F; --navy-400: #3A4690;
+      --navy-overlay: rgba(39, 49, 111, 0.75);
+
+      /* --- NEUTRALS --- */
+      --white: #FFFFFF; --cream: #FBFAF7;
+      --gray-100: #F4F5F8; --gray-200: #E6E8EF; --gray-300: #D2D6E1;
+      --gray-500: #6B7280; --gray-700: #374151; --ink: #1A1F36;
+
+      /* --- SEMANTIC --- */
+      --color-heading: var(--navy-500);
+      --color-accent: var(--brand-red);
+      --color-accent-2: var(--brand-gold);
+
+      /* --- GRADIENTS --- */
+      --gradient-hero: linear-gradient(140deg, #3A4690 0%, #27316F 42%, #12173A 100%);
+      --gradient-dark: linear-gradient(135deg, #27316F 0%, #1D2555 100%);
+      --gradient-red: linear-gradient(135deg, #951F21 0%, #B8353A 100%);
+      --gradient-red-deep: linear-gradient(135deg, #6E1517 0%, #951F21 55%, #B8353A 100%);
+      --gradient-gold: linear-gradient(135deg, #FFB300 0%, #FFC63D 100%);
+
+      /* --- TYPOGRAPHY --- */
+      /* Accesibilidad: Atkinson Hyperlegible (cuerpo, diseñada para baja visión)
+         + Lexend (títulos, optimizada para velocidad de lectura). */
+      --font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;  /* párrafos */
+      --font-heading: 'Lexend', 'Atkinson Hyperlegible', sans-serif;                                      /* títulos */
+      --font-display: 700 clamp(2.5rem, 5vw, 4.5rem) / 1.1 var(--font-heading);
+      --font-section: 600 clamp(2rem, 4vw, 3rem) / 1.15 var(--font-heading);
+      --font-subsection: 600 clamp(1.5rem, 3vw, 2.25rem) / 1.2 var(--font-heading);
+      --font-card: 600 1.5rem / 1.3 var(--font-heading);
+      --font-body: 400 1.125rem / 1.75 var(--font-family);      /* 18px, interlineado holgado */
+      --font-body-sm: 400 1rem / 1.6 var(--font-family);        /* 16px */
+      --font-label: 500 0.9375rem / 1.4 var(--font-family);
+      --font-nav: 500 1.0625rem / 1 var(--font-family);
+      --font-btn: 500 1.0625rem / 1 var(--font-family);
+      --font-stat: 700 clamp(3rem, 6vw, 4.75rem) / 1 var(--font-heading);
+      --letter-spacing-tight: -0.01em;
+      --letter-spacing-label: 0.08em;
+
+      /* --- SPACING --- */
+      --space-xs: 8px; --space-sm: 16px; --space-md: 24px; --space-lg: 32px;
+      --space-xl: 48px; --space-2xl: 64px; --space-3xl: 96px;
+      --container-max: 1280px; --container-pad: 24px;
+
+      /* --- RADIUS --- */
+      --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px; --radius-full: 9999px;
+
+      /* --- SHADOWS --- */
+      --shadow-sm: 0 2px 8px rgba(21,27,63,0.08);
+      --shadow-md: 0 8px 24px rgba(21,27,63,0.12);
+      --shadow-lg: 0 16px 48px rgba(21,27,63,0.16);
+      --shadow-glow-red: 0 0 40px rgba(149,31,33,0.35);
+      --shadow-glow-gold: 0 0 40px rgba(255,179,0,0.35);
+
+      /* --- EASING --- */
+      --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #0d0d0d;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      color: #fff;
+      font: var(--font-body); font-family: var(--font-family);
+      color: var(--gray-700); background: var(--white);
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--color-heading); font-weight: 600; letter-spacing: var(--letter-spacing-tight); }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
-    .container {
-      text-align: center;
-      padding: 2rem;
-    }
+    /* ============================================================
+       UTILITIES
+       ============================================================ */
+    .container { width: 100%; max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-pad); }
+    @media (min-width: 1600px) { .container { max-width: 1480px; } }
+    @media (min-width: 1920px) { .container { max-width: 1640px; } }
+    .section-padding { padding: var(--space-2xl) 0; }
+    @media (min-width: 1024px) { .section-padding { padding: var(--space-3xl) 0; } }
 
-    .label {
-      font-size: 0.75rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 1.5rem;
-    }
+    .gradient-hero { background: var(--gradient-hero); }
+    .gradient-dark { background: var(--gradient-dark); }
 
-    h1 {
-      font-size: clamp(2rem, 6vw, 4rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-    }
+    .glass-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.12); }
+    .glass-card-strong { background: var(--navy-overlay); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.12); }
 
-    .divider {
-      width: 48px;
-      height: 2px;
-      background: #fff;
-      margin: 0 auto 1.5rem;
-      opacity: 0.3;
+    /* --- Buttons --- */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs);
+      padding: 14px 28px; border-radius: var(--radius-full); font: var(--font-btn);
+      color: var(--white); background: var(--gradient-red); transition: all 0.3s ease; white-space: nowrap;
     }
+    .btn-primary:hover { filter: brightness(1.08); box-shadow: var(--shadow-glow-red); }
+    .btn-gold {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs);
+      padding: 14px 28px; border-radius: var(--radius-full); font: var(--font-btn);
+      color: var(--navy-700); background: var(--gradient-gold); transition: all 0.3s ease; white-space: nowrap;
+    }
+    .btn-gold:hover { filter: brightness(1.05); box-shadow: var(--shadow-glow-gold); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs);
+      padding: 14px 28px; border-radius: var(--radius-full); font: var(--font-btn);
+      color: var(--white); background: transparent; border: 1.5px solid rgba(255,255,255,0.3);
+      transition: all 0.3s ease; white-space: nowrap;
+    }
+    .btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
 
-    p {
-      font-size: 1rem;
-      color: #888;
-      max-width: 320px;
-      line-height: 1.6;
+    /* --- Section label --- */
+    .section-label {
+      display: inline-flex; align-items: center;
+      font: var(--font-label); letter-spacing: var(--letter-spacing-label);
+      text-transform: uppercase; color: var(--brand-red);
     }
+    .section-label.gold { color: var(--brand-gold); }
+    .section-label.light { color: var(--white); }
+
+    /* --- Reveal animations --- */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ============================================================
+       NAVBAR
+       ============================================================ */
+    .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transition: background 0.3s ease, backdrop-filter 0.3s ease; }
+    .navbar.scrolled { background: rgba(39, 49, 111, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 135px; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-img { width: 125px; height: 125px; object-fit: contain; }
+    .logo-text { font: var(--font-card); color: white; font-size: 1.25rem; }
+    .nav-links { display: none; align-items: center; gap: 32px; }
+    @media (min-width: 1024px) { .nav-links { display: flex; } }
+    .nav-links a { font: var(--font-nav); font-family: var(--font-heading); font-weight: 500; color: rgba(255,255,255,0.92); transition: color 0.3s; }
+    .nav-links a:hover { color: var(--brand-gold); }
+    .nav-cta { display: none; font-size: 1.125rem; padding: 14px 30px; }
+    @media (min-width: 640px) { .nav-cta { display: inline-flex; } }
+
+    /* Phone CTA */
+    .nav-phone { display: none; align-items: center; gap: 12px; color: white; }
+    @media (min-width: 1180px) { .nav-phone { display: inline-flex; } }
+    .nav-phone-icon { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid rgba(255,255,255,0.4); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: border-color 0.3s, background 0.3s; }
+    .nav-phone-icon svg { width: 20px; height: 20px; color: white; }
+    .nav-phone:hover .nav-phone-icon { border-color: var(--brand-gold); background: rgba(255,255,255,0.08); }
+    .nav-phone-label { display: block; font-size: 0.9375rem; color: rgba(255,255,255,0.7); line-height: 1.3; margin-bottom: 3px; }
+    .nav-phone-number { display: block; font-weight: 700; font-size: 1.0625rem; color: white; line-height: 1.3; }
+    .hamburger { display: flex; padding: 8px; color: white; }
+    @media (min-width: 1024px) { .hamburger { display: none; } }
+
+    .mobile-menu { position: fixed; inset: 0; z-index: 60; visibility: hidden; transition: visibility 0.3s; }
+    .mobile-menu.open { visibility: visible; }
+    .mobile-menu-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.6); opacity: 0; transition: opacity 0.3s; }
+    .mobile-menu.open .mobile-menu-overlay { opacity: 1; }
+    .mobile-menu-panel { position: absolute; right: 0; top: 0; width: 320px; max-width: 85vw; height: 100%; background: var(--navy-500); padding: 32px; transform: translateX(100%); transition: transform 0.3s ease; }
+    .mobile-menu.open .mobile-menu-panel { transform: translateX(0); }
+    .mobile-menu-close { position: absolute; top: 24px; right: 24px; color: white; padding: 8px; }
+    .mobile-menu-links { margin-top: 64px; display: flex; flex-direction: column; gap: 24px; }
+    .mobile-menu-links a { font-family: var(--font-heading); color: rgba(255,255,255,0.92); font-size: 1.125rem; font-weight: 500; transition: color 0.3s; }
+    .mobile-menu-links a:hover { color: var(--brand-gold); }
+
+    /* ============================================================
+       HERO
+       ============================================================ */
+    .hero { min-height: 100vh; padding-top: 195px; padding-bottom: 80px; position: relative; overflow: hidden; }
+    .hero-content { text-align: center; max-width: 820px; margin: 0 auto; }
+    .hero-title { font: var(--font-display); color: white; }
+    .hero-title .accent { color: var(--brand-gold); }
+    .hero-desc { margin-top: 22px; font: var(--font-family); font-size: clamp(1.375rem, 2.4vw, 1.875rem); line-height: 1.4; font-weight: 500; color: rgba(255,255,255,0.85); max-width: 680px; margin-left: auto; margin-right: auto; }
+    .hero-buttons { margin-top: var(--space-xl); display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-md); }
+
+    .hero-images { margin-top: var(--space-2xl); display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+    @media (min-width: 768px) { .hero-images { grid-template-columns: 1fr 1.2fr 1fr; align-items: stretch; } }
+    .hero-img { border-radius: var(--radius-xl); overflow: hidden; height: clamp(360px, 42vw, 480px); }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    .hero-badges { margin-top: var(--space-lg); position: relative; z-index: 10; display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+    @media (min-width: 640px) { .hero-badges { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 768px) { .hero-badges { margin-top: -64px; } }
+    .hero-badge { border-radius: var(--radius-lg); padding: 20px 24px; display: flex; align-items: center; gap: 16px; }
+    .hero-badge-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-red); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .hero-badge-icon svg { width: 20px; height: 20px; color: white; }
+    .hero-badge-title { font-weight: 600; color: white; font-size: 1rem; }
+    .hero-badge-desc { color: rgba(255,255,255,0.6); font-size: 0.875rem; margin-top: 2px; }
+
+    /* ============================================================
+       SERVICES
+       ============================================================ */
+    .services-header { display: flex; flex-direction: column; gap: var(--space-md); margin-bottom: var(--space-2xl); }
+    @media (min-width: 768px) { .services-header { flex-direction: row; justify-content: space-between; align-items: flex-end; } }
+    .services-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); max-width: 680px; }
+    .services-viewall { display: inline-flex; align-items: center; gap: 8px; color: var(--brand-red); font-weight: 700; font-family: var(--font-heading); white-space: nowrap; transition: gap 0.3s; }
+    .services-viewall:hover { gap: 12px; }
+    .services-viewall svg { width: 18px; height: 18px; }
+    .services-intro { max-width: 720px; margin: calc(-1 * var(--space-lg)) 0 var(--space-2xl); color: var(--gray-700); }
+
+    /* 2-column layout: pills left, media right */
+    .svc-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-md); align-items: stretch; }
+    @media (min-width: 1024px) { .svc-layout { grid-template-columns: 1.7fr 1fr; } }
+    .svc-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+    @media (min-width: 560px) { .svc-grid { grid-template-columns: 1fr 1fr; } }
+    .svc-media { display: flex; flex-direction: column; gap: var(--space-md); }
+    .svc-media .phone-card, .svc-media .img-card { flex: 1; }
+    .svc-pill { display: flex; align-items: center; justify-content: space-between; gap: 16px; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 18px 22px; box-shadow: var(--shadow-sm); transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s; }
+    .svc-pill:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--gold-300); }
+    .svc-pill-inner { display: flex; align-items: center; gap: 14px; }
+    .svc-pill-icon { color: var(--brand-red); flex-shrink: 0; }
+    .svc-pill-icon svg { width: 26px; height: 26px; }
+    .svc-pill-title { color: var(--navy-500); font-weight: 700; font-family: var(--font-heading); }
+    .svc-pill-arrow { width: 34px; height: 34px; border-radius: 50%; background: var(--gray-100); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.3s; }
+    .svc-pill:hover .svc-pill-arrow { background: var(--brand-red); }
+    .svc-pill-arrow svg { width: 14px; height: 14px; color: var(--brand-red); transition: color 0.3s; }
+    .svc-pill:hover .svc-pill-arrow svg { color: white; }
+
+    .phone-card { position: relative; border-radius: var(--radius-xl); overflow: hidden; min-height: 190px; display: flex; flex-direction: column; justify-content: center; padding: 28px 32px; }
+    .phone-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .phone-card-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(21,27,63,0.85), rgba(39,49,111,0.65)); }
+    .phone-card-content { position: relative; z-index: 1; }
+    .phone-card-label { color: rgba(255,255,255,0.75); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
+    .phone-card-number { color: white; font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 6px; }
+    .phone-card .btn-primary { margin-top: 18px; align-self: flex-start; }
+
+    .img-card { border-radius: var(--radius-xl); overflow: hidden; min-height: 190px; }
+    .img-card img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ============================================================
+       SERVICES OVERVIEW (4 cards)
+       ============================================================ */
+    .ov-header { text-align: center; max-width: 820px; margin: 0 auto var(--space-2xl); }
+    .ov-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .ov-divider { display: block; width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-gold); margin: var(--space-lg) auto 0; }
+    .ov-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
+    @media (min-width: 640px) { .ov-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .ov-grid { grid-template-columns: repeat(4, 1fr); } }
+    .ov-card { display: block; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-xl); padding: 32px; box-shadow: var(--shadow-sm); transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s; }
+    .ov-card:hover { box-shadow: var(--shadow-md); transform: translateY(-6px); border-color: var(--gold-300); }
+    .ov-card-top { display: flex; justify-content: space-between; align-items: flex-start; }
+    .ov-icon { width: 64px; height: 64px; border-radius: var(--radius-md); background: var(--gradient-gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .ov-icon svg { width: 32px; height: 32px; color: var(--navy-700); stroke-width: 2; }
+    .ov-arrow { width: 40px; height: 40px; border-radius: 50%; background: var(--gray-100); display: flex; align-items: center; justify-content: center; transition: background 0.3s; }
+    .ov-card:hover .ov-arrow { background: var(--brand-red); }
+    .ov-arrow svg { width: 16px; height: 16px; color: var(--brand-red); transition: color 0.3s; }
+    .ov-card:hover .ov-arrow svg { color: white; }
+    .ov-card-title { margin-top: var(--space-lg); font: var(--font-card); color: var(--navy-500); font-size: 1.375rem; }
+    .ov-card-desc { margin-top: 10px; color: var(--gray-500); font: var(--font-body-sm); }
+
+    /* ============================================================
+       ABOUT
+       ============================================================ */
+    .about { background: var(--cream); }
+    .about-header { display: flex; flex-direction: column; gap: var(--space-lg); }
+    @media (min-width: 900px) { .about-header { flex-direction: row; justify-content: space-between; align-items: flex-start; gap: var(--space-2xl); } }
+    .about-header-left { max-width: 620px; }
+    .about-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .about-stat { display: flex; align-items: flex-start; flex-shrink: 0; }
+    .about-stat-number { font: var(--font-stat); color: var(--brand-red); letter-spacing: -0.02em; }
+    .about-stat-label { margin-left: var(--space-md); align-self: center; max-width: 200px; font-size: 1rem; line-height: 1.4; color: var(--gray-500); }
+    .about-stat-stars { display: block; color: var(--brand-gold); font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 4px; }
+
+    .about-body { margin-top: var(--space-2xl); display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: start; }
+    @media (min-width: 900px) { .about-body { grid-template-columns: 1fr 1fr; gap: var(--space-3xl); } }
+    .about-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .about-img img { width: 100%; height: auto; display: block; }
+    .about-text p { color: var(--gray-700); }
+    .about-text p + p { margin-top: var(--space-md); }
+    .about-lead { font-weight: 700; color: var(--navy-500); }
+    .about-cta { margin-top: var(--space-xl); }
+
+    /* ============================================================
+       REVIEWS
+       ============================================================ */
+    .reviews { background: var(--gradient-red-deep); }
+    .reviews-header { text-align: center; max-width: 860px; margin: 0 auto var(--space-2xl); }
+    .reviews-title { font: var(--font-section); color: var(--white); margin-top: var(--space-xs); }
+    .reviews-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-gold); margin: var(--space-lg) auto 0; }
+
+    .reviews-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+    @media (min-width: 768px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
+    .review-card { background: var(--navy-500); border: 2px solid var(--brand-gold); border-radius: var(--radius-lg); padding: 36px 32px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .review-google { width: 52px; height: 52px; border-radius: var(--radius-md); background: var(--white); display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-sm); }
+    .review-stars { color: var(--brand-gold); font-size: 1.2rem; letter-spacing: 3px; margin: var(--space-md) 0 var(--space-lg); }
+    .review-text { color: rgba(255,255,255,0.9); line-height: 1.7; }
+    .review-author { margin-top: var(--space-lg); color: var(--brand-gold); font-weight: 700; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 0.04em; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="label">Comfort One</div>
-    <h1>Under<br>Construction</h1>
-    <div class="divider"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#hero" class="logo">
+        <img class="logo-img" src="https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp" alt="Comfort One Air Conditioning" />
+      </a>
+
+      <div class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:24px;">
+        <a href="tel:+16022476151" class="nav-phone">
+          <span class="nav-phone-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <span class="nav-phone-text">
+            <span class="nav-phone-label">Need Help? Talk to an expert</span>
+            <span class="nav-phone-number">(602) 247-6151</span>
+          </span>
+        </a>
+        <a href="#contact" class="btn-primary nav-cta">Request a Service</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu-panel">
+      <button class="mobile-menu-close" id="menuClose" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="mobile-menu-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:+16022476151" style="color:var(--brand-gold);font-weight:700;">📞 (602) 247-6151</a>
+        <a href="#contact" class="btn-primary" style="margin-top:16px;text-align:center;">Request a Service</a>
+      </div>
+    </div>
   </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero gradient-hero" id="hero">
+    <div class="container">
+      <div class="hero-content reveal">
+        <h1 class="hero-title">We Are Here <span class="accent">For You</span></h1>
+        <p class="hero-desc">Your Trusted HVAC Company in Scottsdale, AZ</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary">Request a Service</a>
+          <a href="#services" class="btn-ghost">Schedule A Service</a>
+        </div>
+      </div>
+
+      <div class="hero-images">
+        <div class="hero-img reveal reveal-delay-1">
+          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/ComfortOneAC_BusinessBranding2026-8836.jpg" alt="Técnico de Comfort One en la van de servicio" />
+        </div>
+        <div class="hero-img center reveal reveal-delay-2">
+          <img src="https://www.comfort1ac.com/wp-content/uploads/2025/10/ComfortOneAC_BusinessBranding2026-9143.jpg" alt="Técnico dando servicio a una unidad condensadora" />
+        </div>
+        <div class="hero-img reveal reveal-delay-3">
+          <img src="https://www.comfort1ac.com/wp-content/uploads/2025/10/ComfortOneAC_BusinessBranding2026-8946.jpg" alt="Técnico trabajando en la ductería" style="object-position: 60% center;" />
+        </div>
+      </div>
+
+      <div class="hero-badges">
+        <div class="hero-badge glass-card-strong reveal reveal-delay-3">
+          <div class="hero-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div><div class="hero-badge-title">100% Satisfaction</div><div class="hero-badge-desc">Guaranteed on every job.</div></div>
+        </div>
+        <div class="hero-badge glass-card-strong reveal reveal-delay-4">
+          <div class="hero-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div><div class="hero-badge-title">24/7 Services</div><div class="hero-badge-desc">Emergency support, any time.</div></div>
+        </div>
+        <div class="hero-badge glass-card-strong reveal reveal-delay-5">
+          <div class="hero-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+          <div><div class="hero-badge-title">Certified Experts</div><div class="hero-badge-desc">Trained & licensed team.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES OVERVIEW ===================== -->
+  <section class="section-padding" id="services" style="background: var(--white);">
+    <div class="container">
+      <div class="ov-header reveal">
+        <div class="section-label" style="justify-content:center;">Our HVAC Services</div>
+        <h2 class="ov-title">Heating and air conditioning throughout Scottsdale and surrounding areas</h2>
+        <span class="ov-divider"></span>
+      </div>
+
+      <div class="ov-grid">
+        <a href="#services-all" class="ov-card reveal">
+          <div class="ov-card-top">
+            <div class="ov-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="2" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="22"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg></div>
+            <div class="ov-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+          </div>
+          <h3 class="ov-card-title">Air Conditioning</h3>
+          <p class="ov-card-desc">Installation, repair, and tune-ups to keep you cool through every Arizona summer.</p>
+        </a>
+
+        <a href="#services-all" class="ov-card reveal reveal-delay-1">
+          <div class="ov-card-top">
+            <div class="ov-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div>
+            <div class="ov-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+          </div>
+          <h3 class="ov-card-title">Heating</h3>
+          <p class="ov-card-desc">Furnace and heat-pump service so your home stays warm when the temperature drops.</p>
+        </a>
+
+        <a href="#services-all" class="ov-card reveal reveal-delay-2">
+          <div class="ov-card-top">
+            <div class="ov-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></div>
+            <div class="ov-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+          </div>
+          <h3 class="ov-card-title">Ductless AC</h3>
+          <p class="ov-card-desc">Efficient mini-split systems for room-by-room comfort without ductwork.</p>
+        </a>
+
+        <a href="#services-all" class="ov-card reveal reveal-delay-3">
+          <div class="ov-card-top">
+            <div class="ov-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            <div class="ov-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+          </div>
+          <h3 class="ov-card-title">Comfort Club</h3>
+          <p class="ov-card-desc">Our maintenance membership — priority service and seasonal check-ups all year.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section-padding about" id="about">
+    <div class="container">
+      <div class="about-header reveal">
+        <div class="about-header-left">
+          <div class="section-label">About Us</div>
+          <h2 class="about-title">Family owned &amp; operated HVAC company in Scottsdale, AZ</h2>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-number">5.0</span>
+          <span class="about-stat-label"><span class="about-stat-stars">★★★★★</span>Rated 5 stars on Google</span>
+        </div>
+      </div>
+
+      <div class="about-body">
+        <div class="about-img reveal">
+          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/ComfortOneAC_BusinessBranding2026-8836-2-scaled.jpg" alt="Técnico de Comfort One HVAC en Scottsdale" />
+        </div>
+        <div class="about-text reveal reveal-delay-1">
+          <p>If you're looking for professional help with heating and air conditioning in Scottsdale, Arizona, then you've come to the right place. Your search for the best HVAC company in the Valley of the Sun ends with Comfort One Air Conditioning! Our goal is to provide excellent service and outstanding results to customers like you.</p>
+          <p>Whether you're having a problem with your air conditioner or it's just time for a routine inspection, our experienced team of heating and cooling contractors is here to help. As your expert on all things heating and air conditioning in Scottsdale, AZ, and the surrounding areas, we can tackle any HVAC issue you might be having.</p>
+          <p class="about-lead">If you have questions about our heating and air conditioning services or want to set up an appointment, call us today!</p>
+          <a href="#contact" class="btn-primary about-cta">Request a Service</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REVIEWS ===================== -->
+  <section class="section-padding reviews" id="reviews">
+    <div class="container">
+      <div class="reviews-header reveal">
+        <div class="section-label gold" style="justify-content:center;">Reviews</div>
+        <h2 class="reviews-title">What your neighbors in Scottsdale, Arizona are saying!</h2>
+        <div class="reviews-divider"></div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-google">
+            <svg viewBox="0 0 48 48" width="30" height="30"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"All the reviews are accurate. Show up on time, highly communicative, great prices, locally owned, family run business. There is no better HVAC company in the valley. Comfort One is the last stop for all your air conditioning needs. They're the best."</p>
+          <p class="review-author">— Joseph M.</p>
+        </div>
+
+        <div class="review-card reveal reveal-delay-1">
+          <div class="review-google">
+            <svg viewBox="0 0 48 48" width="30" height="30"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Jon and the whole crew at Comfort One Air Conditioning are the best in the business! If you're looking for honest and trustworthy HVAC professionals look no further. Highly recommended!"</p>
+          <p class="review-author">— Nic B.</p>
+        </div>
+
+        <div class="review-card reveal reveal-delay-2">
+          <div class="review-google">
+            <svg viewBox="0 0 48 48" width="30" height="30"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"As a contractor myself it is reassuring to have a quality HVAC company that I can rely on to show up on time, do the job correctly and have zero issues throughout the entire process. Everyone that has been out on my jobsites has been respectful of the jobsite and any other trades. Great company! Would recommend for any job big or small!!"</p>
+          <p class="review-author">— Tyler S.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES (DETALLADA) ===================== -->
+  <section class="section-padding" id="services-all" style="background: var(--white);">
+    <div class="container">
+      <div class="services-header reveal">
+        <div>
+          <div class="section-label">Our HVAC Services</div>
+          <h2 class="services-title">Heating &amp; air conditioning services in Scottsdale, Arizona</h2>
+        </div>
+        <a href="#services-all" class="services-viewall">View All Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      </div>
+
+      <p class="services-intro reveal">Whether you need air conditioning installation or repairs, you can count on Comfort One Air Conditioning for the job. Call (602) 247-6151 to schedule your service.</p>
+
+      <!-- Layout 2 columnas: pills izq + media der -->
+      <div class="svc-layout">
+      <div class="svc-grid">
+        <a href="#contact" class="svc-pill reveal"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="2" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="22"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg></span><span class="svc-pill-title">Air Conditioning Repair</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+        <a href="#contact" class="svc-pill reveal reveal-delay-1"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="2" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="22"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg></span><span class="svc-pill-title">Air Conditioning Installation</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+        <a href="#contact" class="svc-pill reveal reveal-delay-2"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="2" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="22"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg></span><span class="svc-pill-title">Air Conditioning Maintenance</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+
+        <a href="#contact" class="svc-pill reveal"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span><span class="svc-pill-title">Furnace Installation</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+        <a href="#contact" class="svc-pill reveal reveal-delay-1"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span><span class="svc-pill-title">Furnace Repair</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+        <a href="#contact" class="svc-pill reveal reveal-delay-2"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span><span class="svc-pill-title">Furnace Maintenance</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+
+        <a href="#contact" class="svc-pill reveal"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></span><span class="svc-pill-title">Ductless Mini Split Repair</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+        <a href="#contact" class="svc-pill reveal reveal-delay-1"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></span><span class="svc-pill-title">Ductless Mini Split Installation</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+        <a href="#contact" class="svc-pill reveal reveal-delay-2"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></span><span class="svc-pill-title">Ductless Mini Split Maintenance</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+
+        <a href="#contact" class="svc-pill reveal"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg></span><span class="svc-pill-title">Heat Pump Repair</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+        <a href="#contact" class="svc-pill reveal reveal-delay-1"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg></span><span class="svc-pill-title">Heat Pump Installation</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+        <a href="#contact" class="svc-pill reveal reveal-delay-2"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><span class="svc-pill-title">HVAC Maintenance Plan</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
+      </div>
+
+        <!-- Media apilada a la derecha -->
+        <div class="svc-media">
+          <div class="phone-card reveal">
+            <img src="https://www.comfort1ac.com/wp-content/uploads/2025/10/Drone_C1AC2026-5.jpg" alt="Vista aérea de Comfort One" />
+            <div class="phone-card-overlay"></div>
+            <div class="phone-card-content">
+              <p class="phone-card-label">Call Now</p>
+              <p class="phone-card-number">(602) 247-6151</p>
+              <a href="tel:+16022476151" class="btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Contact Us</a>
+            </div>
+          </div>
+
+          <div class="img-card reveal reveal-delay-1">
+            <img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/archer.webp" alt="Archer, la mascota de Comfort One" style="object-position: center top;" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Las siguientes secciones se irán construyendo aquí -->
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const mobileMenu = document.getElementById('mobileMenu');
+    const toggleMenu = () => mobileMenu.classList.toggle('open');
+    document.getElementById('hamburger').addEventListener('click', toggleMenu);
+    document.getElementById('menuClose').addEventListener('click', toggleMenu);
+    document.getElementById('menuOverlay').addEventListener('click', toggleMenu);
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+
 </body>
 </html>

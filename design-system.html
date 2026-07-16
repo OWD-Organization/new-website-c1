@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comfort One — Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       COMFORT ONE — DESIGN SYSTEM / DESIGN TOKENS
+       ============================================================
+       HVAC brand. Palette based on the original colors:
+         · #951F21  red     → primary accent, CTAs (heat)
+         · #FFB300  gold    → secondary accent, highlights
+         · #27316F  navy    → dark base, backgrounds (cool)
+       Copy the :root block into your new project and build the
+       home by reusing the component classes below.
+       ============================================================ */
+
+    :root {
+      /* --- BRAND COLORS --- */
+      --brand-red: #951F21;
+      --brand-gold: #FFB300;
+      --brand-navy: #27316F;
+
+      /* --- RED SCALE (primary accent) --- */
+      --red-700: #6E1517;
+      --red-600: #7C1A1B;
+      --red-500: #951F21;   /* base */
+      --red-400: #B8353A;
+      --red-300: #D26468;
+      --red-050: #F8EAEA;   /* tint for icon circles */
+
+      /* --- GOLD SCALE (secondary accent) --- */
+      --gold-600: #D99A00;
+      --gold-500: #FFB300;  /* base */
+      --gold-400: #FFC63D;
+      --gold-300: #FFD873;
+      --gold-050: #FFF6E0;  /* tint */
+
+      /* --- NAVY SCALE (dark base) --- */
+      --navy-700: #151B3F;  /* deepest */
+      --navy-600: #1D2555;  /* deep */
+      --navy-500: #27316F;  /* base */
+      --navy-400: #3A4690;  /* light */
+      --navy-overlay: rgba(39, 49, 111, 0.75);
+
+      /* --- NEUTRALS --- */
+      --white: #FFFFFF;
+      --cream: #FBFAF7;
+      --gray-100: #F4F5F8;
+      --gray-200: #E6E8EF;
+      --gray-300: #D2D6E1;
+      --gray-500: #6B7280;
+      --gray-700: #374151;
+      --ink: #1A1F36;
+
+      /* --- SEMANTIC ALIASES (use in components) --- */
+      --color-bg: var(--white);
+      --color-text: var(--gray-700);
+      --color-heading: var(--navy-500);
+      --color-accent: var(--brand-red);      /* role of the former "orange" */
+      --color-accent-2: var(--brand-gold);
+
+      /* --- GRADIENTS --- */
+      --gradient-hero: linear-gradient(140deg, #3A4690 0%, #27316F 42%, #12173A 100%);
+      --gradient-dark: linear-gradient(135deg, #27316F 0%, #1D2555 100%);
+      --gradient-red: linear-gradient(135deg, #951F21 0%, #B8353A 100%);
+      --gradient-red-deep: linear-gradient(135deg, #6E1517 0%, #951F21 55%, #B8353A 100%);
+      --gradient-gold: linear-gradient(135deg, #FFB300 0%, #FFC63D 100%);
+      --gradient-subtle: linear-gradient(180deg, rgba(39,49,111,0.6) 0%, rgba(39,49,111,0.3) 100%);
+
+      /* --- TYPOGRAPHY --- */
+      /* Accessibility (older-reader focus): Atkinson Hyperlegible (body,
+         designed for low vision) + Lexend (headings, fast reading). */
+      --font-family: 'Atkinson Hyperlegible', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;  /* body */
+      --font-heading: 'Lexend', 'Atkinson Hyperlegible', sans-serif;                                      /* headings */
+      --font-display: 700 clamp(2.5rem, 5vw, 4.5rem) / 1.1 var(--font-heading);
+      --font-section: 600 clamp(2rem, 4vw, 3rem) / 1.15 var(--font-heading);
+      --font-subsection: 600 clamp(1.5rem, 3vw, 2.25rem) / 1.2 var(--font-heading);
+      --font-card: 600 1.5rem / 1.3 var(--font-heading);
+      --font-body: 400 1.125rem / 1.75 var(--font-family);      /* 18px, generous line-height */
+      --font-body-sm: 400 1rem / 1.6 var(--font-family);        /* 16px */
+      --font-label: 500 0.9375rem / 1.4 var(--font-family);
+      --font-nav: 500 1.0625rem / 1 var(--font-heading);
+      --font-btn: 500 1.0625rem / 1 var(--font-family);
+      --font-stat: 700 clamp(3rem, 6vw, 4.75rem) / 1 var(--font-heading);
+      --letter-spacing-tight: -0.01em;
+      --letter-spacing-label: 0.08em;
+
+      /* --- SPACING --- */
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 32px;
+      --space-xl: 48px;
+      --space-2xl: 64px;
+      --space-3xl: 96px;
+      --container-max: 1280px;
+      --container-pad: 24px;
+
+      /* --- BORDER RADIUS --- */
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+
+      /* --- SHADOWS --- */
+      --shadow-sm: 0 2px 8px rgba(21,27,63,0.08);
+      --shadow-md: 0 8px 24px rgba(21,27,63,0.12);
+      --shadow-lg: 0 16px 48px rgba(21,27,63,0.16);
+      --shadow-glow-red: 0 0 40px rgba(149,31,33,0.35);
+      --shadow-glow-gold: 0 0 40px rgba(255,179,0,0.35);
+
+      /* --- EASING --- */
+      --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* ============================================================
+       RESET & BASE
+       ============================================================ */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font: var(--font-body);
+      font-family: var(--font-family);
+      color: var(--color-text);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--color-heading);
+      font-weight: 600;
+      letter-spacing: var(--letter-spacing-tight);
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    code { font-family: 'SF Mono', ui-monospace, Menlo, Consolas, monospace; }
+
+    /* ============================================================
+       STYLE-GUIDE LAYOUT (this page only, do NOT copy)
+       ============================================================ */
+    .ds-shell { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+    .ds-hero {
+      background: var(--gradient-hero);
+      color: white;
+      padding: 72px 0 64px;
+      margin-bottom: 8px;
+    }
+    .ds-hero .ds-shell { max-width: 1180px; }
+    .ds-hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font: var(--font-label); letter-spacing: var(--letter-spacing-label);
+      text-transform: uppercase; color: var(--brand-gold); margin-bottom: 18px;
+    }
+    .ds-hero-eyebrow::before { content:''; width:8px; height:8px; border-radius:50%; background: var(--brand-gold); }
+    .ds-hero h1 { color: white; font: var(--font-display); font-size: clamp(2.25rem, 4vw, 3.5rem); }
+    .ds-hero p { color: rgba(255,255,255,0.7); max-width: 620px; margin-top: 18px; line-height: 1.7; }
+    .ds-hero-chips { display:flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .ds-hero-chip {
+      display:inline-flex; align-items:center; gap:10px;
+      background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14);
+      border-radius: var(--radius-full); padding: 8px 16px; font-size:0.85rem; color: rgba(255,255,255,0.85);
+    }
+    .ds-hero-chip .dot { width:12px; height:12px; border-radius:50%; }
+
+    .ds-section { padding: 56px 0; border-bottom: 1px solid var(--gray-200); }
+    .ds-section:last-child { border-bottom: none; }
+    .ds-section-head { margin-bottom: 32px; }
+    .ds-section-num {
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--brand-red);
+    }
+    .ds-section-head h2 { font: var(--font-subsection); margin-top: 6px; }
+    .ds-section-head p { color: var(--gray-500); margin-top: 8px; max-width: 640px; }
+
+    .ds-grid { display: grid; gap: 20px; }
+    .ds-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .ds-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .ds-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 900px) { .ds-grid.cols-3, .ds-grid.cols-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .ds-grid.cols-2, .ds-grid.cols-3, .ds-grid.cols-4 { grid-template-columns: 1fr; } }
+
+    /* Color swatches */
+    .swatch { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); background: white; }
+    .swatch-color { height: 120px; display:flex; align-items:flex-end; padding: 14px; }
+    .swatch-color .role { font-size: 0.75rem; font-weight: 600; padding: 4px 10px; border-radius: var(--radius-full); background: rgba(255,255,255,0.85); color: var(--ink); }
+    .swatch-meta { padding: 14px 16px; }
+    .swatch-name { font-weight: 600; color: var(--ink); font-size: 0.95rem; }
+    .swatch-hex { font-family: 'SF Mono', ui-monospace, monospace; font-size: 0.8rem; color: var(--gray-500); margin-top: 2px; text-transform: uppercase; }
+
+    .scale-row { display:flex; border-radius: var(--radius-md); overflow:hidden; box-shadow: var(--shadow-sm); }
+    .scale-cell { flex:1; height: 84px; display:flex; align-items:flex-end; justify-content:center; padding-bottom:8px; font-family:'SF Mono',ui-monospace,monospace; font-size:0.7rem; }
+
+    /* Gradients preview */
+    .grad-card { border-radius: var(--radius-lg); overflow:hidden; box-shadow: var(--shadow-sm); }
+    .grad-preview { height: 130px; }
+    .grad-meta { padding: 12px 16px; background: white; }
+    .grad-meta .swatch-name { font-size: 0.9rem; }
+    .grad-meta code { font-size: 0.72rem; color: var(--gray-500); }
+
+    /* Type specimens */
+    .type-row { padding: 18px 0; border-bottom: 1px dashed var(--gray-200); }
+    .type-row:last-child { border-bottom: none; }
+    .type-token { font-family:'SF Mono',ui-monospace,monospace; font-size: 0.72rem; color: var(--brand-red); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* Spacing / radius chips */
+    .spec-list { display:flex; flex-wrap:wrap; gap: 18px; }
+    .spec-item { text-align:center; }
+    .spec-box { background: var(--gradient-red); border-radius: 4px; }
+    .spec-label { font-size:0.72rem; color: var(--gray-500); margin-top:8px; font-family:'SF Mono',ui-monospace,monospace; }
+    .radius-box { width: 90px; height: 90px; background: var(--navy-500); }
+
+    .shadow-box { height: 110px; background: white; border-radius: var(--radius-lg); display:flex; align-items:center; justify-content:center; font-size:0.75rem; color:var(--gray-500); font-family:'SF Mono',ui-monospace,monospace; }
+
+    .comp-frame { border:1px solid var(--gray-200); border-radius: var(--radius-lg); overflow:hidden; }
+    .comp-frame.dark { background: var(--gradient-dark); }
+    .comp-frame.light { background: white; }
+    .comp-frame-body { padding: 32px; }
+    .comp-caption { font-size: 0.78rem; color: var(--gray-500); font-family:'SF Mono',ui-monospace,monospace; padding: 10px 16px; background: var(--gray-100); border-top:1px solid var(--gray-200); }
+    .comp-frame.dark .comp-caption { background: rgba(0,0,0,0.2); color: rgba(255,255,255,0.55); border-top:1px solid rgba(255,255,255,0.08); }
+
+    /* ============================================================
+       REUSABLE COMPONENTS  ·  copy into the home
+       ============================================================ */
+
+    /* --- Buttons --- */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs);
+      padding: 14px 28px; border-radius: var(--radius-full);
+      font: var(--font-btn); color: var(--white);
+      background: var(--gradient-red);
+      transition: all 0.3s ease; white-space: nowrap;
+    }
+    .btn-primary:hover { filter: brightness(1.08); box-shadow: var(--shadow-glow-red); }
+
+    .btn-gold {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs);
+      padding: 14px 28px; border-radius: var(--radius-full);
+      font: var(--font-btn); color: var(--navy-700);
+      background: var(--gradient-gold);
+      transition: all 0.3s ease; white-space: nowrap;
+    }
+    .btn-gold:hover { filter: brightness(1.05); box-shadow: var(--shadow-glow-gold); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs);
+      padding: 14px 28px; border-radius: var(--radius-full);
+      font: var(--font-btn); color: var(--white);
+      background: transparent; border: 1.5px solid rgba(255,255,255,0.3);
+      transition: all 0.3s ease; white-space: nowrap;
+    }
+    .btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+
+    .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs);
+      padding: 14px 28px; border-radius: var(--radius-full);
+      font: var(--font-btn); color: var(--brand-red);
+      background: transparent; border: 1.5px solid var(--brand-red);
+      transition: all 0.3s ease; white-space: nowrap;
+    }
+    .btn-outline:hover { background: var(--brand-red); color: white; }
+
+    /* --- Section label (dot + uppercase) --- */
+    .section-label {
+      display: inline-flex; align-items: center;
+      font: var(--font-label); letter-spacing: var(--letter-spacing-label);
+      text-transform: uppercase; color: var(--brand-red);
+    }
+    .section-label.gold { color: var(--brand-gold); }
+    .section-label.light { color: var(--white); }
+
+    /* --- Glass cards --- */
+    .glass-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .glass-card-strong {
+      background: var(--navy-overlay);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    /* --- Service card --- */
+    .service-card { border-radius: var(--radius-xl); padding: 32px; transition: background 0.3s; cursor: pointer; }
+    .service-card:hover { background: rgba(255,255,255,0.12); }
+    .service-card-header { display:flex; justify-content:space-between; align-items:flex-start; }
+    .service-card-icon { color: var(--brand-gold); }
+    .service-card-icon svg { width:48px; height:48px; stroke-width:1.5; }
+    .service-card-arrow {
+      width:40px; height:40px; border-radius:50%; background: rgba(255,255,255,0.1);
+      display:flex; align-items:center; justify-content:center; transition: background 0.3s;
+    }
+    .service-card:hover .service-card-arrow { background: var(--brand-red); }
+    .service-card-arrow svg { width:16px; height:16px; color:white; }
+    .service-card-title { margin-top: var(--space-lg); font: var(--font-card); color:white; font-size:1.125rem; }
+    .service-card-desc { margin-top:8px; color: rgba(255,255,255,0.6); font-size:0.875rem; line-height:1.6; }
+
+    /* --- Benefit item --- */
+    .benefit-item { display:flex; align-items:flex-start; gap: var(--space-md); }
+    .benefit-icon { color: var(--brand-gold); flex-shrink:0; }
+    .benefit-icon svg { width:40px; height:40px; stroke-width:1.5; }
+    .benefit-title { font: var(--font-card); color:white; font-size:1.125rem; }
+    .benefit-desc { color: rgba(255,255,255,0.6); margin-top:8px; font-size:0.9375rem; line-height:1.6; }
+
+    /* --- Feature (why choose) --- */
+    .feature-row { display:flex; align-items:flex-start; gap: var(--space-md); padding: var(--space-md) 0; border-bottom:1px solid var(--gray-200); }
+    .feature-row:last-child { border-bottom:none; }
+    .feature-icon { width:56px; height:56px; border-radius:50%; background: var(--gradient-red); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .feature-icon svg { width:24px; height:24px; color:white; }
+    .feature-title { font: var(--font-card); font-size:1.125rem; }
+    .feature-desc { color: var(--gray-500); margin-top:4px; line-height:1.6; }
+
+    /* --- How-it-works step --- */
+    .step { display:flex; gap: var(--space-md); padding-bottom: var(--space-xl); position:relative; }
+    .step:last-child { padding-bottom:0; }
+    .step-line { position:absolute; left:22px; top:56px; bottom:0; width:2px; background: var(--gray-200); }
+    .step:last-child .step-line { display:none; }
+    .step-icon-wrap { position:relative; z-index:1; flex-shrink:0; }
+    .step-icon { width:48px; height:48px; border-radius:50%; background: var(--red-050); display:flex; align-items:center; justify-content:center; }
+    .step-icon svg { width:20px; height:20px; color: var(--brand-red); }
+    .step-num { position:absolute; top:-6px; left:-6px; width:22px; height:22px; border-radius:50%; border:2px solid var(--red-300); display:flex; align-items:center; justify-content:center; font-size:0.625rem; font-weight:700; color: var(--brand-red); background:white; }
+    .step-label { font-size:0.875rem; font-weight:500; color: var(--brand-red); }
+    .step-title { margin-top:4px; font: var(--font-card); font-size:1.25rem; }
+    .step-desc { margin-top:8px; color: var(--gray-500); line-height:1.6; }
+
+    /* --- Stat --- */
+    .stat { display:flex; align-items:baseline; gap:4px; }
+    .stat-number { font: var(--font-stat); color: var(--brand-red); letter-spacing:-0.03em; }
+    .stat-plus { font: var(--font-stat); color: var(--brand-red); font-size:3rem; }
+    .stat-label { margin-left: var(--space-md); font-size:0.875rem; color: var(--gray-500); max-width:160px; line-height:1.4; }
+
+    /* --- Hero badge --- */
+    .hero-badge { border-radius: var(--radius-lg); padding: 20px 24px; display:flex; align-items:center; gap:16px; }
+    .hero-badge-icon { width:44px; height:44px; border-radius:50%; background: var(--gradient-red); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .hero-badge-icon svg { width:20px; height:20px; color:white; }
+    .hero-badge-title { font-weight:600; color:white; font-size:1rem; }
+    .hero-badge-desc { color: rgba(255,255,255,0.6); font-size:0.875rem; margin-top:2px; }
+
+    /* --- Project card --- */
+    .project-card { position:relative; border-radius: var(--radius-lg); overflow:hidden; aspect-ratio:4/3; cursor:pointer; }
+    .project-card img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease; }
+    .project-card:hover img { transform: scale(1.05); }
+    .project-card-overlay { position:absolute; inset:0; background: linear-gradient(to top, rgba(21,27,63,0.92) 0%, transparent 55%); }
+    .project-card-content { position:absolute; bottom:0; left:0; right:0; padding: var(--space-lg); }
+    .project-card-label { color: var(--brand-gold); font-size:0.875rem; font-weight:500; }
+    .project-card-title { color:white; font: var(--font-card); font-size:1.125rem; margin-top:4px; }
+
+    /* --- Blog card --- */
+    .blog-card { background:white; border-radius: var(--radius-xl); overflow:hidden; box-shadow: var(--shadow-sm); transition: box-shadow 0.3s; }
+    .blog-card:hover { box-shadow: var(--shadow-md); }
+    .blog-card-img { aspect-ratio:16/10; overflow:hidden; }
+    .blog-card-img img { width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease; }
+    .blog-card:hover .blog-card-img img { transform: scale(1.05); }
+    .blog-card-body { padding: var(--space-md); }
+    .blog-card-date { font-size:0.875rem; color: var(--gray-500); }
+    .blog-card-title { margin-top:8px; font: var(--font-card); font-size:1.125rem; transition: color 0.3s; }
+    .blog-card:hover .blog-card-title { color: var(--brand-red); }
+    .blog-card-link { margin-top: var(--space-md); display:inline-flex; align-items:center; gap:8px; color: var(--brand-red); font-size:0.875rem; font-weight:500; transition: gap 0.3s; }
+    .blog-card-link:hover { gap:12px; }
+
+    /* --- Testimonial --- */
+    .testimonial { text-align:center; max-width:720px; margin:0 auto; }
+    .testimonial-stars { display:flex; justify-content:center; gap:4px; margin-bottom: var(--space-md); }
+    .testimonial-stars svg { width:20px; height:20px; color: var(--brand-gold); fill: var(--brand-gold); }
+    .testimonial-text { font-size:1.125rem; color:white; line-height:1.8; font-style:italic; }
+    .testimonial-name { color:white; font-weight:600; font-size:1.125rem; margin-top: var(--space-lg); }
+    .testimonial-role { color: rgba(255,255,255,0.7); font-size:0.875rem; }
+
+    /* --- Phone CTA --- */
+    .phone-cta { position:relative; border-radius: var(--radius-xl); overflow:hidden; min-height:220px; display:flex; flex-direction:column; justify-content:center; padding:32px; }
+    .phone-cta img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .phone-cta-overlay { position:absolute; inset:0; background: var(--navy-overlay); }
+    .phone-cta-content { position:relative; z-index:1; }
+    .phone-cta-label { color: rgba(255,255,255,0.7); font-size:0.875rem; text-transform:uppercase; letter-spacing:0.1em; }
+    .phone-cta-number { color:white; font: var(--font-subsection); margin-top:8px; }
+    .phone-cta .btn-primary { margin-top:16px; font-size:0.875rem; padding:10px 20px; }
+
+    /* --- Form / newsletter --- */
+    .field { position: relative; max-width: 420px; }
+    .field-input {
+      width:100%; background: rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14);
+      border-radius: var(--radius-full); padding:14px 120px 14px 20px; color:white; font-size:0.9375rem; outline:none; transition: border-color 0.3s;
+    }
+    .field-input::placeholder { color: rgba(255,255,255,0.4); }
+    .field-input:focus { border-color: var(--brand-gold); }
+    .field-btn { position:absolute; right:4px; top:50%; transform:translateY(-50%); background: var(--brand-red); color:white; font-size:0.875rem; font-weight:500; padding:10px 20px; border-radius: var(--radius-full); transition: filter 0.3s; }
+    .field-btn:hover { filter: brightness(1.1); }
+
+    /* --- Navbar demo --- */
+    .nav-demo { background: var(--navy-overlay); backdrop-filter: blur(12px); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; height:72px; padding: 0 24px; }
+    .logo { display:flex; align-items:center; gap:10px; }
+    .logo-icon { width:36px; height:36px; border-radius:50%; background: var(--gradient-red); display:flex; align-items:center; justify-content:center; }
+    .logo-icon svg { width:20px; height:20px; color:white; }
+    .logo-text { font: var(--font-card); color:white; font-size:1.25rem; }
+    .nav-links { display:flex; align-items:center; gap:28px; }
+    .nav-links a { font: var(--font-nav); color: rgba(255,255,255,0.8); transition: color 0.3s; }
+    .nav-links a:hover { color: var(--brand-gold); }
+    @media (max-width: 760px) { .nav-links { display:none; } }
+
+    /* --- Footer social --- */
+    .footer-social { width:40px; height:40px; border-radius:50%; background: rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; transition: background 0.3s; }
+    .footer-social:hover { background: var(--brand-red); }
+    .footer-social svg { width:16px; height:16px; color:white; }
+
+    .icon-tint-red { color: var(--brand-red); }
+    .icon-tint-gold { color: var(--brand-gold); }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="ds-hero">
+    <div class="ds-shell">
+      <div class="ds-hero-eyebrow">Comfort One</div>
+      <h1>Design System</h1>
+      <p>Design system for the HVAC brand, based on the three original colors. All tokens and components are ready to reuse when building the new home.</p>
+      <div class="ds-hero-chips">
+        <span class="ds-hero-chip"><span class="dot" style="background:#951F21"></span> #951F21 · Red</span>
+        <span class="ds-hero-chip"><span class="dot" style="background:#FFB300"></span> #FFB300 · Gold</span>
+        <span class="ds-hero-chip"><span class="dot" style="background:#27316F"></span> #27316F · Navy</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="ds-shell">
+
+    <!-- ============ 01 · BRAND COLORS ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">01 · Brand Colors</div>
+        <h2>Brand colors</h2>
+        <p>The three core colors. Red is the primary accent (CTAs, active icons), gold the secondary accent (highlights, stars, alternate buttons), and navy the dark base for backgrounds.</p>
+      </div>
+      <div class="ds-grid cols-3">
+        <div class="swatch">
+          <div class="swatch-color" style="background:#951F21"><span class="role">Primario</span></div>
+          <div class="swatch-meta"><div class="swatch-name">Brand Red</div><div class="swatch-hex">#951F21 · --brand-red</div></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#FFB300"><span class="role">Secundario</span></div>
+          <div class="swatch-meta"><div class="swatch-name">Brand Gold</div><div class="swatch-hex">#FFB300 · --brand-gold</div></div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background:#27316F"><span class="role">Base</span></div>
+          <div class="swatch-meta"><div class="swatch-name">Brand Navy</div><div class="swatch-hex">#27316F · --brand-navy</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02 · EXTENDED PALETTE ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">02 · Extended Palette</div>
+        <h2>Scales &amp; neutrals</h2>
+        <p>Each brand color extends into a scale for hover states, background tints, and hierarchy — plus a ramp of neutral grays.</p>
+      </div>
+
+      <p class="type-token" style="margin-bottom:10px;">Red scale</p>
+      <div class="scale-row" style="margin-bottom:24px;">
+        <div class="scale-cell" style="background:#6E1517;color:#fff">700</div>
+        <div class="scale-cell" style="background:#7C1A1B;color:#fff">600</div>
+        <div class="scale-cell" style="background:#951F21;color:#fff">500</div>
+        <div class="scale-cell" style="background:#B8353A;color:#fff">400</div>
+        <div class="scale-cell" style="background:#D26468;color:#fff">300</div>
+        <div class="scale-cell" style="background:#F8EAEA;color:#951F21">050</div>
+      </div>
+
+      <p class="type-token" style="margin-bottom:10px;">Gold scale</p>
+      <div class="scale-row" style="margin-bottom:24px;">
+        <div class="scale-cell" style="background:#D99A00;color:#fff">600</div>
+        <div class="scale-cell" style="background:#FFB300;color:#3a2a00">500</div>
+        <div class="scale-cell" style="background:#FFC63D;color:#3a2a00">400</div>
+        <div class="scale-cell" style="background:#FFD873;color:#3a2a00">300</div>
+        <div class="scale-cell" style="background:#FFF6E0;color:#D99A00">050</div>
+      </div>
+
+      <p class="type-token" style="margin-bottom:10px;">Navy scale</p>
+      <div class="scale-row" style="margin-bottom:24px;">
+        <div class="scale-cell" style="background:#151B3F;color:#fff">700</div>
+        <div class="scale-cell" style="background:#1D2555;color:#fff">600</div>
+        <div class="scale-cell" style="background:#27316F;color:#fff">500</div>
+        <div class="scale-cell" style="background:#3A4690;color:#fff">400</div>
+      </div>
+
+      <p class="type-token" style="margin-bottom:10px;">Neutrals</p>
+      <div class="scale-row">
+        <div class="scale-cell" style="background:#FFFFFF;color:#374151;border:1px solid #E6E8EF">white</div>
+        <div class="scale-cell" style="background:#FBFAF7;color:#374151">cream</div>
+        <div class="scale-cell" style="background:#F4F5F8;color:#374151">100</div>
+        <div class="scale-cell" style="background:#E6E8EF;color:#374151">200</div>
+        <div class="scale-cell" style="background:#D2D6E1;color:#374151">300</div>
+        <div class="scale-cell" style="background:#6B7280;color:#fff">500</div>
+        <div class="scale-cell" style="background:#374151;color:#fff">700</div>
+        <div class="scale-cell" style="background:#1A1F36;color:#fff">ink</div>
+      </div>
+    </section>
+
+    <!-- ============ 03 · GRADIENTS ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">03 · Gradients</div>
+        <h2>Gradients</h2>
+      </div>
+      <div class="ds-grid cols-3">
+        <div class="grad-card">
+          <div class="grad-preview" style="background:linear-gradient(140deg,#3A4690 0%,#27316F 42%,#12173A 100%)"></div>
+          <div class="grad-meta"><div class="swatch-name">Hero</div><code>--gradient-hero</code></div>
+        </div>
+        <div class="grad-card">
+          <div class="grad-preview" style="background:linear-gradient(135deg,#27316F 0%,#1D2555 100%)"></div>
+          <div class="grad-meta"><div class="swatch-name">Dark</div><code>--gradient-dark</code></div>
+        </div>
+        <div class="grad-card">
+          <div class="grad-preview" style="background:linear-gradient(135deg,#951F21 0%,#B8353A 100%)"></div>
+          <div class="grad-meta"><div class="swatch-name">Red</div><code>--gradient-red</code></div>
+        </div>
+        <div class="grad-card">
+          <div class="grad-preview" style="background:linear-gradient(135deg,#6E1517 0%,#951F21 55%,#B8353A 100%)"></div>
+          <div class="grad-meta"><div class="swatch-name">Red deep (sections)</div><code>--gradient-red-deep</code></div>
+        </div>
+        <div class="grad-card">
+          <div class="grad-preview" style="background:linear-gradient(135deg,#FFB300 0%,#FFC63D 100%)"></div>
+          <div class="grad-meta"><div class="swatch-name">Gold</div><code>--gradient-gold</code></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 · TYPOGRAPHY ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">04 · Typography</div>
+        <h2>Typography — Lexend + Atkinson Hyperlegible</h2>
+        <p>Headings in <strong>Lexend</strong> (fast reading) and body in <strong>Atkinson Hyperlegible</strong> (designed for low vision). Body at 18px with 1.75 line-height — optimized for older readers.</p>
+      </div>
+      <div class="type-row"><div class="type-token">--font-display</div><div style="font:var(--font-display);color:var(--navy-500)">Beat the heat</div></div>
+      <div class="type-row"><div class="type-token">--font-section</div><div style="font:var(--font-section);color:var(--navy-500)">Complete HVAC services</div></div>
+      <div class="type-row"><div class="type-token">--font-subsection</div><div style="font:var(--font-subsection);color:var(--navy-500)">Transparent pricing</div></div>
+      <div class="type-row"><div class="type-token">--font-card</div><div style="font:var(--font-card);color:var(--navy-500)">Smart Thermostat Installation</div></div>
+      <div class="type-row"><div class="type-token">--font-body</div><div style="font:var(--font-body)">Standard body text for paragraphs, descriptions, and general site content.</div></div>
+      <div class="type-row"><div class="type-token">--font-body-sm</div><div style="font:var(--font-body-sm);color:var(--gray-500)">Smaller secondary text for metadata and details.</div></div>
+      <div class="type-row"><div class="type-token">--font-label</div><div style="font:var(--font-label);letter-spacing:var(--letter-spacing-label);text-transform:uppercase;color:var(--brand-red)">OUR SERVICES</div></div>
+      <div class="type-row"><div class="type-token">--font-stat</div><div style="font:var(--font-stat);color:var(--brand-red)">22+</div></div>
+    </section>
+
+    <!-- ============ 05 · SPACING / RADIUS / SHADOWS ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">05 · Spacing · Radius · Shadows</div>
+        <h2>Spacing, radius &amp; shadows</h2>
+      </div>
+
+      <p class="type-token" style="margin-bottom:14px;">Spacing scale</p>
+      <div class="spec-list" style="align-items:flex-end; margin-bottom:36px;">
+        <div class="spec-item"><div class="spec-box" style="width:8px;height:8px"></div><div class="spec-label">xs · 8</div></div>
+        <div class="spec-item"><div class="spec-box" style="width:16px;height:16px"></div><div class="spec-label">sm · 16</div></div>
+        <div class="spec-item"><div class="spec-box" style="width:24px;height:24px"></div><div class="spec-label">md · 24</div></div>
+        <div class="spec-item"><div class="spec-box" style="width:32px;height:32px"></div><div class="spec-label">lg · 32</div></div>
+        <div class="spec-item"><div class="spec-box" style="width:48px;height:48px"></div><div class="spec-label">xl · 48</div></div>
+        <div class="spec-item"><div class="spec-box" style="width:64px;height:64px"></div><div class="spec-label">2xl · 64</div></div>
+        <div class="spec-item"><div class="spec-box" style="width:96px;height:96px"></div><div class="spec-label">3xl · 96</div></div>
+      </div>
+
+      <p class="type-token" style="margin-bottom:14px;">Border radius</p>
+      <div class="spec-list" style="margin-bottom:36px;">
+        <div class="spec-item"><div class="radius-box" style="border-radius:8px"></div><div class="spec-label">sm · 8</div></div>
+        <div class="spec-item"><div class="radius-box" style="border-radius:12px"></div><div class="spec-label">md · 12</div></div>
+        <div class="spec-item"><div class="radius-box" style="border-radius:16px"></div><div class="spec-label">lg · 16</div></div>
+        <div class="spec-item"><div class="radius-box" style="border-radius:24px"></div><div class="spec-label">xl · 24</div></div>
+        <div class="spec-item"><div class="radius-box" style="border-radius:9999px"></div><div class="spec-label">full</div></div>
+      </div>
+
+      <p class="type-token" style="margin-bottom:14px;">Shadows</p>
+      <div class="ds-grid cols-3">
+        <div class="shadow-box" style="box-shadow:var(--shadow-sm)">shadow-sm</div>
+        <div class="shadow-box" style="box-shadow:var(--shadow-md)">shadow-md</div>
+        <div class="shadow-box" style="box-shadow:var(--shadow-lg)">shadow-lg</div>
+      </div>
+    </section>
+
+    <!-- ============ 06 · BUTTONS ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">06 · Buttons</div>
+        <h2>Buttons</h2>
+      </div>
+      <div class="comp-frame dark">
+        <div class="comp-frame-body" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;">
+          <a class="btn-primary">Schedule A Service</a>
+          <a class="btn-gold">Request a Service</a>
+          <a class="btn-ghost">Learn More</a>
+        </div>
+        <div class="comp-caption">.btn-primary (red) · .btn-gold · .btn-ghost — on dark background</div>
+      </div>
+      <div class="comp-frame light" style="margin-top:20px;">
+        <div class="comp-frame-body" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;">
+          <a class="btn-primary">More About Us</a>
+          <a class="btn-outline">View All Services</a>
+        </div>
+        <div class="comp-caption">.btn-primary · .btn-outline — on light background</div>
+      </div>
+    </section>
+
+    <!-- ============ 07 · SECTION LABELS ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">07 · Section Labels</div>
+        <h2>Section labels</h2>
+      </div>
+      <div class="comp-frame light">
+        <div class="comp-frame-body" style="display:flex;flex-direction:column;gap:16px;">
+          <span class="section-label">Our Services</span>
+          <span class="section-label gold">Our Benefits</span>
+        </div>
+        <div class="comp-caption">.section-label · .section-label.gold</div>
+      </div>
+      <div class="comp-frame dark" style="margin-top:20px;">
+        <div class="comp-frame-body"><span class="section-label light">Testimonials</span></div>
+        <div class="comp-caption">.section-label.light — on dark background</div>
+      </div>
+    </section>
+
+    <!-- ============ 08 · NAVBAR ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">08 · Navbar</div>
+        <h2>Navbar</h2>
+      </div>
+      <div class="comp-frame" style="background:var(--gradient-hero)">
+        <div class="nav-demo">
+          <div class="nav-inner">
+            <a class="logo">
+              <span class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 12v4m-4-8H4m16 0h-4m-1.5-5.5L7 17m0-10 10 10"/></svg></span>
+              <span class="logo-text">Comfort One</span>
+            </a>
+            <nav class="nav-links">
+              <a>Home</a><a>About Us</a><a>Services</a><a>Projects</a><a>Contact</a>
+            </nav>
+            <a class="btn-primary" style="padding:10px 20px;font-size:0.875rem;">Request a Service</a>
+          </div>
+        </div>
+        <div class="comp-caption" style="background:rgba(0,0,0,0.25);color:rgba(255,255,255,0.55);border-top:1px solid rgba(255,255,255,0.08)">.navbar · red logo · links with gold hover</div>
+      </div>
+    </section>
+
+    <!-- ============ 09 · SERVICE CARDS ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">09 · Service Cards</div>
+        <h2>Service cards</h2>
+      </div>
+      <div class="comp-frame dark">
+        <div class="comp-frame-body">
+          <div class="ds-grid cols-3">
+            <div class="service-card glass-card">
+              <div class="service-card-header">
+                <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg></div>
+                <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+              </div>
+              <h3 class="service-card-title">Smart Thermostat Installation</h3>
+              <p class="service-card-desc">Professional installation and maintenance services for your home or business.</p>
+            </div>
+            <div class="service-card glass-card">
+              <div class="service-card-header">
+                <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+              </div>
+              <h3 class="service-card-title">Seasonal Heating Maintenance</h3>
+              <p class="service-card-desc">Professional installation and maintenance services for your home or business.</p>
+            </div>
+            <div class="service-card glass-card">
+              <div class="service-card-header">
+                <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+              </div>
+              <h3 class="service-card-title">Emergency Heating Repairs</h3>
+              <p class="service-card-desc">Professional installation and maintenance services for your home or business.</p>
+            </div>
+          </div>
+        </div>
+        <div class="comp-caption">.service-card.glass-card — gold icon, red arrow on hover</div>
+      </div>
+    </section>
+
+    <!-- ============ 10 · BENEFITS & FEATURES ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">10 · Benefits & Features</div>
+        <h2>Benefits &amp; features</h2>
+      </div>
+      <div class="comp-frame dark">
+        <div class="comp-frame-body">
+          <div class="ds-grid cols-2">
+            <div class="benefit-item">
+              <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+              <div><h3 class="benefit-title">100% Customer Satisfaction</h3><p class="benefit-desc">Dependable heating and cooling services with a focus on quality.</p></div>
+            </div>
+            <div class="benefit-item">
+              <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div><h3 class="benefit-title">Fast & Reliable Service</h3><p class="benefit-desc">Certified technicians ensure your comfort in every season.</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="comp-caption">.benefit-item — gold icon on dark</div>
+      </div>
+
+      <div class="comp-frame light" style="margin-top:20px;">
+        <div class="comp-frame-body">
+          <div class="feature-row">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <div><h3 class="feature-title">Emergency repairs available</h3><p class="feature-desc">We specialize in delivering comfort, day or night.</p></div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 5 17 4.5 17 4.5c.5.5 0 3.5-1.5 5.5"/></svg></div>
+            <div><h3 class="feature-title">Energy-Saving Options</h3><p class="feature-desc">Efficient systems that lower your monthly bills.</p></div>
+          </div>
+        </div>
+        <div class="comp-caption">.feature-row — circle with .gradient-red on light</div>
+      </div>
+    </section>
+
+    <!-- ============ 11 · HOW IT WORKS ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">11 · Process Steps</div>
+        <h2>Process steps</h2>
+      </div>
+      <div class="comp-frame light">
+        <div class="comp-frame-body" style="max-width:560px;">
+          <div class="step">
+            <div class="step-line"></div>
+            <div class="step-icon-wrap"><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/></svg></div><span class="step-num">01</span></div>
+            <div><span class="step-label">Step 01</span><h3 class="step-title">Schedule a Free Consultation</h3><p class="step-desc">We assess your space and needs at no cost.</p></div>
+          </div>
+          <div class="step">
+            <div class="step-icon-wrap"><div class="step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><span class="step-num">02</span></div>
+            <div><span class="step-label">Step 02</span><h3 class="step-title">Quality Check & Walkthrough</h3><p class="step-desc">A full review before we start the job.</p></div>
+          </div>
+        </div>
+        <div class="comp-caption">.step — icons and indices in red, red-050 tints</div>
+      </div>
+    </section>
+
+    <!-- ============ 12 · STATS & HERO BADGES ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">12 · Stats & Badges</div>
+        <h2>Stats &amp; badges</h2>
+      </div>
+      <div class="comp-frame light">
+        <div class="comp-frame-body">
+          <div class="stat">
+            <span class="stat-number">22</span><span class="stat-plus">+</span>
+            <span class="stat-label">Years of Experience In Air Conditioning Solution</span>
+          </div>
+        </div>
+        <div class="comp-caption">.stat — number in red</div>
+      </div>
+      <div class="comp-frame dark" style="margin-top:20px;">
+        <div class="comp-frame-body">
+          <div class="ds-grid cols-3">
+            <div class="hero-badge glass-card-strong">
+              <div class="hero-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div><div class="hero-badge-title">100% Satisfaction</div><div class="hero-badge-desc">Available 24/7 for all your heating.</div></div>
+            </div>
+            <div class="hero-badge glass-card-strong">
+              <div class="hero-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg></div>
+              <div><div class="hero-badge-title">24/7 Services</div><div class="hero-badge-desc">Available 24/7 for all your heating.</div></div>
+            </div>
+            <div class="hero-badge glass-card-strong">
+              <div class="hero-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+              <div><div class="hero-badge-title">Certified Expert</div><div class="hero-badge-desc">Available 24/7 for all your heating.</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="comp-caption">.hero-badge.glass-card-strong — circle with .gradient-red</div>
+      </div>
+    </section>
+
+    <!-- ============ 13 · PROJECT CARDS ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">13 · Project Cards</div>
+        <h2>Project cards</h2>
+        <p>The photos are current placeholders — to be replaced later.</p>
+      </div>
+      <div class="ds-grid cols-3">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=450&fit=crop" alt="Proyecto residencial" />
+          <div class="project-card-overlay"></div>
+          <div class="project-card-content"><span class="project-card-label">Boiler Services</span><h3 class="project-card-title">Residential Heating Installation</h3></div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=450&fit=crop" alt="Proyecto comercial" />
+          <div class="project-card-overlay"></div>
+          <div class="project-card-content"><span class="project-card-label">Multi-Zone Cooling</span><h3 class="project-card-title">Office Building AC System</h3></div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop" alt="Proyecto residencial" />
+          <div class="project-card-overlay"></div>
+          <div class="project-card-content"><span class="project-card-label">Central Air</span><h3 class="project-card-title">Complete Home Cooling Solution</h3></div>
+        </div>
+      </div>
+      <p class="comp-caption" style="border:1px solid var(--gray-200);border-radius:8px;margin-top:14px;">.project-card — gold label, navy overlay</p>
+    </section>
+
+    <!-- ============ 14 · BLOG CARDS ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">14 · Blog Cards</div>
+        <h2>Blog cards</h2>
+      </div>
+      <div class="ds-grid cols-3">
+        <article class="blog-card">
+          <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=375&fit=crop" alt="Blog" /></div>
+          <div class="blog-card-body">
+            <p class="blog-card-date">May 12, 2025</p>
+            <h3 class="blog-card-title">We handle cooling system repairs & complete AC servicing</h3>
+            <a class="blog-card-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=375&fit=crop" alt="Blog" /></div>
+          <div class="blog-card-body">
+            <p class="blog-card-date">May 12, 2025</p>
+            <h3 class="blog-card-title">Breathe Easy with Comfort One Smart Air Solutions</h3>
+            <a class="blog-card-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          </div>
+        </article>
+        <article class="blog-card">
+          <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=375&fit=crop" alt="Blog" /></div>
+          <div class="blog-card-body">
+            <p class="blog-card-date">May 12, 2025</p>
+            <h3 class="blog-card-title">Comfort One Insights: Heating Essentials</h3>
+            <a class="blog-card-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          </div>
+        </article>
+      </div>
+      <p class="comp-caption" style="border:1px solid var(--gray-200);border-radius:8px;margin-top:14px;">.blog-card — red title on hover, red link</p>
+    </section>
+
+    <!-- ============ 15 · TESTIMONIAL & PHONE CTA ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">15 · Testimonial & CTA</div>
+        <h2>Testimonial &amp; CTA</h2>
+      </div>
+      <div class="comp-frame" style="background:var(--gradient-dark)">
+        <div class="comp-frame-body">
+          <div class="testimonial">
+            <div class="testimonial-stars">
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <p class="testimonial-text">"Our home has never felt this comfortable. The technicians were professional, on time, and explained everything clearly."</p>
+            <p class="testimonial-name">John Matthews</p>
+            <p class="testimonial-role">Homeowner</p>
+          </div>
+        </div>
+        <div class="comp-caption" style="background:rgba(0,0,0,0.25);color:rgba(255,255,255,0.55);border-top:1px solid rgba(255,255,255,0.08)">.testimonial — gold stars</div>
+      </div>
+
+      <div class="ds-grid cols-2" style="margin-top:20px;">
+        <div class="phone-cta">
+          <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=400&fit=crop" alt="Technician" />
+          <div class="phone-cta-overlay"></div>
+          <div class="phone-cta-content">
+            <p class="phone-cta-label">Call Now</p>
+            <p class="phone-cta-number">+1 234 567 890</p>
+            <a class="btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Contact Us</a>
+          </div>
+        </div>
+        <div class="comp-frame dark" style="display:flex;align-items:center;justify-content:center;">
+          <div class="comp-frame-body" style="width:100%;">
+            <p class="section-label light" style="margin-bottom:18px;">Newsletter</p>
+            <div class="field">
+              <input class="field-input" type="email" placeholder="Enter your email" />
+              <button class="field-btn">Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 16 · FOOTER SOCIALS ============ -->
+    <section class="ds-section">
+      <div class="ds-section-head">
+        <div class="ds-section-num">16 · Footer</div>
+        <h2>Footer socials</h2>
+      </div>
+      <div class="comp-frame dark">
+        <div class="comp-frame-body" style="display:flex;gap:12px;">
+          <a class="footer-social" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a class="footer-social" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a class="footer-social" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        </div>
+        <div class="comp-caption" style="background:rgba(0,0,0,0.25);color:rgba(255,255,255,0.55);border-top:1px solid rgba(255,255,255,0.08)">.footer-social — red hover</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="background:var(--gradient-dark);color:rgba(255,255,255,0.6);text-align:center;padding:32px 24px;font-size:0.85rem;">
+    Comfort One · Design System — tokens ready for the new home
+  </footer>
+
+</body>
+</html>

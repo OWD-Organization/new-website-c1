@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coolify - HVAC Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       DESIGN TOKENS - COOLIFY HVAC
+       ============================================================
+       Copia estas variables CSS a tu nuevo proyecto.
+       Estos son todos los tokens de diseño del sistema.
+       ============================================================ */
+
+    :root {
+      /* --- COLORS --- */
+      --color-navy: #0F2B38;
+      --color-navy-deep: #0A1F28;
+      --color-teal: #164C5E;
+      --color-orange: #E86842;
+      --color-orange-light: #F08050;
+      --color-coral: #D45440;
+      --color-white: #FFFFFF;
+      --color-cream: #FDFBF7;
+      --color-gray-100: #F5F5F0;
+      --color-gray-200: #E8E8E3;
+      --color-gray-500: #6B7280;
+      --color-gray-700: #374151;
+      --color-navy-overlay: rgba(15, 43, 56, 0.75);
+      --color-dark-card: rgba(255, 255, 255, 0.08);
+
+      /* --- GRADIENTS --- */
+      --gradient-hero: linear-gradient(135deg, #0F2B38 0%, #164C5E 40%, #0A1F28 70%, #3A1F18 100%);
+      --gradient-dark: linear-gradient(135deg, #0F2B38 0%, #164C5E 50%, #0A1F28 100%);
+      --gradient-orange: linear-gradient(135deg, #E86842 0%, #F08050 100%);
+      --gradient-coral: linear-gradient(135deg, #E86842 0%, #D45440 100%);
+      --gradient-subtle: linear-gradient(180deg, rgba(15,43,56,0.6) 0%, rgba(15,43,56,0.3) 100%);
+
+      /* --- TYPOGRAPHY --- */
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-display: 600 clamp(2.5rem, 5vw, 4.5rem) / 1.1 var(--font-family);
+      --font-section: 600 clamp(2rem, 4vw, 3rem) / 1.15 var(--font-family);
+      --font-subsection: 600 clamp(1.5rem, 3vw, 2.25rem) / 1.2 var(--font-family);
+      --font-card: 600 1.5rem / 1.3 var(--font-family);
+      --font-body: 400 1rem / 1.6 var(--font-family);
+      --font-body-sm: 400 0.875rem / 1.5 var(--font-family);
+      --font-label: 500 0.875rem / 1.4 var(--font-family);
+      --font-nav: 500 1rem / 1 var(--font-family);
+      --font-btn: 500 1rem / 1 var(--font-family);
+      --font-stat: 700 clamp(3rem, 6vw, 4.5rem) / 1 var(--font-family);
+      --letter-spacing-tight: -0.02em;
+      --letter-spacing-label: 0.1em;
+
+      /* --- SPACING --- */
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 32px;
+      --space-xl: 48px;
+      --space-2xl: 64px;
+      --space-3xl: 96px;
+      --space-page: 120px;
+      --container-max: 1280px;
+      --container-pad: 24px;
+
+      /* --- BORDER RADIUS --- */
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+
+      /* --- SHADOWS --- */
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+      --shadow-lg: 0 16px 48px rgba(0,0,0,0.16);
+      --shadow-glow-orange: 0 0 40px rgba(232,104,66,0.3);
+
+      /* --- EASINGS --- */
+      --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    /* --- RESET & BASE --- */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font: var(--font-body);
+      font-family: var(--font-family);
+      color: var(--color-gray-700);
+      background: var(--color-white);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--color-navy);
+      font-weight: 600;
+      letter-spacing: var(--letter-spacing-tight);
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ============================================================
+       UTILITY CLASSES
+       ============================================================ */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+    }
+    .section-padding {
+      padding: var(--space-2xl) 0;
+    }
+    @media (min-width: 1024px) {
+      .section-padding { padding: var(--space-3xl) 0; }
+    }
+
+    /* Gradients */
+    .gradient-hero { background: var(--gradient-hero); }
+    .gradient-dark { background: var(--gradient-dark); }
+    .gradient-orange-bg { background: var(--gradient-orange); }
+
+    /* Glassmorphism */
+    .glass-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .glass-card-strong {
+      background: var(--color-navy-overlay);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: var(--space-xs);
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font: var(--font-btn);
+      color: var(--color-white);
+      background: var(--gradient-orange);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .btn-primary:hover {
+      filter: brightness(1.1);
+      box-shadow: var(--shadow-glow-orange);
+    }
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: var(--space-xs);
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font: var(--font-btn);
+      color: var(--color-white);
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .btn-ghost:hover {
+      border-color: var(--color-white);
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Section Label (orange dot + uppercase text) */
+    .section-label {
+      display: flex; align-items: center; gap: var(--space-sm);
+      font: var(--font-label);
+      letter-spacing: var(--letter-spacing-label);
+      text-transform: uppercase;
+      color: var(--color-orange);
+      margin-bottom: var(--space-md);
+    }
+    .section-label::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--color-orange);
+      display: inline-block;
+    }
+    .section-label.light { color: var(--color-white); }
+    .section-label.light::before { background: var(--color-white); }
+
+    /* Entrance animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ============================================================
+       NAVBAR
+       ============================================================ */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      transition: background 0.3s ease, backdrop-filter 0.3s ease;
+    }
+    .navbar.scrolled {
+      background: rgba(15, 43, 56, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .navbar-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 80px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 8px;
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--gradient-orange);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 20px; height: 20px; color: white; }
+    .logo-text { font: var(--font-card); color: white; font-size: 1.25rem; }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 32px;
+    }
+    @media (min-width: 1024px) { .nav-links { display: flex; } }
+    .nav-links a {
+      font: var(--font-nav);
+      color: rgba(255,255,255,0.8);
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--color-orange); }
+
+    .nav-cta { display: none; }
+    @media (min-width: 640px) { .nav-cta { display: inline-flex; } }
+
+    .hamburger {
+      display: flex;
+      padding: 8px;
+      color: white;
+    }
+    @media (min-width: 1024px) { .hamburger { display: none; } }
+
+    /* Mobile menu */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      visibility: hidden;
+      transition: visibility 0.3s;
+    }
+    .mobile-menu.open { visibility: visible; }
+    .mobile-menu-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.6);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .mobile-menu.open .mobile-menu-overlay { opacity: 1; }
+    .mobile-menu-panel {
+      position: absolute;
+      right: 0; top: 0;
+      width: 320px; max-width: 85vw;
+      height: 100%;
+      background: var(--color-navy);
+      padding: 32px;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-menu.open .mobile-menu-panel { transform: translateX(0); }
+    .mobile-menu-close {
+      position: absolute;
+      top: 24px; right: 24px;
+      color: white;
+      padding: 8px;
+    }
+    .mobile-menu-links {
+      margin-top: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .mobile-menu-links a {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.125rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .mobile-menu-links a:hover { color: var(--color-orange); }
+
+    /* ============================================================
+       HERO SECTION
+       ============================================================ */
+    .hero {
+      min-height: 100vh;
+      padding-top: 140px;
+      padding-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-content { text-align: center; max-width: 800px; margin: 0 auto; }
+    .hero-title {
+      font: var(--font-display);
+      color: white;
+    }
+    .hero-desc {
+      margin-top: var(--space-lg);
+      font: var(--font-body);
+      color: rgba(255,255,255,0.7);
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-buttons {
+      margin-top: var(--space-xl);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-md);
+    }
+
+    .hero-images {
+      margin-top: var(--space-xl);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+    @media (min-width: 768px) {
+      .hero-images { grid-template-columns: 1fr 1.2fr 1fr; }
+    }
+    .hero-img {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+    .hero-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .hero-img.center { aspect-ratio: 4/3; }
+    @media (min-width: 768px) {
+      .hero-img.center { transform: translateY(32px); }
+    }
+
+    .hero-badges {
+      margin-top: var(--space-lg);
+      position: relative;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+    @media (min-width: 640px) {
+      .hero-badges { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 768px) {
+      .hero-badges { margin-top: -64px; }
+    }
+    .hero-badge {
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .hero-badge-icon {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--gradient-orange);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-badge-icon svg { width: 20px; height: 20px; color: white; }
+    .hero-badge-title { font-weight: 600; color: white; font-size: 1rem; }
+    .hero-badge-desc { color: rgba(255,255,255,0.6); font-size: 0.875rem; margin-top: 2px; }
+
+    /* ============================================================
+       ABOUT SECTION
+       ============================================================ */
+    .about-header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+    }
+    @media (min-width: 1024px) {
+      .about-header { flex-direction: row; justify-content: space-between; align-items: flex-start; }
+    }
+    .about-header-left { max-width: 520px; }
+    .about-title { font: var(--font-section); }
+    .about-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+    .about-stat-number {
+      font: var(--font-stat);
+      color: var(--color-orange);
+      letter-spacing: -0.03em;
+    }
+    .about-stat-label {
+      margin-left: var(--space-md);
+      font-size: 0.875rem;
+      color: var(--color-gray-500);
+      max-width: 140px;
+      line-height: 1.4;
+    }
+
+    .about-body {
+      margin-top: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+    }
+    @media (min-width: 1024px) {
+      .about-body { flex-direction: row; gap: var(--space-2xl); }
+      .about-body > * { flex: 1; }
+    }
+    .about-img {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+
+    .about-text p { line-height: 1.7; color: var(--color-gray-700); }
+    .about-text p + p { margin-top: var(--space-md); }
+    .about-checks { margin-top: var(--space-xl); display: flex; flex-direction: column; gap: var(--space-md); }
+    .about-check {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .about-check-icon {
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: rgba(232,104,66,0.1);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .about-check-icon svg { width: 12px; height: 12px; color: var(--color-orange); }
+    .about-text .btn-primary { margin-top: var(--space-xl); }
+
+    /* ============================================================
+       SERVICES SECTION
+       ============================================================ */
+    .services-header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    @media (min-width: 640px) {
+      .services-header { flex-direction: row; justify-content: space-between; align-items: flex-end; }
+    }
+    .services-title { font: var(--font-section); color: white; max-width: 400px; }
+    .services-viewall {
+      color: var(--color-orange);
+      display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 500;
+      transition: gap 0.3s;
+    }
+    .services-viewall:hover { gap: 12px; }
+
+    .services-grid {
+      margin-top: var(--space-xl);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+    @media (min-width: 640px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .service-card {
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    .service-card:hover { background: rgba(255,255,255,0.12); }
+    .service-card-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+    }
+    .service-card-icon { color: var(--color-orange); }
+    .service-card-icon svg { width: 48px; height: 48px; stroke-width: 1.5; }
+    .service-card-arrow {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s;
+    }
+    .service-card:hover .service-card-arrow { background: var(--color-orange); }
+    .service-card-arrow svg { width: 16px; height: 16px; color: white; }
+    .service-card-title { margin-top: var(--space-lg); font: var(--font-card); color: white; font-size: 1.125rem; }
+    .service-card-desc { margin-top: 8px; color: rgba(255,255,255,0.6); font-size: 0.875rem; line-height: 1.6; }
+
+    .services-cta-row {
+      margin-top: var(--space-xl);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+    @media (min-width: 1024px) { .services-cta-row { grid-template-columns: 1fr 1fr 1fr; } }
+
+    .service-mini {
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    .service-mini:hover { background: rgba(255,255,255,0.12); }
+    .service-mini-inner { display: flex; align-items: center; gap: 16px; }
+    .service-mini-icon { color: var(--color-orange); }
+    .service-mini-icon svg { width: 32px; height: 32px; stroke-width: 1.5; }
+    .service-mini-title { color: white; font-weight: 500; }
+
+    .phone-cta {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      min-height: 220px;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 32px;
+    }
+    .phone-cta img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .phone-cta-overlay { position: absolute; inset: 0; background: rgba(15,43,56,0.6); }
+    .phone-cta-content { position: relative; z-index: 1; }
+    .phone-cta-label { color: rgba(255,255,255,0.6); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    .phone-cta-number { color: white; font: var(--font-subsection); margin-top: 8px; }
+    .phone-cta .btn-primary { margin-top: 16px; font-size: 0.875rem; padding: 10px 20px; }
+
+    .ac-unit-card {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: flex; align-items: flex-end; justify-content: center;
+      min-height: 220px;
+    }
+    .ac-unit-card img { width: 100%; height: auto; padding: 16px; }
+
+    /* ============================================================
+       WHY CHOOSE US
+       ============================================================ */
+    .whychoose-body {
+      margin-top: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+    }
+    @media (min-width: 1024px) {
+      .whychoose-body { flex-direction: row; gap: var(--space-2xl); }
+      .whychoose-img-wrap { width: 42%; }
+      .whychoose-features { width: 58%; }
+    }
+    .whychoose-img {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .whychoose-img img { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+
+    .whychoose-feature {
+      display: flex; align-items: flex-start; gap: var(--space-md);
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--color-gray-200);
+    }
+    .whychoose-feature:last-child { border-bottom: none; }
+    .whychoose-feature-icon {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--gradient-orange);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .whychoose-feature-icon svg { width: 24px; height: 24px; color: white; }
+    .whychoose-feature-title { font: var(--font-card); font-size: 1.125rem; }
+    .whychoose-feature-desc { color: var(--color-gray-500); margin-top: 4px; line-height: 1.6; }
+
+    .whychoose-banner {
+      margin-top: var(--space-lg);
+      background: var(--gradient-orange);
+      border-radius: var(--radius-lg);
+      padding: var(--space-md) var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+      align-items: center;
+      text-align: center;
+    }
+    @media (min-width: 640px) {
+      .whychoose-banner { flex-direction: row; justify-content: space-between; text-align: left; }
+    }
+    .whychoose-banner-text { color: white; font-weight: 500; font-size: 1.125rem; }
+    .whychoose-banner-link { color: white; text-decoration: underline; text-underline-offset: 4px; font-weight: 500; white-space: nowrap; }
+    .whychoose-banner-link:hover { text-decoration: none; }
+
+    /* ============================================================
+       BENEFITS SECTION
+       ============================================================ */
+    .benefits-header {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+    }
+    @media (min-width: 1024px) {
+      .benefits-header { flex-direction: row; gap: var(--space-2xl); }
+      .benefits-header > * { flex: 1; }
+    }
+    .benefits-title { font: var(--font-section); color: white; max-width: 500px; }
+    .benefits-desc { color: rgba(255,255,255,0.7); line-height: 1.7; align-self: flex-end; }
+
+    .benefits-divider {
+      margin: var(--space-xl) 0;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+    @media (min-width: 768px) { .benefits-grid { grid-template-columns: 1fr 1fr; } }
+
+    .benefit-item {
+      display: flex; align-items: flex-start; gap: var(--space-md);
+    }
+    .benefit-icon { color: var(--color-orange); flex-shrink: 0; }
+    .benefit-icon svg { width: 40px; height: 40px; stroke-width: 1.5; }
+    .benefit-title { font: var(--font-card); color: white; font-size: 1.125rem; }
+    .benefit-desc { color: rgba(255,255,255,0.6); margin-top: 8px; font-size: 0.9375rem; line-height: 1.6; }
+
+    /* ============================================================
+       HOW IT WORKS
+       ============================================================ */
+    .how-body {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2xl);
+    }
+    @media (min-width: 1024px) {
+      .how-body { flex-direction: row; gap: var(--space-3xl); }
+      .how-left { width: 38%; }
+      .how-right { width: 55%; margin-left: auto; }
+    }
+    .how-title { font: var(--font-section); }
+    .how-desc { margin-top: var(--space-md); color: var(--color-gray-700); line-height: 1.7; }
+    .how-left .btn-primary { margin-top: var(--space-xl); }
+
+    .how-step {
+      display: flex;
+      gap: var(--space-md);
+      padding-bottom: var(--space-xl);
+      position: relative;
+    }
+    .how-step:last-child { padding-bottom: 0; }
+    .how-step-line {
+      position: absolute;
+      left: 22px;
+      top: 56px;
+      bottom: 0;
+      width: 2px;
+      background: var(--color-gray-200);
+    }
+    .how-step:last-child .how-step-line { display: none; }
+
+    .how-step-icon-wrap {
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    .how-step-icon {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: rgba(232,104,66,0.1);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .how-step-icon svg { width: 20px; height: 20px; color: var(--color-orange); }
+    .how-step-num {
+      position: absolute;
+      top: -6px; left: -6px;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      border: 2px solid rgba(232,104,66,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.625rem;
+      font-weight: 700;
+      color: var(--color-orange);
+      background: white;
+    }
+
+    .how-step-label { font-size: 0.875rem; font-weight: 500; color: var(--color-orange); }
+    .how-step-title { margin-top: 4px; font: var(--font-card); font-size: 1.25rem; }
+    .how-step-desc { margin-top: 8px; color: var(--color-gray-500); line-height: 1.6; }
+
+    /* ============================================================
+       PROJECTS SECTION
+       ============================================================ */
+    .projects-title { font: var(--font-section); color: white; }
+
+    .projects-filters {
+      margin-top: var(--space-xl);
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .projects-filter {
+      padding: 10px 24px;
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: white;
+      background: rgba(255,255,255,0.1);
+      transition: all 0.2s;
+    }
+    .projects-filter:hover { background: rgba(255,255,255,0.2); }
+    .projects-filter.active { background: var(--color-orange); }
+
+    .projects-grid {
+      margin-top: var(--space-xl);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+    @media (min-width: 640px) { .projects-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .projects-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .project-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+    .project-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .project-card:hover img { transform: scale(1.05); }
+    .project-card-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(15,43,56,0.9) 0%, transparent 55%);
+    }
+    .project-card-content {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: var(--space-lg);
+    }
+    .project-card-label { color: var(--color-orange); font-size: 0.875rem; font-weight: 500; }
+    .project-card-title { color: white; font: var(--font-card); font-size: 1.125rem; margin-top: 4px; }
+    .project-card.hidden { display: none; }
+
+    /* ============================================================
+       SPECIALIZE SECTION (Tabs)
+       ============================================================ */
+    .specialize-title { font: var(--font-section); }
+
+    .specialize-tabs {
+      margin-top: var(--space-xl);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .specialize-tab {
+      display: flex; align-items: center; gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font: var(--font-btn);
+      font-size: 0.9375rem;
+      color: white;
+      background: var(--color-navy);
+      transition: all 0.2s;
+    }
+    .specialize-tab:hover { background: rgba(15,43,56,0.8); }
+    .specialize-tab.active { background: var(--color-orange); }
+    .specialize-tab svg { width: 18px; height: 18px; }
+
+    .specialize-content {
+      margin-top: var(--space-xl);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+    @media (min-width: 1024px) {
+      .specialize-content { flex-direction: row; gap: var(--space-2xl); }
+      .specialize-content > * { flex: 1; }
+    }
+    .specialize-content-inner {
+      transition: opacity 0.3s ease;
+    }
+    .specialize-img {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .specialize-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .specialize-content-title { font: var(--font-subsection); }
+    .specialize-content-subtitle { margin-top: 8px; color: var(--color-gray-500); font-size: 1.125rem; }
+    .specialize-content-desc { margin-top: var(--space-md); color: var(--color-gray-700); line-height: 1.7; }
+    .specialize-bullets { margin-top: var(--space-lg); display: flex; flex-direction: column; gap: 12px; }
+    .specialize-bullet {
+      display: flex; align-items: flex-start; gap: 12px;
+    }
+    .specialize-bullet-icon {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: rgba(232,104,66,0.1);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .specialize-bullet-icon svg { width: 10px; height: 10px; color: var(--color-orange); }
+
+    /* ============================================================
+       TESTIMONIALS SECTION
+       ============================================================ */
+    .testimonials-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+
+    .testimonials-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: var(--radius-full);
+      padding: 12px 24px;
+      margin-bottom: var(--space-xl);
+    }
+    .testimonials-avatars { display: flex; }
+    .testimonials-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(15,43,56,0.4);
+      border: 2px solid var(--color-orange);
+      display: flex; align-items: center; justify-content: center;
+      margin-left: -10px;
+      font-size: 0.75rem;
+      color: white;
+      font-weight: 500;
+    }
+    .testimonials-avatar:first-child { margin-left: 0; }
+    .testimonials-badge-text { color: white; font-size: 0.875rem; font-weight: 500; }
+
+    .testimonials-title { font: var(--font-section); color: white; }
+
+    .testimonials-stars {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-top: var(--space-md);
+    }
+    .testimonials-stars svg {
+      width: 20px; height: 20px;
+      color: #FCD34D;
+      fill: #FCD34D;
+    }
+
+    .testimonial-slide {
+      margin-top: var(--space-xl);
+      min-height: 200px;
+    }
+    .testimonial-text {
+      font-size: 1.125rem;
+      color: white;
+      line-height: 1.8;
+      font-style: italic;
+    }
+    .testimonial-author { margin-top: var(--space-lg); }
+    .testimonial-name { color: white; font-weight: 600; font-size: 1.125rem; }
+    .testimonial-role { color: rgba(255,255,255,0.7); font-size: 0.875rem; }
+
+    .testimonials-nav {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-md);
+      margin-top: var(--space-xl);
+    }
+    .testimonials-nav-btn {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s;
+    }
+    .testimonials-nav-btn:hover { background: white; }
+    .testimonials-nav-btn svg { width: 20px; height: 20px; color: white; }
+    .testimonials-nav-btn:hover svg { color: var(--color-orange); }
+
+    /* ============================================================
+       BLOG SECTION
+       ============================================================ */
+    .blog-title { font: var(--font-section); }
+
+    .blog-grid {
+      margin-top: var(--space-xl);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+    @media (min-width: 640px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .blog-card {
+      background: white;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.3s;
+    }
+    .blog-card:hover { box-shadow: var(--shadow-md); }
+    .blog-card-img {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+    }
+    .blog-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .blog-card:hover .blog-card-img img { transform: scale(1.05); }
+    .blog-card-body { padding: var(--space-md); }
+    .blog-card-date { font-size: 0.875rem; color: var(--color-gray-500); }
+    .blog-card-title {
+      margin-top: 8px;
+      font: var(--font-card);
+      font-size: 1.125rem;
+      transition: color 0.3s;
+    }
+    .blog-card:hover .blog-card-title { color: var(--color-orange); }
+    .blog-card-link {
+      margin-top: var(--space-md);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-orange);
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: gap 0.3s;
+    }
+    .blog-card-link:hover { gap: 12px; }
+
+    /* ============================================================
+       CTA SECTION
+       ============================================================ */
+    .cta-heading {
+      font: var(--font-section);
+      color: white;
+      max-width: 700px;
+    }
+
+    .cta-badge {
+      position: relative;
+      width: 112px; height: 112px;
+      flex-shrink: 0;
+    }
+    .cta-badge-rotating {
+      position: absolute; inset: 0;
+      animation: rotate-slow 20s linear infinite;
+    }
+    @keyframes rotate-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .cta-badge-center {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cta-badge-center-inner {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--gradient-orange);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .cta-badge-center-inner svg { width: 20px; height: 20px; color: white; }
+
+    .cta-contacts {
+      margin-top: var(--space-2xl);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+      padding-bottom: var(--space-xl);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    @media (min-width: 768px) { .cta-contacts { grid-template-columns: repeat(3, 1fr); } }
+
+    .cta-contact { display: flex; align-items: flex-start; gap: var(--space-md); }
+    .cta-contact-icon {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: rgba(232,104,66,0.1);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .cta-contact-icon svg { width: 20px; height: 20px; color: var(--color-orange); }
+    .cta-contact-label { color: rgba(255,255,255,0.5); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.1em; }
+    .cta-contact-value { color: white; font-weight: 500; margin-top: 4px; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer-main {
+      padding-top: var(--space-2xl);
+      padding-bottom: var(--space-xl);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+    @media (min-width: 640px) { .footer-main { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .footer-main { grid-template-columns: 1.2fr 1fr 0.8fr 1.2fr; } }
+
+    .footer-logo-desc { color: rgba(255,255,255,0.5); font-size: 0.875rem; line-height: 1.7; margin-top: var(--space-md); }
+
+    .footer-socials {
+      display: flex; gap: 12px; margin-top: var(--space-lg);
+    }
+    .footer-social {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.3s;
+    }
+    .footer-social:hover { background: var(--color-orange); }
+    .footer-social svg { width: 16px; height: 16px; color: white; }
+
+    .footer-heading { color: white; font: var(--font-card); font-size: 1.125rem; }
+
+    .footer-contact-list { margin-top: var(--space-md); display: flex; flex-direction: column; gap: var(--space-md); }
+    .footer-contact-item {
+      display: flex; align-items: center; gap: 12px;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9375rem;
+    }
+    .footer-contact-item svg { width: 16px; height: 16px; color: var(--color-orange); flex-shrink: 0; }
+
+    .footer-links { margin-top: var(--space-md); display: flex; flex-direction: column; gap: 12px; }
+    .footer-links a {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9375rem;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: white; }
+
+    .footer-newsletter { margin-top: var(--space-md); position: relative; }
+    .footer-newsletter-input {
+      width: 100%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-full);
+      padding: 14px 110px 14px 20px;
+      color: white;
+      font-size: 0.9375rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .footer-newsletter-input::placeholder { color: rgba(255,255,255,0.4); }
+    .footer-newsletter-input:focus { border-color: rgba(232,104,66,0.5); }
+    .footer-newsletter-btn {
+      position: absolute;
+      right: 4px; top: 50%;
+      transform: translateY(-50%);
+      background: var(--color-orange);
+      color: white;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      transition: filter 0.3s;
+    }
+    .footer-newsletter-btn:hover { filter: brightness(1.1); }
+    .footer-newsletter-desc { color: rgba(255,255,255,0.5); font-size: 0.875rem; margin-top: var(--space-md); line-height: 1.6; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: var(--space-md) 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+      text-align: center;
+    }
+    @media (min-width: 640px) {
+      .footer-bottom { flex-direction: row; justify-content: space-between; }
+    }
+    .footer-copyright { color: rgba(255,255,255,0.4); font-size: 0.875rem; }
+
+    /* SVG Icons inline styles */
+    .icon { width: 24px; height: 24px; }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#hero" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 12v4m-4-8H4m16 0h-4m-1.5-5.5L7 17m0-10 10 10"/></svg>
+        </div>
+        <span class="logo-text">Coolify</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:16px;">
+        <a href="#contact" class="btn-primary nav-cta" style="padding:10px 20px;font-size:0.875rem;">Get A Free Estimate</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+    <div class="mobile-menu-panel">
+      <button class="mobile-menu-close" id="menuClose" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="mobile-menu-links">
+        <a href="#hero">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn-primary" style="margin-top:16px;text-align:center;">Get A Free Estimate</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero gradient-hero" id="hero">
+    <div class="container">
+      <div class="hero-content reveal">
+        <div class="section-label" style="justify-content:center;">
+          <span></span> WELCOME COOLIFY
+        </div>
+        <h1 class="hero-title">Beat the heat with reliable, air conditioning services today</h1>
+        <p class="hero-desc">At Stay Heating & Cooling, we believe that every home deserves perfect comfort no matter season that's why we provide customized heating.</p>
+        <div class="hero-buttons">
+          <a href="#services" class="btn-primary">Schedule A Service</a>
+          <a href="#contact" class="btn-ghost">Get A Free Estimate</a>
+        </div>
+      </div>
+
+      <div class="hero-images">
+        <div class="hero-img reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1631545308772-81a0e0a3a6ae?w=600&h=800&fit=crop" alt="Technician installing outdoor AC unit" />
+        </div>
+        <div class="hero-img center reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1581094794329-cdab2d3e7b33?w=700&h=525&fit=crop" alt="Friendly HVAC technician" />
+        </div>
+        <div class="hero-img reveal reveal-delay-3">
+          <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=800&fit=crop" alt="Technician servicing indoor unit" />
+        </div>
+      </div>
+
+      <div class="hero-badges">
+        <div class="hero-badge glass-card-strong reveal reveal-delay-3">
+          <div class="hero-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div><div class="hero-badge-title">100% Satisfaction</div><div class="hero-badge-desc">Available 24/7 for all your heating.</div></div>
+        </div>
+        <div class="hero-badge glass-card-strong reveal reveal-delay-4">
+          <div class="hero-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div><div class="hero-badge-title">24/7 Services</div><div class="hero-badge-desc">Available 24/7 for all your heating.</div></div>
+        </div>
+        <div class="hero-badge glass-card-strong reveal reveal-delay-5">
+          <div class="hero-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+          </div>
+          <div><div class="hero-badge-title">Certified Expert</div><div class="hero-badge-desc">Available 24/7 for all your heating.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section-padding" id="about" style="background:white;">
+    <div class="container">
+      <div class="about-header reveal">
+        <div class="about-header-left">
+          <div class="section-label"><span></span> ABOUT US</div>
+          <h2 class="about-title">Professional HVAC service with a personal touch</h2>
+        </div>
+        <div class="about-stat">
+          <span class="about-stat-number" id="statNumber">0</span>
+          <span style="font:var(--font-stat);color:var(--color-orange);font-size:3rem;">+</span>
+          <span class="about-stat-label">Years of Experience In Air Conditioning Solution</span>
+        </div>
+      </div>
+
+      <div class="about-body">
+        <div class="about-img reveal">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop" alt="Technician working on AC unit" />
+        </div>
+        <div class="about-text reveal reveal-delay-2">
+          <p>At Total Comfort HVAC, we specialize in delivering dependable heating and cooling services with a focus on quality, efficiency.</p>
+          <p>With over 15 years of industry experience, certified technicians ensure your home or business stays comfortable in every season.</p>
+          <ul class="about-checks">
+            <li class="about-check">
+              <span class="about-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>Years of Experience In Air Conditioning</span>
+            </li>
+            <li class="about-check">
+              <span class="about-check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>Long-Standing Air Conditioning Expertise</span>
+            </li>
+          </ul>
+          <a href="#about" class="btn-primary">More About Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="section-padding gradient-dark" id="services">
+    <div class="container">
+      <div class="services-header reveal">
+        <div>
+          <div class="section-label light"><span></span> OUR SERVICES</div>
+          <h2 class="services-title">Complete HVAC services</h2>
+        </div>
+        <a href="#services" class="services-viewall">View All Services <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card glass-card reveal">
+          <div class="service-card-header">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg></div>
+            <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+          </div>
+          <h3 class="service-card-title">Smart Thermostat Installation</h3>
+          <p class="service-card-desc">Professional installation and maintenance services for your home or business.</p>
+        </div>
+        <div class="service-card glass-card reveal reveal-delay-1">
+          <div class="service-card-header">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+          </div>
+          <h3 class="service-card-title">Seasonal Heating Maintenance</h3>
+          <p class="service-card-desc">Professional installation and maintenance services for your home or business.</p>
+        </div>
+        <div class="service-card glass-card reveal reveal-delay-2">
+          <div class="service-card-header">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+          </div>
+          <h3 class="service-card-title">Emergency Heating Repairs</h3>
+          <p class="service-card-desc">Professional installation and maintenance services for your home or business.</p>
+        </div>
+        <div class="service-card glass-card reveal reveal-delay-3">
+          <div class="service-card-header">
+            <div class="service-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg></div>
+            <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+          </div>
+          <h3 class="service-card-title">Air Duct Cleaning and Sealing</h3>
+          <p class="service-card-desc">Professional installation and maintenance services for your home or business.</p>
+        </div>
+      </div>
+
+      <div class="services-cta-row" style="margin-top:48px;">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div class="service-mini glass-card reveal">
+            <div class="service-mini-inner">
+              <div class="service-mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18m-6-6 6 6 6-6M6 9l6-6 6 6"/></svg></div>
+              <span class="service-mini-title">Air Conditioning Installation</span>
+            </div>
+            <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+          </div>
+          <div class="service-mini glass-card reveal reveal-delay-1">
+            <div class="service-mini-inner">
+              <div class="service-mini-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></svg></div>
+              <span class="service-mini-title">Installing a Smart Thermostat</span>
+            </div>
+            <div class="service-card-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+          </div>
+        </div>
+
+        <div class="phone-cta reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600&h=800&fit=crop" alt="Technician" />
+          <div class="phone-cta-overlay"></div>
+          <div class="phone-cta-content">
+            <p class="phone-cta-label">Call Now</p>
+            <p class="phone-cta-number">+1 234 567 890</p>
+            <a href="#contact" class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        <div class="ac-unit-card glass-card reveal reveal-delay-3">
+          <img src="https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=600&h=400&fit=crop" alt="AC Unit" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY CHOOSE US ===================== -->
+  <section class="section-padding" style="background:white;">
+    <div class="container">
+      <div class="text-center reveal" style="max-width:640px;margin:0 auto;">
+        <div class="section-label" style="justify-content:center;"><span></span> WHY CHOOSE US</div>
+        <h2 style="font:var(--font-section);">Committed to excellence in every installation</h2>
+      </div>
+
+      <div class="whychoose-body">
+        <div class="whychoose-img-wrap reveal">
+          <div class="whychoose-img">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=600&h=800&fit=crop" alt="Confident technician" />
+          </div>
+        </div>
+        <div class="whychoose-features">
+          <div class="whychoose-feature reveal">
+            <div class="whychoose-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <div><h3 class="whychoose-feature-title">Emergency repairs available</h3><p class="whychoose-feature-desc">At Total Comfort HVAC we specialize in delivery comfort.</p></div>
+          </div>
+          <div class="whychoose-feature reveal reveal-delay-1">
+            <div class="whychoose-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 5 17 4.5 17 4.5c.5.5 0 3.5-1.5 5.5"/><path d="M11 20a7 7 0 0 0 1.5-12.5"/><path d="M2 21c0-3 2-5.5 5-6.5"/><path d="M15 4.5c1.5 1 4 3.5 4 7.5"/><path d="M19 12c-1.5 0-3 .5-4 1.5"/></svg></div>
+            <div><h3 class="whychoose-feature-title">Energy-Saving Options</h3><p class="whychoose-feature-desc">At Total Comfort HVAC we specialize in delivery comfort.</p></div>
+          </div>
+          <div class="whychoose-feature reveal reveal-delay-2">
+            <div class="whychoose-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg></div>
+            <div><h3 class="whychoose-feature-title">100% Customer Satisfied</h3><p class="whychoose-feature-desc">At Total Comfort HVAC we specialize in delivery comfort.</p></div>
+          </div>
+
+          <div class="whychoose-banner reveal reveal-delay-3">
+            <p class="whychoose-banner-text">Let's make something great work together.</p>
+            <a href="#contact" class="whychoose-banner-link">Contact us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BENEFITS ===================== -->
+  <section class="section-padding gradient-dark">
+    <div class="container">
+      <div class="benefits-header reveal">
+        <div>
+          <div class="section-label light"><span></span> OUR BENEFITS</div>
+          <h2 class="benefits-title">The advantages of partner with HVAC experts</h2>
+        </div>
+        <p class="benefits-desc">At Total Comfort HVAC, we specialize in delivering dependable heating and cooling services with a focus on quality, efficiency. With over 15 years of industry experience, certified technicians ensure</p>
+      </div>
+
+      <div class="benefits-divider reveal"></div>
+
+      <div class="benefits-grid">
+        <div class="benefit-item reveal">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div><h3 class="benefit-title">100% Customer Satisfaction</h3><p class="benefit-desc">At Total Comfort HVAC, we specialize in delivering dependable heating and cooling services with a focus on.</p></div>
+        </div>
+        <div class="benefit-item reveal reveal-delay-1">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><h3 class="benefit-title">Fast & Reliable Service</h3><p class="benefit-desc">At Total Comfort HVAC, we specialize in delivering dependable heating and cooling services with a focus on.</p></div>
+        </div>
+        <div class="benefit-item reveal reveal-delay-2">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.24 3 5 3s5-1.34 5-3v-5"/></svg></div>
+          <div><h3 class="benefit-title">Certified & Experience Technician</h3><p class="benefit-desc">At Total Comfort HVAC, we specialize in delivering dependable heating and cooling services with a focus on.</p></div>
+        </div>
+        <div class="benefit-item reveal reveal-delay-3">
+          <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.66 0 3-4.5 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.5-3-9s1.34-9 3-9"/></svg></div>
+          <div><h3 class="benefit-title">Energy-Efficient Solutions</h3><p class="benefit-desc">At Total Comfort HVAC, we specialize in delivering dependable heating and cooling services with a focus on.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section class="section-padding" style="background:white;">
+    <div class="container">
+      <div class="how-body">
+        <div class="how-left reveal">
+          <h2 style="font:var(--font-section);">Our proven process for reliable heating & cooling</h2>
+          <p class="how-desc">At Total Comfort HVAC, we specialize in delivering dependable heating and cooling services with a focus on quality, efficiency.</p>
+          <a href="#contact" class="btn-primary">Contact Us</a>
+        </div>
+
+        <div class="how-right">
+          <div class="how-step reveal">
+            <div class="how-step-line"></div>
+            <div class="how-step-icon-wrap">
+              <div class="how-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></div>
+              <span class="how-step-num">01</span>
+            </div>
+            <div>
+              <span class="how-step-label">Step 01</span>
+              <h3 class="how-step-title">Schedule a Free Consultation</h3>
+              <p class="how-step-desc">At Total Comfort HVAC, we specialize in delivering dependable heating and cooling services with a focus on quality, efficiency.</p>
+            </div>
+          </div>
+          <div class="how-step reveal reveal-delay-1">
+            <div class="how-step-line"></div>
+            <div class="how-step-icon-wrap">
+              <div class="how-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+              <span class="how-step-num">02</span>
+            </div>
+            <div>
+              <span class="how-step-label">Step 02</span>
+              <h3 class="how-step-title">Quality Check & Walkthrough</h3>
+              <p class="how-step-desc">At Total Comfort HVAC, we specialize in delivering dependable heating and cooling services with a focus on quality, efficiency.</p>
+            </div>
+          </div>
+          <div class="how-step reveal reveal-delay-2">
+            <div class="how-step-icon-wrap">
+              <div class="how-step-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3"/></svg></div>
+              <span class="how-step-num">03</span>
+            </div>
+            <div>
+              <span class="how-step-label">Step 03</span>
+              <h3 class="how-step-title">Ongoing Support & Maintenance</h3>
+              <p class="how-step-desc">At Total Comfort HVAC, we specialize in delivering dependable heating and cooling services with a focus on quality, efficiency.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="section-padding gradient-dark" id="projects">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label light" style="justify-content:center;"><span></span> OUR PROJECTS</div>
+        <h2 class="projects-title" style="max-width:600px;margin:0 auto;">Showcase of our work across homes and businesses</h2>
+      </div>
+
+      <div class="projects-filters reveal">
+        <button class="projects-filter active" data-filter="all">All</button>
+        <button class="projects-filter" data-filter="residential">Residential</button>
+        <button class="projects-filter" data-filter="commercial">Commercial</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <div class="project-card reveal" data-category="residential">
+          <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=450&fit=crop" alt="Residential project" />
+          <div class="project-card-overlay"></div>
+          <div class="project-card-content"><span class="project-card-label">Boiler Services</span><h3 class="project-card-title">Residential Heating Installation</h3></div>
+        </div>
+        <div class="project-card reveal reveal-delay-1" data-category="commercial">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=450&fit=crop" alt="Commercial project" />
+          <div class="project-card-overlay"></div>
+          <div class="project-card-content"><span class="project-card-label">Multi-Zone Cooling</span><h3 class="project-card-title">Office Building AC System</h3></div>
+        </div>
+        <div class="project-card reveal reveal-delay-2" data-category="residential">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop" alt="Residential project" />
+          <div class="project-card-overlay"></div>
+          <div class="project-card-content"><span class="project-card-label">Central Air</span><h3 class="project-card-title">Complete Home Cooling Solution</h3></div>
+        </div>
+        <div class="project-card reveal" data-category="commercial">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&h=450&fit=crop" alt="Commercial project" />
+          <div class="project-card-overlay"></div>
+          <div class="project-card-content"><span class="project-card-label">Hotel HVAC</span><h3 class="project-card-title">Hotel Maintenance Contract</h3></div>
+        </div>
+        <div class="project-card reveal reveal-delay-1" data-category="residential">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=450&fit=crop" alt="Residential project" />
+          <div class="project-card-overlay"></div>
+          <div class="project-card-content"><span class="project-card-label">Furnace Repair</span><h3 class="project-card-title">Emergency Furnace Replacement</h3></div>
+        </div>
+        <div class="project-card reveal reveal-delay-2" data-category="commercial">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=450&fit=crop" alt="Commercial project" />
+          <div class="project-card-overlay"></div>
+          <div class="project-card-content"><span class="project-card-label">Multi-Zone AC</span><h3 class="project-card-title">Restaurant Cooling Installation</h3></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SPECIALIZE (TABS) ===================== -->
+  <section class="section-padding" style="background:white;">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label" style="justify-content:center;"><span></span> OUR SPECIALIZE</div>
+        <h2 class="specialize-title" style="max-width:640px;margin:0 auto;">Why best home owners and businesses trust us</h2>
+      </div>
+
+      <div class="specialize-tabs reveal">
+        <button class="specialize-tab active" data-tab="0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 5 17 4.5 17 4.5c.5.5 0 3.5-1.5 5.5"/><path d="M11 20a7 7 0 0 0 1.5-12.5"/></svg>
+          Energy Savings
+        </button>
+        <button class="specialize-tab" data-tab="1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Upfront Pricing
+        </button>
+        <button class="specialize-tab" data-tab="2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Custom Solutions
+        </button>
+        <button class="specialize-tab" data-tab="3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v18m8-18v18M3 8h18M3 16h18"/></svg>
+          Eco-Friendly
+        </button>
+      </div>
+
+      <div class="specialize-content" id="specializeContent">
+        <div class="specialize-img reveal">
+          <img id="tabImage" src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop" alt="Energy savings" />
+        </div>
+        <div class="specialize-content-inner reveal reveal-delay-1">
+          <h3 class="specialize-content-title" id="tabTitle">Cool Air, Warm Service Solutions</h3>
+          <p class="specialize-content-subtitle" id="tabSubtitle">From chilling challenges to heating solutions</p>
+          <p class="specialize-content-desc" id="tabDesc">We're committed to bringing expert heating and cooling services to throughout your community. No matter where you are, comfort is just a call away.</p>
+          <ul class="specialize-bullets" id="tabBullets">
+            <li class="specialize-bullet"><span class="specialize-bullet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Delivering Trusted Air Conditioning Solutions with Years of Professional.</span></li>
+            <li class="specialize-bullet"><span class="specialize-bullet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Bringing Comfort to Homes and Businesses Through Decades of AC.</span></li>
+            <li class="specialize-bullet"><span class="specialize-bullet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>Your Reliable Partner for Expert Air Conditioning Repair, Maintenance.</span></li>
+          </ul>
+          <button class="btn-primary" style="margin-top:24px;">View Location</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="section-padding" style="background:var(--color-orange);">
+    <div class="container">
+      <div class="testimonials-inner">
+        <div class="testimonials-badge reveal">
+          <div class="testimonials-avatars">
+            <div class="testimonials-avatar">JM</div>
+            <div class="testimonials-avatar">DM</div>
+            <div class="testimonials-avatar">SJ</div>
+            <div class="testimonials-avatar">RK</div>
+          </div>
+          <span class="testimonials-badge-text">More Than 500+ Client Review</span>
+        </div>
+
+        <div class="reveal">
+          <div class="section-label light" style="justify-content:center;"><span></span> TESTIMONIALS</div>
+          <h2 class="testimonials-title">Trusted cooling, proven by customers</h2>
+        </div>
+
+        <div class="testimonials-stars reveal">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+
+        <div class="testimonial-slide reveal" id="testimonialSlide">
+          <p class="testimonial-text" id="testimonialText">"Our home has never felt this comfortable. The technicians were professional, on time, and explained everything clearly. From consultation to installation, the whole process was smooth and stress-free. Highly recommend for anyone needing reliable and efficient air conditioning!"</p>
+          <div class="testimonial-author">
+            <p class="testimonial-name" id="testimonialName">John Matthews</p>
+            <p class="testimonial-role" id="testimonialRole">AC Specialist</p>
+          </div>
+        </div>
+
+        <div class="testimonials-nav reveal">
+          <button class="testimonials-nav-btn" id="testPrev" aria-label="Previous">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="testimonials-nav-btn" id="testNext" aria-label="Next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BLOG ===================== -->
+  <section class="section-padding" id="blog" style="background:white;">
+    <div class="container">
+      <div class="text-center reveal">
+        <div class="section-label" style="justify-content:center;"><span></span> LATEST BLOG</div>
+        <h2 class="blog-title" style="max-width:600px;margin:0 auto;">Stay informed with our most recent blog posts</h2>
+      </div>
+
+      <div class="blog-grid">
+        <article class="blog-card reveal">
+          <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&h=375&fit=crop" alt="Blog post" /></div>
+          <div class="blog-card-body">
+            <p class="blog-card-date">May 12, 2025</p>
+            <h3 class="blog-card-title">We handle cooling system repairs, & complete AC servicing</h3>
+            <a href="#blog" class="blog-card-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          </div>
+        </article>
+        <article class="blog-card reveal reveal-delay-1">
+          <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=375&fit=crop" alt="Blog post" /></div>
+          <div class="blog-card-body">
+            <p class="blog-card-date">May 12, 2025</p>
+            <h3 class="blog-card-title">Breathe Easy with Coolify Smart Air & Heating Solutions</h3>
+            <a href="#blog" class="blog-card-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          </div>
+        </article>
+        <article class="blog-card reveal reveal-delay-2">
+          <div class="blog-card-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&h=375&fit=crop" alt="Blog post" /></div>
+          <div class="blog-card-body">
+            <p class="blog-card-date">May 12, 2025</p>
+            <h3 class="blog-card-title">Coolify Insights Air Conditioning & Heating Essentials</h3>
+            <a href="#blog" class="blog-card-link">Read More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="gradient-dark" id="contact" style="padding-top:96px;">
+    <div class="container">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:40px;text-align:center;">
+        <h2 class="cta-heading reveal" style="text-align:center;">We handle cooling system repairs, & complete AC servicing</h2>
+
+        <div class="cta-badge reveal">
+          <div class="cta-badge-rotating">
+            <svg viewBox="0 0 120 120"><defs><path id="cp" d="M60,60 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs><text style="fill:rgba(255,255,255,0.5);font-size:10px;letter-spacing:3px;text-transform:uppercase;"><textPath href="#cp">Contact Us &bull; Contact Us &bull; Contact Us &bull; </textPath></text></svg>
+          </div>
+          <div class="cta-badge-center">
+            <div class="cta-badge-center-inner"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18m-6-6 6 6 6-6M6 9l6-6 6 6"/></svg></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-contacts">
+        <div class="cta-contact reveal">
+          <div class="cta-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><p class="cta-contact-label">Say Hello</p><p class="cta-contact-value">+1 234 467 885</p></div>
+        </div>
+        <div class="cta-contact reveal reveal-delay-1">
+          <div class="cta-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div><p class="cta-contact-label">Say Hello</p><p class="cta-contact-value">info@domainname.com</p></div>
+        </div>
+        <div class="cta-contact reveal reveal-delay-2">
+          <div class="cta-contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><p class="cta-contact-label">Say Hello</p><p class="cta-contact-value">2972 Westheimer Rd. Santa Ana, Illinois UK</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="gradient-dark">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-col reveal">
+          <a href="#hero" class="logo">
+            <div class="logo-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4m0 12v4m-4-8H4m16 0h-4m-1.5-5.5L7 17m0-10 10 10"/></svg></div>
+            <span class="logo-text">Coolify</span>
+          </a>
+          <p class="footer-logo-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.12 2.5 7.65 6.06 9.17-.08-.74-.16-1.88.03-2.69.17-.73 1.13-4.71 1.13-4.71s-.29-.58-.29-1.43c0-1.34.78-2.34 1.74-2.34.82 0 1.22.62 1.22 1.36 0 .83-.53 2.06-.8 3.21-.23.96.48 1.75 1.43 1.75 1.72 0 3.04-1.81 3.04-4.43 0-2.32-1.67-3.94-4.05-3.94-2.76 0-4.38 2.07-4.38 4.21 0 .83.32 1.72.72 2.21.08.1.09.18.07.28-.07.3-.24.96-.27 1.09-.04.18-.14.22-.33.13-1.24-.58-2.01-2.38-2.01-3.83 0-3.12 2.27-5.99 6.54-5.99 3.44 0 6.11 2.45 6.11 5.71 0 3.41-2.15 6.16-5.14 6.16-1 0-1.95-.52-2.27-1.14l-.62 2.36c-.22.87-.83 1.95-1.24 2.61.93.29 1.92.44 2.95.44 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg></a>
+            <a href="#" class="footer-social" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" class="footer-social" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#" class="footer-social" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          </div>
+        </div>
+
+        <div class="footer-col reveal reveal-delay-1">
+          <h3 class="footer-heading">Say Hello</h3>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+1 234 467 885</li>
+            <li class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>info@domainname.com</li>
+            <li class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>2972 Westheimer Rd. Santa Ana, Illinois UK</li>
+          </ul>
+        </div>
+
+        <div class="footer-col reveal reveal-delay-2">
+          <h3 class="footer-heading">Quick Link</h3>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col reveal reveal-delay-3">
+          <h3 class="footer-heading">Subscribe Newsletter's</h3>
+          <div class="footer-newsletter">
+            <input type="email" class="footer-newsletter-input" placeholder="Enter your email" />
+            <button class="footer-newsletter-btn">Subscribe</button>
+          </div>
+          <p class="footer-newsletter-desc">Get the latest AC tips, maintenance advice special offers delivered to your inbox.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">Copyright 2026 Coolify. All Rights Reserved.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="Pinterest"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.12 2.5 7.65 6.06 9.17-.08-.74-.16-1.88.03-2.69.17-.73 1.13-4.71 1.13-4.71s-.29-.58-.29-1.43c0-1.34.78-2.34 1.74-2.34.82 0 1.22.62 1.22 1.36 0 .83-.53 2.06-.8 3.21-.23.96.48 1.75 1.43 1.75 1.72 0 3.04-1.81 3.04-4.43 0-2.32-1.67-3.94-4.05-3.94-2.76 0-4.38 2.07-4.38 4.21 0 .83.32 1.72.72 2.21.08.1.09.18.07.28-.07.3-.24.96-.27 1.09-.04.18-.14.22-.33.13-1.24-.58-2.01-2.38-2.01-3.83 0-3.12 2.27-5.99 6.54-5.99 3.44 0 6.11 2.45 6.11 5.71 0 3.41-2.15 6.16-5.14 6.16-1 0-1.95-.52-2.27-1.14l-.62 2.36c-.22.87-.83 1.95-1.24 2.61.93.29 1.92.44 2.95.44 5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg></a>
+          <a href="#" class="footer-social" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          <a href="#" class="footer-social" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a href="#" class="footer-social" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    // ============ NAVBAR SCROLL ============
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // ============ MOBILE MENU ============
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuClose = document.getElementById('menuClose');
+    const menuOverlay = document.getElementById('menuOverlay');
+
+    function toggleMenu() { mobileMenu.classList.toggle('open'); }
+    hamburger.addEventListener('click', toggleMenu);
+    menuClose.addEventListener('click', toggleMenu);
+    menuOverlay.addEventListener('click', toggleMenu);
+
+    // ============ SCROLL REVEAL ============
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // ============ COUNT UP (About stat) ============
+    const statNumber = document.getElementById('statNumber');
+    let counted = false;
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !counted) {
+          counted = true;
+          let count = 0;
+          const target = 22;
+          const duration = 2000;
+          const start = performance.now();
+          function update(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = progress * (2 - progress); // easeOutQuad
+            statNumber.textContent = Math.floor(eased * target);
+            if (progress < 1) requestAnimationFrame(update);
+          }
+          requestAnimationFrame(update);
+        }
+      });
+    }, { threshold: 0.5 });
+    countObserver.observe(statNumber);
+
+    // ============ PROJECTS FILTER ============
+    const filterBtns = document.querySelectorAll('.projects-filter');
+    const projectCards = document.querySelectorAll('.project-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // ============ SPECIALIZE TABS ============
+    const tabData = [
+      {
+        image: 'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=800&h=600&fit=crop',
+        title: 'Cool Air, Warm Service Solutions',
+        subtitle: 'From chilling challenges to heating solutions',
+        desc: "We're committed to bringing expert heating and cooling services to throughout your community. No matter where you are, comfort is just a call away.",
+        bullets: [
+          'Delivering Trusted Air Conditioning Solutions with Years of Professional.',
+          'Bringing Comfort to Homes and Businesses Through Decades of AC.',
+          'Your Reliable Partner for Expert Air Conditioning Repair, Maintenance.',
+        ]
+      },
+      {
+        image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=600&fit=crop',
+        title: 'Transparent Pricing, No Surprises',
+        subtitle: 'Honest costs, exceptional value',
+        desc: 'We believe in complete transparency. Our upfront pricing model ensures you know exactly what to expect before any work begins, with no hidden fees.',
+        bullets: [
+          'Free detailed estimates before any work begins.',
+          'Competitive rates without compromising quality.',
+          'Flexible financing options available for major installations.',
+        ]
+      },
+      {
+        image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop',
+        title: 'Tailored HVAC Solutions',
+        subtitle: 'Every space is unique',
+        desc: 'Our experts design customized heating and cooling systems that match your specific needs, space requirements, and budget constraints.',
+        bullets: [
+          'Personalized system design for optimal efficiency.',
+          'Smart home integration and zoning capabilities.',
+          'Scalable solutions for growing families and businesses.',
+        ]
+      },
+      {
+        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&h=600&fit=crop',
+        title: 'Green Cooling Technology',
+        subtitle: 'Sustainable comfort for the planet',
+        desc: 'We prioritize eco-friendly refrigerants and energy-efficient systems that reduce your carbon footprint while keeping your space perfectly comfortable.',
+        bullets: [
+          'EPA-certified eco-friendly refrigerant handling.',
+          'Energy Star rated equipment recommendations.',
+          'Programs to reduce energy consumption by up to 30%.',
+        ]
+      },
+    ];
+
+    const specTabs = document.querySelectorAll('.specialize-tab');
+    const tabImage = document.getElementById('tabImage');
+    const tabTitle = document.getElementById('tabTitle');
+    const tabSubtitle = document.getElementById('tabSubtitle');
+    const tabDesc = document.getElementById('tabDesc');
+    const tabBullets = document.getElementById('tabBullets');
+    const specContent = document.getElementById('specializeContent');
+
+    specTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const idx = parseInt(tab.dataset.tab);
+        specTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const data = tabData[idx];
+        specContent.style.opacity = '0';
+        setTimeout(() => {
+          tabImage.src = data.image;
+          tabImage.alt = data.title;
+          tabTitle.textContent = data.title;
+          tabSubtitle.textContent = data.subtitle;
+          tabDesc.textContent = data.desc;
+          tabBullets.innerHTML = data.bullets.map(b =>
+            `<li class="specialize-bullet"><span class="specialize-bullet-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span>${b}</span></li>`
+          ).join('');
+          specContent.style.opacity = '1';
+        }, 150);
+      });
+    });
+
+    // ============ TESTIMONIALS SLIDER ============
+    const testimonials = [
+      { text: 'Our home has never felt this comfortable. The technicians were professional, on time, and explained everything clearly. From consultation to installation, the whole process was smooth and stress-free. Highly recommend for anyone needing reliable and efficient air conditioning!', name: 'John Matthews', role: 'AC Specialist' },
+      { text: "Coolify transformed our office environment completely. The team's expertise in commercial HVAC is unmatched. They completed the installation ahead of schedule and our energy bills have dropped significantly since the upgrade.", name: 'David Miller', role: 'Service Manager' },
+      { text: "After years of dealing with unreliable AC services, finding Coolify was a breath of fresh air. Their maintenance plan keeps our system running perfectly year-round, and their emergency response is truly 24/7 as promised.", name: 'Sarah Johnson', role: 'Homeowner' },
+    ];
+    let currentTestimonial = 0;
+    const testText = document.getElementById('testimonialText');
+    const testName = document.getElementById('testimonialName');
+    const testRole = document.getElementById('testimonialRole');
+    const testSlide = document.getElementById('testimonialSlide');
+
+    function showTestimonial(idx) {
+      testSlide.style.opacity = '0';
+      setTimeout(() => {
+        const t = testimonials[idx];
+        testText.textContent = '"' + t.text + '"';
+        testName.textContent = t.name;
+        testRole.textContent = t.role;
+        testSlide.style.opacity = '1';
+      }, 200);
+    }
+
+    document.getElementById('testPrev').addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(currentTestimonial);
+    });
+    document.getElementById('testNext').addEventListener('click', () => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      showTestimonial(currentTestimonial);
+    });
+  </script>
+
+</body>
+</html>
