@@ -582,14 +582,14 @@
 
     .abt-guarantee { background: var(--gradient-dark); }
     .abt-guar-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
-    @media (min-width: 900px) { .abt-guar-grid { grid-template-columns: 1.1fr 0.9fr; gap: var(--space-3xl); } }
+    @media (min-width: 900px) { .abt-guar-grid { grid-template-columns: 1fr 600px; gap: var(--space-3xl); } }
     .abt-guar-title { font: var(--font-section); color: var(--white); margin-top: var(--space-xs); }
     .abt-guar-body { margin-top: var(--space-lg); }
     .abt-guar-body p { color: rgba(255,255,255,0.8); }
     .abt-guar-body p + p { margin-top: var(--space-md); }
     .abt-guar-body strong { color: var(--white); }
-    .abt-guar-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
-    .abt-guar-img img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4; }
+    .abt-guar-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); max-width: 600px; width: 100%; }
+    .abt-guar-img img { display: block; width: 100%; height: 550px; object-fit: cover; }
 
     /* ============================================================
        COMFORT CLUB PAGE (stacked, no sidebar)
@@ -660,12 +660,24 @@
           <a href="index.html#about" class="nav-dd-toggle">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="nav-dd-menu">
             <a href="hvac-projects.html">Project Portfolio</a>
+            <a href="recent-projects.html">Recent Projects</a>
             <a href="meet-the-team.html">Meet the Team</a>
             <a href="about.html">About Us</a>
             <a href="comfort-club.html">Comfort Club</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="blog.html">Blog</a>
+            <a href="hvac-faq-scottsdale-az.html">HVAC FAQ</a>
           </div>
         </div>
-        <a href="index.html#services">Cooling</a>
+        <div class="nav-dd">
+          <a href="index.html#services" class="nav-dd-toggle">Cooling <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dd-menu">
+            <a href="air-conditioning-repair.html">Air Conditioning Repair</a>
+            <a href="air-conditioning-installation.html">Air Conditioning Installation</a>
+            <a href="air-conditioning-replacement.html">Air Conditioning Replacement</a>
+            <a href="air-conditioning-maintenance.html">Air Conditioning Maintenance</a>
+          </div>
+        </div>
         <a href="index.html#services">Ductless</a>
         <a href="index.html#services">Heating</a>
         <a href="index.html#contact">Service Area</a>
@@ -701,10 +713,18 @@
       <div class="mobile-menu-links">
         <a href="index.html#about">About</a>
         <a href="hvac-projects.html">Project Portfolio</a>
+            <a href="recent-projects.html">Recent Projects</a>
             <a href="meet-the-team.html">Meet the Team</a>
             <a href="about.html">About Us</a>
             <a href="comfort-club.html">Comfort Club</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="blog.html">Blog</a>
+            <a href="hvac-faq-scottsdale-az.html">HVAC FAQ</a>
         <a href="index.html#services">Cooling</a>
+            <a href="air-conditioning-repair.html">Air Conditioning Repair</a>
+            <a href="air-conditioning-installation.html">Air Conditioning Installation</a>
+            <a href="air-conditioning-replacement.html">Air Conditioning Replacement</a>
+            <a href="air-conditioning-maintenance.html">Air Conditioning Maintenance</a>
         <a href="index.html#services">Ductless</a>
         <a href="index.html#services">Heating</a>
         <a href="index.html#contact">Service Area</a>
@@ -821,6 +841,64 @@
         </div>
         <button type="submit" class="btn-gold">Next Step</button>
       </form>
+    </div>
+  </section>
+
+  <!-- ===================== GUARANTEE ===================== -->
+  <section class="section-padding abt-guarantee">
+    <div class="container">
+      <div class="abt-guar-grid reveal">
+        <div>
+          <div class="section-label gold">We Stand Behind Our Work</div>
+          <h2 class="abt-guar-title">Your comfort or we will make it right</h2>
+          <div class="abt-guar-body">
+            <p>At Comfort One, your satisfaction is our top priority. If anything doesn't meet your expectations, we're committed to fixing it. Our goal is to exceed your expectations with every interaction, ensuring you always feel valued and cared for.</p>
+            <p>And let's not forget our <strong>Chief Happiness Officer, Loki!</strong> This lovable canine takes customer satisfaction very seriously. He treats our customers like family and keeps a watchful eye on our team. If we ever fall short of 100% satisfaction, Loki might just have to give us a stern talking-to (or a playful nip to keep us in line)!</p>
+            <p>Rest assured, with Comfort One and Loki on the job, your complete satisfaction isn't just a goal — it's a guarantee.</p>
+          </div>
+        </div>
+        <div class="abt-guar-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9539-1.jpg" alt="The Comfort One Air Conditioning team at the office" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REVIEWS ===================== -->
+  <section class="section-padding reviews reviews-light" id="reviews">
+    <div class="container">
+      <div class="reviews-header reveal">
+        <div class="section-label" style="justify-content:center;">Reviews</div>
+        <h2 class="reviews-title">What your neighbors in Scottsdale, Arizona are saying!</h2>
+        <div class="reviews-divider"></div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card reveal">
+          <div class="review-google">
+            <svg viewBox="0 0 48 48" width="30" height="30"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"All the reviews are accurate. Show up on time, highly communicative, great prices, locally owned, family run business. There is no better HVAC company in the valley. Comfort One is the last stop for all your air conditioning needs. They're the best."</p>
+          <p class="review-author">— Joseph M.</p>
+        </div>
+
+        <div class="review-card reveal reveal-delay-1">
+          <div class="review-google">
+            <svg viewBox="0 0 48 48" width="30" height="30"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Jon and the whole crew at Comfort One Air Conditioning are the best in the business! If you're looking for honest and trustworthy HVAC professionals look no further. Highly recommended!"</p>
+          <p class="review-author">— Nic B.</p>
+        </div>
+
+        <div class="review-card reveal reveal-delay-2">
+          <div class="review-google">
+            <svg viewBox="0 0 48 48" width="30" height="30"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"As a contractor myself it is reassuring to have a quality HVAC company that I can rely on to show up on time, do the job correctly and have zero issues throughout the entire process. Everyone that has been out on my jobsites has been respectful of the jobsite and any other trades. Great company! Would recommend for any job big or small!!"</p>
+          <p class="review-author">— Tyler S.</p>
+        </div>
+      </div>
     </div>
   </section>
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Comfort One — HVAC Services</title>
+  <title>Recent Projects — Comfort One Air Conditioning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -395,6 +395,8 @@
        REVIEWS
        ============================================================ */
     .reviews { background: var(--gradient-red-deep); }
+    .reviews.reviews-light { background: var(--white); }
+    .reviews-light .reviews-title { color: var(--navy-500); }
     .reviews-header { text-align: center; max-width: 860px; margin: 0 auto var(--space-2xl); }
     .reviews-title { font: var(--font-section); color: var(--white); margin-top: var(--space-xs); }
     .reviews-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-gold); margin: var(--space-lg) auto 0; }
@@ -474,20 +476,169 @@
     .footer-news-input { width: 100%; background: var(--white); border: 0; border-radius: var(--radius-md); padding: 14px 18px; color: var(--navy-700); font-family: var(--font-family); font-size: 1rem; outline: none; }
     .footer-news-form .btn-primary { width: 100%; }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); margin-top: var(--space-2xl); padding-top: var(--space-lg); text-align: center; color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+
+    /* ============================================================
+       PAGE HERO (interior) + PROJECTS
+       ============================================================ */
+    .page-hero { background: var(--gradient-hero); padding: 200px 0 90px; text-align: center; }
+    .page-hero-title { font: var(--font-display); color: var(--white); margin-top: var(--space-sm); }
+    .page-hero-desc { max-width: 780px; margin: var(--space-lg) auto 0; color: rgba(255,255,255,0.82); font-size: 1.0625rem; line-height: 1.7; }
+    .page-hero-phone { color: var(--brand-gold); font-weight: 700; }
+    .page-crumb { margin-top: var(--space-md); display: flex; justify-content: center; align-items: center; gap: 10px; color: rgba(255,255,255,0.7); font-family: var(--font-heading); font-weight: 500; }
+    .page-crumb a { color: var(--brand-gold); }
+    .page-crumb a:hover { text-decoration: underline; }
+    .projh { text-align: center; max-width: 900px; margin: 0 auto var(--space-2xl); }
+    .projh-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .proj-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+    @media (min-width: 640px) { .proj-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .proj-grid { grid-template-columns: repeat(3, 1fr); } }
+    .proj-card { position: relative; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3; }
+    .proj-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .proj-card:hover img { transform: scale(1.05); }
+    #galGrid .proj-card::after { content: 'zoom_in'; font-family: 'Material Icons'; position: absolute; top: 16px; right: 16px; z-index: 2; width: 46px; height: 46px; border-radius: 50%; background: var(--brand-gold); color: var(--navy-700); display: flex; align-items: center; justify-content: center; font-size: 24px; opacity: 0; transform: scale(0.8); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
+    #galGrid .proj-card:hover::after { opacity: 1; transform: scale(1); }
+    .proj-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(21,27,63,0.94) 0%, rgba(21,27,63,0.15) 100%); }
+    /* Lightbox */
+    .lightbox { position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.8); display: none; align-items: center; justify-content: center; padding: 40px; }
+    .lightbox.open { display: flex; }
+    .lightbox-img { max-width: 92vw; max-height: 88vh; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+    .lightbox-close { position: absolute; top: 24px; right: 32px; width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.15); color: #fff; font-size: 1.75rem; line-height: 1; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.25s; }
+    .lightbox-close:hover { background: var(--brand-red); }
+    .proj-card-content { position: absolute; bottom: 0; left: 0; right: 0; padding: var(--space-lg); }
+    .proj-card-label { color: var(--brand-gold); font-size: 0.9rem; font-weight: 600; font-family: var(--font-heading); }
+    .proj-card-title { color: var(--white); font: var(--font-card); font-size: 1.2rem; margin-top: 4px; }
+    .proj-card.hidden { display: none; }
+    /* Gallery filter tabs */
+    .gal-tabs { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-bottom: var(--space-2xl); }
+    .gal-tab { padding: 12px 26px; border-radius: var(--radius-full); font-family: var(--font-heading); font-weight: 600; font-size: 0.95rem; color: var(--navy-500); background: var(--white); border: 1.5px solid var(--gray-200); cursor: pointer; transition: background 0.25s, color 0.25s, border-color 0.25s; }
+    .gal-tab:hover { border-color: var(--brand-gold); }
+    .gal-tab.active { background: var(--brand-red); border-color: var(--brand-red); color: var(--white); }
+
+    /* Case-study cards (lead to a page) */
+    .case-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); margin-bottom: var(--space-3xl); }
+    @media (min-width: 640px) { .case-grid { grid-template-columns: repeat(3, 1fr); } }
+    .case-card { display: flex; flex-direction: column; background: #F8F9FB; border: 1px solid var(--gray-200); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); transition: box-shadow 0.3s, transform 0.3s; }
+    .case-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-6px); }
+    .case-card-img { aspect-ratio: 16 / 11; overflow: hidden; }
+    .case-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .case-card:hover .case-card-img img { transform: scale(1.05); }
+    .case-card-body { padding: var(--space-lg); display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .case-card-tag { font-family: var(--font-heading); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand-red); }
+    .case-card-title { font: var(--font-card); font-size: 1.15rem; color: var(--navy-500); line-height: 1.3; }
+    .case-card-link { margin-top: auto; padding-top: var(--space-sm); display: inline-flex; align-items: center; gap: 8px; color: var(--brand-red); font-weight: 700; font-family: var(--font-heading); transition: gap 0.3s; }
+    .case-card-link:hover { gap: 12px; }
+    .case-card-link svg { width: 16px; height: 16px; }
+
+    /* ============================================================
+       TEAM
+       ============================================================ */
+    .team-head { text-align: center; max-width: 820px; margin: 0 auto var(--space-2xl); }
+    .team-head-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .team-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-xl); }
+    @media (min-width: 640px) { .team-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
+    .team-card-img { border-radius: var(--radius-xl); overflow: hidden; aspect-ratio: 4/5; box-shadow: var(--shadow-md); }
+    .team-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .team-card:hover .team-card-img img { transform: scale(1.04); }
+    .team-name { margin-top: var(--space-md); font: var(--font-card); font-size: 1.15rem; color: var(--navy-500); line-height: 1.3; }
+    .team-role { display: block; color: var(--brand-red); font-weight: 700; font-family: var(--font-heading); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 4px; }
+    .team-bio { margin-top: 12px; color: var(--gray-700); font: var(--font-body-sm); }
+    .mascot-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-xl); max-width: 760px; margin: var(--space-3xl) auto 0; }
+    @media (min-width: 560px) { .mascot-grid { grid-template-columns: 1fr 1fr; } }
+    .collage { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
+    @media (min-width: 768px) { .collage { grid-template-columns: repeat(4, 1fr); } }
+    .collage-item { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1/1; cursor: pointer; position: relative; }
+    .collage-item::after { content: 'zoom_in'; font-family: 'Material Icons'; position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; border-radius: 50%; background: var(--brand-gold); color: var(--navy-700); display: flex; align-items: center; justify-content: center; font-size: 20px; opacity: 0; transform: scale(0.8); transition: opacity 0.3s, transform 0.3s; pointer-events: none; }
+    .collage-item:hover::after { opacity: 1; transform: scale(1); }
+    .collage-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .collage-item:hover img { transform: scale(1.05); }
+
+    /* ============================================================
+       ABOUT PAGE
+       ============================================================ */
+    .abt-intro { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); }
+    @media (min-width: 900px) { .abt-intro { grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); align-items: start; } }
+    .abt-title { font: var(--font-section); color: var(--navy-500); }
+    .abt-intro-text { margin-top: var(--space-lg); }
+    .abt-intro-text p { color: var(--gray-700); }
+    .abt-intro-text p + p { margin-top: var(--space-md); }
+    .abt-accent { color: var(--brand-red); font-weight: 600; }
+    .abt-quote { background: var(--gray-100); border-left: 4px solid var(--brand-red); border-radius: var(--radius-md); padding: var(--space-lg); }
+    .abt-quote p { color: var(--navy-500); font-weight: 600; line-height: 1.7; font-size: 0.95rem; }
+    .abt-quote cite { display: block; margin-top: var(--space-md); color: var(--brand-red); font-weight: 700; font-style: normal; font-family: var(--font-heading); }
+
+    .abt-msg { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .abt-msg { grid-template-columns: 0.85fr 1.15fr; gap: var(--space-3xl); } }
+    .abt-msg-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .abt-msg-img img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4; }
+    .abt-msg-title { font: var(--font-section); color: var(--navy-500); }
+    .abt-msg-body { margin-top: var(--space-md); }
+    .abt-msg-body p { color: var(--gray-700); }
+    .abt-msg-body p + p { margin-top: var(--space-md); }
+    .abt-msg-body strong { color: var(--navy-500); }
+    .abt-goals { margin: var(--space-md) 0; padding-left: var(--space-lg); }
+    .abt-goals li { color: var(--gray-700); list-style: disc; margin-bottom: 6px; }
+    .abt-slogan { font-style: italic; color: var(--navy-500); font-weight: 600; }
+
+    .abt-guarantee { background: var(--gradient-dark); }
+    .abt-guar-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .abt-guar-grid { grid-template-columns: 1.1fr 0.9fr; gap: var(--space-3xl); } }
+    .abt-guar-title { font: var(--font-section); color: var(--white); margin-top: var(--space-xs); }
+    .abt-guar-body { margin-top: var(--space-lg); }
+    .abt-guar-body p { color: rgba(255,255,255,0.8); }
+    .abt-guar-body p + p { margin-top: var(--space-md); }
+    .abt-guar-body strong { color: var(--white); }
+    .abt-guar-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .abt-guar-img img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4; }
+
+    /* ============================================================
+       REVIEWS PAGE
+       ============================================================ */
+    .rv-intro-head { text-align: center; max-width: 840px; margin: 0 auto; }
+    .rv-intro-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .rv-intro-lead { margin-top: var(--space-md); color: var(--gray-700); }
+    .rv-cards { margin: var(--space-2xl) auto 0; display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+    @media (min-width: 560px) { .rv-cards { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1000px) { .rv-cards { grid-template-columns: repeat(5, 1fr); } }
+    .rv-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-lg) var(--space-md); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .rv-card-ico { width: 60px; height: 60px; border-radius: var(--radius-full); display: grid; place-items: center; margin-bottom: var(--space-md); background: var(--red-050); color: var(--brand-red); }
+    .rv-card-ico .material-icons { font-size: 30px; }
+    .rv-card p { color: var(--gray-700); font-size: 0.95rem; line-height: 1.5; }
+    .rv-card strong { color: var(--navy-500); font-weight: 700; }
+    .rv-closing { max-width: 820px; margin: 0 auto; text-align: center; }
+    .rv-closing p { color: var(--gray-700); }
+    .rv-closing .btn-primary { margin-top: var(--space-lg); }
+
+    .rv-reasons-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .rv-reasons-grid { grid-template-columns: 1.1fr 0.9fr; gap: var(--space-3xl); } }
+    .rv-reasons-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .rv-reason-list { margin-top: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-md); }
+    .rv-reason { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); font-weight: 500; }
+    .rv-reason .material-icons { color: #1FA35B; font-size: 22px; flex-shrink: 0; }
+    .rv-story-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .rv-story-grid { grid-template-columns: 0.9fr 1.1fr; gap: var(--space-3xl); } }
+    .rv-story-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .rv-story-img img { display: block; width: 100%; height: 500px; object-fit: cover; }
+    .rv-story-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .rv-story-grid p { margin-top: var(--space-md); color: var(--gray-700); }
+    .rv-ontime { margin-top: var(--space-lg); color: var(--gray-700); }
+    .rv-ontime a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
+    .rv-archer { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .rv-archer img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; }
   </style>
 </head>
 <body>
 
   <!-- ===================== NAVBAR ===================== -->
-  <nav class="navbar" id="navbar">
+  <nav class="navbar scrolled" id="navbar" style="background: rgba(39, 49, 111, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
     <div class="container navbar-inner">
-      <a href="#hero" class="logo">
+      <a href="index.html#hero" class="logo">
         <img class="logo-img" src="https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp" alt="Comfort One Air Conditioning" />
       </a>
 
       <div class="nav-links">
         <div class="nav-dd">
-          <a href="#about" class="nav-dd-toggle">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <a href="index.html#about" class="nav-dd-toggle">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="nav-dd-menu">
             <a href="hvac-projects.html">Project Portfolio</a>
             <a href="recent-projects.html">Recent Projects</a>
@@ -500,7 +651,7 @@
           </div>
         </div>
         <div class="nav-dd">
-          <a href="#services" class="nav-dd-toggle">Cooling <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <a href="index.html#services" class="nav-dd-toggle">Cooling <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="nav-dd-menu">
             <a href="air-conditioning-repair.html">Air Conditioning Repair</a>
             <a href="air-conditioning-installation.html">Air Conditioning Installation</a>
@@ -508,11 +659,11 @@
             <a href="air-conditioning-maintenance.html">Air Conditioning Maintenance</a>
           </div>
         </div>
-        <a href="#services">Ductless</a>
-        <a href="#services">Heating</a>
-        <a href="#contact">Service Area</a>
-        <a href="#financing">Financing</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#services">Ductless</a>
+        <a href="index.html#services">Heating</a>
+        <a href="index.html#contact">Service Area</a>
+        <a href="index.html#financing">Financing</a>
+        <a href="index.html#contact">Contact</a>
       </div>
 
       <div style="display:flex;align-items:center;gap:24px;">
@@ -525,7 +676,7 @@
             <span class="nav-phone-number">(602) 247-6151</span>
           </span>
         </a>
-        <a href="#contact" class="btn-primary nav-cta">Request a Service</a>
+        <a href="index.html#contact" class="btn-primary nav-cta">Request a Service</a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
@@ -541,7 +692,7 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
       <div class="mobile-menu-links">
-        <a href="#about">About</a>
+        <a href="index.html#about">About</a>
         <a href="hvac-projects.html">Project Portfolio</a>
             <a href="recent-projects.html">Recent Projects</a>
             <a href="meet-the-team.html">Meet the Team</a>
@@ -550,420 +701,26 @@
             <a href="reviews.html">Reviews</a>
             <a href="blog.html">Blog</a>
             <a href="hvac-faq-scottsdale-az.html">HVAC FAQ</a>
-        <a href="#services">Cooling</a>
+        <a href="index.html#services">Cooling</a>
             <a href="air-conditioning-repair.html">Air Conditioning Repair</a>
             <a href="air-conditioning-installation.html">Air Conditioning Installation</a>
             <a href="air-conditioning-replacement.html">Air Conditioning Replacement</a>
             <a href="air-conditioning-maintenance.html">Air Conditioning Maintenance</a>
-        <a href="#services">Ductless</a>
-        <a href="#services">Heating</a>
-        <a href="#contact">Service Area</a>
-        <a href="#financing">Financing</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#services">Ductless</a>
+        <a href="index.html#services">Heating</a>
+        <a href="index.html#contact">Service Area</a>
+        <a href="index.html#financing">Financing</a>
+        <a href="index.html#contact">Contact</a>
         <a href="tel:+16022476151" style="color:var(--brand-gold);font-weight:700;">📞 (602) 247-6151</a>
-        <a href="#contact" class="btn-primary" style="margin-top:16px;text-align:center;">Request a Service</a>
+        <a href="index.html#contact" class="btn-primary" style="margin-top:16px;text-align:center;">Request a Service</a>
       </div>
     </div>
   </div>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero gradient-hero framed" id="hero">
-    <div class="container">
-      <div class="hero-content reveal">
-        <h1 class="hero-title">We Are Here <span class="accent">For You</span></h1>
-        <p class="hero-desc">Your Trusted HVAC Company in Scottsdale, AZ</p>
-        <div class="hero-buttons">
-          <a href="#contact" class="btn-primary">Request a Service</a>
-          <a href="tel:+16022476151" class="btn-ghost">Give Us a Call</a>
-        </div>
-
-        <div class="hero-certs">
-          <span class="hero-cert lg"><img src="https://www.comfort1ac.com/wp-content/uploads/2024/08/google-rating.webp" alt="Google 5-star rating" /></span>
-          <span class="hero-cert lg"><img src="https://www.comfort1ac.com/wp-content/uploads/2024/08/yelp-rating.webp" alt="Yelp 5-star rating" /></span>
-          <span class="hero-cert"><img src="https://www.comfort1ac.com/wp-content/uploads/2024/08/bbb-5-stars-white.webp" alt="BBB 5-star rating" /></span>
-        </div>
-      </div>
-
-      <div class="hero-images">
-        <div class="hero-img reveal reveal-delay-1">
-          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/ComfortOneAC_BusinessBranding2026-8836.jpg" alt="Técnico de Comfort One en la van de servicio" />
-        </div>
-        <div class="hero-img center reveal reveal-delay-2">
-          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/Comfort-One-HVAC-Company-Scottsdale.webp" alt="Comfort One HVAC Company Scottsdale" style="object-position: center center;" />
-        </div>
-        <div class="hero-img reveal reveal-delay-3">
-          <img src="https://www.comfort1ac.com/wp-content/uploads/2025/10/ComfortOneAC_BusinessBranding2026-9143.jpg" alt="Técnico dando servicio a una unidad condensadora" />
-        </div>
-      </div>
-
-      <div class="hero-badges">
-        <div class="hero-badge glass-card-strong reveal reveal-delay-3">
-          <div class="hero-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div><div class="hero-badge-title">100% Satisfaction</div><div class="hero-badge-desc">Guaranteed on every job.</div></div>
-        </div>
-        <div class="hero-badge glass-card-strong reveal reveal-delay-4">
-          <div class="hero-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-          <div><div class="hero-badge-title">24/7 Services</div><div class="hero-badge-desc">Emergency support, any time.</div></div>
-        </div>
-        <div class="hero-badge glass-card-strong reveal reveal-delay-5">
-          <div class="hero-badge-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
-          <div><div class="hero-badge-title">Certified Experts</div><div class="hero-badge-desc">Trained & licensed team.</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SERVICES OVERVIEW ===================== -->
-  <section class="section-padding" id="services" style="background: var(--white);">
-    <div class="container">
-      <div class="ov-header reveal">
-        <div class="section-label" style="justify-content:center;">Our HVAC Services</div>
-        <h2 class="ov-title">Heating and air conditioning throughout Scottsdale and surrounding areas</h2>
-        <span class="ov-divider"></span>
-      </div>
-
-      <div class="ov-grid">
-        <a href="#services-all" class="ov-card reveal">
-          <div class="ov-card-top">
-            <div class="ov-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="2" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="22"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg></div>
-            <div class="ov-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
-          </div>
-          <h3 class="ov-card-title">Air Conditioning</h3>
-          <p class="ov-card-desc">Installation, repair, and tune-ups to keep you cool through every Arizona summer.</p>
-        </a>
-
-        <a href="#services-all" class="ov-card reveal reveal-delay-1">
-          <div class="ov-card-top">
-            <div class="ov-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></div>
-            <div class="ov-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
-          </div>
-          <h3 class="ov-card-title">Heating</h3>
-          <p class="ov-card-desc">Furnace and heat-pump service so your home stays warm when the temperature drops.</p>
-        </a>
-
-        <a href="#services-all" class="ov-card reveal reveal-delay-2">
-          <div class="ov-card-top">
-            <div class="ov-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></div>
-            <div class="ov-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
-          </div>
-          <h3 class="ov-card-title">Ductless AC</h3>
-          <p class="ov-card-desc">Efficient mini-split systems for room-by-room comfort without ductwork.</p>
-        </a>
-
-        <a href="#services-all" class="ov-card reveal reveal-delay-3">
-          <div class="ov-card-top">
-            <div class="ov-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-            <div class="ov-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
-          </div>
-          <h3 class="ov-card-title">Comfort Club</h3>
-          <p class="ov-card-desc">Our maintenance membership — priority service and seasonal check-ups all year.</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== ABOUT ===================== -->
-  <section class="section-padding about" id="about">
-    <div class="container">
-      <div class="about-header reveal">
-        <div class="about-header-left">
-          <div class="section-label">About Us</div>
-          <h2 class="about-title">Family owned &amp; operated HVAC company in Scottsdale, AZ</h2>
-        </div>
-        <div class="about-stat">
-          <span class="about-stat-number">5.0</span>
-          <span class="about-stat-label"><span class="about-stat-stars">★★★★★</span>Based on 500+ Google Reviews.</span>
-        </div>
-      </div>
-
-      <div class="about-body">
-        <div class="about-img reveal">
-          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/ComfortOneAC_BusinessBranding2026-8715-1.jpg" alt="Los dueños de Comfort One Air Conditioning" />
-        </div>
-        <div class="about-text reveal reveal-delay-1">
-          <p>If you're looking for professional help with heating and air conditioning in Scottsdale, Arizona, then you've come to the right place. Your search for the best HVAC company in the Valley of the Sun ends with Comfort One Air Conditioning! Our goal is to provide excellent service and outstanding results to customers like you.</p>
-          <p>Whether you're having a problem with your air conditioner or it's just time for a routine inspection, our experienced team of heating and cooling contractors is here to help. As your expert on all things heating and air conditioning in Scottsdale, AZ, and the surrounding areas, we can tackle any HVAC issue you might be having.</p>
-          <p class="about-lead">If you have questions about our heating and air conditioning services or want to set up an appointment, call us today!</p>
-          <a href="#contact" class="btn-primary about-cta">Request a Service</a>
-          <div class="about-certs">
-            <img src="https://www.comfort1ac.com/wp-content/uploads/2023/10/bbb-accredited-hvac-phoenix-1024x540.webp" alt="BBB A+ Accredited" />
-            <img src="https://www.comfort1ac.com/wp-content/uploads/2023/10/epa-certified-hvac-phoenix-1024x1024.webp" alt="EPA Certified" />
-            <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/1-45ca7a62-removebg-preview.png" alt="Google Guaranteed" />
-            <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/expertise.com-awards-removebg-preview-nobg-1.png" alt="Expertise.com — Best HVAC & Furnace Repair 2024" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== REVIEWS ===================== -->
-  <section class="section-padding reviews framed" id="reviews">
-    <div class="container">
-      <div class="reviews-header reveal">
-        <div class="section-label gold" style="justify-content:center;">Reviews</div>
-        <h2 class="reviews-title">What your neighbors in Scottsdale, Arizona are saying!</h2>
-        <div class="reviews-divider"></div>
-      </div>
-
-      <div class="reviews-grid">
-        <div class="review-card reveal">
-          <div class="review-google">
-            <svg viewBox="0 0 48 48" width="30" height="30"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"All the reviews are accurate. Show up on time, highly communicative, great prices, locally owned, family run business. There is no better HVAC company in the valley. Comfort One is the last stop for all your air conditioning needs. They're the best."</p>
-          <p class="review-author">— Joseph M.</p>
-        </div>
-
-        <div class="review-card reveal reveal-delay-1">
-          <div class="review-google">
-            <svg viewBox="0 0 48 48" width="30" height="30"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Jon and the whole crew at Comfort One Air Conditioning are the best in the business! If you're looking for honest and trustworthy HVAC professionals look no further. Highly recommended!"</p>
-          <p class="review-author">— Nic B.</p>
-        </div>
-
-        <div class="review-card reveal reveal-delay-2">
-          <div class="review-google">
-            <svg viewBox="0 0 48 48" width="30" height="30"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"As a contractor myself it is reassuring to have a quality HVAC company that I can rely on to show up on time, do the job correctly and have zero issues throughout the entire process. Everyone that has been out on my jobsites has been respectful of the jobsite and any other trades. Great company! Would recommend for any job big or small!!"</p>
-          <p class="review-author">— Tyler S.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SERVICES (DETALLADA) ===================== -->
-  <section class="section-padding" id="services-all" style="background: var(--white);">
-    <div class="container">
-      <div class="services-header reveal">
-        <div>
-          <div class="section-label">Our HVAC Services</div>
-          <h2 class="services-title">Heating &amp; air conditioning services in Scottsdale, Arizona</h2>
-        </div>
-        <a href="#services-all" class="services-viewall">View All Services <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-      </div>
-
-      <p class="services-intro reveal">Whether you need air conditioning installation or repairs, you can count on Comfort One Air Conditioning for the job. Call (602) 247-6151 to schedule your service.</p>
-
-      <!-- Layout 2 columnas: pills izq + media der -->
-      <div class="svc-layout">
-      <div class="svc-grid">
-        <a href="#contact" class="svc-pill reveal"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="2" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="22"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg></span><span class="svc-pill-title">Air Conditioning Repair</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
-        <a href="#contact" class="svc-pill reveal reveal-delay-1"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="2" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="22"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg></span><span class="svc-pill-title">Air Conditioning Installation</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
-        <a href="#contact" class="svc-pill reveal reveal-delay-2"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="2" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="22"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg></span><span class="svc-pill-title">Air Conditioning Maintenance</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
-
-        <a href="#contact" class="svc-pill reveal"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span><span class="svc-pill-title">Furnace Installation</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
-        <a href="#contact" class="svc-pill reveal reveal-delay-1"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span><span class="svc-pill-title">Furnace Repair</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
-        <a href="#contact" class="svc-pill reveal reveal-delay-2"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg></span><span class="svc-pill-title">Furnace Maintenance</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
-
-        <a href="#contact" class="svc-pill reveal"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></span><span class="svc-pill-title">Ductless Mini Split Repair</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
-        <a href="#contact" class="svc-pill reveal reveal-delay-1"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></span><span class="svc-pill-title">Ductless Mini Split Installation</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
-        <a href="#contact" class="svc-pill reveal reveal-delay-2"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></svg></span><span class="svc-pill-title">Ductless Mini Split Maintenance</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
-
-        <a href="#contact" class="svc-pill reveal"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg></span><span class="svc-pill-title">Heat Pump Repair</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
-        <a href="#contact" class="svc-pill reveal reveal-delay-1"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 16h5v5"/></svg></span><span class="svc-pill-title">Heat Pump Installation</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
-        <a href="#contact" class="svc-pill reveal reveal-delay-2"><span class="svc-pill-inner"><span class="svc-pill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><span class="svc-pill-title">HVAC Maintenance Plan</span></span><span class="svc-pill-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></a>
-      </div>
-
-        <!-- Media apilada a la derecha -->
-        <div class="svc-media">
-          <div class="phone-card reveal">
-            <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9279.jpg" alt="Comfort One" />
-            <div class="phone-card-overlay"></div>
-            <div class="phone-card-content">
-              <p class="phone-card-label">Call Now</p>
-              <p class="phone-card-number">(602) 247-6151</p>
-              <a href="tel:+16022476151" class="btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Contact Us</a>
-            </div>
-          </div>
-
-          <div class="img-card reveal reveal-delay-1">
-            <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9676.jpg" alt="Archer y Loki, las mascotas de Comfort One" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Las siguientes secciones se irán construyendo aquí -->
-
-  <!-- ===================== COMFORT CLUB ===================== -->
-  <section class="section-padding club framed" id="comfort-club">
-    <div class="container">
-      <div class="club-grid">
-        <div class="club-img reveal">
-          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/ComfortOneAC_BusinessBranding2026-8916.jpg" alt="Técnico de Comfort One revisando el sistema con los clientes" />
-        </div>
-        <div class="club-text reveal reveal-delay-1">
-          <div class="section-label gold">HVAC Maintenance Plan</div>
-          <h2 class="club-title">For top-notch service — you need the Comfort Club! Become a member today</h2>
-          <div class="club-divider"></div>
-          <div class="club-body">
-            <p>If you're a homeowner, you know how important it is to have routine AC and furnace maintenance to keep your living space comfortable year-round — or else you may end up with a costly catastrophe on your hands.</p>
-            <p>But sometimes it can be difficult to stay on top of all the complicated maintenance tasks needed to keep your heating and air conditioning system working efficiently — and that's where Comfort One Air Conditioning comes in!</p>
-            <p>Our HVAC maintenance service in Scottsdale, AZ is designed to make it easy and convenient for homeowners to take proper care of their HVAC systems, with regular maintenance visits from our experienced technicians. With a maintenance plan from Comfort One, you'll enjoy priority service, peace of mind, cost savings, and so much more.</p>
-            <p class="club-lead">Join today and save 10% on all service repairs!</p>
-          </div>
-          <a href="#contact" class="btn-gold club-cta">Join The Club</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== STATS ===================== -->
-  <section class="section-padding stats" id="stats">
-    <div class="container">
-      <div class="stats-header reveal">
-        <div class="section-label">Heating &amp; Cooling Experts</div>
-        <h2 class="stats-title">American quality service for your peace of mind</h2>
-        <span class="stats-divider"></span>
-      </div>
-
-      <div class="stats-grid">
-        <div class="statcard reveal">
-          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9296.jpg" alt="Técnico de Comfort One" />
-          <div class="statcard-overlay"></div>
-          <div class="statcard-content">
-            <div class="statcard-num">+40</div>
-            <div class="statcard-label">Years of experience as HVAC contractors</div>
-          </div>
-        </div>
-
-        <div class="statcard reveal reveal-delay-1">
-          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9213.jpg" alt="Reparación de aire acondicionado" />
-          <div class="statcard-overlay"></div>
-          <div class="statcard-content">
-            <div class="statcard-num">+2,500</div>
-            <div class="statcard-label">Air conditioning &amp; heating repairs</div>
-          </div>
-        </div>
-
-        <div class="statcard reveal reveal-delay-2">
-          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/Drone_C1AC2026-11.jpg" alt="Instalación de sistema HVAC" />
-          <div class="statcard-overlay"></div>
-          <div class="statcard-content">
-            <div class="statcard-num">+600</div>
-            <div class="statcard-label">HVAC systems installed &amp; replaced</div>
-          </div>
-        </div>
-
-        <div class="statcard reveal reveal-delay-3">
-          <img src="https://www.comfort1ac.com/wp-content/uploads/2025/09/ComfortOneAC_BusinessBranding2026-9236.jpg" alt="Clientes satisfechos de Comfort One" />
-          <div class="statcard-overlay"></div>
-          <div class="statcard-content">
-            <div class="statcard-num">+2,300</div>
-            <div class="statcard-label">Satisfied customers in the Valley</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================== FINANCING ===================== -->
-  <section class="section-padding fin" id="financing">
-    <div class="container">
-      <div class="fin-header reveal">
-        <div class="fin-header-left">
-          <div class="section-label">AC Financing Options</div>
-          <h2 class="fin-title">Flexible lending options for your new HVAC system</h2>
-        </div>
-        <a href="#contact" class="fin-viewall">More about financing <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-      </div>
-
-      <div class="fin-body">
-        <div class="fin-img reveal">
-          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9005.jpg" alt="Especialista en instalación de Comfort One" />
-        </div>
-        <div class="fin-body-text reveal reveal-delay-1">
-          <p>As a homeowner in North Scottsdale, you understand how vital it is to have a dependable heating and air conditioning system.</p>
-          <p>But when the temperature starts hitting the hundreds and your old system bites the dust, what do you do? We understand that a new AC unit can be expensive. That's why we offer flexible financing options for homeowners.</p>
-          <p class="fin-strong">There are many benefits to financing your new system, including:</p>
-          <ul class="fin-checks">
-            <li><span class="material-icons">check_circle</span> Seamless application process</li>
-            <li><span class="material-icons">check_circle</span> Low monthly payments*</li>
-            <li><span class="material-icons">check_circle</span> Flexible lending options</li>
-          </ul>
-          <p>The online application process is short and sweet. And best of all? We can have one of our expert AC installation specialists at your home in no time!</p>
-          <p class="fin-strong">To learn more, apply online or give us a call at <a href="tel:+16022476151" class="fin-phone">(602) 247-6151</a>.</p>
-          <a href="#contact" class="btn-gold fin-cta">Financing Options</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ===================== BLOG ===================== -->
-  <section class="section-padding blog framed" id="blog">
-    <div class="container">
-      <div class="blog-header reveal">
-        <div class="section-label gold" style="justify-content:center;">Comfort One's Oasis of Wisdom</div>
-        <h2 class="blog-title">Expert tips &amp; advice from our team of AC experts</h2>
-        <div class="blog-divider"></div>
-      </div>
-
-      <div class="blog-grid">
-        <article class="blog-card reveal">
-          <div class="blog-card-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9263.jpg" alt="Técnico de Comfort One" /></div>
-          <div class="blog-card-body">
-            <p class="blog-card-date">May 12, 2026</p>
-            <h3 class="blog-card-title">Top 5 HVAC companies in Arizona: an honest look at who earns your trust</h3>
-            <a href="#blog" class="blog-card-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-          </div>
-        </article>
-
-        <article class="blog-card reveal reveal-delay-1">
-          <div class="blog-card-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9458.jpg" alt="Técnico trabajando en el sistema" /></div>
-          <div class="blog-card-body">
-            <p class="blog-card-date">May 12, 2026</p>
-            <h3 class="blog-card-title">When to switch from AC to heat in Arizona (2026 guide)</h3>
-            <a href="#blog" class="blog-card-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-          </div>
-        </article>
-
-        <article class="blog-card reveal reveal-delay-2">
-          <div class="blog-card-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9189.jpg" alt="Unidades HVAC en la azotea" /></div>
-          <div class="blog-card-body">
-            <p class="blog-card-date">May 12, 2026</p>
-            <h3 class="blog-card-title">Preventing monsoon dust HVAC damage: tips to keep your system running smoothly</h3>
-            <a href="#blog" class="blog-card-link">Read More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SERVICE AREA ===================== -->
-  <section class="section-padding area" id="service-area">
-    <div class="container">
-      <div class="area-card reveal">
-        <div class="area-map">
-          <iframe src="https://www.google.com/maps?q=Comfort%20One%20Air%20Conditioning%2C%20Scottsdale%2C%20AZ&z=10&output=embed" loading="lazy" title="Comfort One service area map" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="area-content">
-          <div class="section-label">Areas We Serve</div>
-          <h2 class="area-title">Providing service to the Scottsdale, Arizona and surrounding areas</h2>
-          <div class="area-divider"></div>
-          <div class="area-list">
-            <span class="area-item"><span class="material-icons">location_on</span> Anthem, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> Paradise Valley, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> Carefree, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> Phoenix, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> Cave Creek, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> New River, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> Desert Mountain, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> Scottsdale, AZ</span>
-          </div>
-          <a href="#contact" class="btn-gold area-cta">Our Service Area</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- ===================== PLACEHOLDER ===================== -->
+  <main style="padding-top: 140px;">
+    <div style="height: 500px; background: #ffffff;"></div>
+  </main>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer framed">
@@ -972,10 +729,10 @@
         <img class="footer-logo-img" src="https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp" alt="Comfort One Air Conditioning" />
         <p class="footer-desc">Comfort One Air Conditioning is a premiere HVAC company in Scottsdale, Arizona.</p>
         <div class="footer-socials">
-          <a class="footer-social" href="#" aria-label="Google"><svg viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></a>
-          <a class="footer-social" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-          <a class="footer-social" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-          <a class="footer-social" href="#" aria-label="Yelp"><svg viewBox="0 0 384 512"><path d="M42.9 240.32l99.62 48.61c19.2 9.4 16.2 37.51-4.5 42.71L30.5 358.45a22.79 22.79 0 0 1-28.21-19.6 197.16 197.16 0 0 1 9.29-85.37 22.87 22.87 0 0 1 31.39-13.16zm44 239.25l64.42-90.03c12.44-17.38 39.5-3 31.79 16.89l-42.51 97.68a22.79 22.79 0 0 1-33.71 8.4 197.4 197.4 0 0 1-24.62-24.62 22.87 22.87 0 0 1 4.63-8.32zM147.63 32.53l45.42 78.14c11.44 19.75-9.06 42.83-29.79 33.53L62.34 98.83a22.79 22.79 0 0 1-11.66-31.24A197.32 197.32 0 0 1 116.39 8.53a22.87 22.87 0 0 1 31.24 24zM384 251.24a197.16 197.16 0 0 1-11.42 85.37 22.79 22.79 0 0 1-28.21 19.6l-107.52-26.8c-20.7-5.2-23.7-33.31-4.5-42.71l99.62-48.61a22.87 22.87 0 0 1 31.39 13.16zm-124.79 90.68l45.52 78.34a22.85 22.85 0 0 1-8.11 31.74 197.31 197.31 0 0 1-51.09 21.29 22.85 22.85 0 0 1-28.17-19.85l-11.9-107.52c-2.3-20.86 25.11-30.66 36.65-13.1z"/></svg></a>
+          <a class="footer-social" href="index.html#" aria-label="Google"><svg viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></a>
+          <a class="footer-social" href="index.html#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a class="footer-social" href="index.html#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a class="footer-social" href="index.html#" aria-label="Yelp"><svg viewBox="0 0 384 512"><path d="M42.9 240.32l99.62 48.61c19.2 9.4 16.2 37.51-4.5 42.71L30.5 358.45a22.79 22.79 0 0 1-28.21-19.6 197.16 197.16 0 0 1 9.29-85.37 22.87 22.87 0 0 1 31.39-13.16zm44 239.25l64.42-90.03c12.44-17.38 39.5-3 31.79 16.89l-42.51 97.68a22.79 22.79 0 0 1-33.71 8.4 197.4 197.4 0 0 1-24.62-24.62 22.87 22.87 0 0 1 4.63-8.32zM147.63 32.53l45.42 78.14c11.44 19.75-9.06 42.83-29.79 33.53L62.34 98.83a22.79 22.79 0 0 1-11.66-31.24A197.32 197.32 0 0 1 116.39 8.53a22.87 22.87 0 0 1 31.24 24zM384 251.24a197.16 197.16 0 0 1-11.42 85.37 22.79 22.79 0 0 1-28.21 19.6l-107.52-26.8c-20.7-5.2-23.7-33.31-4.5-42.71l99.62-48.61a22.87 22.87 0 0 1 31.39 13.16zm-124.79 90.68l45.52 78.34a22.85 22.85 0 0 1-8.11 31.74 197.31 197.31 0 0 1-51.09 21.29 22.85 22.85 0 0 1-28.17-19.85l-11.9-107.52c-2.3-20.86 25.11-30.66 36.65-13.1z"/></svg></a>
         </div>
       </div>
 
@@ -995,8 +752,8 @@
       <div>
         <span class="footer-heading">Helpful Links</span>
         <div class="footer-links">
-          <a href="#contact"><span class="material-icons">chevron_right</span> Request a Service</a>
-          <a href="#financing"><span class="material-icons">chevron_right</span> Financing Options</a>
+          <a href="index.html#contact"><span class="material-icons">chevron_right</span> Request a Service</a>
+          <a href="index.html#financing"><span class="material-icons">chevron_right</span> Financing Options</a>
           <a href="comfort-club.html"><span class="material-icons">chevron_right</span> Comfort Club</a>
         </div>
       </div>
@@ -1042,6 +799,29 @@
       });
     }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // Gallery filter
+    const galTabs = document.querySelectorAll('.gal-tab');
+    const galCards = document.querySelectorAll('#galGrid .proj-card');
+    galTabs.forEach(tab => tab.addEventListener('click', () => {
+      galTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const f = tab.dataset.filter;
+      galCards.forEach(c => {
+        c.classList.toggle('hidden', !(f === 'all' || c.dataset.category === f));
+      });
+    }));
+
+    // Lightbox
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+    function openLb(imgEl) { lbImg.src = imgEl.src; lbImg.alt = imgEl.alt; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    galCards.forEach(card => card.addEventListener('click', (e) => { e.preventDefault(); openLb(card.querySelector('img')); }));
+    document.querySelectorAll('.collage-item').forEach(item => item.addEventListener('click', () => openLb(item.querySelector('img'))));
+    document.getElementById('lightboxClose').addEventListener('click', closeLb);
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
   </script>
 
 </body>
