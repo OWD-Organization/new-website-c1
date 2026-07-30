@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Air Conditioning Maintenance — Comfort One Air Conditioning</title>
+  <title>Air Conditioning Maintenance in Scottsdale, AZ — Comfort One Air Conditioning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -493,6 +493,14 @@
        PAGE HERO (interior) + PROJECTS
        ============================================================ */
     .page-hero { background: var(--gradient-hero-home); padding: 200px 0 90px; text-align: center; }
+    .page-hero { text-align: left; }
+    .page-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .page-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-3xl); } }
+    .page-hero-text .section-label { justify-content: flex-start; }
+    .page-hero-text .page-hero-desc { margin-left: 0; margin-right: 0; }
+    .page-hero-text .page-hero-crumb { justify-content: flex-start; }
+    .page-hero-media { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .page-hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
     .page-hero-title { font: var(--font-display); color: var(--white); margin-top: var(--space-sm); }
     .page-hero-desc { max-width: 780px; margin: var(--space-lg) auto 0; color: rgba(255,255,255,0.82); font-size: 1.0625rem; line-height: 1.7; }
     .page-hero-phone { color: var(--brand-gold); font-weight: 700; }
@@ -637,12 +645,141 @@
     .rv-ontime a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
     .rv-archer { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
     .rv-archer img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; }
+
+    /* ============================================================
+       FAQ ACCORDION
+       ============================================================ */
+    .faq-wrap { max-width: 980px; }
+    .faq-block { margin-bottom: var(--space-3xl); }
+    .faq-block:last-child { margin-bottom: 0; }
+    .faq-block-title { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: clamp(1.25rem, 2.2vw, 1.6rem); text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: var(--space-lg); }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: rgba(255, 179, 0, 0.07); border: 1px solid rgba(255, 179, 0, 0.35); border-radius: var(--radius-md); overflow: hidden; transition: border-color 0.3s, background 0.3s; }
+    .faq-item.open { background: rgba(255, 179, 0, 0.12); border-color: var(--brand-gold); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; cursor: pointer; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); line-height: 1.35; }
+    .faq-q:hover { color: var(--brand-red); }
+    .faq-icon { flex-shrink: 0; width: 28px; height: 28px; display: grid; place-items: center; color: var(--brand-red); font-size: 1.6rem; font-weight: 400; line-height: 1; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-a { max-height: 640px; }
+    .faq-a-inner { padding: 0 22px 20px; color: var(--gray-700); }
+
+    /* ============================================================
+       SERVICE PAGE
+       ============================================================ */
+    .page-hero-crumb { margin-top: var(--space-md); display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; font-weight: 600; color: rgba(255,255,255,0.75); }
+    .page-hero-crumb a { color: var(--brand-gold); text-decoration: none; }
+    .page-hero-crumb a:hover { text-decoration: underline; }
+    .page-hero-crumb .current { color: var(--white); }
+
+    .svc-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); }
+    @media (min-width: 992px) { .svc-layout { grid-template-columns: 330px 1fr; gap: var(--space-3xl); align-items: start; } }
+
+    .svc-sidebar { display: flex; flex-direction: column; gap: var(--space-xl); }
+    @media (min-width: 992px) { .svc-sidebar { position: sticky; top: 150px; } }
+    .svc-cat { border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--white); }
+    .svc-cat-head { background: var(--gradient-red); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; padding: 18px 22px; }
+    .svc-cat-list { display: flex; flex-direction: column; }
+    .svc-cat-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 15px 22px; color: var(--navy-500); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gray-100); transition: background 0.25s, color 0.25s; }
+    .svc-cat-link:last-child { border-bottom: none; }
+    .svc-cat-ico { width: 30px; height: 30px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; flex-shrink: 0; transition: background 0.25s, color 0.25s; }
+    .svc-cat-ico .material-icons { font-size: 18px; }
+    .svc-cat-link:hover, .svc-cat-link.active { background: var(--gray-100); color: var(--brand-red); }
+    .svc-cat-link.active .svc-cat-ico, .svc-cat-link:hover .svc-cat-ico { background: var(--brand-red); color: var(--white); transform: translateX(3px); }
+    .svc-cat-ico { transition: background 0.25s, color 0.25s, transform 0.25s; }
+
+    .svc-help { background: var(--gradient-hero); color: var(--white); border-radius: var(--radius-lg); padding: var(--space-xl); box-shadow: var(--shadow-md); }
+    .svc-help-brand { display: flex; align-items: center; gap: 10px; }
+    .svc-help-brand img { height: 46px; width: auto; }
+    .svc-help-title { font-family: var(--font-heading); font-weight: 600; font-size: 1.05rem; line-height: 1.4; }
+    .svc-help-links { margin-top: var(--space-lg); display: flex; flex-direction: column; gap: 10px; }
+    .svc-help-link { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-md); color: var(--white); text-decoration: none; font-weight: 600; transition: background 0.25s; }
+    .svc-help-link:hover { background: rgba(255,255,255,0.18); }
+    .svc-help-link .material-icons { color: var(--brand-gold); font-size: 20px; }
+    .svc-help-contact { margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid rgba(255,255,255,0.18); }
+    .svc-help-eyebrow { color: var(--brand-gold); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .svc-help-phone { display: block; margin-top: 6px; font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; color: var(--white); text-decoration: none; }
+    .svc-help-email { display: block; margin-top: 8px; color: rgba(255,255,255,0.85); text-decoration: none; }
+    .svc-help-email:hover { color: var(--white); }
+
+    .svc-content { display: flex; flex-direction: column; gap: var(--space-2xl); }
+    .svc-hero-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+    .svc-hero-img img { display: block; width: 100%; height: 560px; object-fit: cover; object-position: center; }
+    .svc-lead p { color: var(--gray-700); }
+    .svc-lead p + p { margin-top: var(--space-md); }
+    .svc-h2 { font: var(--font-section); color: var(--navy-500); }
+    .svc-sub { margin-top: var(--space-sm); color: var(--gray-700); }
+
+    .svc-features { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-lg); }
+    @media (min-width: 600px) { .svc-features { grid-template-columns: 1fr 1fr; } }
+    .svc-feature { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: var(--space-lg); box-shadow: var(--shadow-sm); }
+    .svc-feature-ico { width: 46px; height: 46px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; margin-bottom: 12px; }
+    .svc-feature-ico .material-icons { font-size: 24px; }
+    .svc-feature h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); }
+    .svc-feature p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-cta-line { text-align: center; color: var(--gray-700); margin-top: var(--space-lg); }
+    .svc-cta-line a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
+
+    .svc-checklist { display: flex; flex-direction: column; gap: 12px; margin-top: var(--space-lg); }
+    .svc-check { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); }
+    .svc-check .material-icons { color: #1FA35B; flex-shrink: 0; }
+
+    .svc-imgcards { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+    @media (min-width: 600px) { .svc-imgcards { grid-template-columns: 1fr 1fr; } }
+    .svc-imgcard { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 260px; box-shadow: var(--shadow-md); }
+    .svc-imgcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .svc-imgcard-overlay { position: relative; z-index: 1; height: 100%; min-height: 260px; display: flex; flex-direction: column; justify-content: flex-end; padding: var(--space-lg); background: linear-gradient(to top, rgba(21,27,63,0.92) 0%, rgba(21,27,63,0.15) 70%); color: var(--white); }
+    .svc-imgcard-ico { color: var(--brand-gold); margin-bottom: 8px; }
+    .svc-imgcard h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--white); }
+    .svc-imgcard p { margin-top: 6px; font-size: 0.92rem; color: rgba(255,255,255,0.85); }
+
+    .svc-steps-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: stretch; margin-top: var(--space-lg); }
+    @media (min-width: 900px) { .svc-steps-grid { grid-template-columns: 1fr 1fr; } }
+    .svc-steps-list { display: flex; flex-direction: column; }
+    .svc-step { padding: var(--space-lg) 0; border-bottom: 1px solid var(--gray-200); }
+    .svc-step:first-child { padding-top: 0; }
+    .svc-step:last-child { border-bottom: none; }
+    .svc-step-head { display: flex; align-items: center; gap: 12px; }
+    .svc-step-ico { width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; }
+    .svc-step-num { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); }
+    .svc-step h3 { margin-top: 10px; font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); }
+    .svc-step p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-steps-img { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 380px; box-shadow: var(--shadow-md); }
+    .svc-steps-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .svc-callus { position: absolute; left: var(--space-lg); bottom: var(--space-lg); z-index: 1; display: flex; align-items: center; gap: 12px; background: rgba(21,27,63,0.85); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-radius: var(--radius-md); padding: 12px 18px; color: var(--white); }
+    .svc-callus .material-icons { color: var(--brand-gold); }
+    .svc-callus .lbl { font-size: 0.8rem; color: rgba(255,255,255,0.8); }
+    .svc-callus .num { font-family: var(--font-heading); font-weight: 700; }
+    .svc-stats { display: flex; flex-wrap: wrap; gap: var(--space-2xl); margin-top: var(--space-lg); }
+    .svc-stat-num { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: 1.9rem; line-height: 1; }
+    .svc-stat-label { margin-top: 6px; color: var(--gray-500); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    .svc-todo { color: var(--gray-500); font-style: italic; background: rgba(255,179,0,0.08); border-left: 3px solid var(--brand-gold); padding: 10px 14px; border-radius: var(--radius-sm); margin-top: var(--space-sm); }
+    .svc-list { margin-top: var(--space-md); display: flex; flex-direction: column; gap: 10px; }
+    .svc-list-item { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); }
+    .svc-list-item .material-icons { color: var(--brand-red); flex-shrink: 0; font-size: 20px; margin-top: 2px; }
+    .svc-list-item.warn .material-icons { color: var(--brand-gold); }
+    .svc-list-item strong { color: var(--navy-500); }
+    .svc-note { margin-top: var(--space-md); color: var(--gray-500); font-size: 0.92rem; }
+    .svc-table-wrap { overflow-x: auto; margin-top: var(--space-lg); border: 1px solid var(--gray-200); border-radius: var(--radius-md); }
+    .svc-table { width: 100%; border-collapse: collapse; min-width: 460px; }
+    .svc-table th { background: var(--gradient-red); color: var(--white); text-align: left; padding: 14px 18px; font-family: var(--font-heading); font-weight: 700; }
+    .svc-table td { padding: 14px 18px; border-top: 1px solid var(--gray-200); color: var(--gray-700); }
+    .svc-table tr:nth-child(even) td { background: var(--gray-100); }
+    .svc-onum { margin-top: var(--space-md); display: flex; flex-direction: column; gap: var(--space-md); }
+    .svc-onum-item { display: flex; gap: 14px; }
+    .svc-onum-badge { flex-shrink: 0; width: 34px; height: 34px; border-radius: var(--radius-full); background: var(--brand-red); color: var(--white); display: grid; place-items: center; font-family: var(--font-heading); font-weight: 700; }
+    .svc-onum-item h3 { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.02rem; }
+    .svc-onum-item p { margin-top: 4px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-subhead { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); margin-top: var(--space-lg); margin-bottom: 4px; }
+    .svc-cta-strong { margin-top: var(--space-md); font-weight: 600; color: var(--navy-500); }
+    .svc-sub-title { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.15rem; margin-top: var(--space-xl); margin-bottom: 6px; }
+    .svc-notice { background: rgba(255,179,0,0.10); border-left: 3px solid var(--brand-gold); padding: 14px 16px; border-radius: var(--radius-sm); margin-top: var(--space-lg); color: var(--gray-700); font-size: 0.95rem; }
+    .svc-notice strong { color: var(--navy-500); }
   </style>
 </head>
 <body>
 
   <!-- ===================== NAVBAR ===================== -->
-  <nav class="navbar scrolled" id="navbar" style="background: rgba(39, 49, 111, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+  <nav class="navbar" id="navbar">
     <div class="container navbar-inner">
       <a href="index.html#hero" class="logo">
         <img class="logo-img" src="https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp" alt="Comfort One Air Conditioning" />
@@ -659,7 +796,7 @@
             <a href="comfort-club.html">Comfort Club</a>
             <a href="reviews.html">Reviews</a>
             <a href="blog.html">Blog</a>
-            <a href="hvac-faq-scottsdale-az.html">HVAC FAQ</a>
+            <a href="hvac-faq-scottsdale-az.html">FAQ</a>
           </div>
         </div>
         <div class="nav-dd">
@@ -671,7 +808,12 @@
             <a href="air-conditioning-maintenance.html">Air Conditioning Maintenance</a>
           </div>
         </div>
-        <a href="index.html#services">Ductless</a>
+        <div class="nav-dd">
+          <a href="index.html#services" class="nav-dd-toggle">Ductless <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dd-menu">
+            <a href="ductless-mini-split-repair.html">Ductless Mini Split Repair</a>
+          </div>
+        </div>
         <a href="index.html#services">Heating</a>
         <a href="index.html#contact">Service Area</a>
         <a href="index.html#financing">Financing</a>
@@ -719,6 +861,7 @@
             <a href="air-conditioning-replacement.html">Air Conditioning Replacement</a>
             <a href="air-conditioning-maintenance.html">Air Conditioning Maintenance</a>
         <a href="index.html#services">Ductless</a>
+            <a href="ductless-mini-split-repair.html">Ductless Mini Split Repair</a>
         <a href="index.html#services">Heating</a>
         <a href="index.html#contact">Service Area</a>
         <a href="index.html#financing">Financing</a>
@@ -729,10 +872,182 @@
     </div>
   </div>
 
-  <!-- ===================== PLACEHOLDER ===================== -->
-  <main style="padding-top: 140px;">
-    <div style="height: 500px; background: #ffffff;"></div>
-  </main>
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero gradient-hero">
+    <div class="container">
+      <div class="page-hero-grid">
+        <div class="page-hero-text reveal">
+          <div class="section-label gold">Cooling · AC Maintenance</div>
+          <h1 class="page-hero-title">Expert air conditioning maintenance near me in Scottsdale, AZ</h1>
+          <p class="page-hero-desc">Ensure peak performance, lower energy bills, and extend your AC's lifespan with our expert maintenance services. We offer same-day service, 100% satisfaction guarantee, and over 4 decades of HVAC experience.</p>
+          <p class="page-hero-desc" style="font-weight: 700; margin-top: var(--space-sm);">Call us now at <a href="tel:+16022476151" class="page-hero-phone">602-247-6151</a> to schedule your AC maintenance and restore your comfort quickly.</p>
+          <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+        </div>
+        <div class="page-hero-media reveal reveal-delay-1">
+          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9709.jpg" alt="The Comfort One Air Conditioning team and service vehicles" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICE LAYOUT ===================== -->
+  <section class="section-padding" style="background: var(--white);">
+    <div class="container">
+      <div class="svc-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="svc-sidebar">
+          <nav class="svc-cat" aria-label="Cooling services">
+            <div class="svc-cat-head">Cooling Services</div>
+            <div class="svc-cat-list">
+              <a href="air-conditioning-repair.html" class="svc-cat-link">Air Conditioning Repair <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="air-conditioning-installation.html" class="svc-cat-link">Air Conditioning Installation <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="air-conditioning-replacement.html" class="svc-cat-link">Air Conditioning Replacement <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="air-conditioning-maintenance.html" class="svc-cat-link active" aria-current="page">Air Conditioning Maintenance <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+            </div>
+          </nav>
+          <div class="svc-help">
+            <p class="svc-help-title">Help is just a call away — 24/7, rain or shine.</p>
+            <div class="svc-help-links">
+              <a href="#contact" class="svc-help-link"><span class="material-icons">build</span> Request a Service</a>
+              <a href="index.html#financing" class="svc-help-link"><span class="material-icons">payments</span> Financing Options</a>
+              <a href="comfort-club.html" class="svc-help-link"><span class="material-icons">workspace_premium</span> Comfort Club</a>
+            </div>
+            <div class="svc-help-contact">
+              <div class="svc-help-eyebrow">Need Help? Give Us a Call</div>
+              <a href="tel:+16022476151" class="svc-help-phone">(602) 247-6151</a>
+              <a href="mailto:office@comfort1ac.com" class="svc-help-email">office@comfort1ac.com</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- CONTENT -->
+        <div class="svc-content">
+          <div class="reveal">
+            <h2 class="svc-h2">Expert air conditioning maintenance in Scottsdale, AZ</h2>
+            <p class="svc-sub">We're Comfort One Air Conditioning, your trusted local experts for top-notch AC maintenance in Scottsdale and surrounding areas. With over 40 years of HVAC experience, we've successfully maintained more than 2,500 HVAC systems and solved 500+ emergencies. Our family-owned business is built on integrity, hard work, and dedication to excellence.</p>
+            <p class="svc-sub">We understand the unique challenges of desert living and how crucial a well-maintained AC system is for your comfort. Our team of skilled technicians, led by industry veterans like Jon Holstrom, are committed to keeping your AC running smoothly year-round.</p>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Reasons to choose Comfort One</h2>
+            <div class="svc-checklist">
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Highly rated by our customers with 300+ 5-Star reviews</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Fair pricing with affordable financing options available</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Fully stocked trucks to ensure timely repairs</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Free estimates for system replacement or installation</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Industry-leading warranties and guarantees</span></div>
+            </div>
+            <div class="svc-stats">
+              <div><div class="svc-stat-num">+2,250</div><div class="svc-stat-label">AC repairs</div></div>
+              <div><div class="svc-stat-num">+40 Years</div><div class="svc-stat-label">Of experience</div></div>
+              <div><div class="svc-stat-num">+2,750</div><div class="svc-stat-label">Customers</div></div>
+            </div>
+            <p class="svc-note">Don't let your AC break down in the Arizona heat. Call us at 602-247-6151 for expert maintenance that will save you money and headaches in the long run.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Signs you need air conditioning maintenance in Scottsdale, AZ</h2>
+            <p class="svc-sub">Living in Scottsdale's hot climate means your AC works overtime. Regular maintenance is crucial to keep it running efficiently. But how do you know when it's time for a check-up? Here are some telltale signs that your AC system needs professional attention:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Higher than usual energy bills</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Uneven cooling or hot spots in your home</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Strange noises coming from your AC unit</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Weak airflow from vents</span></div>
+            </div>
+            <p class="svc-note">Don't ignore these warning signs – they could lead to costly repairs or premature system failure. Regular maintenance can prevent these issues and keep your home comfortable in the Arizona heat. Call us today at 602-247-6151 to schedule your AC maintenance and ensure your system is running at peak efficiency.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Importance &amp; benefits of regular AC maintenance in Scottsdale, AZ</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we believe in the power of preventive care. Here's why regular AC maintenance is crucial:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Lower Energy Bills:</strong> Regular maintenance can reduce your monthly energy costs by up to 30%, helping you save significantly in our hot climate.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Prevent Costly Repairs:</strong> We identify and fix potential issues early, saving you hundreds of dollars and the stress of unexpected breakdowns during scorching summer days.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Extended System Lifespan:</strong> Proper care can add years to your AC's life, delaying the need for expensive replacements.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Improved Indoor Air Quality:</strong> Clean, well-maintained systems circulate cleaner air, benefiting your family's health and comfort.</span></div>
+            </div>
+            <p class="svc-note">Don't compromise your comfort or your wallet. With over 2,250 HVAC systems repaired, we know how to keep your AC running smoothly. Call Comfort One Air Conditioning at 602-247-6151 to schedule your maintenance today and enjoy worry-free cooling all year long.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Why professional AC maintenance matters</h2>
+            <p class="svc-sub">While some basic AC care can be done by homeowners, professional maintenance is crucial for several reasons:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Expertise Matters:</strong> Our HVAC technicians have the training and experience to spot issues you might miss. With over four decades in the industry, we've seen it all and know what to look for.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Bi-Annual Check-ups:</strong> We recommend scheduling maintenance twice a year – before summer and winter. These regular check-ups protect your investment and can significantly extend your AC's lifespan.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Preventive Care:</strong> Our technicians can detect minor issues before they become major problems. This proactive approach saves you from costly repairs and unexpected breakdowns during Scottsdale's hottest days.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Maximize Efficiency:</strong> Professional maintenance goes beyond basic cleaning. We fine-tune your system to ensure it's operating at peak efficiency, potentially saving you up to 30% on energy costs.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Safety First:</strong> AC systems involve complex electrical components and refrigerants. Our licensed, bonded, and insured technicians ensure all work is done safely and to code.</span></div>
+            </div>
+            <p class="svc-note">Don't risk your comfort or your AC's health with DIY solutions. Trust the experts at Comfort One Air Conditioning. With over 2,500 happy customers in the Valley, we're Scottsdale's go-to for professional AC maintenance. Call us at 602-247-6151 to schedule your AC tune-up today.</p>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">What AC maintenance in Scottsdale, AZ looks like</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we take a comprehensive approach to AC maintenance, ensuring your system can withstand Scottsdale's intense heat. Our process is thorough, covering all aspects of your AC system to maximize efficiency and prevent breakdowns. Here's an overview of our professional maintenance service:</p>
+            <div class="svc-onum">
+              <div class="svc-onum-item"><div class="svc-onum-badge">1</div><div><h3>Pre-Maintenance Checks</h3><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span>We start by powering down your system to ensure safety during inspection and maintenance.</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Our technicians perform a visual and auditory inspection, checking for signs of malfunction like warm air output, unusual noises, or leaks.</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>We inspect the condensate drain line for clogs, a common issue in our dry climate that can lead to water damage if left unchecked.</span></div></div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">2</div><div><h3>Filter Maintenance</h3><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span>We replace your AC filters with premium filters provided by the client and make recommendations if a cleaning is needed</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Clean filters mean better air quality, better airflow, and a system that isn't working harder than it needs to</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>In Scottsdale's dusty environment, we recommend changing filters every 30 days – more often for homes with pets or allergy sufferers</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>If allergies and dust are a concern of yours, ask our team about our indoor air quality solutions.</span></div></div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">3</div><div><h3>Coil and Drain Maintenance</h3><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span>We thoroughly inspect both your evaporator and condenser coils for dust buildup, which is common in our desert environment and can quickly hurt system efficiency</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>We inspect and clear your condensate drain line to prevent water damage and mold growth</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>If our technicians find that your coils need cleaning, we'll recommend our professional-grade, eco-friendly cleaning solutions powerful enough to remove buildup without damaging the coils</span></div></div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">4</div><div><h3>AC Unit Maintenance</h3><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span>For outdoor units, we clear away debris and vegetation that can impede airflow and efficiency.</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>We clean the condenser fins and straighten any that are bent, ensuring optimal heat transfer.</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Our team checks refrigerant levels and tests for leaks, a critical step in our hot climate where AC systems work overtime.</span></div></div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">5</div><div><h3>Insulation and Airflow</h3><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span>We inspect ductwork for leaks or damage that could be wasting energy and reducing comfort.</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Our technicians ensure your AC unit is level, which is crucial for proper operation and longevity.</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>We check the condition of insulation around key components, which is vital for efficiency in Scottsdale's extreme temperatures.</span></div></div></div></div>
+            </div>
+            <p class="svc-note">With over 2,500 HVAC systems repaired, our experienced team knows exactly what your Scottsdale AC needs to perform its best. Don't wait for a breakdown – call Comfort One Air Conditioning at 602-247-6151 to schedule your comprehensive AC maintenance today.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Our guarantees &amp; warranties</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we stand firmly behind our work. Our promise to you is simple: Your comfort, or we will make it right!</p>
+            <p class="svc-subhead">Our Guarantees:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>100% Satisfaction Guarantee:</strong> Your satisfaction is our top priority. If anything doesn't meet your expectations, we're committed to fixing it – no questions asked.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Cleanliness Guarantee:</strong> We'll leave your home as clean as we found it. Our technicians treat your space with respect.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Upfront Pricing:</strong> No surprises here. We provide clear, upfront pricing before any work begins.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>No Dirty Upsells You Don't Need:</strong> We believe in honest service. Our technicians work commission-free and will never try to sell you services or parts you don't actually need. We recommend only what's necessary for your system's optimal performance and your comfort.</span></div>
+            </div>
+            <p class="svc-subhead">Our Warranties:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>90-Day Labor Warranty:</strong> All our repair work is backed by a 90-day labor warranty. If the same issue recurs within 90 days, we'll fix it at no additional cost.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>1-2 Year Parts Warranty:</strong> We stand behind the quality of our parts. All parts we install come with a 1-2 year parts warranty.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>10-Year Parts &amp; 2-Year Labor Warranty:</strong> If you were to need an air conditioning replacement, we offer an industry-leading 10-year parts and 2-year labor warranty (upgradeable to 10 years).</span></div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">The Comfort One difference</h2>
+            <p class="svc-sub">Our goal is to exceed your expectations with every interaction, ensuring you always feel valued and cared for. And let's not forget our Chief Happiness Officer, Loki! This lovable pooch takes customer satisfaction very seriously. He treats our customers like family and keeps a watchful eye on our team.</p>
+            <p class="svc-sub">If we ever fall short of 100% satisfaction, Loki might just have to give us a stern talking-to (or a playful nip to keep us in line)! Rest assured, with Comfort One and Loki on the job, complete satisfaction isn't just a goal – it's a guarantee.</p>
+            <p class="svc-note">Ready to experience the Comfort One difference? Call us at 602-247-6151 to schedule your AC maintenance today!</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Frequently asked questions</h2>
+            <div class="faq-list" style="margin-top: var(--space-lg);">
+          <div class="faq-item open">
+            <button class="faq-q" type="button">How often should I service my AC in Scottsdale? <span class="faq-icon">−</span></button>
+            <div class="faq-a"><div class="faq-a-inner">In Scottsdale's extreme climate, we recommend servicing your AC at least twice a year. Schedule a maintenance check in early spring before the intense heat arrives, and another in fall after the summer stress on your system. For optimal performance, some Scottsdale homeowners opt for quarterly checks during the hottest months (May-September).</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">What is the average life of an AC unit in Arizona? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How much is AC maintenance in Scottsdale? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer framed">
@@ -836,5 +1151,15 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
   </script>
 
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.faq-item');
+        var open = item.classList.toggle('open');
+        var icon = btn.querySelector('.faq-icon');
+        if (icon) icon.textContent = open ? '\u2212' : '+';
+      });
+    });
+  </script>
 </body>
 </html>
