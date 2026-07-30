@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Air Conditioning Replacement — Comfort One Air Conditioning</title>
+  <title>Air Conditioning Replacement in Scottsdale, AZ — Comfort One Air Conditioning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -493,6 +493,14 @@
        PAGE HERO (interior) + PROJECTS
        ============================================================ */
     .page-hero { background: var(--gradient-hero-home); padding: 200px 0 90px; text-align: center; }
+    .page-hero { text-align: left; }
+    .page-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .page-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-3xl); } }
+    .page-hero-text .section-label { justify-content: flex-start; }
+    .page-hero-text .page-hero-desc { margin-left: 0; margin-right: 0; }
+    .page-hero-text .page-hero-crumb { justify-content: flex-start; }
+    .page-hero-media { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .page-hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
     .page-hero-title { font: var(--font-display); color: var(--white); margin-top: var(--space-sm); }
     .page-hero-desc { max-width: 780px; margin: var(--space-lg) auto 0; color: rgba(255,255,255,0.82); font-size: 1.0625rem; line-height: 1.7; }
     .page-hero-phone { color: var(--brand-gold); font-weight: 700; }
@@ -637,12 +645,141 @@
     .rv-ontime a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
     .rv-archer { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
     .rv-archer img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; }
+
+    /* ============================================================
+       FAQ ACCORDION
+       ============================================================ */
+    .faq-wrap { max-width: 980px; }
+    .faq-block { margin-bottom: var(--space-3xl); }
+    .faq-block:last-child { margin-bottom: 0; }
+    .faq-block-title { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: clamp(1.25rem, 2.2vw, 1.6rem); text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: var(--space-lg); }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: rgba(255, 179, 0, 0.07); border: 1px solid rgba(255, 179, 0, 0.35); border-radius: var(--radius-md); overflow: hidden; transition: border-color 0.3s, background 0.3s; }
+    .faq-item.open { background: rgba(255, 179, 0, 0.12); border-color: var(--brand-gold); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; cursor: pointer; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); line-height: 1.35; }
+    .faq-q:hover { color: var(--brand-red); }
+    .faq-icon { flex-shrink: 0; width: 28px; height: 28px; display: grid; place-items: center; color: var(--brand-red); font-size: 1.6rem; font-weight: 400; line-height: 1; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-a { max-height: 640px; }
+    .faq-a-inner { padding: 0 22px 20px; color: var(--gray-700); }
+
+    /* ============================================================
+       SERVICE PAGE
+       ============================================================ */
+    .page-hero-crumb { margin-top: var(--space-md); display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; font-weight: 600; color: rgba(255,255,255,0.75); }
+    .page-hero-crumb a { color: var(--brand-gold); text-decoration: none; }
+    .page-hero-crumb a:hover { text-decoration: underline; }
+    .page-hero-crumb .current { color: var(--white); }
+
+    .svc-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); }
+    @media (min-width: 992px) { .svc-layout { grid-template-columns: 330px 1fr; gap: var(--space-3xl); align-items: start; } }
+
+    .svc-sidebar { display: flex; flex-direction: column; gap: var(--space-xl); }
+    @media (min-width: 992px) { .svc-sidebar { position: sticky; top: 150px; } }
+    .svc-cat { border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--white); }
+    .svc-cat-head { background: var(--gradient-red); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; padding: 18px 22px; }
+    .svc-cat-list { display: flex; flex-direction: column; }
+    .svc-cat-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 15px 22px; color: var(--navy-500); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gray-100); transition: background 0.25s, color 0.25s; }
+    .svc-cat-link:last-child { border-bottom: none; }
+    .svc-cat-ico { width: 30px; height: 30px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; flex-shrink: 0; transition: background 0.25s, color 0.25s; }
+    .svc-cat-ico .material-icons { font-size: 18px; }
+    .svc-cat-link:hover, .svc-cat-link.active { background: var(--gray-100); color: var(--brand-red); }
+    .svc-cat-link.active .svc-cat-ico, .svc-cat-link:hover .svc-cat-ico { background: var(--brand-red); color: var(--white); transform: translateX(3px); }
+    .svc-cat-ico { transition: background 0.25s, color 0.25s, transform 0.25s; }
+
+    .svc-help { background: var(--gradient-hero); color: var(--white); border-radius: var(--radius-lg); padding: var(--space-xl); box-shadow: var(--shadow-md); }
+    .svc-help-brand { display: flex; align-items: center; gap: 10px; }
+    .svc-help-brand img { height: 46px; width: auto; }
+    .svc-help-title { font-family: var(--font-heading); font-weight: 600; font-size: 1.05rem; line-height: 1.4; }
+    .svc-help-links { margin-top: var(--space-lg); display: flex; flex-direction: column; gap: 10px; }
+    .svc-help-link { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-md); color: var(--white); text-decoration: none; font-weight: 600; transition: background 0.25s; }
+    .svc-help-link:hover { background: rgba(255,255,255,0.18); }
+    .svc-help-link .material-icons { color: var(--brand-gold); font-size: 20px; }
+    .svc-help-contact { margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid rgba(255,255,255,0.18); }
+    .svc-help-eyebrow { color: var(--brand-gold); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .svc-help-phone { display: block; margin-top: 6px; font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; color: var(--white); text-decoration: none; }
+    .svc-help-email { display: block; margin-top: 8px; color: rgba(255,255,255,0.85); text-decoration: none; }
+    .svc-help-email:hover { color: var(--white); }
+
+    .svc-content { display: flex; flex-direction: column; gap: var(--space-2xl); }
+    .svc-hero-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+    .svc-hero-img img { display: block; width: 100%; height: 560px; object-fit: cover; object-position: center; }
+    .svc-lead p { color: var(--gray-700); }
+    .svc-lead p + p { margin-top: var(--space-md); }
+    .svc-h2 { font: var(--font-section); color: var(--navy-500); }
+    .svc-sub { margin-top: var(--space-sm); color: var(--gray-700); }
+
+    .svc-features { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-lg); }
+    @media (min-width: 600px) { .svc-features { grid-template-columns: 1fr 1fr; } }
+    .svc-feature { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: var(--space-lg); box-shadow: var(--shadow-sm); }
+    .svc-feature-ico { width: 46px; height: 46px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; margin-bottom: 12px; }
+    .svc-feature-ico .material-icons { font-size: 24px; }
+    .svc-feature h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); }
+    .svc-feature p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-cta-line { text-align: center; color: var(--gray-700); margin-top: var(--space-lg); }
+    .svc-cta-line a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
+
+    .svc-checklist { display: flex; flex-direction: column; gap: 12px; margin-top: var(--space-lg); }
+    .svc-check { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); }
+    .svc-check .material-icons { color: #1FA35B; flex-shrink: 0; }
+
+    .svc-imgcards { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+    @media (min-width: 600px) { .svc-imgcards { grid-template-columns: 1fr 1fr; } }
+    .svc-imgcard { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 260px; box-shadow: var(--shadow-md); }
+    .svc-imgcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .svc-imgcard-overlay { position: relative; z-index: 1; height: 100%; min-height: 260px; display: flex; flex-direction: column; justify-content: flex-end; padding: var(--space-lg); background: linear-gradient(to top, rgba(21,27,63,0.92) 0%, rgba(21,27,63,0.15) 70%); color: var(--white); }
+    .svc-imgcard-ico { color: var(--brand-gold); margin-bottom: 8px; }
+    .svc-imgcard h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--white); }
+    .svc-imgcard p { margin-top: 6px; font-size: 0.92rem; color: rgba(255,255,255,0.85); }
+
+    .svc-steps-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: stretch; margin-top: var(--space-lg); }
+    @media (min-width: 900px) { .svc-steps-grid { grid-template-columns: 1fr 1fr; } }
+    .svc-steps-list { display: flex; flex-direction: column; }
+    .svc-step { padding: var(--space-lg) 0; border-bottom: 1px solid var(--gray-200); }
+    .svc-step:first-child { padding-top: 0; }
+    .svc-step:last-child { border-bottom: none; }
+    .svc-step-head { display: flex; align-items: center; gap: 12px; }
+    .svc-step-ico { width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; }
+    .svc-step-num { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); }
+    .svc-step h3 { margin-top: 10px; font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); }
+    .svc-step p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-steps-img { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 380px; box-shadow: var(--shadow-md); }
+    .svc-steps-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .svc-callus { position: absolute; left: var(--space-lg); bottom: var(--space-lg); z-index: 1; display: flex; align-items: center; gap: 12px; background: rgba(21,27,63,0.85); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-radius: var(--radius-md); padding: 12px 18px; color: var(--white); }
+    .svc-callus .material-icons { color: var(--brand-gold); }
+    .svc-callus .lbl { font-size: 0.8rem; color: rgba(255,255,255,0.8); }
+    .svc-callus .num { font-family: var(--font-heading); font-weight: 700; }
+    .svc-stats { display: flex; flex-wrap: wrap; gap: var(--space-2xl); margin-top: var(--space-lg); }
+    .svc-stat-num { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: 1.9rem; line-height: 1; }
+    .svc-stat-label { margin-top: 6px; color: var(--gray-500); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    .svc-todo { color: var(--gray-500); font-style: italic; background: rgba(255,179,0,0.08); border-left: 3px solid var(--brand-gold); padding: 10px 14px; border-radius: var(--radius-sm); margin-top: var(--space-sm); }
+    .svc-list { margin-top: var(--space-md); display: flex; flex-direction: column; gap: 10px; }
+    .svc-list-item { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); }
+    .svc-list-item .material-icons { color: var(--brand-red); flex-shrink: 0; font-size: 20px; margin-top: 2px; }
+    .svc-list-item.warn .material-icons { color: var(--brand-gold); }
+    .svc-list-item strong { color: var(--navy-500); }
+    .svc-note { margin-top: var(--space-md); color: var(--gray-500); font-size: 0.92rem; }
+    .svc-table-wrap { overflow-x: auto; margin-top: var(--space-lg); border: 1px solid var(--gray-200); border-radius: var(--radius-md); }
+    .svc-table { width: 100%; border-collapse: collapse; min-width: 460px; }
+    .svc-table th { background: var(--gradient-red); color: var(--white); text-align: left; padding: 14px 18px; font-family: var(--font-heading); font-weight: 700; }
+    .svc-table td { padding: 14px 18px; border-top: 1px solid var(--gray-200); color: var(--gray-700); }
+    .svc-table tr:nth-child(even) td { background: var(--gray-100); }
+    .svc-onum { margin-top: var(--space-md); display: flex; flex-direction: column; gap: var(--space-md); }
+    .svc-onum-item { display: flex; gap: 14px; }
+    .svc-onum-badge { flex-shrink: 0; width: 34px; height: 34px; border-radius: var(--radius-full); background: var(--brand-red); color: var(--white); display: grid; place-items: center; font-family: var(--font-heading); font-weight: 700; }
+    .svc-onum-item h3 { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.02rem; }
+    .svc-onum-item p { margin-top: 4px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-subhead { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); margin-top: var(--space-lg); margin-bottom: 4px; }
+    .svc-cta-strong { margin-top: var(--space-md); font-weight: 600; color: var(--navy-500); }
+    .svc-sub-title { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.15rem; margin-top: var(--space-xl); margin-bottom: 6px; }
+    .svc-notice { background: rgba(255,179,0,0.10); border-left: 3px solid var(--brand-gold); padding: 14px 16px; border-radius: var(--radius-sm); margin-top: var(--space-lg); color: var(--gray-700); font-size: 0.95rem; }
+    .svc-notice strong { color: var(--navy-500); }
   </style>
 </head>
 <body>
 
   <!-- ===================== NAVBAR ===================== -->
-  <nav class="navbar scrolled" id="navbar" style="background: rgba(39, 49, 111, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+  <nav class="navbar" id="navbar">
     <div class="container navbar-inner">
       <a href="index.html#hero" class="logo">
         <img class="logo-img" src="https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp" alt="Comfort One Air Conditioning" />
@@ -659,7 +796,7 @@
             <a href="comfort-club.html">Comfort Club</a>
             <a href="reviews.html">Reviews</a>
             <a href="blog.html">Blog</a>
-            <a href="hvac-faq-scottsdale-az.html">HVAC FAQ</a>
+            <a href="hvac-faq-scottsdale-az.html">FAQ</a>
           </div>
         </div>
         <div class="nav-dd">
@@ -729,10 +866,279 @@
     </div>
   </div>
 
-  <!-- ===================== PLACEHOLDER ===================== -->
-  <main style="padding-top: 140px;">
-    <div style="height: 500px; background: #ffffff;"></div>
-  </main>
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero gradient-hero">
+    <div class="container">
+      <div class="page-hero-grid">
+        <div class="page-hero-text reveal">
+          <div class="section-label gold">Cooling · AC Replacement</div>
+          <h1 class="page-hero-title">Expert air conditioning replacement near me in Scottsdale, AZ</h1>
+          <p class="page-hero-desc">We provide fast, reliable and energy-efficient air conditioning replacements with same or next day service, custom-tailored solutions, and industry-leading 10-year warranties.</p>
+          <p class="page-hero-desc" style="font-weight: 700; margin-top: var(--space-sm);">Call Comfort One Air Conditioning at <a href="tel:+16022476151" class="page-hero-phone">602-247-6151</a> for a free estimate today!</p>
+          <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+        </div>
+        <div class="page-hero-media reveal reveal-delay-1">
+          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9709.jpg" alt="The Comfort One Air Conditioning team and service vehicles" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICE LAYOUT ===================== -->
+  <section class="section-padding" style="background: var(--white);">
+    <div class="container">
+      <div class="svc-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="svc-sidebar">
+          <nav class="svc-cat" aria-label="Cooling services">
+            <div class="svc-cat-head">Cooling Services</div>
+            <div class="svc-cat-list">
+              <a href="air-conditioning-repair.html" class="svc-cat-link">Air Conditioning Repair <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="air-conditioning-installation.html" class="svc-cat-link">Air Conditioning Installation <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="air-conditioning-replacement.html" class="svc-cat-link active" aria-current="page">Air Conditioning Replacement <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="air-conditioning-maintenance.html" class="svc-cat-link">Air Conditioning Maintenance <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+            </div>
+          </nav>
+          <div class="svc-help">
+            <p class="svc-help-title">Help is just a call away — 24/7, rain or shine.</p>
+            <div class="svc-help-links">
+              <a href="#contact" class="svc-help-link"><span class="material-icons">build</span> Request a Service</a>
+              <a href="index.html#financing" class="svc-help-link"><span class="material-icons">payments</span> Financing Options</a>
+              <a href="comfort-club.html" class="svc-help-link"><span class="material-icons">workspace_premium</span> Comfort Club</a>
+            </div>
+            <div class="svc-help-contact">
+              <div class="svc-help-eyebrow">Need Help? Give Us a Call</div>
+              <a href="tel:+16022476151" class="svc-help-phone">(602) 247-6151</a>
+              <a href="mailto:office@comfort1ac.com" class="svc-help-email">office@comfort1ac.com</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- CONTENT -->
+        <div class="svc-content">
+          <div class="reveal">
+            <h2 class="svc-h2">Air conditioning replacement done right in Scottsdale, AZ</h2>
+            <p class="svc-sub">We're Comfort One Air Conditioning, your local family-owned HVAC experts offering professional air conditioning replacements in Scottsdale and surrounding areas. With over 4 decades of experience and 600+ HVAC systems installed, we understand the unique cooling needs of Arizona homes.</p>
+            <p class="svc-sub">Our team of skilled AC installers specialize in custom cooling solutions tailored to your Scottsdale, AZ home's specific requirements, ensuring optimal comfort and energy efficiency.</p>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Reasons to choose Comfort One</h2>
+            <div class="svc-checklist">
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Highly rated by our customers with 300+ 5-star reviews</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Transparent pricing with affordable financing options available</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Free and fixed price estimates for AC replacements</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Industry-leading 10-year parts &amp; 2-year labor warranty (upgradeable)</span></div>
+            </div>
+            <div class="svc-stats">
+              <div><div class="svc-stat-num">+600</div><div class="svc-stat-label">AC replacements</div></div>
+              <div><div class="svc-stat-num">+40 Years</div><div class="svc-stat-label">Of experience</div></div>
+              <div><div class="svc-stat-num">+2,750</div><div class="svc-stat-label">Happy customers</div></div>
+            </div>
+            <p class="svc-note">Don't let the Arizona heat catch you off guard. Call us at 602-247-6151 for a free estimate on your new air conditioning replacement.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Comfort One's energy-efficient air conditioning replacement</h2>
+            <p class="svc-sub">When the Scottsdale summer becomes unbearable, Comfort One Air Conditioning's comprehensive replacement services are your ticket to a cool, comfortable home. Our expert HVAC technicians, led by RSI Top Tech Tapani Ojalehto, are ready to transform your indoor climate with state-of-the-art cooling solutions.</p>
+            <p class="svc-subhead">We deliver:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Personalized system design based on your home's unique layout and cooling demands</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Energy-efficient AC unit selection to combat rising energy costs in Arizona</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Expert installation by our team of skilled, non-commissioned technicians</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Thorough ductwork evaluation and enhancement for maximum airflow and efficiency</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Smart thermostat integration for precise temperature control and energy optimization</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Post-installation performance testing to ensure your new AC operates at peak efficiency</span></div>
+            </div>
+            <p class="svc-sub">With Comfort One Air Conditioning, you're not just getting a new AC unit – you're investing in a long-term cooling solution backed by our industry-leading warranties and our commitment to your comfort.</p>
+            <p class="svc-sub">Our team, including our dedicated Office Manager Jessica Ojalehto, ensures a smooth, stress-free replacement process from start to finish.</p>
+            <p class="svc-note">Don't let another scorching Scottsdale day pass you by. Call us today at 602-247-6151 to schedule your AC replacement consultation and experience the Comfort One difference.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Why choose Comfort One for your AC replacement in Scottsdale?</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we don't just replace your AC – we provide a comprehensive cooling solution tailored to your Scottsdale home. Our holistic approach ensures you get the latest system, expertly installed, with ongoing support to keep you cool through even the hottest Arizona summers.</p>
+            <p class="svc-subhead">Here's what makes us the top choice in Scottsdale:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Rapid Response:</strong> Same or next day AC replacement to quickly restore comfort to your home</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Customized Cooling:</strong> Personalized solutions based on your home's unique layout and your specific needs</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Upfront Pricing:</strong> Transparent, fixed-price estimates with no surprises or hidden fees</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Integrity First:</strong> Our non-commissioned technicians prioritize your comfort, not sales quotas</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Ongoing Care:</strong> Comfort Club membership for priority maintenance and service</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Unmatched Protection:</strong> Industry-leading 10-year parts and 2-year labor warranty (upgradeable to 10 years)</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Family-Owned Values:</strong> Experience service from a team that treats you like family</span></div>
+            </div>
+            <p class="svc-sub">Don't compromise on your comfort with a generic AC replacement. Experience the Comfort One difference – where your cooling needs come first, and we're always here when the heat is on.</p>
+            <p class="svc-note">Ready to beat the Scottsdale heat? Call us today at 602-247-6151 to schedule your free, no-obligation estimate and take the first step towards a cooler, more comfortable home.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">How much does air conditioning replacement cost in Scottsdale, AZ?</h2>
+            <p class="svc-sub">Drawing from our experience installing over 600 HVAC systems across Scottsdale and the surrounding areas, here's what you can expect for air conditioning replacement costs:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Entry-level:</strong> $6,500</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Average:</strong> $8,500</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>High-end:</strong> $20,000</span></div>
+            </div>
+            <p class="svc-subhead">Typical price ranges for different AC system types in Scottsdale:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>New AC Split units:</strong> $6,000 – $20,000</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>New Ductless mini-split AC units:</strong> $3,500 – $14,000</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>New Packaged AC units:</strong> $5,000 – $14,000</span></div>
+            </div>
+            <p class="svc-sub">It's important to note that these are general ranges. The actual cost of your AC replacement can vary based on several factors unique to your Scottsdale home:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Home size and layout</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Desired cooling capacity</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Energy efficiency rating (SEER)</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Existing ductwork condition</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Any necessary electrical upgrades</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Additional features like smart thermostats or zoning systems</span></div>
+            </div>
+            <p class="svc-sub">We understand that replacing your AC is a significant investment. That's why we offer transparent, fixed-price estimates with no hidden fees. Our experienced team, led by Comfort Specialist Tapani Ojalehto, will assess your home's specific needs and provide a tailored solution that balances performance and cost-effectiveness.</p>
+            <p class="svc-note">Take the uncertainty out of AC replacement — contact us today. Call Comfort One Air Conditioning at 602-247-6151 for a precise, no-obligation estimate. We're committed to finding the perfect cooling solution for your Scottsdale home.</p>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">What influences AC replacement costs in Scottsdale, AZ?</h2>
+            <p class="svc-sub">When planning an AC replacement in Scottsdale, several factors can impact the overall cost. At Comfort One Air Conditioning, we believe in transparency and educating our customers. Here's what affects the price of your new cooling system:</p>
+            <div class="svc-onum">
+              <div class="svc-onum-item"><div class="svc-onum-badge">1</div><div><h3>System Size and Cooling Capacity</h3><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Larger Scottsdale homes require more powerful units, increasing costs</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Our experts will help you choose the right size to avoid over or under-cooling, ensuring optimal comfort and efficiency in Arizona's heat</span></div></div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">2</div><div><h3>Energy Efficiency Rating (SEER)</h3><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Higher SEER (Seasonal Energy Efficiency Ratio) ratings mean better efficiency but higher upfront costs</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>We'll guide you to the best balance of efficiency and budget, factoring in Scottsdale's long, hot summers for maximum long-term savings</span></div></div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">3</div><div><h3>AC System Type</h3><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Central air conditioning:</strong> Traditional option for homes with existing ductwork</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Ductless mini-split systems:</strong> Ideal for homes without ducts, for zoned cooling, garages or mother-in-law suites</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Heat pumps:</strong> Efficient option for both cooling and heating in Scottsdale's climate</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>We'll help you choose the best system based on your home's layout and your cooling needs</span></div></div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">4</div><div><h3>Brand and Quality</h3><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span>We install trusted brands known for reliability and performance in Arizona's harsh climate</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Premium brands often offer better features, efficiency, and warranties, which can be crucial for Scottsdale's intense cooling demands</span></div></div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">5</div><div><h3>Advanced Features</h3><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Single-stage:</strong> Most affordable, basic operation</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Two-stage:</strong> Better efficiency and comfort, ideal for Scottsdale's varying temperatures</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Variable-speed:</strong> Highest efficiency and comfort, perfect for maintaining consistent temperatures year-round</span></div></div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">6</div><div><h3>Existing Infrastructure</h3><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Condition of existing ductwork</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Necessary electrical upgrades</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Potential need for improved insulation to combat Scottsdale's heat</span></div></div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">7</div><div><h3>Installation Complexity</h3><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Ease of access to installation area</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Any required modifications to your home</span></div></div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">8</div><div><h3>Seasonal Factors</h3><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span>AC replacements during peak summer months may have different pricing due to high demand in Scottsdale</span></div></div></div></div>
+            </div>
+            <p class="svc-sub">At Comfort One Air Conditioning, we'll help you navigate these options to find the perfect balance of performance and value for your Scottsdale home. Our team, led by HVAC expert Tapani Ojalehto, will provide a comprehensive assessment of your home's unique cooling needs.</p>
+            <p class="svc-note">Call 602-247-6151 for a personalized consultation and transparent, fixed-price estimate tailored to your Scottsdale home's specific requirements.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Affordable AC replacement financing in Scottsdale, AZ</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we believe that every Scottsdale homeowner deserves a reliable, efficient cooling system. We understand that replacing your AC is a significant investment, which is why we offer flexible financing options to help you stay cool without breaking the bank.</p>
+            <p class="svc-subhead">Why finance your AC replacement?</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Get a top-tier, energy-efficient AC system without the upfront cost</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Spread payments over time to better manage your household budget</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Start saving on energy bills immediately with a high-efficiency system</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Enjoy a cooler home now and pay over time</span></div>
+            </div>
+            <p class="svc-sub">We've partnered with Synchrony to provide you with tailored AC replacement financing solutions that fit your unique situation.</p>
+            <p class="svc-subhead">Benefits of financing with Comfort One:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Low-cost financing options to suit various budgets</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Flexible repayment terms to fit your financial situation</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Competitive interest rates</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Quick and straightforward approval process</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Potential to improve your credit score with timely payments</span></div>
+            </div>
+            <p class="svc-subhead">Our financing process:</p>
+            <div class="svc-onum">
+              <div class="svc-onum-item"><div class="svc-onum-badge">1</div><div><p style="margin:0;color:var(--gray-700);">During your free estimate, we'll discuss financing options</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">2</div><div><p style="margin:0;color:var(--gray-700);">Choose the plan that works best for you</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">3</div><div><p style="margin:0;color:var(--gray-700);">Complete a simple application</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">4</div><div><p style="margin:0;color:var(--gray-700);">Get quick approval, often within minutes</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">5</div><div><p style="margin:0;color:var(--gray-700);">Enjoy your new AC system while making manageable payments</p></div></div>
+            </div>
+            <p class="svc-sub">Don't let financial constraints keep you sweating through another Scottsdale summer. Our financing options make it easier to get the cooling system your home needs and deserves.</p>
+            <p class="svc-note">Ready to explore how you can afford a new, efficient AC system? Call Comfort One Air Conditioning at 602-247-6151 to learn more about our flexible financing options and schedule your free estimate today.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Our AC replacement process in Scottsdale</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we're dedicated to providing you with a seamless and efficient AC replacement experience. Here's what you can expect when you choose us for your Scottsdale home:</p>
+            <div class="svc-onum">
+              <div class="svc-onum-item"><div class="svc-onum-badge">1</div><div><h3>Initial Contact</h3><p>Reach out to us at 602-247-6151 or through our website to request an AC replacement quote.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">2</div><div><h3>Scheduling Your Estimate</h3><p>Our friendly office staff, led by Office Manager Jessica Ojalehto, will arrange a convenient appointment time, carefully noting your specific situation and cooling needs.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">3</div><div><h3>In-Home Assessment</h3><p>Our RSI Top Tech and Comfort Specialist, Tapani Ojalehto or one of our lead AC installers, arrives on time for your in-home estimate. We conduct a thorough assessment of your home's layout, existing cooling system, and discuss your comfort needs and budget.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">4</div><div><h3>System Inspection</h3><p>We perform a comprehensive inspection of your current AC setup, including:</p><div class="svc-list" style="margin-top:8px;"><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Measuring static pressure</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Checking ductwork condition</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Evaluating air distribution</span></div><div class="svc-list-item"><span class="material-icons">check_circle</span><span>Assessing insulation quality (crucial for Scottsdale's heat)</span></div></div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">5</div><div><h3>Custom-Tailored Estimate</h3><p>Based on your Scottsdale home's unique characteristics, your cooling needs, and budget, we present you with a personalized solution and pricing. We provide a transparent, fixed-price estimate that provides absolute clarity on the cost.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">6</div><div><h3>Professional Installation</h3><p>Once you approve our estimate, we schedule your AC replacement – often within 24 hours if needed, ensuring you're not left sweltering in Scottsdale's heat. Our non-commissioned technicians focus on respect, cleanliness, and efficiency throughout the installation process.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">7</div><div><h3>System Testing and Education</h3><p>We rigorously test your new AC to ensure peak performance in Scottsdale's challenging climate. We then walk you through its operation and maintenance, ensuring you're comfortable with your new cooling system.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">8</div><div><h3>Follow-Up</h3><p>We don't disappear after installation. Our team checks in to ensure your new AC is meeting your expectations and keeping you cool through Scottsdale's hottest days.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">9</div><div><h3>Ongoing Support</h3><p>As a Comfort One customer, you'll have access to our priority service and maintenance through our Comfort Club membership, ensuring your new AC continues to perform optimally year after year.</p></div></div>
+            </div>
+            <p class="svc-sub">Experience the Comfort One difference – where your comfort is our priority from the first phone call to long after the installation is complete. We're not just replacing your AC; we're providing a long-term cooling solution for your Scottsdale home.</p>
+            <p class="svc-note">Ready to begin your journey to a cooler, more efficient home? Call us at 602-247-6151 to schedule your free in-home estimate with Scottsdale's cooling experts.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Our ironclad guarantees &amp; warranties</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we're not just confident in our work – we're committed to it. Our promise to Scottsdale homeowners is straightforward: “Your comfort is guaranteed, or we'll make it right!”</p>
+            <p class="svc-subhead">Our Comfort One guarantees:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>100% Satisfaction Guarantee:</strong> Your contentment is our primary goal. If any aspect of our service or your new AC system doesn't meet your expectations, we're dedicated to addressing it promptly – no questions asked.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Cleanliness Pledge:</strong> We respect your Scottsdale home as if it were our own. Our technicians will leave your space as pristine as they found it, or cleaner.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Transparent Pricing Promise:</strong> No hidden fees or last-minute surprises. We provide clear, upfront pricing before any work begins, ensuring you can make informed decisions about your AC replacement.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Honest Recommendations Only:</strong> We've built our reputation on integrity. Our non-commissioned technicians will never push unnecessary services or parts. We recommend only what's essential for your system's optimal performance and your comfort in Scottsdale's heat.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Punctuality Promise:</strong> We value your time. If we're not on time for your scheduled appointment, we'll waive our service call fee.</span></div>
+            </div>
+            <p class="svc-subhead">Our industry-leading AC replacement warranty:</p>
+            <p class="svc-sub">When you choose Comfort One for your AC replacement, you're not just getting a new cooling system – you're getting peace of mind. Our warranty coverage for new AC installations includes:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>10-Year Parts Warranty:</strong> All major components of your new AC system are covered for a full decade, protecting your investment for years to come.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>2-Year Labor Warranty:</strong> Installation labor is backed by a 2-year labor warranty, covering any issues related to the installation process.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Upgradeable Labor Warranty:</strong> For even more protection, you can upgrade your labor warranty to a full 10 years, matching the coverage on your parts.</span></div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">The Comfort One difference</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we're not just about replacing AC units – we're creating lasting relationships with our Scottsdale customers. Our goal is to exceed your expectations with every interaction, ensuring you always feel valued, heard, and most importantly, comfortable in the Arizona heat.</p>
+            <p class="svc-subhead">What sets us apart?</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Family-Owned Values:</strong> As a family-owned business, we treat every customer like a member of our own family. Our personalized approach ensures that your unique needs are always at the forefront of our service.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Local Expertise:</strong> With over 40 years of experience cooling Scottsdale homes, we understand the unique challenges of desert living. Our solutions are tailored to combat even the hottest Scottsdale summers.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Transparent Communication:</strong> From your first call to the final installation, we keep you informed every step of the way. No surprises, no hidden fees – just clear, honest communication.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Cutting-Edge Technology:</strong> We stay ahead of the curve, offering the latest in energy-efficient AC technology to keep your home cool and your energy bills low.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Ongoing Support:</strong> Our relationship doesn't end with the installation. We're here for you long-term, offering maintenance plans and prompt service to keep your AC running smoothly year after year.</span></div>
+            </div>
+            <p class="svc-sub">And let's not forget our secret weapon – Loki, our Chief Happiness Officer! This lovable pooch takes customer satisfaction very seriously. He treats our customers like family and watches over our team to ensure we're always performing our best.</p>
+            <p class="svc-sub">If we ever fall short of 100% satisfaction, Loki might just have to give us a stern talking-to (or a playful nip to keep us in line)! Rest assured, with Comfort One and Loki on the job, complete satisfaction isn't just a goal – it's a guarantee. Our team, led by Comfort Specialist Tapani Ojalehto and Office Manager Jessica Ojalehto, is committed to providing you with not just a cool home, but a truly exceptional experience.</p>
+            <p class="svc-note">Ready to experience the Comfort One difference and meet Loki? Call us at 602-247-6151 to schedule your AC replacement consultation today. Let us show you why we're Scottsdale's trusted choice for staying cool!</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Frequently asked questions</h2>
+            <div class="faq-list" style="margin-top: var(--space-lg);">
+          <div class="faq-item open">
+            <button class="faq-q" type="button">How do I know if I need a new AC or if my old one can be repaired? <span class="faq-icon">−</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Several signs indicate it might be time for an AC replacement:<ul style="margin:10px 0 0 20px;"><li>Your AC is over 10-15 years old</li><li>Frequent breakdowns and rising repair costs</li><li>Inconsistent cooling or inadequate performance in Scottsdale's heat</li><li>Significantly higher energy bills</li><li>Strange noises or odors coming from the unit</li></ul><p style="margin-top:10px;">At Comfort One, our expert technicians will perform a thorough assessment of your current system. We'll provide honest recommendations, whether it's a repair or replacement, based on what's most cost-effective for you in the long run.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">Will a new AC really save me money on my energy bills? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How long does an AC replacement take? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How do I choose the right size AC for my Scottsdale home? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">What if I can't afford a new AC right now? Do you offer financing? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer framed">
@@ -836,5 +1242,15 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
   </script>
 
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.faq-item');
+        var open = item.classList.toggle('open');
+        var icon = btn.querySelector('.faq-icon');
+        if (icon) icon.textContent = open ? '\u2212' : '+';
+      });
+    });
+  </script>
 </body>
 </html>
