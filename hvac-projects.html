@@ -169,6 +169,17 @@
     .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 135px; }
     .logo { display: flex; align-items: center; gap: 10px; }
     .logo-img { width: 125px; height: 125px; object-fit: contain; }
+    .nav-reviews { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0; margin-left: var(--space-sm); }
+    .nav-reviews-text { font-family: var(--font-heading); font-weight: 700; color: #fff; font-size: 0.82rem; line-height: 1.15; white-space: nowrap; }
+    .nav-reviews-text .g { color: var(--brand-gold); }
+    .nav-reviews img { height: 32px; width: auto; display: block; }
+    @media (min-width: 1024px) { .nav-reviews { display: none; } }  /* reviews: mobile only */
+    @media (max-width: 767px) {
+      .navbar-inner { height: 92px; }
+      .logo-img { width: 74px; height: 74px; }
+      .nav-reviews-text { font-size: 0.78rem; }
+      .nav-reviews img { height: 30px; }
+    }
     .logo-text { font: var(--font-card); color: white; font-size: 1.25rem; }
     .nav-links { display: none; align-items: center; gap: 32px; }
     @media (min-width: 1024px) { .nav-links { display: flex; } }
@@ -551,6 +562,11 @@
     <div class="container navbar-inner">
       <a href="index.html#hero" class="logo">
         <img class="logo-img" src="https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp" alt="Comfort One Air Conditioning" />
+      </a>
+
+      <a href="https://www.google.com/search?q=comfort+opne+air+conditioning+arizxona&amp;ie=UTF-8#lrd=0x872b6e5270c22e51:0xe5ffad82f971dc9f,1,,,," class="nav-reviews" target="_blank" rel="noopener" aria-label="Over 550 5-star reviews on Google">
+        <span class="nav-reviews-text">Over 550 <span class="g">5-star</span> reviews</span>
+        <img src="imag/Google-Review-Symbol-c1.webp" alt="Google 5-star reviews" />
       </a>
 
       <div class="nav-links">
