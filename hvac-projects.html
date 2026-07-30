@@ -43,6 +43,9 @@
 
       /* --- GRADIENTS --- */
       --gradient-hero: linear-gradient(140deg, #3A4690 0%, #27316F 42%, #12173A 100%);
+      --gradient-hero-home: linear-gradient(135deg, #151B3F 0%, #27316F 40%, #3E6D96 76%, #66A6BF 100%);  /* navy + light blue — heros */
+      --khaki: #AB917C;  /* earthy accent */
+      --gradient-cream-khaki: linear-gradient(135deg, #FBFAF7 0%, #F8F4EF 62%, #F2ECE4 100%);  /* very subtle cream -> khaki */
       --gradient-dark: linear-gradient(135deg, #27316F 0%, #1D2555 100%);
       --gradient-red: linear-gradient(135deg, #951F21 0%, #B8353A 100%);
       --gradient-red-deep: linear-gradient(135deg, #6E1517 0%, #951F21 55%, #B8353A 100%);
@@ -162,7 +165,7 @@
        NAVBAR
        ============================================================ */
     .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transition: background 0.3s ease, backdrop-filter 0.3s ease; }
-    .navbar.scrolled { background: rgba(39, 49, 111, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .navbar.scrolled { background: linear-gradient(100deg, rgba(21,27,63,0.96) 0%, rgba(39,49,111,0.96) 52%, rgba(62,109,150,0.96) 100%); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
     .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 135px; }
     .logo { display: flex; align-items: center; gap: 10px; }
     .logo-img { width: 125px; height: 125px; object-fit: contain; }
@@ -308,7 +311,7 @@
     /* ============================================================
        ABOUT
        ============================================================ */
-    .about { background: var(--cream); }
+    .about { background: var(--gradient-cream-khaki); }
     .about-header { display: flex; flex-direction: column; gap: var(--space-lg); max-width: 1280px; margin: 0 auto; }
     @media (min-width: 900px) { .about-header { flex-direction: row; justify-content: space-between; align-items: flex-start; gap: var(--space-2xl); } }
     .about-header-left { max-width: 620px; }
@@ -353,7 +356,7 @@
     /* ============================================================
        COMFORT CLUB (maintenance plan)
        ============================================================ */
-    .club { background: var(--gradient-dark); }
+    .club { background: var(--gradient-hero-home); }
     .club-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
     @media (min-width: 900px) { .club-grid { grid-template-columns: minmax(0, 460px) minmax(0, 660px); gap: 96px; justify-content: center; } }
     .club-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
@@ -369,7 +372,7 @@
     /* ============================================================
        FINANCING
        ============================================================ */
-    .fin { background: var(--cream); }
+    .fin { background: var(--gradient-cream-khaki); }
     .fin-header { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-md); }
     @media (min-width: 900px) { .fin-header { flex-direction: row; justify-content: space-between; align-items: flex-start; gap: var(--space-2xl); } }
     .fin-header-left { max-width: 680px; }
@@ -394,10 +397,18 @@
     /* ============================================================
        REVIEWS
        ============================================================ */
-    .reviews { background: var(--gradient-red-deep); }
+    .reviews { background: linear-gradient(135deg, #FFFFFF 0%, rgba(102, 166, 191, 0.18) 44%, rgba(102, 166, 191, 0.60) 100%); }
     .reviews-header { text-align: center; max-width: 860px; margin: 0 auto var(--space-2xl); }
-    .reviews-title { font: var(--font-section); color: var(--white); margin-top: var(--space-xs); }
-    .reviews-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-gold); margin: var(--space-lg) auto 0; }
+    .reviews-title { font: var(--font-section); color: var(--navy-700); margin-top: var(--space-xs); }
+    .reviews-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-red); margin: var(--space-lg) auto 0; }
+    .reviews .section-label { color: var(--brand-red); }
+    .reviews-masonry { column-count: 2; column-gap: var(--space-md); }
+    @media (min-width: 560px) { .reviews-masonry { column-count: 2; } }
+    @media (min-width: 900px) { .reviews-masonry { column-count: 3; } }
+    @media (min-width: 1200px) { .reviews-masonry { column-count: 4; } }
+    .reviews-masonry-item { break-inside: avoid; margin-bottom: var(--space-md); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); cursor: zoom-in; transition: transform 0.25s var(--ease-out), box-shadow 0.25s; }
+    .reviews-masonry-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .reviews-masonry-item img { display: block; width: 100%; height: auto; }
 
     .reviews-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
     @media (min-width: 768px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -410,10 +421,11 @@
     /* ============================================================
        BLOG
        ============================================================ */
-    .blog { background: var(--gradient-red-deep); }
+    .blog { background: linear-gradient(135deg, #FFFFFF 0%, rgba(171, 145, 124, 0.06) 46%, rgba(171, 145, 124, 0.24) 100%); }
     .blog-header { text-align: center; max-width: 860px; margin: 0 auto var(--space-2xl); }
-    .blog-title { font: var(--font-section); color: var(--white); margin-top: var(--space-xs); }
-    .blog-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-gold); margin: var(--space-lg) auto 0; }
+    .blog-title { font: var(--font-section); color: var(--navy-700); margin-top: var(--space-xs); }
+    .blog-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-red); margin: var(--space-lg) auto 0; }
+    .blog .section-label { color: var(--brand-red); }
     .blog-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
     @media (min-width: 768px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
     .blog-card { background: var(--white); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); transition: box-shadow 0.3s, transform 0.3s; }
@@ -478,8 +490,14 @@
     /* ============================================================
        PAGE HERO (interior) + PROJECTS
        ============================================================ */
-    .page-hero { background: var(--gradient-hero); padding: 200px 0 90px; text-align: center; }
+    .page-hero { background: var(--gradient-hero-home); padding: 200px 0 90px; text-align: center; }
     .page-hero-title { font: var(--font-display); color: var(--white); margin-top: var(--space-sm); }
+    .page-hero { text-align: left; }
+    .page-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .page-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-3xl); } }
+    .page-hero-text .section-label { justify-content: flex-start; }
+    .page-hero-media { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .page-hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
     .page-crumb { margin-top: var(--space-md); display: flex; justify-content: center; align-items: center; gap: 10px; color: rgba(255,255,255,0.7); font-family: var(--font-heading); font-weight: 500; }
     .page-crumb a { color: var(--brand-gold); }
     .page-crumb a:hover { text-decoration: underline; }
@@ -619,9 +637,15 @@
   <!-- ===================== PAGE HERO ===================== -->
   <section class="page-hero gradient-hero">
     <div class="container">
-      <div class="reveal">
-        <div class="section-label gold" style="justify-content:center;">AC Replacements, Installations &amp; Repairs</div>
-        <h1 class="page-hero-title">Our Project Portfolio</h1>
+      <div class="page-hero-grid">
+        <div class="page-hero-text reveal">
+          <div class="section-label gold">AC Replacements, Installations &amp; Repairs</div>
+          <h1 class="page-hero-title">Our Project Portfolio</h1>
+          <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+        </div>
+        <div class="page-hero-media reveal reveal-delay-1">
+          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9189.jpg" alt="Comfort One HVAC rooftop installation project" />
+        </div>
       </div>
     </div>
   </section>
@@ -731,33 +755,14 @@
         <div class="reviews-divider"></div>
       </div>
 
-      <div class="reviews-grid">
-        <div class="review-card reveal">
-          <div class="review-google">
-            <svg viewBox="0 0 48 48" width="30" height="30"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"All the reviews are accurate. Show up on time, highly communicative, great prices, locally owned, family run business. There is no better HVAC company in the valley. Comfort One is the last stop for all your air conditioning needs. They're the best."</p>
-          <p class="review-author">— Joseph M.</p>
-        </div>
-
-        <div class="review-card reveal reveal-delay-1">
-          <div class="review-google">
-            <svg viewBox="0 0 48 48" width="30" height="30"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Jon and the whole crew at Comfort One Air Conditioning are the best in the business! If you're looking for honest and trustworthy HVAC professionals look no further. Highly recommended!"</p>
-          <p class="review-author">— Nic B.</p>
-        </div>
-
-        <div class="review-card reveal reveal-delay-2">
-          <div class="review-google">
-            <svg viewBox="0 0 48 48" width="30" height="30"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.211 35.091 26.715 36 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
-          </div>
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"As a contractor myself it is reassuring to have a quality HVAC company that I can rely on to show up on time, do the job correctly and have zero issues throughout the entire process. Everyone that has been out on my jobsites has been respectful of the jobsite and any other trades. Great company! Would recommend for any job big or small!!"</p>
-          <p class="review-author">— Tyler S.</p>
-        </div>
+            <div class="reviews-masonry">
+        <div class="reviews-masonry-item reveal"><img src="imag/review-01.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/review-02.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/review-03.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/review-04.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/review-05.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/review-06.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/review-07.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -900,5 +905,25 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
   </script>
 
+  <script>
+    (function () {
+      var items = document.querySelectorAll('.reviews-masonry-item');
+      if (!items.length) return;
+      var lb = document.getElementById('lightbox');
+      if (!lb) {
+        lb = document.createElement('div');
+        lb.className = 'lightbox'; lb.id = 'lightbox';
+        lb.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img class="lightbox-img" src="" alt="" />';
+        document.body.appendChild(lb);
+      }
+      var img = lb.querySelector('.lightbox-img');
+      function openLb(el) { img.src = el.src; img.alt = el.alt; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+      items.forEach(function (it) { it.addEventListener('click', function () { var i = it.querySelector('img'); if (i) openLb(i); }); });
+      var c = lb.querySelector('.lightbox-close'); if (c) c.addEventListener('click', closeLb);
+      lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+    })();
+  </script>
 </body>
 </html>

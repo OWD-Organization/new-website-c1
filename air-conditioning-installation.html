@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Air Conditioning Installation — Comfort One Air Conditioning</title>
+  <title>Air Conditioning Installation in Scottsdale, AZ — Comfort One Air Conditioning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -43,6 +43,9 @@
 
       /* --- GRADIENTS --- */
       --gradient-hero: linear-gradient(140deg, #3A4690 0%, #27316F 42%, #12173A 100%);
+      --gradient-hero-home: linear-gradient(135deg, #151B3F 0%, #27316F 40%, #3E6D96 76%, #66A6BF 100%);  /* navy + light blue — heros */
+      --khaki: #AB917C;  /* earthy accent */
+      --gradient-cream-khaki: linear-gradient(135deg, #FBFAF7 0%, #F8F4EF 62%, #F2ECE4 100%);  /* very subtle cream -> khaki */
       --gradient-dark: linear-gradient(135deg, #27316F 0%, #1D2555 100%);
       --gradient-red: linear-gradient(135deg, #951F21 0%, #B8353A 100%);
       --gradient-red-deep: linear-gradient(135deg, #6E1517 0%, #951F21 55%, #B8353A 100%);
@@ -162,7 +165,7 @@
        NAVBAR
        ============================================================ */
     .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transition: background 0.3s ease, backdrop-filter 0.3s ease; }
-    .navbar.scrolled { background: rgba(39, 49, 111, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .navbar.scrolled { background: linear-gradient(100deg, rgba(21,27,63,0.96) 0%, rgba(39,49,111,0.96) 52%, rgba(62,109,150,0.96) 100%); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
     .navbar-inner { display: flex; align-items: center; justify-content: space-between; height: 135px; }
     .logo { display: flex; align-items: center; gap: 10px; }
     .logo-img { width: 125px; height: 125px; object-fit: contain; }
@@ -308,7 +311,7 @@
     /* ============================================================
        ABOUT
        ============================================================ */
-    .about { background: var(--cream); }
+    .about { background: var(--gradient-cream-khaki); }
     .about-header { display: flex; flex-direction: column; gap: var(--space-lg); max-width: 1280px; margin: 0 auto; }
     @media (min-width: 900px) { .about-header { flex-direction: row; justify-content: space-between; align-items: flex-start; gap: var(--space-2xl); } }
     .about-header-left { max-width: 620px; }
@@ -353,7 +356,7 @@
     /* ============================================================
        COMFORT CLUB (maintenance plan)
        ============================================================ */
-    .club { background: var(--gradient-dark); }
+    .club { background: var(--gradient-hero-home); }
     .club-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
     @media (min-width: 900px) { .club-grid { grid-template-columns: minmax(0, 460px) minmax(0, 660px); gap: 96px; justify-content: center; } }
     .club-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
@@ -369,7 +372,7 @@
     /* ============================================================
        FINANCING
        ============================================================ */
-    .fin { background: var(--cream); }
+    .fin { background: var(--gradient-cream-khaki); }
     .fin-header { max-width: 1280px; margin: 0 auto; display: flex; flex-direction: column; gap: var(--space-md); }
     @media (min-width: 900px) { .fin-header { flex-direction: row; justify-content: space-between; align-items: flex-start; gap: var(--space-2xl); } }
     .fin-header-left { max-width: 680px; }
@@ -394,12 +397,20 @@
     /* ============================================================
        REVIEWS
        ============================================================ */
-    .reviews { background: var(--gradient-red-deep); }
-    .reviews.reviews-light { background: var(--white); }
+    .reviews { background: linear-gradient(135deg, #FFFFFF 0%, rgba(102, 166, 191, 0.18) 44%, rgba(102, 166, 191, 0.60) 100%); }
+    .reviews.reviews-light { background: linear-gradient(135deg, #FFFFFF 0%, rgba(102, 166, 191, 0.18) 44%, rgba(102, 166, 191, 0.60) 100%); }
     .reviews-light .reviews-title { color: var(--navy-500); }
     .reviews-header { text-align: center; max-width: 860px; margin: 0 auto var(--space-2xl); }
-    .reviews-title { font: var(--font-section); color: var(--white); margin-top: var(--space-xs); }
-    .reviews-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-gold); margin: var(--space-lg) auto 0; }
+    .reviews-title { font: var(--font-section); color: var(--navy-700); margin-top: var(--space-xs); }
+    .reviews-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-red); margin: var(--space-lg) auto 0; }
+    .reviews .section-label { color: var(--brand-red); }
+    .reviews-masonry { column-count: 2; column-gap: var(--space-md); }
+    @media (min-width: 560px) { .reviews-masonry { column-count: 2; } }
+    @media (min-width: 900px) { .reviews-masonry { column-count: 3; } }
+    @media (min-width: 1200px) { .reviews-masonry { column-count: 4; } }
+    .reviews-masonry-item { break-inside: avoid; margin-bottom: var(--space-md); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); cursor: zoom-in; transition: transform 0.25s var(--ease-out), box-shadow 0.25s; }
+    .reviews-masonry-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .reviews-masonry-item img { display: block; width: 100%; height: auto; }
 
     .reviews-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
     @media (min-width: 768px) { .reviews-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -412,10 +423,11 @@
     /* ============================================================
        BLOG
        ============================================================ */
-    .blog { background: var(--gradient-red-deep); }
+    .blog { background: linear-gradient(135deg, #FFFFFF 0%, rgba(171, 145, 124, 0.06) 46%, rgba(171, 145, 124, 0.24) 100%); }
     .blog-header { text-align: center; max-width: 860px; margin: 0 auto var(--space-2xl); }
-    .blog-title { font: var(--font-section); color: var(--white); margin-top: var(--space-xs); }
-    .blog-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-gold); margin: var(--space-lg) auto 0; }
+    .blog-title { font: var(--font-section); color: var(--navy-700); margin-top: var(--space-xs); }
+    .blog-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-red); margin: var(--space-lg) auto 0; }
+    .blog .section-label { color: var(--brand-red); }
     .blog-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
     @media (min-width: 768px) { .blog-grid { grid-template-columns: repeat(3, 1fr); } }
     .blog-card { background: var(--white); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-sm); transition: box-shadow 0.3s, transform 0.3s; }
@@ -480,7 +492,15 @@
     /* ============================================================
        PAGE HERO (interior) + PROJECTS
        ============================================================ */
-    .page-hero { background: var(--gradient-hero); padding: 200px 0 90px; text-align: center; }
+    .page-hero { background: var(--gradient-hero-home); padding: 200px 0 90px; text-align: center; }
+    .page-hero { text-align: left; }
+    .page-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .page-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-3xl); } }
+    .page-hero-text .section-label { justify-content: flex-start; }
+    .page-hero-text .page-hero-desc { margin-left: 0; margin-right: 0; }
+    .page-hero-text .page-hero-crumb { justify-content: flex-start; }
+    .page-hero-media { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .page-hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
     .page-hero-title { font: var(--font-display); color: var(--white); margin-top: var(--space-sm); }
     .page-hero-desc { max-width: 780px; margin: var(--space-lg) auto 0; color: rgba(255,255,255,0.82); font-size: 1.0625rem; line-height: 1.7; }
     .page-hero-phone { color: var(--brand-gold); font-weight: 700; }
@@ -625,12 +645,141 @@
     .rv-ontime a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
     .rv-archer { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
     .rv-archer img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; }
+
+    /* ============================================================
+       FAQ ACCORDION
+       ============================================================ */
+    .faq-wrap { max-width: 980px; }
+    .faq-block { margin-bottom: var(--space-3xl); }
+    .faq-block:last-child { margin-bottom: 0; }
+    .faq-block-title { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: clamp(1.25rem, 2.2vw, 1.6rem); text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: var(--space-lg); }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: rgba(255, 179, 0, 0.07); border: 1px solid rgba(255, 179, 0, 0.35); border-radius: var(--radius-md); overflow: hidden; transition: border-color 0.3s, background 0.3s; }
+    .faq-item.open { background: rgba(255, 179, 0, 0.12); border-color: var(--brand-gold); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; cursor: pointer; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); line-height: 1.35; }
+    .faq-q:hover { color: var(--brand-red); }
+    .faq-icon { flex-shrink: 0; width: 28px; height: 28px; display: grid; place-items: center; color: var(--brand-red); font-size: 1.6rem; font-weight: 400; line-height: 1; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-a { max-height: 640px; }
+    .faq-a-inner { padding: 0 22px 20px; color: var(--gray-700); }
+
+    /* ============================================================
+       SERVICE PAGE
+       ============================================================ */
+    .page-hero-crumb { margin-top: var(--space-md); display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; font-weight: 600; color: rgba(255,255,255,0.75); }
+    .page-hero-crumb a { color: var(--brand-gold); text-decoration: none; }
+    .page-hero-crumb a:hover { text-decoration: underline; }
+    .page-hero-crumb .current { color: var(--white); }
+
+    .svc-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); }
+    @media (min-width: 992px) { .svc-layout { grid-template-columns: 330px 1fr; gap: var(--space-3xl); align-items: start; } }
+
+    .svc-sidebar { display: flex; flex-direction: column; gap: var(--space-xl); }
+    @media (min-width: 992px) { .svc-sidebar { position: sticky; top: 150px; } }
+    .svc-cat { border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--white); }
+    .svc-cat-head { background: var(--gradient-red); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; padding: 18px 22px; }
+    .svc-cat-list { display: flex; flex-direction: column; }
+    .svc-cat-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 15px 22px; color: var(--navy-500); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gray-100); transition: background 0.25s, color 0.25s; }
+    .svc-cat-link:last-child { border-bottom: none; }
+    .svc-cat-ico { width: 30px; height: 30px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; flex-shrink: 0; transition: background 0.25s, color 0.25s; }
+    .svc-cat-ico .material-icons { font-size: 18px; }
+    .svc-cat-link:hover, .svc-cat-link.active { background: var(--gray-100); color: var(--brand-red); }
+    .svc-cat-link.active .svc-cat-ico, .svc-cat-link:hover .svc-cat-ico { background: var(--brand-red); color: var(--white); transform: translateX(3px); }
+    .svc-cat-ico { transition: background 0.25s, color 0.25s, transform 0.25s; }
+
+    .svc-help { background: var(--gradient-hero); color: var(--white); border-radius: var(--radius-lg); padding: var(--space-xl); box-shadow: var(--shadow-md); }
+    .svc-help-brand { display: flex; align-items: center; gap: 10px; }
+    .svc-help-brand img { height: 46px; width: auto; }
+    .svc-help-title { font-family: var(--font-heading); font-weight: 600; font-size: 1.05rem; line-height: 1.4; }
+    .svc-help-links { margin-top: var(--space-lg); display: flex; flex-direction: column; gap: 10px; }
+    .svc-help-link { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-md); color: var(--white); text-decoration: none; font-weight: 600; transition: background 0.25s; }
+    .svc-help-link:hover { background: rgba(255,255,255,0.18); }
+    .svc-help-link .material-icons { color: var(--brand-gold); font-size: 20px; }
+    .svc-help-contact { margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid rgba(255,255,255,0.18); }
+    .svc-help-eyebrow { color: var(--brand-gold); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .svc-help-phone { display: block; margin-top: 6px; font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; color: var(--white); text-decoration: none; }
+    .svc-help-email { display: block; margin-top: 8px; color: rgba(255,255,255,0.85); text-decoration: none; }
+    .svc-help-email:hover { color: var(--white); }
+
+    .svc-content { display: flex; flex-direction: column; gap: var(--space-2xl); }
+    .svc-hero-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+    .svc-hero-img img { display: block; width: 100%; height: 560px; object-fit: cover; object-position: center; }
+    .svc-lead p { color: var(--gray-700); }
+    .svc-lead p + p { margin-top: var(--space-md); }
+    .svc-h2 { font: var(--font-section); color: var(--navy-500); }
+    .svc-sub { margin-top: var(--space-sm); color: var(--gray-700); }
+
+    .svc-features { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-lg); }
+    @media (min-width: 600px) { .svc-features { grid-template-columns: 1fr 1fr; } }
+    .svc-feature { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: var(--space-lg); box-shadow: var(--shadow-sm); }
+    .svc-feature-ico { width: 46px; height: 46px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; margin-bottom: 12px; }
+    .svc-feature-ico .material-icons { font-size: 24px; }
+    .svc-feature h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); }
+    .svc-feature p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-cta-line { text-align: center; color: var(--gray-700); margin-top: var(--space-lg); }
+    .svc-cta-line a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
+
+    .svc-checklist { display: flex; flex-direction: column; gap: 12px; margin-top: var(--space-lg); }
+    .svc-check { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); }
+    .svc-check .material-icons { color: #1FA35B; flex-shrink: 0; }
+
+    .svc-imgcards { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+    @media (min-width: 600px) { .svc-imgcards { grid-template-columns: 1fr 1fr; } }
+    .svc-imgcard { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 260px; box-shadow: var(--shadow-md); }
+    .svc-imgcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .svc-imgcard-overlay { position: relative; z-index: 1; height: 100%; min-height: 260px; display: flex; flex-direction: column; justify-content: flex-end; padding: var(--space-lg); background: linear-gradient(to top, rgba(21,27,63,0.92) 0%, rgba(21,27,63,0.15) 70%); color: var(--white); }
+    .svc-imgcard-ico { color: var(--brand-gold); margin-bottom: 8px; }
+    .svc-imgcard h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--white); }
+    .svc-imgcard p { margin-top: 6px; font-size: 0.92rem; color: rgba(255,255,255,0.85); }
+
+    .svc-steps-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: stretch; margin-top: var(--space-lg); }
+    @media (min-width: 900px) { .svc-steps-grid { grid-template-columns: 1fr 1fr; } }
+    .svc-steps-list { display: flex; flex-direction: column; }
+    .svc-step { padding: var(--space-lg) 0; border-bottom: 1px solid var(--gray-200); }
+    .svc-step:first-child { padding-top: 0; }
+    .svc-step:last-child { border-bottom: none; }
+    .svc-step-head { display: flex; align-items: center; gap: 12px; }
+    .svc-step-ico { width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; }
+    .svc-step-num { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); }
+    .svc-step h3 { margin-top: 10px; font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); }
+    .svc-step p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-steps-img { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 380px; box-shadow: var(--shadow-md); }
+    .svc-steps-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .svc-callus { position: absolute; left: var(--space-lg); bottom: var(--space-lg); z-index: 1; display: flex; align-items: center; gap: 12px; background: rgba(21,27,63,0.85); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-radius: var(--radius-md); padding: 12px 18px; color: var(--white); }
+    .svc-callus .material-icons { color: var(--brand-gold); }
+    .svc-callus .lbl { font-size: 0.8rem; color: rgba(255,255,255,0.8); }
+    .svc-callus .num { font-family: var(--font-heading); font-weight: 700; }
+    .svc-stats { display: flex; flex-wrap: wrap; gap: var(--space-2xl); margin-top: var(--space-lg); }
+    .svc-stat-num { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: 1.9rem; line-height: 1; }
+    .svc-stat-label { margin-top: 6px; color: var(--gray-500); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    .svc-todo { color: var(--gray-500); font-style: italic; background: rgba(255,179,0,0.08); border-left: 3px solid var(--brand-gold); padding: 10px 14px; border-radius: var(--radius-sm); margin-top: var(--space-sm); }
+    .svc-list { margin-top: var(--space-md); display: flex; flex-direction: column; gap: 10px; }
+    .svc-list-item { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); }
+    .svc-list-item .material-icons { color: var(--brand-red); flex-shrink: 0; font-size: 20px; margin-top: 2px; }
+    .svc-list-item.warn .material-icons { color: var(--brand-gold); }
+    .svc-list-item strong { color: var(--navy-500); }
+    .svc-note { margin-top: var(--space-md); color: var(--gray-500); font-size: 0.92rem; }
+    .svc-table-wrap { overflow-x: auto; margin-top: var(--space-lg); border: 1px solid var(--gray-200); border-radius: var(--radius-md); }
+    .svc-table { width: 100%; border-collapse: collapse; min-width: 460px; }
+    .svc-table th { background: var(--gradient-red); color: var(--white); text-align: left; padding: 14px 18px; font-family: var(--font-heading); font-weight: 700; }
+    .svc-table td { padding: 14px 18px; border-top: 1px solid var(--gray-200); color: var(--gray-700); }
+    .svc-table tr:nth-child(even) td { background: var(--gray-100); }
+    .svc-onum { margin-top: var(--space-md); display: flex; flex-direction: column; gap: var(--space-md); }
+    .svc-onum-item { display: flex; gap: 14px; }
+    .svc-onum-badge { flex-shrink: 0; width: 34px; height: 34px; border-radius: var(--radius-full); background: var(--brand-red); color: var(--white); display: grid; place-items: center; font-family: var(--font-heading); font-weight: 700; }
+    .svc-onum-item h3 { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.02rem; }
+    .svc-onum-item p { margin-top: 4px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-subhead { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); margin-top: var(--space-lg); margin-bottom: 4px; }
+    .svc-cta-strong { margin-top: var(--space-md); font-weight: 600; color: var(--navy-500); }
+    .svc-sub-title { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.15rem; margin-top: var(--space-xl); margin-bottom: 6px; }
+    .svc-notice { background: rgba(255,179,0,0.10); border-left: 3px solid var(--brand-gold); padding: 14px 16px; border-radius: var(--radius-sm); margin-top: var(--space-lg); color: var(--gray-700); font-size: 0.95rem; }
+    .svc-notice strong { color: var(--navy-500); }
   </style>
 </head>
 <body>
 
   <!-- ===================== NAVBAR ===================== -->
-  <nav class="navbar scrolled" id="navbar" style="background: rgba(39, 49, 111, 0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+  <nav class="navbar" id="navbar">
     <div class="container navbar-inner">
       <a href="index.html#hero" class="logo">
         <img class="logo-img" src="https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp" alt="Comfort One Air Conditioning" />
@@ -647,7 +796,7 @@
             <a href="comfort-club.html">Comfort Club</a>
             <a href="reviews.html">Reviews</a>
             <a href="blog.html">Blog</a>
-            <a href="hvac-faq-scottsdale-az.html">HVAC FAQ</a>
+            <a href="hvac-faq-scottsdale-az.html">FAQ</a>
           </div>
         </div>
         <div class="nav-dd">
@@ -717,10 +866,156 @@
     </div>
   </div>
 
-  <!-- ===================== PLACEHOLDER ===================== -->
-  <main style="padding-top: 140px;">
-    <div style="height: 500px; background: #ffffff;"></div>
-  </main>
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="page-hero gradient-hero">
+    <div class="container">
+      <div class="page-hero-grid">
+        <div class="page-hero-text reveal">
+          <div class="section-label gold">Cooling · AC Installation</div>
+          <h1 class="page-hero-title">AC installation in Scottsdale, AZ — done right the first time</h1>
+          <p class="page-hero-desc">When Scottsdale temps push past 110 degrees, a poorly installed AC system is not just uncomfortable, it is a real problem. We believe the most important day in the life of your system is the day it is installed. Get it right the first time, and you stay cool for years.</p>
+          <p class="page-hero-desc" style="font-weight: 700; margin-top: var(--space-sm);">Call Comfort One Air Conditioning at <a href="tel:+16022476151" class="page-hero-phone">602-247-6151</a> for a free estimate today!</p>
+          <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+        </div>
+        <div class="page-hero-media reveal reveal-delay-1">
+          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9709.jpg" alt="The Comfort One Air Conditioning team and service vehicles" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICE LAYOUT ===================== -->
+  <section class="section-padding" style="background: var(--white);">
+    <div class="container">
+      <div class="svc-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="svc-sidebar">
+          <nav class="svc-cat" aria-label="Cooling services">
+            <div class="svc-cat-head">Cooling Services</div>
+            <div class="svc-cat-list">
+              <a href="air-conditioning-repair.html" class="svc-cat-link">Air Conditioning Repair <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="air-conditioning-installation.html" class="svc-cat-link active" aria-current="page">Air Conditioning Installation <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="air-conditioning-replacement.html" class="svc-cat-link">Air Conditioning Replacement <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="air-conditioning-maintenance.html" class="svc-cat-link">Air Conditioning Maintenance <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+            </div>
+          </nav>
+          <div class="svc-help">
+            <p class="svc-help-title">Help is just a call away — 24/7, rain or shine.</p>
+            <div class="svc-help-links">
+              <a href="#contact" class="svc-help-link"><span class="material-icons">build</span> Request a Service</a>
+              <a href="index.html#financing" class="svc-help-link"><span class="material-icons">payments</span> Financing Options</a>
+              <a href="comfort-club.html" class="svc-help-link"><span class="material-icons">workspace_premium</span> Comfort Club</a>
+            </div>
+            <div class="svc-help-contact">
+              <div class="svc-help-eyebrow">Need Help? Give Us a Call</div>
+              <a href="tel:+16022476151" class="svc-help-phone">(602) 247-6151</a>
+              <a href="mailto:office@comfort1ac.com" class="svc-help-email">office@comfort1ac.com</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- CONTENT -->
+        <div class="svc-content">
+          <div class="reveal">
+            <h2 class="svc-h2">Scottsdale's summer heat demands more than an average AC installation</h2>
+            <p class="svc-sub">A 4,000-square-foot home in Tatum Ranch or Dove Valley has very different cooling needs than a standard Phoenix build. High ceilings, open floor plans, large windows, and desert sun exposure all affect how your system needs to be sized and positioned. Most HVAC companies use a generic formula and call it a day.</p>
+            <p class="svc-sub">Comfort One takes a different approach. Every installation starts with a full assessment of your home's layout, insulation, and sun exposure. We size the system to match your home — not the other way around. That is what proper air conditioning installation looks like.</p>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Reasons to choose Comfort One</h2>
+            <div class="svc-checklist">
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Highly rated by our customers with 300+ 5-Star reviews</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Fair pricing with affordable financing options available</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Free and fixed price estimates for AC installations</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>10 year parts &amp; labor warranties</span></div>
+            </div>
+            <div class="svc-stats">
+              <div><div class="svc-stat-num">+600</div><div class="svc-stat-label">AC installations</div></div>
+              <div><div class="svc-stat-num">+40 Years</div><div class="svc-stat-label">Of experience</div></div>
+              <div><div class="svc-stat-num">+2,750</div><div class="svc-stat-label">Happy customers</div></div>
+            </div>
+            <p class="svc-note">Don't let the Arizona heat catch you off guard. Call us at 602-247-6151 for a free estimate on your new AC installation.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Our AC installation services</h2>
+            <p class="svc-sub">We install all major types of air conditioning systems for residential homes across the North Scottsdale area. Here is what we offer:</p>
+            <h3 class="svc-sub-title">Central Air Conditioning Installation</h3>
+            <p class="svc-sub">Central air is the most common and effective solution for large Scottsdale homes. It delivers consistent, whole-home cooling through your existing ductwork. We install premium, energy-efficient central AC systems sized specifically for your home's square footage and layout. Proper sizing is critical — an oversized unit short-cycles, wastes energy, and fails early. An undersized unit runs constantly and still can't keep up on the hottest days.</p>
+            <h3 class="svc-sub-title">Ductless Mini Split Installation in Scottsdale</h3>
+            <p class="svc-sub">Ductless mini split systems are the best solution for casitas, home additions, garage conversions, and rooms that your central system just does not reach. They are also perfect for older homes in Carefree or Cave Creek that do not have existing ductwork. We install ductless systems that let you control each zone independently, so no one is arguing over the thermostat.</p>
+            <h3 class="svc-sub-title">Heat Pump Installation</h3>
+            <p class="svc-sub">Heat pumps are an increasingly popular choice in Scottsdale because they handle both cooling and heating in a single system. They are highly-efficient and a great fit for homeowners who want to reduce utility bills without sacrificing comfort. We help you determine whether a heat pump is the right choice for your home and install it to manufacturer specs.</p>
+            <h3 class="svc-sub-title">Smart Thermostat &amp; System Add-Ons</h3>
+            <p class="svc-sub">Every new installation can be paired with a smart thermostat for better control and lower energy bills. We also offer whole-home air purifiers and dehumidifiers that connect to your new system. Ask us about available add-ons when you book your free estimate.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">What makes installation day different at Comfort One</h2>
+            <p class="svc-sub">Most HVAC companies send a crew, swap out the equipment, and leave. We do things differently. Here is what to expect when Comfort One handles your air conditioning installation in Scottsdale:</p>
+            <div class="svc-onum">
+              <div class="svc-onum-item"><div class="svc-onum-badge">1</div><div><h3>Step 1: Custom Load Calculation for Your Home</h3><p>Before we recommend any system, we calculate the cooling load your home actually requires. We look at square footage, ceiling height, insulation quality, window placement, and sun exposure. This step is what separates a proper installation from a guess.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">2</div><div><h3>Step 2: Right-Sized System, Installed by Commission-Free Technicians</h3><p>Our technicians do not earn a commission on the equipment they install. That means they are focused on one thing: installing the right system for your home. No upsells, no pressure, no unnecessary add-ons. Just quality work by experienced professionals who take pride in getting it right.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">3</div><div><h3>Step 3: Full System Test &amp; Homeowner Walkthrough Before We Leave</h3><p>When the installation is complete, we run a full startup test to confirm the system is working properly. We check airflow, thermostat calibration, refrigerant levels, and electrical connections. Then we walk you through how to operate your new system, what to expect in the first few weeks, and how to get the most out of your warranty.</p></div></div>
+            </div>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">How much does AC installation cost in Scottsdale, AZ?</h2>
+            <p class="svc-sub">Based on our experience installing over 600 AC systems in Scottsdale, Arizona, average costs are:</p>
+            <div class="svc-list">
+            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Lowest:</strong> $3,000</span></div>
+            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Average:</strong> $12,000</span></div>
+            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Highest:</strong> $24,000</span></div>
+            </div>
+            <p class="svc-subhead">Typical price ranges for different AC types:</p>
+            <div class="svc-list">
+            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>New AC Split units:</strong> $7,000 – $20,000</span></div>
+            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>New Ductless mini split units:</strong> $3,000 – $16,000</span></div>
+            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>New Packaged AC units:</strong> $6,000 – $18,000</span></div>
+            </div>
+            <p class="svc-note">For a precise estimate tailored to your home's specific needs, call Comfort One Air Conditioning at 602-247-6151. We offer transparent, fixed-price estimates with no hidden fees.</p>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">What affects the cost of air conditioning installation?</h2>
+            <p class="svc-sub">When considering a new AC installation in Scottsdale, several factors influence the overall cost:</p>
+            <div class="svc-onum">
+              <div class="svc-onum-item"><div class="svc-onum-badge">1</div><div><h3>System Size and Capacity</h3>
+                <div class="svc-list" style="margin-top:8px;">
+                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Larger homes require more powerful units, increasing costs</span></div>
+                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>We'll help you choose the right size to avoid over or under-cooling</span></div>
+                </div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">2</div><div><h3>Energy Efficiency Rating (SEER)</h3>
+                <div class="svc-list" style="margin-top:8px;">
+                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Higher SEER ratings mean better efficiency but higher upfront costs</span></div>
+                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>We will guide you to the best balance of efficiency and budget, making sure your system refinances itself</span></div>
+                </div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">3</div><div><h3>Brand and Quality</h3>
+                <div class="svc-list" style="margin-top:8px;">
+                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>We install trusted brands like Rheem, Trane, Midea, Bosch, Grandaire and other manufactures</span></div>
+                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Premium brands often offer better reliability, features and warranties</span></div>
+                </div></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">4</div><div><h3>Compressor Technology</h3>
+                <div class="svc-list" style="margin-top:8px;">
+                <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Single-stage:</strong> Most affordable, basic operation</span></div>
+                <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Two-stage:</strong> Better efficiency and comfort, mid-range price</span></div>
+                <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Variable-speed:</strong> Highest efficiency and comfort, premium price</span></div>
+                </div></div></div>
+            </div>
+            <p class="svc-note">At Comfort One Air Conditioning, we'll help you navigate these options to find the perfect balance of performance and value. Call 602-247-6151 for a personalized consultation.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer framed">
@@ -824,5 +1119,15 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
   </script>
 
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.faq-item');
+        var open = item.classList.toggle('open');
+        var icon = btn.querySelector('.faq-icon');
+        if (icon) icon.textContent = open ? '\u2212' : '+';
+      });
+    });
+  </script>
 </body>
 </html>
