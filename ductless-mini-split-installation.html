@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meet the Team — Comfort One</title>
+  <title>Ductless Mini Split Installation in Scottsdale, AZ — Comfort One Air Conditioning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -409,6 +409,8 @@
        REVIEWS
        ============================================================ */
     .reviews { background: linear-gradient(135deg, #FFFFFF 0%, rgba(102, 166, 191, 0.18) 44%, rgba(102, 166, 191, 0.60) 100%); }
+    .reviews.reviews-light { background: linear-gradient(135deg, #FFFFFF 0%, rgba(102, 166, 191, 0.18) 44%, rgba(102, 166, 191, 0.60) 100%); }
+    .reviews-light .reviews-title { color: var(--navy-500); }
     .reviews-header { text-align: center; max-width: 860px; margin: 0 auto var(--space-2xl); }
     .reviews-title { font: var(--font-section); color: var(--navy-700); margin-top: var(--space-xs); }
     .reviews-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-red); margin: var(--space-lg) auto 0; }
@@ -507,6 +509,7 @@
     @media (min-width: 900px) { .page-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-3xl); } }
     .page-hero-text .section-label { justify-content: flex-start; }
     .page-hero-text .page-hero-desc { margin-left: 0; margin-right: 0; }
+    .page-hero-text .page-hero-crumb { justify-content: flex-start; }
     .page-hero-media { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
     .page-hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
     .page-hero-right { display: flex; flex-direction: column; }
@@ -586,6 +589,236 @@
     .collage-item:hover::after { opacity: 1; transform: scale(1); }
     .collage-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
     .collage-item:hover img { transform: scale(1.05); }
+
+    /* ============================================================
+       ABOUT PAGE
+       ============================================================ */
+    .abt-intro { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); }
+    @media (min-width: 900px) { .abt-intro { grid-template-columns: 1.5fr 1fr; gap: var(--space-3xl); align-items: start; } }
+    .abt-title { font: var(--font-section); color: var(--navy-500); }
+    .abt-intro-text { margin-top: var(--space-lg); }
+    .abt-intro-text p { color: var(--gray-700); }
+    .abt-intro-text p + p { margin-top: var(--space-md); }
+    .abt-accent { color: var(--brand-red); font-weight: 600; }
+    .abt-quote { background: var(--gray-100); border-left: 4px solid var(--brand-red); border-radius: var(--radius-md); padding: var(--space-lg); }
+    .abt-quote p { color: var(--navy-500); font-weight: 600; line-height: 1.7; font-size: 0.95rem; }
+    .abt-quote cite { display: block; margin-top: var(--space-md); color: var(--brand-red); font-weight: 700; font-style: normal; font-family: var(--font-heading); }
+
+    .abt-msg { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .abt-msg { grid-template-columns: 0.85fr 1.15fr; gap: var(--space-3xl); } }
+    .abt-msg-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .abt-msg-img img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4; }
+    .abt-msg-title { font: var(--font-section); color: var(--navy-500); }
+    .abt-msg-body { margin-top: var(--space-md); }
+    .abt-msg-body p { color: var(--gray-700); }
+    .abt-msg-body p + p { margin-top: var(--space-md); }
+    .abt-msg-body strong { color: var(--navy-500); }
+    .abt-goals { margin: var(--space-md) 0; padding-left: var(--space-lg); }
+    .abt-goals li { color: var(--gray-700); list-style: disc; margin-bottom: 6px; }
+    .abt-slogan { font-style: italic; color: var(--navy-500); font-weight: 600; }
+
+    .abt-guarantee { background: var(--gradient-dark); }
+    .abt-guar-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .abt-guar-grid { grid-template-columns: 1.1fr 0.9fr; gap: var(--space-3xl); } }
+    .abt-guar-title { font: var(--font-section); color: var(--white); margin-top: var(--space-xs); }
+    .abt-guar-body { margin-top: var(--space-lg); }
+    .abt-guar-body p { color: rgba(255,255,255,0.8); }
+    .abt-guar-body p + p { margin-top: var(--space-md); }
+    .abt-guar-body strong { color: var(--white); }
+    .abt-guar-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .abt-guar-img img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4; }
+
+    /* ============================================================
+       REVIEWS PAGE
+       ============================================================ */
+    .rv-intro-head { text-align: center; max-width: 840px; margin: 0 auto; }
+    .rv-intro-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .rv-intro-lead { margin-top: var(--space-md); color: var(--gray-700); }
+    .rv-cards { margin: var(--space-2xl) auto 0; display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+    @media (min-width: 560px) { .rv-cards { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1000px) { .rv-cards { grid-template-columns: repeat(5, 1fr); } }
+    .rv-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-lg) var(--space-md); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .rv-card-ico { width: 60px; height: 60px; border-radius: var(--radius-full); display: grid; place-items: center; margin-bottom: var(--space-md); background: var(--red-050); color: var(--brand-red); }
+    .rv-card-ico .material-icons { font-size: 30px; }
+    .rv-card p { color: var(--gray-700); font-size: 0.95rem; line-height: 1.5; }
+    .rv-card strong { color: var(--navy-500); font-weight: 700; }
+    .rv-closing { max-width: 820px; margin: 0 auto; text-align: center; }
+    .rv-closing p { color: var(--gray-700); }
+    .rv-closing .btn-primary { margin-top: var(--space-lg); }
+
+    .rv-reasons-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .rv-reasons-grid { grid-template-columns: 1.1fr 0.9fr; gap: var(--space-3xl); } }
+    .rv-reasons-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .rv-reason-list { margin-top: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-md); }
+    .rv-reason { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); font-weight: 500; }
+    .rv-reason .material-icons { color: #1FA35B; font-size: 22px; flex-shrink: 0; }
+    .rv-story-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .rv-story-grid { grid-template-columns: 0.9fr 1.1fr; gap: var(--space-3xl); } }
+    .rv-story-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .rv-story-img img { display: block; width: 100%; height: 500px; object-fit: cover; }
+    .rv-story-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .rv-story-grid p { margin-top: var(--space-md); color: var(--gray-700); }
+    .rv-ontime { margin-top: var(--space-lg); color: var(--gray-700); }
+    .rv-ontime a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
+    .rv-archer { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .rv-archer img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; }
+
+    /* ============================================================
+       FAQ ACCORDION
+       ============================================================ */
+    .faq-wrap { max-width: 980px; }
+    .faq-block { margin-bottom: var(--space-3xl); }
+    .faq-block:last-child { margin-bottom: 0; }
+    .faq-block-title { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: clamp(1.25rem, 2.2vw, 1.6rem); text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: var(--space-lg); }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: rgba(255, 179, 0, 0.07); border: 1px solid rgba(255, 179, 0, 0.35); border-radius: var(--radius-md); overflow: hidden; transition: border-color 0.3s, background 0.3s; }
+    .faq-item.open { background: rgba(255, 179, 0, 0.12); border-color: var(--brand-gold); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; cursor: pointer; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); line-height: 1.35; }
+    .faq-q:hover { color: var(--brand-red); }
+    .faq-icon { flex-shrink: 0; width: 28px; height: 28px; display: grid; place-items: center; color: var(--brand-red); font-size: 1.6rem; font-weight: 400; line-height: 1; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-a { max-height: 640px; }
+    .faq-a-inner { padding: 0 22px 20px; color: var(--gray-700); }
+
+    /* ============================================================
+       SERVICE PAGE
+       ============================================================ */
+    .page-hero-crumb { margin-top: var(--space-md); display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; font-weight: 600; color: rgba(255,255,255,0.75); }
+    .page-hero-crumb a { color: var(--brand-gold); text-decoration: none; }
+    .page-hero-crumb a:hover { text-decoration: underline; }
+    .page-hero-crumb .current { color: var(--white); }
+
+    .svc-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); }
+    @media (min-width: 992px) { .svc-layout { grid-template-columns: 330px 1fr; gap: var(--space-3xl); align-items: start; } }
+
+    .svc-sidebar { display: flex; flex-direction: column; gap: var(--space-xl); }
+    @media (min-width: 992px) { .svc-sidebar { position: sticky; top: 150px; } }
+    .svc-cat { border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--white); }
+    .svc-cat-head { background: var(--gradient-red); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; padding: 18px 22px; }
+    .svc-cat-list { display: flex; flex-direction: column; }
+    .svc-cat-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 15px 22px; color: var(--navy-500); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gray-100); transition: background 0.25s, color 0.25s; }
+    .svc-cat-link:last-child { border-bottom: none; }
+    .svc-cat-ico { width: 30px; height: 30px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; flex-shrink: 0; transition: background 0.25s, color 0.25s; }
+    .svc-cat-ico .material-icons { font-size: 18px; }
+    .svc-cat-link:hover, .svc-cat-link.active { background: var(--gray-100); color: var(--brand-red); }
+    .svc-cat-link.active .svc-cat-ico, .svc-cat-link:hover .svc-cat-ico { background: var(--brand-red); color: var(--white); transform: translateX(3px); }
+    .svc-cat-ico { transition: background 0.25s, color 0.25s, transform 0.25s; }
+
+    .svc-help { background: var(--gradient-hero); color: var(--white); border-radius: var(--radius-lg); padding: var(--space-xl); box-shadow: var(--shadow-md); }
+    .svc-help-brand { display: flex; align-items: center; gap: 10px; }
+    .svc-help-brand img { height: 46px; width: auto; }
+    .svc-help-title { font-family: var(--font-heading); font-weight: 600; font-size: 1.05rem; line-height: 1.4; }
+    .svc-help-links { margin-top: var(--space-lg); display: flex; flex-direction: column; gap: 10px; }
+    .svc-help-link { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-md); color: var(--white); text-decoration: none; font-weight: 600; transition: background 0.25s; }
+    .svc-help-link:hover { background: rgba(255,255,255,0.18); }
+    .svc-help-link .material-icons { color: var(--brand-gold); font-size: 20px; }
+    .svc-help-contact { margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid rgba(255,255,255,0.18); }
+    .svc-help-eyebrow { color: var(--brand-gold); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .svc-help-phone { display: block; margin-top: 6px; font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; color: var(--white); text-decoration: none; }
+    .svc-help-email { display: block; margin-top: 8px; color: rgba(255,255,255,0.85); text-decoration: none; }
+    .svc-help-email:hover { color: var(--white); }
+
+    .svc-content { display: flex; flex-direction: column; gap: var(--space-2xl); }
+    .svc-hero-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+    .svc-hero-img img { display: block; width: 100%; height: 560px; object-fit: cover; object-position: center; }
+    .svc-lead p { color: var(--gray-700); }
+    .svc-lead p + p { margin-top: var(--space-md); }
+    .svc-h2 { font: var(--font-section); color: var(--navy-500); }
+    .svc-sub { margin-top: var(--space-sm); color: var(--gray-700); }
+
+    .svc-features { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-lg); }
+    @media (min-width: 600px) { .svc-features { grid-template-columns: 1fr 1fr; } }
+    .svc-feature { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: var(--space-lg); box-shadow: var(--shadow-sm); }
+    .svc-feature-ico { width: 46px; height: 46px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; margin-bottom: 12px; }
+    .svc-feature-ico .material-icons { font-size: 24px; }
+    .svc-feature h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); }
+    .svc-feature p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-cta-line { text-align: center; color: var(--gray-700); margin-top: var(--space-lg); }
+    .svc-cta-line a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
+
+    .svc-checklist { display: flex; flex-direction: column; gap: 12px; margin-top: var(--space-lg); }
+    .svc-check { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); }
+    .svc-check .material-icons { color: #1FA35B; flex-shrink: 0; }
+
+    .svc-imgcards { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+    @media (min-width: 600px) { .svc-imgcards { grid-template-columns: 1fr 1fr; } }
+    .svc-imgcard { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 260px; box-shadow: var(--shadow-md); }
+    .svc-imgcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .svc-imgcard-overlay { position: relative; z-index: 1; height: 100%; min-height: 260px; display: flex; flex-direction: column; justify-content: flex-end; padding: var(--space-lg); background: linear-gradient(to top, rgba(21,27,63,0.92) 0%, rgba(21,27,63,0.15) 70%); color: var(--white); }
+    .svc-imgcard-ico { color: var(--brand-gold); margin-bottom: 8px; }
+    .svc-imgcard h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--white); }
+    .svc-imgcard p { margin-top: 6px; font-size: 0.92rem; color: rgba(255,255,255,0.85); }
+
+    .svc-steps-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: stretch; margin-top: var(--space-lg); }
+    @media (min-width: 900px) { .svc-steps-grid { grid-template-columns: 1fr 1fr; } }
+    .svc-steps-list { display: flex; flex-direction: column; }
+    .svc-step { padding: var(--space-lg) 0; border-bottom: 1px solid var(--gray-200); }
+    .svc-step:first-child { padding-top: 0; }
+    .svc-step:last-child { border-bottom: none; }
+    .svc-step-head { display: flex; align-items: center; gap: 12px; }
+    .svc-step-ico { width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; }
+    .svc-step-num { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); }
+    .svc-step h3 { margin-top: 10px; font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); }
+    .svc-step p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-steps-img { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 380px; box-shadow: var(--shadow-md); }
+    .svc-steps-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .svc-callus { position: absolute; left: var(--space-lg); bottom: var(--space-lg); z-index: 1; display: flex; align-items: center; gap: 12px; background: rgba(21,27,63,0.85); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-radius: var(--radius-md); padding: 12px 18px; color: var(--white); }
+    .svc-callus .material-icons { color: var(--brand-gold); }
+    .svc-callus .lbl { font-size: 0.8rem; color: rgba(255,255,255,0.8); }
+    .svc-callus .num { font-family: var(--font-heading); font-weight: 700; }
+    .svc-stats { display: flex; flex-wrap: wrap; gap: var(--space-2xl); margin-top: var(--space-lg); }
+    .svc-stat-num { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: 1.9rem; line-height: 1; }
+    .svc-stat-label { margin-top: 6px; color: var(--gray-500); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    .svc-todo { color: var(--gray-500); font-style: italic; background: rgba(255,179,0,0.08); border-left: 3px solid var(--brand-gold); padding: 10px 14px; border-radius: var(--radius-sm); margin-top: var(--space-sm); }
+    .svc-list { margin-top: var(--space-md); display: flex; flex-direction: column; gap: 10px; }
+    .svc-list-item { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); }
+    .svc-list-item .material-icons { color: var(--brand-red); flex-shrink: 0; font-size: 20px; margin-top: 2px; }
+    .svc-list-item.warn .material-icons { color: var(--brand-gold); }
+    .svc-list-item strong { color: var(--navy-500); }
+    .svc-note { margin-top: var(--space-md); color: var(--gray-500); font-size: 0.92rem; }
+    .svc-table-wrap { overflow-x: auto; margin-top: var(--space-lg); border: 1px solid var(--gray-200); border-radius: var(--radius-md); }
+    .svc-table { width: 100%; border-collapse: collapse; min-width: 460px; }
+    .svc-table th { background: var(--gradient-red); color: var(--white); text-align: left; padding: 14px 18px; font-family: var(--font-heading); font-weight: 700; }
+    .svc-table td { padding: 14px 18px; border-top: 1px solid var(--gray-200); color: var(--gray-700); }
+    .svc-table tr:nth-child(even) td { background: var(--gray-100); }
+    .svc-onum { margin-top: var(--space-md); display: flex; flex-direction: column; gap: var(--space-md); }
+    .svc-onum-item { display: flex; gap: 14px; }
+    .svc-onum-badge { flex-shrink: 0; width: 34px; height: 34px; border-radius: var(--radius-full); background: var(--brand-red); color: var(--white); display: grid; place-items: center; font-family: var(--font-heading); font-weight: 700; }
+    .svc-onum-item h3 { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.02rem; }
+    .svc-onum-item p { margin-top: 4px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-subhead { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); margin-top: var(--space-lg); margin-bottom: 4px; }
+    .svc-cta-strong { margin-top: var(--space-md); font-weight: 600; color: var(--navy-500); }
+    .svc-notice { background: rgba(255,179,0,0.10); border-left: 3px solid var(--brand-gold); padding: 14px 16px; border-radius: var(--radius-sm); margin-top: var(--space-lg); color: var(--gray-700); font-size: 0.95rem; }
+    .svc-notice strong { color: var(--navy-500); }
+    /* creative cards for ductless installation */
+    .svc-cardgrid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-lg); }
+    @media (min-width: 560px) { .svc-cardgrid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1000px) { .svc-cardgrid.cols3 { grid-template-columns: 1fr 1fr 1fr; } }
+    .svc-card2 { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); transition: transform .25s var(--ease-out), box-shadow .25s; }
+    .svc-card2:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .svc-card2-ico { width: 48px; height: 48px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; margin-bottom: 12px; }
+    .svc-card2-ico .material-icons { font-size: 26px; }
+    .svc-card2-num { position: absolute; top: 14px; right: 18px; font-family: var(--font-heading); font-weight: 700; color: var(--gray-300); font-size: 1.4rem; }
+    .svc-card2 h3 { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.02rem; line-height: 1.25; }
+    .svc-card2 p { margin-top: 6px; color: var(--gray-700); font-size: 0.94rem; }
+    .svc-card2 ul { margin-top: 10px; padding: 0; list-style: none; }
+    .svc-card2 ul li { position: relative; padding-left: 18px; color: var(--gray-700); font-size: 0.9rem; margin-top: 7px; line-height: 1.4; }
+    .svc-card2 ul li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-red); }
+    .svc-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: var(--space-md); }
+    .svc-chip { display: inline-flex; align-items: center; gap: 8px; padding: 9px 15px; border-radius: var(--radius-full); background: rgba(102,166,191,0.12); border: 1px solid var(--gray-200); color: var(--navy-500); font-weight: 600; font-size: 0.9rem; }
+    .svc-chip .material-icons { font-size: 18px; color: var(--brand-red); }
+    .svc-price { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-md); }
+    @media (min-width: 560px) { .svc-price { grid-template-columns: 1fr 1fr; } }
+    .svc-price-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); }
+    .svc-price-head { background: var(--light-blue); color: var(--navy-700); font-family: var(--font-heading); font-weight: 700; padding: 12px 18px; display: flex; align-items: center; gap: 8px; }
+    .svc-price-head .material-icons { font-size: 20px; }
+    .svc-price-body { padding: 4px 18px 12px; }
+    .svc-price-row { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--gray-100); }
+    .svc-price-row:last-child { border-bottom: none; }
+    .svc-price-row .lbl { color: var(--gray-700); }
+    .svc-price-row .val { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); white-space: nowrap; }
+    .svc-fin { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); margin-top: var(--space-lg); }
+    @media (min-width: 700px) { .svc-fin { grid-template-columns: 1fr 1fr; } }
   </style>
 </head>
 <body>
@@ -613,7 +846,7 @@
             <a href="comfort-club.html">Comfort Club</a>
             <a href="reviews.html">Reviews</a>
             <a href="blog.html">Blog</a>
-            <a href="hvac-faq-scottsdale-az.html">HVAC FAQ</a>
+            <a href="hvac-faq-scottsdale-az.html">FAQ</a>
           </div>
         </div>
         <div class="nav-dd">
@@ -696,9 +929,10 @@
     <div class="container">
       <div class="page-hero-grid">
         <div class="page-hero-text reveal">
-          <div class="section-label gold">The People Behind Comfort One</div>
-          <h1 class="page-hero-title">Meet the Team</h1>
-          <p class="page-hero-desc">Meet the team of Comfort One Air Conditioning! Our group of screened and trained HVAC professionals are dedicated to ensuring your comfort while doing the right thing every time. Call Comfort One's AC experts at <a href="tel:+16022476151" class="page-hero-phone">602-247-6151</a> for quality HVAC services in Scottsdale and surrounding areas.</p>
+          <div class="section-label gold">Ductless · Mini Split Installation</div>
+          <h1 class="page-hero-title">Reliable ductless mini split installation in Scottsdale, AZ</h1>
+          <p class="page-hero-desc">We offer custom-designed ductless mini split installations with same or next day service, transparent fixed-price estimates, and industry-leading warranties.</p>
+          <p class="page-hero-desc" style="font-weight: 700; margin-top: var(--space-sm);">Call Comfort One Air Conditioning at <a href="tel:+16022476151" class="page-hero-phone">602-247-6151</a> for a free estimate today!</p>
           <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
         </div>
         <div class="page-hero-right reveal reveal-delay-1">
@@ -707,115 +941,258 @@
             <img src="imag/Google-Review-Symbol-c1.webp" alt="Google 5-star reviews" />
           </a>
           <div class="page-hero-media">
-            <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9709.jpg" alt="The Comfort One Air Conditioning team" />
+            <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9709.jpg" alt="The Comfort One Air Conditioning team and service vehicles" />
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== TEAM ===================== -->
+  <!-- ===================== SERVICE LAYOUT ===================== -->
   <section class="section-padding" style="background: var(--white);">
     <div class="container">
-      <div class="team-head reveal">
-        <div class="section-label" style="justify-content:center;">Our People</div>
-        <h2 class="team-head-title">The Team</h2>
-      </div>
-      <div class="team-grid">
-        <div class="team-card reveal">
-          <div class="team-card-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/ComfortOneAC_BusinessBranding2026-8618-819x1024.jpg" alt="Tapani Ojalehto" /></div>
-          <h3 class="team-name">Tapani Ojalehto<span class="team-role">Founder · RSI Top Tech &amp; Comfort Specialist</span></h3>
-          <p class="team-bio">Born and raised in the midwest, Taps was always out tinkering on most things with his dad, and that is where his mechanical interests came into fruition. He has always had a passion and determination when it comes to problem solving, which is what makes him great at what he does. Taps moved to Arizona in 2002, and quickly called it his home. Taps has been in the HVAC industry for over 15 years now. Outside of work he enjoys hiking, camping, archery, hockey, and spending time with his wife and pups.</p>
-        </div>
-        <div class="team-card reveal reveal-delay-1">
-          <div class="team-card-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/ComfortOneAC_BusinessBranding2026-8621-819x1024.jpg" alt="Jessica Ojalehto" /></div>
-          <h3 class="team-name">Jessica Ojalehto<span class="team-role">Founder · Office Manager &amp; Integrator</span></h3>
-          <p class="team-bio">Born and raised in the sunny state of Arizona, Jessica grew up in a home of entrepreneurs, and always dreamed of one day owning her own business as well. She met Taps in her junior year of high-school, and a few short years later got married. They both had interests in starting a business. After finishing school in 2016, Comfort One Air Conditioning was founded. Outside of the office, Jessica enjoys many outdoor activities, swimming, hiking, paddleboarding, boating, camping and spending time with her family and friends.</p>
-        </div>
-        <div class="team-card reveal reveal-delay-2">
-          <div class="team-card-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/ComfortOneAC_BusinessBranding2026-8623-819x1024.jpg" alt="Joanna Ashley" /></div>
-          <h3 class="team-name">Joanna Ashley<span class="team-role">Admin Assistant Extraordinaire</span></h3>
-          <p class="team-bio">Joanna was born in the burbs of southern Chicago and moved to Arizona in 2000. After 15 years in the medical field, she decided to quit and pursue a more purpose-driven and passion-filled lifestyle. Since joining Comfort One two years ago, she has enjoyed organizing data, forging strong customer connections, and being part of the team. Outside the office, she enjoys playing in nature, connecting with friends and family, pursuing inner growth, and finding ways to make the planet a better place.</p>
-        </div>
-        <div class="team-card reveal">
-          <div class="team-card-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/ComfortOneAC_BusinessBranding2026-8608-819x1024.jpg" alt="Jon" /></div>
-          <h3 class="team-name">Jon<span class="team-role">Lead Technician</span></h3>
-          <p class="team-bio">Jon was born and raised in Canada, eh, where he pursued a career in carpentry. Later, Jon met his wife, who is from Arizona, and they moved to Arizona to help him defrost. They have 5 beautiful children together. He has been in the HVAC industry for 6 years and has 15+ years in the construction industry. Jon is our top technician. He is very caring and always looks out for the clients best interest. Away from work Jon enjoys hockey, golfing and spending time with his wife and kids.</p>
-        </div>
-        <div class="team-card reveal reveal-delay-1">
-          <div class="team-card-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/lars-8607-1-819x1024.webp" alt="Lars" /></div>
-          <h3 class="team-name">Lars<span class="team-role">Technician</span></h3>
-          <p class="team-bio">Meet Lars, our Comfort Specialist. Before joining the Comfort One team, he built his skills as an aircraft mechanic in both Phoenix and Alaska, giving him a strong foundation for working with complex systems. That hands-on experience translates perfectly into keeping your home comfortable all year round. When he's off the clock, Lars loves getting outdoors to hunt and spend quality time with his wife and kid.</p>
-        </div>
-        <div class="team-card reveal reveal-delay-2">
-          <div class="team-card-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/ComfortOneAC_BusinessBranding2026-8607-819x1024.jpg" alt="Juha" /></div>
-          <h3 class="team-name">Juha<span class="team-role">Technician</span></h3>
-          <p class="team-bio">Juha is from a small town in Minnesota, and now resides in sunny AZ, in the Desert Hills area. He has been in the HVAC industry for 4 years and is one of our top technicians. He also has a background in remodeling. Juha pays attention to the small details, which is what makes him such an asset to our team. When Juha is not at work, he enjoys spending time with his family, fishing, camping, tinkering on his jeep, and boat, and most things outdoors.</p>
-        </div>
-      </div>
-      <div class="mascot-grid">
-        <div class="team-card reveal">
-          <div class="team-card-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/loki.webp" alt="Loki" /></div>
-          <h3 class="team-name">Loki<span class="team-role">Mascot</span></h3>
-          <p class="team-bio">Loki joined Comfort One with zero HVAC experience and no plans to learn. His specialties include aggressive tail wagging during service calls, strategic napping wherever he pleases, and quality testing every lunch the crew brings along. He's never missed a day of work, firmly believes every job site deserves a belly rub, and insists the thermostat always stays on “cozy.” When he's not riding shotgun to the next appointment, he enjoys long walks, short attention spans, and pretending he didn't just steal a snack from someone's lunch bag.</p>
-        </div>
-        <div class="team-card reveal reveal-delay-1">
-          <div class="team-card-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/archer.webp" alt="Archer" /></div>
-          <h3 class="team-name">Archer<span class="team-role">Mascot</span></h3>
-          <p class="team-bio">Archer was hired for one elite skill: looking adorable on command. His interview lasted about 4 seconds (he tilted his head and it was over). He personally inspects every technician before they head out on a job, mostly by sniffing their pockets for treats, and has been known to tag along just to supervise. He holds a 100% customer satisfaction rating because no one has ever been sad in his presence. Off the clock, Archer enjoys chewing things he shouldn't, random zoomies across the yard, and being suspiciously quiet (which usually means trouble).</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="svc-layout">
 
-  <!-- ===================== TEAM COLLAGE ===================== -->
-  <section class="section-padding" style="background: var(--gradient-cream-khaki);">
-    <div class="container">
-      <div class="collage">
-        <div class="collage-item reveal"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9653.jpg" alt="Comfort One team" /></div>
-        <div class="collage-item reveal"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/Drone_C1AC2026-11.jpg" alt="Comfort One team" /></div>
-        <div class="collage-item reveal"><img src="https://www.comfort1ac.com/wp-content/uploads/2025/10/ComfortOneAC_BusinessBranding2026-8946.jpg" alt="Comfort One team" /></div>
-        <div class="collage-item reveal"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9189.jpg" alt="Comfort One team" /></div>
-        <div class="collage-item reveal"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9279.jpg" alt="Comfort One team" /></div>
-        <div class="collage-item reveal"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/ComfortOneAC_BusinessBranding2026-8836.jpg" alt="Comfort One team" /></div>
-        <div class="collage-item reveal"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9213.jpg" alt="Comfort One team" /></div>
-        <div class="collage-item reveal"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9005.jpg" alt="Comfort One team" /></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SERVICE AREA ===================== -->
-  <section class="section-padding area" id="service-area">
-    <div class="container">
-      <div class="area-card reveal">
-        <div class="area-map">
-          <iframe src="https://www.google.com/maps?q=Comfort%20One%20Air%20Conditioning%2C%20Scottsdale%2C%20AZ&z=10&output=embed" loading="lazy" title="Comfort One service area map" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="area-content">
-          <div class="section-label">Areas We Serve</div>
-          <h2 class="area-title">Providing service to the Scottsdale, Arizona and surrounding areas</h2>
-          <div class="area-divider"></div>
-          <div class="area-list">
-            <span class="area-item"><span class="material-icons">location_on</span> Anthem, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> Paradise Valley, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> Carefree, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> Phoenix, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> Cave Creek, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> New River, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> Desert Mountain, AZ</span>
-            <span class="area-item"><span class="material-icons">location_on</span> Scottsdale, AZ</span>
+        <!-- SIDEBAR -->
+        <aside class="svc-sidebar">
+          <nav class="svc-cat" aria-label="Ductless services">
+            <div class="svc-cat-head">Ductless Services</div>
+            <div class="svc-cat-list">
+              <a href="ductless-mini-split-repair.html" class="svc-cat-link">Ductless Mini Split Repair <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="ductless-mini-split-installation.html" class="svc-cat-link active" aria-current="page">Ductless Mini Split Installation <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+            </div>
+          </nav>
+          <div class="svc-help">
+            <p class="svc-help-title">Help is just a call away — 24/7, rain or shine.</p>
+            <div class="svc-help-links">
+              <a href="#contact" class="svc-help-link"><span class="material-icons">build</span> Request a Service</a>
+              <a href="index.html#financing" class="svc-help-link"><span class="material-icons">payments</span> Financing Options</a>
+              <a href="comfort-club.html" class="svc-help-link"><span class="material-icons">workspace_premium</span> Comfort Club</a>
+            </div>
+            <div class="svc-help-contact">
+              <div class="svc-help-eyebrow">Need Help? Give Us a Call</div>
+              <a href="tel:+16022476151" class="svc-help-phone">(602) 247-6151</a>
+              <a href="mailto:office@comfort1ac.com" class="svc-help-email">office@comfort1ac.com</a>
+            </div>
           </div>
-          <a href="index.html#contact" class="btn-gold area-cta">Our Service Area</a>
+        </aside>
+
+        <!-- CONTENT (pending) -->
+        <div class="svc-content">
+          <div class="reveal">
+            <h2 class="svc-h2">Ductless mini split installation done right in Scottsdale, AZ</h2>
+            <p class="svc-sub">We're Comfort One Air Conditioning, your local family-owned HVAC experts specializing in ductless mini split installations across Scottsdale and surrounding areas. With over 4 decades of experience and 2,750+ satisfied customers, we understand the unique comfort challenges of Arizona homes — especially those hard-to-cool spaces that traditional HVAC systems can't handle.</p>
+            <p class="svc-sub">Our team of skilled technicians excels in designing custom ductless solutions that transform problematic rooms into perfectly comfortable spaces, whether it's a sunroom, garage conversion, or home addition. Each installation is tailored to your specific needs, ensuring maximum comfort and energy savings year-round.</p>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Reasons to choose Comfort One</h2>
+            <div class="svc-checklist">
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Highly rated by our customers with 300+ 5-star reviews</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Fair pricing with affordable financing options available</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Free and fixed price estimates for ductless installations</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Industry-leading 10-year parts &amp; 2-year labor warranty (upgradeable)</span></div>
+            </div>
+            <div class="svc-stats">
+              <div><div class="svc-stat-num">+600</div><div class="svc-stat-label">Installations</div></div>
+              <div><div class="svc-stat-num">+40 Years</div><div class="svc-stat-label">Of experience</div></div>
+              <div><div class="svc-stat-num">+2,750</div><div class="svc-stat-label">Happy customers</div></div>
+            </div>
+            <p class="svc-note">Don't let hot and cold spots affect your comfort. Call us at 602-247-6151 for a free estimate on your new ductless mini split installation.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Comfort One's expert ductless mini split installation</h2>
+            <p class="svc-sub">When traditional HVAC systems aren't practical, Comfort One Air Conditioning's ductless mini split installation services provide the perfect solution for your Scottsdale home. Our expert technicians deliver precise temperature control exactly where you need it — without the hassle and expense of installing ductwork.</p>
+            <div class="svc-cardgrid cols3">
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">architecture</span></div><h3>Personalized system design</h3><p>based on your home's unique layout and target areas</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">energy_savings_leaf</span></div><h3>Energy-efficient unit selection</h3><p>to minimize utility costs (up to 30% savings)</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">hvac</span></div><h3>Zero-ductwork installation</h3><p>that preserves your home's aesthetics</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">grid_view</span></div><h3>Multi-zone configurations</h3><p>for controlling different areas independently</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">bedtime</span></div><h3>Whisper-quiet indoor units</h3><p>that operate at just 19 decibels</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">settings_remote</span></div><h3>Smart controls integration</h3><p>for convenient temperature management</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">fact_check</span></div><h3>Full system testing</h3><p>to ensure optimal performance in both heating and cooling modes</p></div>
+            </div>
+            <p class="svc-subhead" style="margin-top: var(--space-xl);">Trust Comfort One to transform your space — perfect for:</p>
+            <div class="svc-chips">
+              <span class="svc-chip"><span class="material-icons">home_work</span>Home additions &amp; sunrooms</span>
+              <span class="svc-chip"><span class="material-icons">meeting_room</span>Mother-in-law suites</span>
+              <span class="svc-chip"><span class="material-icons">garage</span>Garage conversions</span>
+              <span class="svc-chip"><span class="material-icons">king_bed</span>Master bedrooms</span>
+              <span class="svc-chip"><span class="material-icons">work</span>Home offices</span>
+              <span class="svc-chip"><span class="material-icons">weekend</span>Bonus rooms</span>
+              <span class="svc-chip"><span class="material-icons">ac_unit</span>Areas with heating &amp; cooling challenges</span>
+            </div>
+            <p class="svc-note">Call us today at 602-247-6151 to schedule your ductless mini split consultation.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Why choose Comfort One for your ductless mini split installation?</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we deliver more than just ductless installations — we provide complete climate solutions tailored to your specific comfort needs. Our comprehensive approach ensures you get the perfect system for your space, installed correctly the first time.</p>
+            <div class="svc-cardgrid cols3">
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">bolt</span></div><h3>Same or next day installation</h3><p>to quickly ensure your comfort</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">tune</span></div><h3>Custom solutions</h3><p>based on your room layout and comfort goals</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">request_quote</span></div><h3>Fixed-price estimates</h3><p>with zero hidden costs</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">verified_user</span></div><h3>Commission-free technicians</h3><p>focused on your needs, not sales</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">workspace_premium</span></div><h3>Comfort Club membership</h3><p>for priority service and maintenance</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">shield</span></div><h3>Industry-leading warranty</h3><p>10-year parts and 2-year labor (upgradeable to 10 years)</p></div>
+            </div>
+            <p class="svc-note">Don't settle for one-size-fits-all cooling and heating. Call us today at 602-247-6151 to schedule your free estimate and discover the perfect ductless solution for your home.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">How much does ductless mini split installation cost in Scottsdale, AZ?</h2>
+            <p class="svc-sub">Based on our experience installing hundreds of ductless systems in Scottsdale homes, average costs for ductless mini split installation are:</p>
+            <div class="svc-price">
+              <div class="svc-price-card">
+                <div class="svc-price-head"><span class="material-icons">looks_one</span> Single Zone Systems</div>
+                <div class="svc-price-body">
+                  <div class="svc-price-row"><span class="lbl">Basic</span><span class="val">$3,500 – $5,000</span></div>
+                  <div class="svc-price-row"><span class="lbl">Mid-Range</span><span class="val">$5,000 – $7,000</span></div>
+                  <div class="svc-price-row"><span class="lbl">Premium</span><span class="val">$7,000 – $9,000</span></div>
+                </div>
+              </div>
+              <div class="svc-price-card">
+                <div class="svc-price-head"><span class="material-icons">grid_view</span> Multi-Zone Systems</div>
+                <div class="svc-price-body">
+                  <div class="svc-price-row"><span class="lbl">2 Zones</span><span class="val">$6,000 – $10,000</span></div>
+                  <div class="svc-price-row"><span class="lbl">3 Zones</span><span class="val">$8,000 – $13,000</span></div>
+                  <div class="svc-price-row"><span class="lbl">4+ Zones</span><span class="val">$10,000 – $16,000</span></div>
+                </div>
+              </div>
+            </div>
+            <p class="svc-note">Remember, these are general ranges. Your ductless mini split installation cost depends on factors like the number of zones needed, system efficiency rating (SEER), and installation complexity. For a precise estimate tailored to your specific needs, call Comfort One Air Conditioning at 602-247-6151. We offer transparent, fixed-price estimates with no hidden fees.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">What affects the cost of ductless mini split installation?</h2>
+            <p class="svc-sub">Understanding the factors that influence your ductless installation cost helps you make an informed decision.</p>
+            <div class="svc-cardgrid">
+              <div class="svc-card2" style="position:relative;"><span class="svc-card2-num">1</span><div class="svc-card2-ico"><span class="material-icons">straighten</span></div><h3>System Size and Zones</h3><ul><li>Number of indoor units needed</li><li>Cooling and heating capacity per zone</li><li>Coverage area requirements</li></ul></div>
+              <div class="svc-card2" style="position:relative;"><span class="svc-card2-num">2</span><div class="svc-card2-ico"><span class="material-icons">energy_savings_leaf</span></div><h3>Energy Efficiency Ratings</h3><ul><li>SEER ratings for cooling efficiency</li><li>HSPF ratings for heating performance</li><li>Higher ratings mean greater long-term savings</li></ul></div>
+              <div class="svc-card2" style="position:relative;"><span class="svc-card2-num">3</span><div class="svc-card2-ico"><span class="material-icons">build</span></div><h3>Installation Requirements</h3><ul><li>Distance between indoor and outdoor units</li><li>Mounting location accessibility</li><li>Electrical system requirements</li><li>Condensate drain placement</li></ul></div>
+              <div class="svc-card2" style="position:relative;"><span class="svc-card2-num">4</span><div class="svc-card2-ico"><span class="material-icons">verified</span></div><h3>Equipment Quality</h3><ul><li>Standard vs. premium manufacturers</li><li>Basic or advanced features</li><li>Warranty coverage options</li></ul></div>
+              <div class="svc-card2" style="position:relative;"><span class="svc-card2-num">5</span><div class="svc-card2-ico"><span class="material-icons">settings_remote</span></div><h3>Additional Features</h3><ul><li>WiFi connectivity</li><li>Smart home integration</li><li>Advanced filtration systems</li><li>Humidity control capabilities</li></ul></div>
+            </div>
+            <p class="svc-note">At Comfort One Air Conditioning, we carefully evaluate these factors to recommend the perfect ductless solution for your space and budget. Call 602-247-6151 for a personalized consultation and clear, fixed-price estimate.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Flexible financing for your ductless mini split installation</h2>
+            <p class="svc-sub">Ready to enjoy precise, energy-efficient comfort in your Scottsdale home? At Comfort One Air Conditioning, we make it easy with flexible financing options that fit your budget.</p>
+            <div class="svc-fin">
+              <div>
+                <p class="svc-subhead">Why finance your ductless system?</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Get immediate comfort without the full upfront cost</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Start saving on energy bills right away</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Create comfortable spaces now, pay over time</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Preserve your savings for other home improvements</span></div>
+            </div>
+              </div>
+              <div>
+                <p class="svc-subhead">Through our partnership with Synchrony, we offer:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Low monthly payments</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Competitive interest rates</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Quick approval process</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Simple online application</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Flexible repayment terms</span></div>
+            </div>
+              </div>
+            </div>
+            <p class="svc-note">Don't wait to transform your uncomfortable spaces. Call Comfort One Air Conditioning at 602-247-6151 to explore your financing options and get your ductless mini split installed promptly.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Our ductless mini split installation process in detail</h2>
+            <p class="svc-sub">We follow a proven process to ensure your ductless system delivers perfect comfort in every zone. Here's our step-by-step approach:</p>
+            <div class="svc-onum">
+              <div class="svc-onum-item"><div class="svc-onum-badge">1</div><div><h3>Initial Consultation</h3><ul style="margin-top:8px;padding:0;list-style:none;"><li>Schedule your free consultation at 602-247-6151</li><li>Discuss your comfort challenges and goals</li><li>Identify specific areas needing temperature control</li><li>Review lifestyle and usage patterns</li></ul></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">2</div><div><h3>Professional Assessment</h3><ul style="margin-top:8px;padding:0;list-style:none;"><li>Expert evaluation by our RSI Top-certified Comfort Specialists</li><li>Measure each zone requiring conditioning</li><li>Assess mounting locations for indoor and outdoor units</li><li>Evaluate electrical requirements</li><li>Determine optimal placement for minimal visual impact</li><li>Plan refrigerant line and drain locations</li></ul></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">3</div><div><h3>System Design &amp; Recommendation</h3><ul style="margin-top:8px;padding:0;list-style:none;"><li>Calculate precise heating and cooling loads per zone</li><li>Select appropriately sized indoor and outdoor units</li><li>Design optimal refrigerant line routing</li><li>Plan electrical connections and drainage solutions</li><li>Present clear, fixed-price options with no surprises</li></ul></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">4</div><div><h3>Pre-Installation Preparation</h3><ul style="margin-top:8px;padding:0;list-style:none;"><li>Schedule installation at your convenience</li><li>Order your custom-selected equipment</li><li>Coordinate any needed electrical work</li><li>Prepare mounting locations</li><li>Protect your home's floors and surfaces</li></ul></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">5</div><div><h3>Professional Installation</h3><ul style="margin-top:8px;padding:0;list-style:none;"><li>Arrive on time with all necessary equipment</li><li>Install outdoor condensing unit on stable pad or wall mount</li><li>Mount indoor units in predetermined locations</li><li>Run refrigerant lines with minimal visual impact</li><li>Install proper drainage system</li><li>Complete electrical connections</li><li>Pressure test system for leaks</li><li>Vacuum system to remove moisture and debris</li><li>Charge system with refrigerant</li></ul></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">6</div><div><h3>Quality Assurance</h3><ul style="margin-top:8px;padding:0;list-style:none;"><li>Test each indoor unit individually</li><li>Verify proper operation in both cooling and heating modes</li><li>Check all electrical connections</li><li>Confirm proper drainage</li><li>Ensure quiet operation of all components</li><li>Clean installation area thoroughly</li></ul></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">7</div><div><h3>Customer Education</h3><ul style="margin-top:8px;padding:0;list-style:none;"><li>Demonstrate system operation</li><li>Explain zone control features</li><li>Show proper maintenance procedures</li><li>Review warranty coverage</li><li>Share energy-saving tips</li><li>Provide complete system documentation</li></ul></div></div>
+            </div>
+            <p class="svc-note">Experience the Comfort One difference — where attention to detail ensures your ductless mini split system delivers perfect comfort in every zone. Call us at 602-247-6151 to schedule your free in-home estimate and start your journey to precision comfort.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Our guarantees &amp; warranties</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we stand firmly behind our work. Our promise to you is simple: Your comfort, or we will make it right!</p>
+            <p class="svc-subhead">Our Guarantees:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>100% Satisfaction Guarantee:</strong> Your satisfaction is our top priority. If anything doesn't meet your expectations, we're committed to fixing it – no questions asked.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Cleanliness Guarantee:</strong> We'll leave your home as clean as we found it. Our technicians treat your space with respect.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Upfront Pricing:</strong> No surprises here. We provide clear, upfront pricing before any work begins.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>No Dirty Upsells You Don't Need:</strong> We believe in honest service. Our technicians work commission-free and will never try to sell you services or parts you don't actually need. We recommend only what's necessary for your system's optimal performance and your comfort.</span></div>
+            </div>
+            <p class="svc-subhead">Our Warranties:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>90-Day Labor Warranty:</strong> All our repair work is backed by a 90-day labor warranty. If the same issue recurs within 90 days, we'll fix it at no additional cost.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>1-2 Year Parts Warranty:</strong> We stand behind the quality of our parts. All parts we install come with a 1-2 year parts warranty.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>10-Year Parts &amp; 2-Year Labor Warranty:</strong> We offer an industry-leading 10-year parts and 2-year labor warranty (upgradeable to 10 years).</span></div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">The Comfort One difference</h2>
+            <p class="svc-sub">Our goal is to exceed your expectations with every interaction, ensuring you always feel valued and cared for. And let's not forget our Chief Happiness Officer, Loki! This lovable canine takes customer satisfaction very seriously. He treats our customers like family and keeps a watchful eye on our team.</p>
+            <p class="svc-sub">If we ever fall short of 100% satisfaction, Loki might just have to give us a stern talking-to (or a playful nip to keep us in line)! Rest assured, with Comfort One and Loki on the job, your complete satisfaction isn't just a goal – it's a guarantee.</p>
+            <p class="svc-note">Ready to experience the Comfort One difference? Call us at 602-247-6151 to schedule your ductless mini split installation today!</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Frequently asked questions</h2>
+            <div class="faq-list" style="margin-top: var(--space-lg);">
+          <div class="faq-item open">
+            <button class="faq-q" type="button">Who can benefit most from a ductless mini split system? <span class="faq-icon">−</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Ductless systems are perfect for:<ul style="margin:10px 0 0 20px;"><li>Homes without existing ductwork</li><li>Room additions or renovations</li><li>Spaces with inconsistent temperatures</li><li>Sunrooms and converted garages</li><li>Home offices needing independent temperature control</li><li>Homes where running ductwork would be costly or impossible</li><li>Multi-generational homes needing personalized comfort zones</li></ul></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How do ductless mini splits compare to traditional AC systems? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How long does a ductless mini split installation take? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">What maintenance does a ductless system need? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How much space can a ductless mini split cool or heat? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">Where can the indoor units be installed? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How long will my ductless mini split system last? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">What about winter performance? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- ===================== LIGHTBOX ===================== -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
-    <img class="lightbox-img" id="lightboxImg" src="" alt="" />
-  </div>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer framed">
@@ -919,5 +1296,15 @@
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
   </script>
 
+  <script>
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.faq-item');
+        var open = item.classList.toggle('open');
+        var icon = btn.querySelector('.faq-icon');
+        if (icon) icon.textContent = open ? '\u2212' : '+';
+      });
+    });
+  </script>
 </body>
 </html>

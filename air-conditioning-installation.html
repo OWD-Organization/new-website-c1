@@ -512,6 +512,12 @@
     .page-hero-text .page-hero-crumb { justify-content: flex-start; }
     .page-hero-media { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
     .page-hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+    .page-hero-right { display: flex; flex-direction: column; }
+    .page-hero-reviews { display: none; }
+    @media (min-width: 900px) { .page-hero-reviews { display: inline-flex; align-self: flex-end; align-items: center; gap: 12px; text-decoration: none; margin-bottom: var(--space-lg); } }
+    .page-hero-reviews-text { font-family: var(--font-heading); font-weight: 700; color: #fff; font-size: 0.9rem; }
+    .page-hero-reviews-text .g { color: var(--brand-gold); }
+    .page-hero-reviews img { height: 35px; width: auto; display: block; }
     .page-hero-title { font: var(--font-display); color: var(--white); margin-top: var(--space-sm); }
     .page-hero-desc { max-width: 780px; margin: var(--space-lg) auto 0; color: rgba(255,255,255,0.82); font-size: 1.0625rem; line-height: 1.7; }
     .page-hero-phone { color: var(--brand-gold); font-weight: 700; }
@@ -828,6 +834,7 @@
           <a href="index.html#services" class="nav-dd-toggle">Ductless <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="nav-dd-menu">
             <a href="ductless-mini-split-repair.html">Ductless Mini Split Repair</a>
+            <a href="ductless-mini-split-installation.html">Ductless Mini Split Installation</a>
           </div>
         </div>
         <a href="index.html#services">Heating</a>
@@ -878,6 +885,7 @@
             <a href="air-conditioning-maintenance.html">Air Conditioning Maintenance</a>
         <a href="index.html#services">Ductless</a>
             <a href="ductless-mini-split-repair.html">Ductless Mini Split Repair</a>
+            <a href="ductless-mini-split-installation.html">Ductless Mini Split Installation</a>
         <a href="index.html#services">Heating</a>
         <a href="index.html#contact">Service Area</a>
         <a href="index.html#financing">Financing</a>
@@ -899,8 +907,14 @@
           <p class="page-hero-desc" style="font-weight: 700; margin-top: var(--space-sm);">Call Comfort One Air Conditioning at <a href="tel:+16022476151" class="page-hero-phone">602-247-6151</a> for a free estimate today!</p>
           <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
         </div>
-        <div class="page-hero-media reveal reveal-delay-1">
-          <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9709.jpg" alt="The Comfort One Air Conditioning team and service vehicles" />
+        <div class="page-hero-right reveal reveal-delay-1">
+          <a href="https://www.google.com/search?q=comfort+opne+air+conditioning+arizxona&amp;ie=UTF-8#lrd=0x872b6e5270c22e51:0xe5ffad82f971dc9f,1,,,," class="page-hero-reviews" target="_blank" rel="noopener" aria-label="Over 500 5-star reviews on Google">
+            <span class="page-hero-reviews-text">Over 500 <span class="g">5-star</span> reviews</span>
+            <img src="imag/Google-Review-Symbol-c1.webp" alt="Google 5-star reviews" />
+          </a>
+          <div class="page-hero-media">
+            <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9709.jpg" alt="The Comfort One Air Conditioning team and service vehicles" />
+          </div>
         </div>
       </div>
     </div>
