@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Comfort Club — HVAC Maintenance Plan — Comfort One</title>
+  <title>Furnace Repair in Scottsdale, AZ — Comfort One Air Conditioning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -509,6 +509,7 @@
     @media (min-width: 900px) { .page-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-3xl); } }
     .page-hero-text .section-label { justify-content: flex-start; }
     .page-hero-text .page-hero-desc { margin-left: 0; margin-right: 0; }
+    .page-hero-text .page-hero-crumb { justify-content: flex-start; }
     .page-hero-media { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
     .page-hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
     .page-hero-right { display: flex; flex-direction: column; }
@@ -618,68 +619,177 @@
 
     .abt-guarantee { background: var(--gradient-dark); }
     .abt-guar-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
-    @media (min-width: 900px) { .abt-guar-grid { grid-template-columns: 1fr 600px; gap: var(--space-3xl); } }
+    @media (min-width: 900px) { .abt-guar-grid { grid-template-columns: 1.1fr 0.9fr; gap: var(--space-3xl); } }
     .abt-guar-title { font: var(--font-section); color: var(--white); margin-top: var(--space-xs); }
     .abt-guar-body { margin-top: var(--space-lg); }
     .abt-guar-body p { color: rgba(255,255,255,0.8); }
     .abt-guar-body p + p { margin-top: var(--space-md); }
     .abt-guar-body strong { color: var(--white); }
-    .abt-guar-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); max-width: 600px; width: 100%; }
-    .abt-guar-img img { display: block; width: 100%; height: 550px; object-fit: cover; }
+    .abt-guar-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .abt-guar-img img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4; }
 
     /* ============================================================
-       COMFORT CLUB PAGE (stacked, no sidebar)
+       REVIEWS PAGE
        ============================================================ */
-    .cc-intro { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
-    @media (min-width: 900px) { .cc-intro { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-3xl); } }
-    .cc-intro-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
-    .cc-intro p { margin-top: var(--space-md); color: var(--gray-700); }
-    .cc-intro .btn-primary { margin-top: var(--space-lg); }
-    .cc-intro-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
-    .cc-intro-img img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
+    .rv-intro-head { text-align: center; max-width: 840px; margin: 0 auto; }
+    .rv-intro-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .rv-intro-lead { margin-top: var(--space-md); color: var(--gray-700); }
+    .rv-cards { margin: var(--space-2xl) auto 0; display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+    @media (min-width: 560px) { .rv-cards { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1000px) { .rv-cards { grid-template-columns: repeat(5, 1fr); } }
+    .rv-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-lg) var(--space-md); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center; }
+    .rv-card-ico { width: 60px; height: 60px; border-radius: var(--radius-full); display: grid; place-items: center; margin-bottom: var(--space-md); background: var(--red-050); color: var(--brand-red); }
+    .rv-card-ico .material-icons { font-size: 30px; }
+    .rv-card p { color: var(--gray-700); font-size: 0.95rem; line-height: 1.5; }
+    .rv-card strong { color: var(--navy-500); font-weight: 700; }
+    .rv-closing { max-width: 820px; margin: 0 auto; text-align: center; }
+    .rv-closing p { color: var(--gray-700); }
+    .rv-closing .btn-primary { margin-top: var(--space-lg); }
 
-    .cc-head { text-align: center; max-width: 760px; margin: 0 auto var(--space-2xl); }
-    .cc-head-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
-    .cc-reasons-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); }
-    @media (min-width: 640px) { .cc-reasons-grid { grid-template-columns: 1fr 1fr; } }
-    @media (min-width: 1024px) { .cc-reasons-grid { grid-template-columns: repeat(4, 1fr); } }
-    .cc-reason-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); }
-    .cc-reason-card .material-icons { color: var(--brand-red); font-size: 34px; }
-    .cc-reason-card p { margin-top: var(--space-sm); color: var(--navy-500); font-weight: 600; font-family: var(--font-heading); line-height: 1.35; }
-    .cc-stats { margin-top: var(--space-2xl); display: grid; grid-template-columns: 1fr; gap: var(--space-lg); text-align: center; }
-    @media (min-width: 640px) { .cc-stats { grid-template-columns: repeat(3, 1fr); } }
-    .cc-stat-num { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: clamp(2rem, 4vw, 2.75rem); line-height: 1; }
-    .cc-stat-label { color: var(--gray-500); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 6px; }
+    .rv-reasons-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .rv-reasons-grid { grid-template-columns: 1.1fr 0.9fr; gap: var(--space-3xl); } }
+    .rv-reasons-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .rv-reason-list { margin-top: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-md); }
+    .rv-reason { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); font-weight: 500; }
+    .rv-reason .material-icons { color: #1FA35B; font-size: 22px; flex-shrink: 0; }
+    .rv-story-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .rv-story-grid { grid-template-columns: 0.9fr 1.1fr; gap: var(--space-3xl); } }
+    .rv-story-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .rv-story-img img { display: block; width: 100%; height: 500px; object-fit: cover; }
+    .rv-story-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .rv-story-grid p { margin-top: var(--space-md); color: var(--gray-700); }
+    .rv-ontime { margin-top: var(--space-lg); color: var(--gray-700); }
+    .rv-ontime a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
+    .rv-archer { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .rv-archer img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; }
 
-    .cc-plan-card { max-width: 1040px; margin: 0 auto; background: var(--gradient-dark); border-radius: var(--radius-xl); overflow: hidden; display: grid; grid-template-columns: 1fr; box-shadow: var(--shadow-lg); }
-    @media (min-width: 768px) { .cc-plan-card { grid-template-columns: 1.4fr 1fr; } }
-    .cc-plan-body { padding: var(--space-2xl); }
-    @media (min-width: 768px) { .cc-plan-body { padding: var(--space-3xl); } }
-    .cc-plan-title { font: var(--font-subsection); color: var(--white); margin-top: var(--space-xs); }
-    .cc-plan-list { margin-top: var(--space-lg); display: grid; grid-template-columns: 1fr; gap: 10px; }
-    @media (min-width: 560px) { .cc-plan-list { grid-template-columns: 1fr 1fr; } }
-    .cc-plan-list li { display: flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.9); font-size: 0.92rem; }
-    .cc-plan-list .material-icons { color: var(--brand-gold); font-size: 18px; }
-    .cc-plan-cta { margin-top: var(--space-xl); display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-lg); }
-    .cc-plan-price { font-family: var(--font-heading); font-weight: 700; color: var(--brand-gold); font-size: 2rem; line-height: 1; }
-    .cc-plan-price span { font-size: 0.9rem; color: rgba(255,255,255,0.7); font-weight: 500; }
-    .cc-plan-img { position: relative; min-height: 280px; }
-    .cc-plan-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    /* ============================================================
+       FAQ ACCORDION
+       ============================================================ */
+    .faq-wrap { max-width: 980px; }
+    .faq-block { margin-bottom: var(--space-3xl); }
+    .faq-block:last-child { margin-bottom: 0; }
+    .faq-block-title { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: clamp(1.25rem, 2.2vw, 1.6rem); text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: var(--space-lg); }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; }
+    .faq-item { background: rgba(255, 179, 0, 0.07); border: 1px solid rgba(255, 179, 0, 0.35); border-radius: var(--radius-md); overflow: hidden; transition: border-color 0.3s, background 0.3s; }
+    .faq-item.open { background: rgba(255, 179, 0, 0.12); border-color: var(--brand-gold); }
+    .faq-q { width: 100%; text-align: left; background: none; border: none; cursor: pointer; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); line-height: 1.35; }
+    .faq-q:hover { color: var(--brand-red); }
+    .faq-icon { flex-shrink: 0; width: 28px; height: 28px; display: grid; place-items: center; color: var(--brand-red); font-size: 1.6rem; font-weight: 400; line-height: 1; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .faq-item.open .faq-a { max-height: 640px; }
+    .faq-a-inner { padding: 0 22px 20px; color: var(--gray-700); }
 
-    .cc-form-sec { background: var(--gradient-cream-khaki); }
-    .cc-form { max-width: 720px; margin: 0 auto; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-md); }
-    .cc-form-step { color: var(--gray-500); }
-    .cc-progress { height: 6px; background: var(--gray-200); border-radius: 999px; margin: var(--space-md) 0 var(--space-lg); overflow: hidden; }
-    .cc-progress span { display: block; height: 100%; width: 33%; background: var(--brand-gold); }
-    .cc-field { margin-bottom: var(--space-md); }
-    .cc-field > label { display: block; font-weight: 700; color: var(--navy-500); margin-bottom: 6px; font-size: 0.9rem; }
-    .cc-field > label em { color: var(--brand-red); font-style: normal; font-weight: 400; font-size: 0.8rem; }
-    .cc-row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
-    .cc-input { width: 100%; border: 1px solid var(--gray-300); border-radius: var(--radius-md); padding: 12px 14px; font-family: var(--font-family); font-size: 1rem; color: var(--navy-700); outline: none; transition: border-color 0.2s; }
-    .cc-input::placeholder { color: var(--gray-500); }
-    .cc-input:focus { border-color: var(--brand-red); }
-    .cc-sublabel { font-size: 0.8rem; color: var(--gray-500); margin-bottom: 4px; display: block; }
-    .cc-form .btn-gold { width: 100%; margin-top: var(--space-sm); }
+    /* ============================================================
+       SERVICE PAGE
+       ============================================================ */
+    .page-hero-crumb { margin-top: var(--space-md); display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; font-weight: 600; color: rgba(255,255,255,0.75); }
+    .page-hero-crumb a { color: var(--brand-gold); text-decoration: none; }
+    .page-hero-crumb a:hover { text-decoration: underline; }
+    .page-hero-crumb .current { color: var(--white); }
+
+    .svc-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); }
+    @media (min-width: 992px) { .svc-layout { grid-template-columns: 330px 1fr; gap: var(--space-3xl); align-items: start; } }
+
+    .svc-sidebar { display: flex; flex-direction: column; gap: var(--space-xl); }
+    @media (min-width: 992px) { .svc-sidebar { position: sticky; top: 150px; } }
+    .svc-cat { border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--white); }
+    .svc-cat-head { background: var(--gradient-red); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; padding: 18px 22px; }
+    .svc-cat-list { display: flex; flex-direction: column; }
+    .svc-cat-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 15px 22px; color: var(--navy-500); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gray-100); transition: background 0.25s, color 0.25s; }
+    .svc-cat-link:last-child { border-bottom: none; }
+    .svc-cat-ico { width: 30px; height: 30px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; flex-shrink: 0; transition: background 0.25s, color 0.25s; }
+    .svc-cat-ico .material-icons { font-size: 18px; }
+    .svc-cat-link:hover, .svc-cat-link.active { background: var(--gray-100); color: var(--brand-red); }
+    .svc-cat-link.active .svc-cat-ico, .svc-cat-link:hover .svc-cat-ico { background: var(--brand-red); color: var(--white); transform: translateX(3px); }
+    .svc-cat-ico { transition: background 0.25s, color 0.25s, transform 0.25s; }
+
+    .svc-help { background: var(--gradient-hero); color: var(--white); border-radius: var(--radius-lg); padding: var(--space-xl); box-shadow: var(--shadow-md); }
+    .svc-help-brand { display: flex; align-items: center; gap: 10px; }
+    .svc-help-brand img { height: 46px; width: auto; }
+    .svc-help-title { font-family: var(--font-heading); font-weight: 600; font-size: 1.05rem; line-height: 1.4; }
+    .svc-help-links { margin-top: var(--space-lg); display: flex; flex-direction: column; gap: 10px; }
+    .svc-help-link { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-md); color: var(--white); text-decoration: none; font-weight: 600; transition: background 0.25s; }
+    .svc-help-link:hover { background: rgba(255,255,255,0.18); }
+    .svc-help-link .material-icons { color: var(--brand-gold); font-size: 20px; }
+    .svc-help-contact { margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid rgba(255,255,255,0.18); }
+    .svc-help-eyebrow { color: var(--brand-gold); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+    .svc-help-phone { display: block; margin-top: 6px; font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; color: var(--white); text-decoration: none; }
+    .svc-help-email { display: block; margin-top: 8px; color: rgba(255,255,255,0.85); text-decoration: none; }
+    .svc-help-email:hover { color: var(--white); }
+
+    .svc-content { display: flex; flex-direction: column; gap: var(--space-2xl); }
+    .svc-hero-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
+    .svc-hero-img img { display: block; width: 100%; height: 560px; object-fit: cover; object-position: center; }
+    .svc-lead p { color: var(--gray-700); }
+    .svc-lead p + p { margin-top: var(--space-md); }
+    .svc-h2 { font: var(--font-section); color: var(--navy-500); }
+    .svc-sub { margin-top: var(--space-sm); color: var(--gray-700); }
+
+    .svc-features { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-lg); }
+    @media (min-width: 600px) { .svc-features { grid-template-columns: 1fr 1fr; } }
+    .svc-feature { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: var(--space-lg); box-shadow: var(--shadow-sm); }
+    .svc-feature-ico { width: 46px; height: 46px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; margin-bottom: 12px; }
+    .svc-feature-ico .material-icons { font-size: 24px; }
+    .svc-feature h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); }
+    .svc-feature p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-cta-line { text-align: center; color: var(--gray-700); margin-top: var(--space-lg); }
+    .svc-cta-line a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
+
+    .svc-checklist { display: flex; flex-direction: column; gap: 12px; margin-top: var(--space-lg); }
+    .svc-check { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); }
+    .svc-check .material-icons { color: #1FA35B; flex-shrink: 0; }
+
+    .svc-imgcards { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
+    @media (min-width: 600px) { .svc-imgcards { grid-template-columns: 1fr 1fr; } }
+    .svc-imgcard { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 260px; box-shadow: var(--shadow-md); }
+    .svc-imgcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .svc-imgcard-overlay { position: relative; z-index: 1; height: 100%; min-height: 260px; display: flex; flex-direction: column; justify-content: flex-end; padding: var(--space-lg); background: linear-gradient(to top, rgba(21,27,63,0.92) 0%, rgba(21,27,63,0.15) 70%); color: var(--white); }
+    .svc-imgcard-ico { color: var(--brand-gold); margin-bottom: 8px; }
+    .svc-imgcard h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--white); }
+    .svc-imgcard p { margin-top: 6px; font-size: 0.92rem; color: rgba(255,255,255,0.85); }
+
+    .svc-steps-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: stretch; margin-top: var(--space-lg); }
+    @media (min-width: 900px) { .svc-steps-grid { grid-template-columns: 1fr 1fr; } }
+    .svc-steps-list { display: flex; flex-direction: column; }
+    .svc-step { padding: var(--space-lg) 0; border-bottom: 1px solid var(--gray-200); }
+    .svc-step:first-child { padding-top: 0; }
+    .svc-step:last-child { border-bottom: none; }
+    .svc-step-head { display: flex; align-items: center; gap: 12px; }
+    .svc-step-ico { width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; }
+    .svc-step-num { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); }
+    .svc-step h3 { margin-top: 10px; font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); }
+    .svc-step p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-steps-img { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 380px; box-shadow: var(--shadow-md); }
+    .svc-steps-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .svc-callus { position: absolute; left: var(--space-lg); bottom: var(--space-lg); z-index: 1; display: flex; align-items: center; gap: 12px; background: rgba(21,27,63,0.85); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-radius: var(--radius-md); padding: 12px 18px; color: var(--white); }
+    .svc-callus .material-icons { color: var(--brand-gold); }
+    .svc-callus .lbl { font-size: 0.8rem; color: rgba(255,255,255,0.8); }
+    .svc-callus .num { font-family: var(--font-heading); font-weight: 700; }
+    .svc-stats { display: flex; flex-wrap: wrap; gap: var(--space-2xl); margin-top: var(--space-lg); }
+    .svc-stat-num { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: 1.9rem; line-height: 1; }
+    .svc-stat-label { margin-top: 6px; color: var(--gray-500); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
+    .svc-todo { color: var(--gray-500); font-style: italic; background: rgba(255,179,0,0.08); border-left: 3px solid var(--brand-gold); padding: 10px 14px; border-radius: var(--radius-sm); margin-top: var(--space-sm); }
+    .svc-list { margin-top: var(--space-md); display: flex; flex-direction: column; gap: 10px; }
+    .svc-list-item { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); }
+    .svc-list-item .material-icons { color: var(--brand-red); flex-shrink: 0; font-size: 20px; margin-top: 2px; }
+    .svc-list-item.warn .material-icons { color: var(--brand-gold); }
+    .svc-list-item strong { color: var(--navy-500); }
+    .svc-note { margin-top: var(--space-md); color: var(--gray-500); font-size: 0.92rem; }
+    .svc-table-wrap { overflow-x: auto; margin-top: var(--space-lg); border: 1px solid var(--gray-200); border-radius: var(--radius-md); }
+    .svc-table { width: 100%; border-collapse: collapse; min-width: 460px; }
+    .svc-table th { background: var(--gradient-red); color: var(--white); text-align: left; padding: 14px 18px; font-family: var(--font-heading); font-weight: 700; }
+    .svc-table td { padding: 14px 18px; border-top: 1px solid var(--gray-200); color: var(--gray-700); }
+    .svc-table tr:nth-child(even) td { background: var(--gray-100); }
+    .svc-onum { margin-top: var(--space-md); display: flex; flex-direction: column; gap: var(--space-md); }
+    .svc-onum-item { display: flex; gap: 14px; }
+    .svc-onum-badge { flex-shrink: 0; width: 34px; height: 34px; border-radius: var(--radius-full); background: var(--brand-red); color: var(--white); display: grid; place-items: center; font-family: var(--font-heading); font-weight: 700; }
+    .svc-onum-item h3 { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.02rem; }
+    .svc-onum-item p { margin-top: 4px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-subhead { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); margin-top: var(--space-lg); margin-bottom: 4px; }
+    .svc-cta-strong { margin-top: var(--space-md); font-weight: 600; color: var(--navy-500); }
+    .svc-notice { background: rgba(255,179,0,0.10); border-left: 3px solid var(--brand-gold); padding: 14px 16px; border-radius: var(--radius-sm); margin-top: var(--space-lg); color: var(--gray-700); font-size: 0.95rem; }
+    .svc-notice strong { color: var(--navy-500); }
   </style>
 </head>
 <body>
@@ -707,7 +817,7 @@
             <a href="comfort-club.html">Comfort Club</a>
             <a href="reviews.html">Reviews</a>
             <a href="blog.html">Blog</a>
-            <a href="hvac-faq-scottsdale-az.html">HVAC FAQ</a>
+            <a href="hvac-faq-scottsdale-az.html">FAQ</a>
           </div>
         </div>
         <div class="nav-dd">
@@ -806,10 +916,11 @@
     <div class="container">
       <div class="page-hero-grid">
         <div class="page-hero-text reveal">
-          <div class="section-label gold">HVAC Maintenance Plan</div>
-          <h1 class="page-hero-title">Comfort Club HVAC Maintenance Plan</h1>
-          <p class="page-hero-desc">Experience worry-free comfort with a regular HVAC maintenance plan. Maintenance is performed by the same expert technician, you receive priority service when you need it most, and can save up to $350 yearly on energy and repairs. Join our Comfort Club today!</p>
-          <a href="#cc-signup" class="btn-primary" style="margin-top: var(--space-lg);">Sign Up Today</a>
+          <div class="section-label gold">Heating · Furnace Repair</div>
+          <h1 class="page-hero-title">Expert furnace repair near me in Scottsdale, AZ</h1>
+          <p class="page-hero-desc">We offer same or next day furnace repairs, commission-free technicians, and a 100% customer satisfaction guarantee.</p>
+          <p class="page-hero-desc" style="font-weight: 700; margin-top: var(--space-sm);">Call us now at <a href="tel:+16022476151" class="page-hero-phone">602-247-6151</a> to schedule your furnace repair and restore your comfort quickly.</p>
+          <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
         </div>
         <div class="page-hero-right reveal reveal-delay-1">
           <a href="https://www.google.com/search?q=comfort+opne+air+conditioning+arizxona&amp;ie=UTF-8#lrd=0x872b6e5270c22e51:0xe5ffad82f971dc9f,1,,,," class="page-hero-reviews" target="_blank" rel="noopener" aria-label="Over 500 5-star reviews on Google">
@@ -817,144 +928,219 @@
             <img src="imag/Google-Review-Symbol-c1.webp" alt="Google 5-star reviews" />
           </a>
           <div class="page-hero-media">
-            <img src="https://www.comfort1ac.com/wp-content/uploads/2025/10/ComfortOneAC_BusinessBranding2026-9143.jpg" alt="Comfort One technician performing HVAC maintenance" />
+            <img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9709.jpg" alt="The Comfort One Air Conditioning team and service vehicles" />
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== CC INTRO ===================== -->
+  <!-- ===================== SERVICE LAYOUT ===================== -->
   <section class="section-padding" style="background: var(--white);">
     <div class="container">
-      <div class="cc-intro reveal">
-        <div>
-          <div class="section-label">HVAC Maintenance Plan</div>
-          <h2 class="cc-intro-title">Join our Comfort Club: your path to year-round comfort</h2>
-          <p>We invite you to become a member of our exclusive Comfort Club. As a family-owned business with over 40 years of experience, we've designed this HVAC maintenance plan to keep your HVAC system running efficiently while preventing costly repairs and unexpected breakdowns.</p>
-          <a href="#cc-signup" class="btn-primary">Sign Up Today</a>
-        </div>
-        <div class="cc-intro-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2025/10/ComfortOneAC_BusinessBranding2026-9143.jpg" alt="Comfort One maintenance visit" /></div>
-      </div>
-    </div>
-  </section>
+      <div class="svc-layout">
 
-  <!-- ===================== CC REASONS + STATS ===================== -->
-  <section class="section-padding" style="background: var(--gradient-cream-khaki);">
-    <div class="container">
-      <div class="cc-head reveal">
-        <div class="section-label" style="justify-content:center;">Why Homeowners Choose Us</div>
-        <h2 class="cc-head-title">Reasons to choose Comfort One</h2>
-      </div>
-      <div class="cc-reasons-grid">
-        <div class="cc-reason-card reveal"><span class="material-icons">star</span><p>Highly rated with 300+ 5-star reviews</p></div>
-        <div class="cc-reason-card reveal reveal-delay-1"><span class="material-icons">payments</span><p>Transparent pricing with affordable financing</p></div>
-        <div class="cc-reason-card reveal reveal-delay-2"><span class="material-icons">request_quote</span><p>Complimentary estimates for replacement or installation</p></div>
-        <div class="cc-reason-card reveal reveal-delay-3"><span class="material-icons">verified</span><p>Industry-leading warranties and guarantees</p></div>
-      </div>
-      <div class="cc-stats reveal">
-        <div><div class="cc-stat-num">+250</div><div class="cc-stat-label">Members</div></div>
-        <div><div class="cc-stat-num">+40 Years</div><div class="cc-stat-label">Of Experience</div></div>
-        <div><div class="cc-stat-num">+2,750</div><div class="cc-stat-label">Happy Customers</div></div>
-      </div>
-    </div>
-  </section>
+        <!-- SIDEBAR -->
+        <aside class="svc-sidebar">
+          <nav class="svc-cat" aria-label="Heating services">
+            <div class="svc-cat-head">Heating Services</div>
+            <div class="svc-cat-list">
+              <a href="furnace-repair.html" class="svc-cat-link active" aria-current="page">Furnace Repair <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+            </div>
+          </nav>
+          <div class="svc-help">
+            <p class="svc-help-title">Help is just a call away — 24/7, rain or shine.</p>
+            <div class="svc-help-links">
+              <a href="#contact" class="svc-help-link"><span class="material-icons">build</span> Request a Service</a>
+              <a href="index.html#financing" class="svc-help-link"><span class="material-icons">payments</span> Financing Options</a>
+              <a href="comfort-club.html" class="svc-help-link"><span class="material-icons">workspace_premium</span> Comfort Club</a>
+            </div>
+            <div class="svc-help-contact">
+              <div class="svc-help-eyebrow">Need Help? Give Us a Call</div>
+              <a href="tel:+16022476151" class="svc-help-phone">(602) 247-6151</a>
+              <a href="mailto:office@comfort1ac.com" class="svc-help-email">office@comfort1ac.com</a>
+            </div>
+          </div>
+        </aside>
 
-  <!-- ===================== CC PLAN ===================== -->
-  <section class="section-padding" style="background: var(--white);">
-    <div class="container">
-      <div class="cc-plan-card reveal">
-        <div class="cc-plan-body">
-          <div class="section-label gold">The Comfort Club</div>
-          <h2 class="cc-plan-title">Everything you need for year-round comfort</h2>
-          <ul class="cc-plan-list">
-            <li><span class="material-icons">check</span> Two professional tune-ups per year</li>
-            <li><span class="material-icons">check</span> Priority service during peak seasons</li>
-            <li><span class="material-icons">check</span> 10% savings on all repairs</li>
-            <li><span class="material-icons">check</span> $105/year estimated savings</li>
-            <li><span class="material-icons">check</span> Extended system lifespan</li>
-            <li><span class="material-icons">check</span> Improved energy efficiency</li>
-            <li><span class="material-icons">check</span> Better indoor air quality</li>
-            <li><span class="material-icons">check</span> Lower utility bills</li>
-          </ul>
-          <div class="cc-plan-cta">
-            <div class="cc-plan-price">$19.90 <span>/ month</span></div>
-            <a href="#cc-signup" class="btn-gold">Sign Up Today</a>
+        <!-- CONTENT -->
+        <div class="svc-content">
+          <div class="reveal">
+            <h2 class="svc-h2">Reliable furnace repair in Scottsdale, AZ</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we're your trusted local experts for furnace repairs in Scottsdale, AZ and surrounding areas. With over four decades of HVAC experience, our family-owned business has successfully repaired more than 2,250 HVAC systems and solved 500+ heating emergencies.</p>
+            <p class="svc-sub">We understand the unique heating challenges of Scottsdale homes during those chilly desert nights. Our team of skilled technicians is dedicated to providing fast, efficient, and lasting furnace repairs. Whether you're dealing with a minor issue or a major breakdown, we have the expertise to get your furnace back up and running smoothly.</p>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Reasons to choose Comfort One</h2>
+            <div class="svc-checklist">
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Highly rated by our customers with 300+ 5-Star reviews</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Fair pricing with affordable financing options available</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Fully stocked trucks to ensure timely repairs</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Free estimates for system replacement or installation</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Industry leading warranties and guarantees</span></div>
+            </div>
+            <div class="svc-stats">
+              <div><div class="svc-stat-num">+2,250</div><div class="svc-stat-label">Furnace repairs</div></div>
+              <div><div class="svc-stat-num">+40 Years</div><div class="svc-stat-label">Of experience</div></div>
+              <div><div class="svc-stat-num">+2,750</div><div class="svc-stat-label">Customers</div></div>
+            </div>
+            <p class="svc-cta-strong">We are on time, every time! Our team of heating professionals is ready to help. To schedule your furnace repair, give us a call at <a href="tel:+16022476151" style="color:var(--brand-red);">602-247-6151</a>.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Comfort One's professional furnace repair services</h2>
+            <p class="svc-sub">When your furnace fails, Comfort One Air Conditioning's comprehensive furnace repair services are the key to restoring warmth and comfort to your Scottsdale home. Our expert HVAC technicians are equipped to handle a wide range of issues, from simple fixes to complex technical problems.</p>
+            <p class="svc-subhead">We offer:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Diagnostics and troubleshooting to pinpoint the exact issue</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Burner cleaning and adjustment for optimal heating performance</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Electrical repairs on wires and components to ensure safe operation</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Airflow optimization to enhance your furnace's efficiency and longevity</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Thermostat replacement or repair for precise temperature control</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Heat exchanger inspection and repair to prevent dangerous gas leaks</span></div>
+            </div>
+            <p class="svc-note">Trust Comfort One Air Conditioning to not only fix your immediate furnace problems but also provide preventive advice and service options that will keep your heating system running smoothly through Scottsdale's cool winter nights. Call us today at 602-247-6151 to schedule your furnace repair.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Signs your furnace needs repair in Scottsdale, AZ</h2>
+            <p class="svc-sub">Even in Scottsdale's mild winters, a properly functioning furnace is crucial for those chilly desert nights. Being attuned to your heating system can help you catch problems early. Watch out for these telltale signs:</p>
+            <div class="svc-list">
+              <div class="svc-list-item warn"><span class="material-icons">report_problem</span><span><strong>Unusual Noises:</strong> If your furnace starts making banging, rattling, or whistling sounds, it's likely calling for help.</span></div>
+              <div class="svc-list-item warn"><span class="material-icons">report_problem</span><span><strong>Inconsistent Heating:</strong> Cold spots in your home or difficulty maintaining a consistent temperature often indicate furnace issues.</span></div>
+              <div class="svc-list-item warn"><span class="material-icons">report_problem</span><span><strong>Yellow Pilot Light:</strong> A healthy pilot light should be blue. If it's yellow, it could signal a dangerous carbon monoxide leak.</span></div>
+              <div class="svc-list-item warn"><span class="material-icons">report_problem</span><span><strong>Increased Energy Bills:</strong> A sudden spike in your heating costs may mean your furnace is working harder than it should.</span></div>
+            </div>
+            <p class="svc-note">Recognizing these signs early can prevent minor issues from becoming major problems. Don't let a small quirk in your heating system turn into a full-blown situation. Call Comfort One Air Conditioning at 602-247-6151 for expert furnace repair in Scottsdale, AZ.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">How much does furnace repair cost in Scottsdale, AZ?</h2>
+            <p class="svc-sub">We've completed over 2,250 HVAC repair jobs in Scottsdale and surrounding areas. Based on our experience, here's what you can expect for furnace repair costs:</p>
+            <p class="svc-subhead">Average cost for furnace repairs:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>$223</strong> on the lower end of the spectrum</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>$1,250</strong> on average</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>$5,500</strong> on the upper end of the spectrum</span></div>
+            </div>
+            <p class="svc-note">Note: These figures give you a general idea of what to expect, but each repair is unique. The final cost depends on factors like the specific issue, the age and model of your furnace, and the parts required. For a precise estimate, call us at 602-247-6151.</p>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Common furnace repair scenarios and cost in Scottsdale and surrounding areas</h2>
+            <p class="svc-sub">The table below shows the estimated cost range for the most common furnace repair scenarios in and around Scottsdale, AZ:</p>
+            <div class="svc-table-wrap">
+              <table class="svc-table">
+                <tr><th>Job type</th><th>Cheapest</th><th>Most expensive</th></tr>
+              <tr><td>Heat exchanger replacement</td><td>$1,275</td><td>$5,500</td></tr>
+              <tr><td>Thermostat replacement</td><td>$280</td><td>$1,901</td></tr>
+              <tr><td>Gas burner replacement</td><td>$735</td><td>$1,200</td></tr>
+              <tr><td>Blower motor replacement</td><td>$600</td><td>$2,494</td></tr>
+              <tr><td>Flame sensor/thermocouple replacement</td><td>$250</td><td>$450</td></tr>
+              </table>
+            </div>
+            <p class="svc-notice"><strong>Important Notice:</strong> Please note: These are average prices, and actual costs may vary depending on the specific issue, labor charges, and parts needed for the repair.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Furnace repair or replacement?</h2>
+            <p class="svc-sub">Sometimes, replacing your furnace might be more cost-effective than repairing it. Here's when to consider replacement:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Your furnace is 15-20+ years old</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Your system needs frequent repairs</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Your energy bills are going up</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Repair parts are becoming more expensive due to the model's age</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Your furnace is making strange noises or heating unevenly</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>The burner flame is yellow instead of blue</span></div>
+            </div>
+            <p class="svc-note"><strong>We use a simple rule of thumb:</strong> Multiply the repair cost by 10. If this exceeds $5,000, we recommend replacement over repair. <strong>For example:</strong> if your furnace is 15 years old and the repair cost is estimated at $600, multiplying these numbers results in $9,000 — according to this “5,000 rule,” you should consider replacing the unit.</p>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Benefits of replacing your furnace</h2>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Improved energy efficiency (some units refinance themselves solely through money saved on energy bills)</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Enhanced safety features</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Greater peace of mind</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Increased comfort and more consistent heating</span></div>
+            </div>
+            <p class="svc-cta-strong">Not sure whether to repair or replace? Call us at <a href="tel:+16022476151" style="color:var(--brand-red);">602-247-6151</a> for expert advice tailored to your situation, home, budget and needs.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Our furnace repair process</h2>
+            <p class="svc-sub">We're committed to providing you with a smooth &amp; efficient furnace repair experience. Here's what you can expect when you choose Comfort One:</p>
+            <div class="svc-onum">
+              <div class="svc-onum-item"><div class="svc-onum-badge">1</div><div><h3>Schedule the repair</h3><p>Contact us online or call us at 602-247-6151 to request a repair. Our friendly Customer Service Representative will find a time that works with your schedule.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">2</div><div><h3>Receive an arrival call</h3><p>Your professionally-trained technician will call you when they're on their way, so you know exactly when to expect them.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">3</div><div><h3>In-person assessment</h3><p>Our EPA-certified technician will meet with you to understand your concerns and conduct a thorough inspection of your heating system.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">4</div><div><h3>See upfront pricing</h3><p>After the inspection, your technician will explain their findings, present a custom-tailored solution, and provide you with an upfront cost estimate – all before any work begins.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">5</div><div><h3>Get your furnace repaired</h3><p>In most cases, we can repair your furnace the same day. Our trucks are well-stocked with common parts to ensure quick service.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">6</div><div><h3>Clean and efficient repair</h3><p>Once you approve the estimate, we'll get to work, ensuring we leave your home as clean as we found it.</p></div></div>
+              <div class="svc-onum-item"><div class="svc-onum-badge">7</div><div><h3>Share your feedback</h3><p>We'll ask for your feedback on our service. We guarantee 100% customer satisfaction, so if you're not completely satisfied, we'll make it right!</p></div></div>
+            </div>
+            <p class="svc-note">Ready to start the process? Call us at 602-247-6151 to schedule your furnace repair today!</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Our guarantees &amp; warranties</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we stand firmly behind our work. Our promise to you is simple: Your comfort, or we will make it right!</p>
+            <p class="svc-subhead">Our Guarantees:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>100% Satisfaction Guarantee:</strong> Your satisfaction is our top priority. If anything doesn't meet your expectations, we're committed to fixing it – no questions asked.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Cleanliness Guarantee:</strong> We'll leave your home as clean as we found it. Our technicians treat your space with respect.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Upfront Pricing:</strong> No surprises here. We provide clear, upfront pricing before any work begins.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>No Dirty Upsells You Don't Need:</strong> We believe in honest service. Our technicians work commission-free and will never try to sell you services or parts you don't actually need. We recommend only what's necessary for your system's optimal performance and your comfort.</span></div>
+            </div>
+            <p class="svc-subhead">Our Warranties:</p>
+            <div class="svc-list">
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>90-Day Labor Warranty:</strong> All our repair work is backed by a 90-day labor warranty. If the same issue recurs within 90 days, we'll fix it at no additional cost.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>1-2 Year Parts Warranty:</strong> We stand behind the quality of our parts. All parts we install come with a 1-2 year parts warranty.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>10-Year Parts &amp; 2-Year Labor Warranty:</strong> If you were to need a furnace replacement, we offer an industry-leading 10-year parts and 2-year labor warranty (upgradeable to 10 years).</span></div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">The Comfort One difference</h2>
+            <p class="svc-sub">Our goal is to exceed your expectations with every interaction, ensuring you always feel valued and cared for. And let's not forget our Chief Happiness Officer, Loki! This lovable canine takes customer satisfaction very seriously. He treats our customers like family and keeps a watchful eye on our team.</p>
+            <p class="svc-sub">If we ever fall short of 100% satisfaction, Loki might just have to give us a stern talking-to (or a playful nip to keep us in line)! Rest assured, with Comfort One and Loki on the job, your complete satisfaction isn't just a goal – it's a guarantee.</p>
+            <p class="svc-note">Ready to experience the Comfort One difference? Call us at 602-247-6151 to schedule your furnace repair today!</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Frequently asked questions</h2>
+            <div class="faq-list" style="margin-top: var(--space-lg);">
+          <div class="faq-item open">
+            <button class="faq-q" type="button">How often should I have my furnace serviced? <span class="faq-icon">−</span></button>
+            <div class="faq-a"><div class="faq-a-inner">We recommend annual maintenance for your furnace, ideally before the heating season starts. Regular service can prevent unexpected breakdowns and extend the life of your system.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">What are some signs that my furnace needs repair? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How long does a typical furnace repair take? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">Is it better to repair or replace my old furnace? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">Do you offer emergency furnace repair services? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner"></div></div>
+          </div>
+            </div>
           </div>
         </div>
-        <div class="cc-plan-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/loki.webp" alt="Loki, Comfort One mascot" /></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== CC SIGN UP FORM ===================== -->
-  <section class="section-padding cc-form-sec" id="cc-signup">
-    <div class="container">
-      <div class="cc-head reveal">
-        <div class="section-label" style="justify-content:center;">Become a Member</div>
-        <h2 class="cc-head-title">Sign up today</h2>
-      </div>
-      <form class="cc-form reveal" onsubmit="return false;">
-        <p class="cc-form-step">Step 1 of 3 — Contact Information</p>
-        <div class="cc-progress"><span></span></div>
-        <div class="cc-field">
-          <label>Name <em>(Required)</em></label>
-          <div class="cc-row">
-            <input class="cc-input" type="text" placeholder="First" aria-label="First name" />
-            <input class="cc-input" type="text" placeholder="Last" aria-label="Last name" />
-          </div>
-        </div>
-        <div class="cc-row">
-          <div class="cc-field"><label>Email <em>(Required)</em></label><input class="cc-input" type="email" placeholder="example@gmail.com" /></div>
-          <div class="cc-field"><label>Phone <em>(Required)</em></label><input class="cc-input" type="tel" placeholder="123-456-7891" /></div>
-        </div>
-        <div class="cc-field">
-          <label>Address <em>(Required)</em></label>
-          <div class="cc-row">
-            <div><span class="cc-sublabel">City</span><input class="cc-input" type="text" placeholder="Cave Creek" /></div>
-            <div><span class="cc-sublabel">ZIP Code</span><input class="cc-input" type="text" placeholder="85327" /></div>
-          </div>
-        </div>
-        <button type="submit" class="btn-gold">Next Step</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- ===================== GUARANTEE ===================== -->
-  <section class="section-padding abt-guarantee">
-    <div class="container">
-      <div class="abt-guar-grid reveal">
-        <div>
-          <div class="section-label gold">We Stand Behind Our Work</div>
-          <h2 class="abt-guar-title">Your comfort or we will make it right</h2>
-          <div class="abt-guar-body">
-            <p>At Comfort One, your satisfaction is our top priority. If anything doesn't meet your expectations, we're committed to fixing it. Our goal is to exceed your expectations with every interaction, ensuring you always feel valued and cared for.</p>
-            <p>And let's not forget our <strong>Chief Happiness Officer, Loki!</strong> This lovable canine takes customer satisfaction very seriously. He treats our customers like family and keeps a watchful eye on our team. If we ever fall short of 100% satisfaction, Loki might just have to give us a stern talking-to (or a playful nip to keep us in line)!</p>
-            <p>Rest assured, with Comfort One and Loki on the job, your complete satisfaction isn't just a goal — it's a guarantee.</p>
-          </div>
-        </div>
-        <div class="abt-guar-img"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/07/ComfortOneAC_BusinessBranding2026-9539-1.jpg" alt="The Comfort One Air Conditioning team at the office" /></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== REVIEWS ===================== -->
-  <section class="section-padding reviews reviews-light" id="reviews">
-    <div class="container">
-      <div class="reviews-header reveal">
-        <div class="section-label" style="justify-content:center;">Reviews</div>
-        <h2 class="reviews-title">What your neighbors in Scottsdale, Arizona are saying!</h2>
-        <div class="reviews-divider"></div>
-      </div>
-
-            <div class="reviews-masonry">
-        <div class="reviews-masonry-item reveal"><img src="imag/review-01.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
-        <div class="reviews-masonry-item reveal"><img src="imag/review-02.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
-        <div class="reviews-masonry-item reveal"><img src="imag/review-03.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
-        <div class="reviews-masonry-item reveal"><img src="imag/review-04.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
-        <div class="reviews-masonry-item reveal"><img src="imag/review-05.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
-        <div class="reviews-masonry-item reveal"><img src="imag/review-06.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
-        <div class="reviews-masonry-item reveal"><img src="imag/review-07.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -1062,24 +1248,14 @@
   </script>
 
   <script>
-    (function () {
-      var items = document.querySelectorAll('.reviews-masonry-item');
-      if (!items.length) return;
-      var lb = document.getElementById('lightbox');
-      if (!lb) {
-        lb = document.createElement('div');
-        lb.className = 'lightbox'; lb.id = 'lightbox';
-        lb.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img class="lightbox-img" src="" alt="" />';
-        document.body.appendChild(lb);
-      }
-      var img = lb.querySelector('.lightbox-img');
-      function openLb(el) { img.src = el.src; img.alt = el.alt; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
-      function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
-      items.forEach(function (it) { it.addEventListener('click', function () { var i = it.querySelector('img'); if (i) openLb(i); }); });
-      var c = lb.querySelector('.lightbox-close'); if (c) c.addEventListener('click', closeLb);
-      lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
-      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
-    })();
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.faq-item');
+        var open = item.classList.toggle('open');
+        var icon = btn.querySelector('.faq-icon');
+        if (icon) icon.textContent = open ? '\u2212' : '+';
+      });
+    });
   </script>
 </body>
 </html>
