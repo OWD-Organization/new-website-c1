@@ -381,7 +381,7 @@
     /* ============================================================
        COMFORT CLUB (maintenance plan)
        ============================================================ */
-    .club { background: var(--gradient-hero-home); }
+    .club { background: linear-gradient(135deg, #66A6BF 0%, #3E6D96 16%, #27316F 46%, #151B3F 100%); }
     .club-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
     @media (min-width: 900px) { .club-grid { grid-template-columns: minmax(0, 460px) minmax(0, 660px); gap: 96px; justify-content: center; } }
     .club-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
@@ -391,8 +391,12 @@
     .club-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-gold); margin: var(--space-lg) 0 var(--space-xl); }
     .club-body p { color: rgba(255,255,255,0.8); }
     .club-body p + p { margin-top: var(--space-md); }
+    .club-body strong { color: var(--white); font-weight: 700; }
     .club-lead { color: var(--white); font-weight: 700; }
-    .club-cta { margin-top: var(--space-xl); }
+    .club-cta { margin-top: var(--space-xl); display: inline-flex; align-items: center; gap: 10px; }
+    .club-arrow { font-size: 20px; animation: clubArrow 1.6s var(--ease-out) infinite; }
+    @keyframes clubArrow { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(7px); } }
+    @media (prefers-reduced-motion: reduce) { .club-arrow { animation: none; } }
 
     /* ============================================================
        FINANCING
@@ -527,8 +531,8 @@
         <img class="logo-img" src="https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp" alt="Comfort One Air Conditioning" />
       </a>
 
-      <a href="https://www.google.com/search?q=comfort+opne+air+conditioning+arizxona&amp;ie=UTF-8#lrd=0x872b6e5270c22e51:0xe5ffad82f971dc9f,1,,,," class="nav-reviews" target="_blank" rel="noopener" aria-label="Over 500 5-star reviews on Google">
-        <span class="nav-reviews-text">Over 500 <span class="g">5-star</span> reviews</span>
+      <a href="https://www.google.com/search?q=comfort+opne+air+conditioning+arizxona&amp;ie=UTF-8#lrd=0x872b6e5270c22e51:0xe5ffad82f971dc9f,1,,,," class="nav-reviews" target="_blank" rel="noopener" aria-label="Over 550 5-star reviews on Google">
+        <span class="nav-reviews-text">Over 550 <span class="g">5-star</span> reviews</span>
         <img src="imag/Google-Review-Symbol-c1.webp" alt="Google 5-star reviews" />
       </a>
 
@@ -641,8 +645,8 @@
   <section class="hero gradient-hero framed" id="hero">
     <div class="container">
       <div class="hero-content reveal">
-        <a href="https://www.google.com/search?q=comfort+opne+air+conditioning+arizxona&amp;ie=UTF-8#lrd=0x872b6e5270c22e51:0xe5ffad82f971dc9f,1,,,," class="hero-reviews" target="_blank" rel="noopener" aria-label="Over 500 5-star reviews on Google">
-          <span class="hero-reviews-text">Over 500 <span class="g">5-star</span> reviews</span>
+        <a href="https://www.google.com/search?q=comfort+opne+air+conditioning+arizxona&amp;ie=UTF-8#lrd=0x872b6e5270c22e51:0xe5ffad82f971dc9f,1,,,," class="hero-reviews" target="_blank" rel="noopener" aria-label="Over 550 5-star reviews on Google">
+          <span class="hero-reviews-text">Over 550 <span class="g">5-star</span> reviews</span>
           <img src="imag/Google-Review-Symbol-c1.webp" alt="Google 5-star reviews" />
         </a>
         <h1 class="hero-title">We Are Here <br class="hero-forbr"><span class="accent">For You</span></h1>
@@ -747,7 +751,7 @@
         </div>
         <div class="about-stat">
           <span class="about-stat-number">5.0</span>
-          <span class="about-stat-label"><span class="about-stat-stars">★★★★★</span>Based on 500+ Google Reviews.</span>
+          <span class="about-stat-label"><span class="about-stat-stars">★★★★★</span>Based on 550+ Google Reviews.</span>
         </div>
       </div>
 
@@ -781,13 +785,18 @@
       </div>
 
             <div class="reviews-masonry">
-        <div class="reviews-masonry-item reveal"><img src="imag/review-01.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
-        <div class="reviews-masonry-item reveal"><img src="imag/review-02.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
-        <div class="reviews-masonry-item reveal"><img src="imag/review-03.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
-        <div class="reviews-masonry-item reveal"><img src="imag/review-04.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
-        <div class="reviews-masonry-item reveal"><img src="imag/review-05.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
-        <div class="reviews-masonry-item reveal"><img src="imag/review-06.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
-        <div class="reviews-masonry-item reveal"><img src="imag/review-07.png" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130904.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130905.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130906.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130907.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130908.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130909.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130910.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130911.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130912.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130913.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130915.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130918.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
       </div>
     </div>
   </section>
@@ -857,15 +866,14 @@
         </div>
         <div class="club-text reveal reveal-delay-1">
           <div class="section-label gold">HVAC Maintenance Plan</div>
-          <h2 class="club-title">For top-notch service — you need the Comfort Club! Become a member today</h2>
+          <h2 class="club-title">For top-notch service, you need the Comfort Club</h2>
           <div class="club-divider"></div>
           <div class="club-body">
-            <p>If you're a homeowner, you know how important it is to have routine AC and furnace maintenance to keep your living space comfortable year-round — or else you may end up with a costly catastrophe on your hands.</p>
-            <p>But sometimes it can be difficult to stay on top of all the complicated maintenance tasks needed to keep your heating and air conditioning system working efficiently — and that's where Comfort One Air Conditioning comes in!</p>
-            <p>Our HVAC maintenance service in Scottsdale, AZ is designed to make it easy and convenient for homeowners to take proper care of their HVAC systems, with regular maintenance visits from our experienced technicians. With a maintenance plan from Comfort One, you'll enjoy priority service, peace of mind, cost savings, and so much more.</p>
+            <p>Routine AC and furnace maintenance keeps your home comfortable year-round and helps you avoid costly breakdowns. Staying on top of it isn't always easy, and that's where the <strong>Comfort Club</strong> comes in.</p>
+            <p>Our Scottsdale maintenance plan makes caring for your HVAC system simple, with regular visits from our experienced technicians. As a <strong>Comfort Club</strong> member you get priority service, real cost savings, and peace of mind.</p>
             <p class="club-lead">Join today and save 10% on all service repairs!</p>
           </div>
-          <a href="#contact" class="btn-gold club-cta">Join The Club</a>
+          <a href="#contact" class="btn-gold club-cta">Join The Club <span class="material-icons club-arrow">arrow_forward</span></a>
         </div>
       </div>
     </div>
@@ -876,7 +884,7 @@
     <div class="container">
       <div class="stats-header reveal">
         <div class="section-label">Heating &amp; Cooling Experts</div>
-        <h2 class="stats-title">American quality service for your peace of mind</h2>
+        <h2 class="stats-title">American quality service<br>for your peace of mind</h2>
         <span class="stats-divider"></span>
       </div>
 
@@ -959,7 +967,7 @@
     <div class="container">
       <div class="blog-header reveal">
         <div class="section-label gold" style="justify-content:center;">Comfort One's Oasis of Wisdom</div>
-        <h2 class="blog-title">Expert tips &amp; advice from our team of AC experts</h2>
+        <h2 class="blog-title">Expert tips &amp; advice<br>from our team of AC experts</h2>
         <div class="blog-divider"></div>
       </div>
 

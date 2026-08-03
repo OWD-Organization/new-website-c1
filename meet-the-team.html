@@ -508,7 +508,9 @@
     .page-hero-text .section-label { justify-content: flex-start; }
     .page-hero-text .page-hero-desc { margin-left: 0; margin-right: 0; }
     .page-hero-media { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
-    .page-hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+    .page-hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; transform-origin: 50% 62%; transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+    .page-hero-media:hover img { transform: scale(1.18); }
+    @media (prefers-reduced-motion: reduce) { .page-hero-media img { transition: none; } .page-hero-media:hover img { transform: none; } }
     .page-hero-right { display: flex; flex-direction: column; }
     .page-hero-reviews { display: none; }
     @media (min-width: 900px) { .page-hero-reviews { display: inline-flex; align-self: flex-end; align-items: center; gap: 12px; text-decoration: none; margin-bottom: var(--space-lg); } }
@@ -597,8 +599,8 @@
         <img class="logo-img" src="https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp" alt="Comfort One Air Conditioning" />
       </a>
 
-      <a href="https://www.google.com/search?q=comfort+opne+air+conditioning+arizxona&amp;ie=UTF-8#lrd=0x872b6e5270c22e51:0xe5ffad82f971dc9f,1,,,," class="nav-reviews" target="_blank" rel="noopener" aria-label="Over 500 5-star reviews on Google">
-        <span class="nav-reviews-text">Over 500 <span class="g">5-star</span> reviews</span>
+      <a href="https://www.google.com/search?q=comfort+opne+air+conditioning+arizxona&amp;ie=UTF-8#lrd=0x872b6e5270c22e51:0xe5ffad82f971dc9f,1,,,," class="nav-reviews" target="_blank" rel="noopener" aria-label="Over 550 5-star reviews on Google">
+        <span class="nav-reviews-text">Over 550 <span class="g">5-star</span> reviews</span>
         <img src="imag/Google-Review-Symbol-c1.webp" alt="Google 5-star reviews" />
       </a>
 
@@ -718,8 +720,8 @@
           <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
         </div>
         <div class="page-hero-right reveal reveal-delay-1">
-          <a href="https://www.google.com/search?q=comfort+opne+air+conditioning+arizxona&amp;ie=UTF-8#lrd=0x872b6e5270c22e51:0xe5ffad82f971dc9f,1,,,," class="page-hero-reviews" target="_blank" rel="noopener" aria-label="Over 500 5-star reviews on Google">
-            <span class="page-hero-reviews-text">Over 500 <span class="g">5-star</span> reviews</span>
+          <a href="https://www.google.com/search?q=comfort+opne+air+conditioning+arizxona&amp;ie=UTF-8#lrd=0x872b6e5270c22e51:0xe5ffad82f971dc9f,1,,,," class="page-hero-reviews" target="_blank" rel="noopener" aria-label="Over 550 5-star reviews on Google">
+            <span class="page-hero-reviews-text">Over 550 <span class="g">5-star</span> reviews</span>
             <img src="imag/Google-Review-Symbol-c1.webp" alt="Google 5-star reviews" />
           </a>
           <div class="page-hero-media">
