@@ -733,6 +733,18 @@
     .svc-feature-ico .material-icons { font-size: 24px; }
     .svc-feature h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); }
     .svc-feature p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-cardgrid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-lg); }
+    @media (min-width: 560px) { .svc-cardgrid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1000px) { .svc-cardgrid.cols3 { grid-template-columns: 1fr 1fr 1fr; } }
+    .svc-card2 { position: relative; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); transition: transform .25s var(--ease-out), box-shadow .25s; }
+    .svc-card2:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .svc-card2-ico { width: 48px; height: 48px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; margin-bottom: 12px; }
+    .svc-card2-ico .material-icons { font-size: 26px; }
+    .svc-card2.warn .svc-card2-ico { background: rgba(255,179,0,0.14); color: var(--gold-600); }
+    .svc-card2 h3 { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.02rem; line-height: 1.25; }
+    .svc-card2 p { margin-top: 6px; color: var(--gray-700); font-size: 0.94rem; }
+    .svc-card2.price .svc-card2-price { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: 1.9rem; line-height: 1; }
+    .svc-card2.price h3 { font-size: 0.95rem; color: var(--gray-700); font-weight: 600; margin-top: 8px; }
     .svc-cta-line { text-align: center; color: var(--gray-700); margin-top: var(--space-lg); }
     .svc-cta-line a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
 
@@ -845,9 +857,21 @@
             <a href="furnace-installation.html">Furnace Installation</a>
             <a href="furnace-replacement.html">Furnace Replacement</a>
             <a href="furnace-maintenance.html">Furnace Maintenance</a>
+            <a href="heat-pump-repair.html">Heat Pump Repair</a>
+            <a href="heat-pump-installation.html">Heat Pump Installation</a>
+            <a href="heat-pump-replacement.html">Heat Pump Replacement</a>
+            <a href="heat-pump-maintenance.html">Heat Pump Maintenance</a>
           </div>
         </div>
-        <a href="index.html#contact">Service Area</a>
+        <div class="nav-dd">
+          <a href="service-area.html" class="nav-dd-toggle">Service Area <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav-dd-menu">
+            <a href="hvac-contractor-cave-creek-az.html">Cave Creek, AZ</a>
+            <a href="hvac-contractor-anthem-az.html">Anthem, AZ</a>
+            <a href="hvac-contractor-carefree-az.html">Carefree, AZ</a>
+            <a href="hvac-contractor-desert-mountain-az.html">Desert Mountain, AZ</a>
+          </div>
+        </div>
         <a href="index.html#financing">Financing</a>
         <a href="index.html#contact">Contact</a>
       </div>
@@ -902,7 +926,15 @@
             <a href="furnace-installation.html">Furnace Installation</a>
             <a href="furnace-replacement.html">Furnace Replacement</a>
             <a href="furnace-maintenance.html">Furnace Maintenance</a>
-        <a href="index.html#contact">Service Area</a>
+            <a href="heat-pump-repair.html">Heat Pump Repair</a>
+            <a href="heat-pump-installation.html">Heat Pump Installation</a>
+            <a href="heat-pump-replacement.html">Heat Pump Replacement</a>
+            <a href="heat-pump-maintenance.html">Heat Pump Maintenance</a>
+        <a href="service-area.html">Service Area</a>
+            <a href="hvac-contractor-cave-creek-az.html">Cave Creek, AZ</a>
+            <a href="hvac-contractor-anthem-az.html">Anthem, AZ</a>
+            <a href="hvac-contractor-carefree-az.html">Carefree, AZ</a>
+            <a href="hvac-contractor-desert-mountain-az.html">Desert Mountain, AZ</a>
         <a href="index.html#financing">Financing</a>
         <a href="index.html#contact">Contact</a>
         <a href="tel:+16022476151" style="color:var(--brand-gold);font-weight:700;">📞 (602) 247-6151</a>
@@ -950,6 +982,9 @@
               <a href="furnace-replacement.html" class="svc-cat-link">Furnace Replacement <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
               <a href="furnace-maintenance.html" class="svc-cat-link">Furnace Maintenance <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
               <a href="heat-pump-repair.html" class="svc-cat-link active" aria-current="page">Heat Pump Repair <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="heat-pump-installation.html" class="svc-cat-link">Heat Pump Installation <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="heat-pump-replacement.html" class="svc-cat-link">Heat Pump Replacement <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="heat-pump-maintenance.html" class="svc-cat-link">Heat Pump Maintenance <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
             </div>
           </nav>
           <div class="svc-help">
@@ -997,14 +1032,14 @@
             <h2 class="svc-h2">Comfort One's professional heat pump repair services</h2>
             <p class="svc-sub">When your heat pump fails, Comfort One Air Conditioning's comprehensive repair services are the key to restoring year-round comfort to your Scottsdale home. Our expert HVAC technicians are equipped to handle all heat pump issues, from simple fixes to complex technical problems.</p>
             <p class="svc-subhead">We offer:</p>
-            <div class="svc-list">
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Complete system diagnostics to pinpoint both heating and cooling issues</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Refrigerant leak detection and repair to maintain optimal performance</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Electrical repairs on components, including compressors and fan motors</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Reversing valve repair or replacement to ensure proper mode switching</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Thermostat calibration and repair for precise temperature control</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Defrost control board testing and repair to prevent winter freezing</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Airflow optimization for consistent temperature throughout your home</span></div>
+            <div class="svc-cardgrid">
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">manage_search</span></div><h3>Complete system diagnostics</h3><p>We pinpoint both heating and cooling issues at the source.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">opacity</span></div><h3>Refrigerant leak detection &amp; repair</h3><p>Restore and maintain optimal system performance.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">electrical_services</span></div><h3>Electrical repairs</h3><p>On components including compressors and fan motors.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">cached</span></div><h3>Reversing valve repair</h3><p>Repair or replacement to ensure proper mode switching.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">thermostat</span></div><h3>Thermostat calibration &amp; repair</h3><p>For precise, reliable temperature control.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">ac_unit</span></div><h3>Defrost control board service</h3><p>Testing and repair to prevent winter freezing.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">air</span></div><h3>Airflow optimization</h3><p>Consistent temperature throughout your home.</p></div>
             </div>
             <p class="svc-note">Trust Comfort One Air Conditioning to not only fix your immediate heat pump problems but also provide preventive advice and service options that will keep your system running efficiently through Scottsdale's extreme temperatures, from summer heat to winter chills. Call us today at 602-247-6151 to schedule your heat pump repair.</p>
             <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
@@ -1013,13 +1048,13 @@
           <div class="reveal">
             <h2 class="svc-h2">Signs your heat pump needs repair</h2>
             <p class="svc-sub">In Scottsdale's demanding climate, your heat pump works hard year-round to maintain your comfort. Being alert to early warning signs can help prevent costly breakdowns and ensure efficient operation in both heating and cooling modes. Watch out for these telltale signs:</p>
-            <div class="svc-list">
-              <div class="svc-list-item warn"><span class="material-icons">report_problem</span><span><strong>Unusual Noises:</strong> Grinding, squealing, or rattling sounds often indicate mechanical problems that need immediate attention.</span></div>
-              <div class="svc-list-item warn"><span class="material-icons">report_problem</span><span><strong>Inconsistent Temperatures:</strong> If some rooms are too hot or too cold, or your system struggles to maintain your desired temperature, it's time for a professional check.</span></div>
-              <div class="svc-list-item warn"><span class="material-icons">report_problem</span><span><strong>Higher Energy Bills:</strong> A sudden increase in your utility costs could mean your heat pump is working harder than necessary to maintain comfort.</span></div>
-              <div class="svc-list-item warn"><span class="material-icons">report_problem</span><span><strong>Short Cycling:</strong> If your system turns on and off frequently, it may indicate a range of issues from thermostat problems to refrigerant leaks.</span></div>
-              <div class="svc-list-item warn"><span class="material-icons">report_problem</span><span><strong>Ice Formation:</strong> While some frost is normal in winter, excessive ice buildup on your outdoor unit signals a potential problem.</span></div>
-              <div class="svc-list-item warn"><span class="material-icons">report_problem</span><span><strong>Weak Airflow:</strong> Reduced air from your vents could mean blocked ducts, dirty filters, or failing components.</span></div>
+            <div class="svc-cardgrid">
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">graphic_eq</span></div><h3>Unusual noises</h3><p>Grinding, squealing, or rattling sounds often indicate mechanical problems that need immediate attention.</p></div>
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">device_thermostat</span></div><h3>Inconsistent temperatures</h3><p>If some rooms are too hot or too cold, or your system struggles to hold your set temperature, it's time for a professional check.</p></div>
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">trending_up</span></div><h3>Higher energy bills</h3><p>A sudden jump in your utility costs could mean your heat pump is working harder than necessary to maintain comfort.</p></div>
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">sync_problem</span></div><h3>Short cycling</h3><p>If your system turns on and off frequently, it may signal anything from thermostat problems to refrigerant leaks.</p></div>
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">severe_cold</span></div><h3>Ice formation</h3><p>Some frost is normal in winter, but excessive ice buildup on your outdoor unit signals a potential problem.</p></div>
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">air</span></div><h3>Weak airflow</h3><p>Reduced air from your vents could mean blocked ducts, dirty filters, or failing components.</p></div>
             </div>
             <p class="svc-note">Recognizing these signs early can prevent minor issues from becoming major problems. Don't let a small quirk in your heat pump's performance impact your year-round comfort. Call Comfort One Air Conditioning at 602-247-6151 for expert heat pump repair in Scottsdale, AZ.</p>
             <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
@@ -1029,10 +1064,10 @@
             <h2 class="svc-h2">How much does heat pump repair cost in Scottsdale, AZ?</h2>
             <p class="svc-sub">We've completed thousands of heat pump repairs in Scottsdale and surrounding areas. Based on our experience, here's what you can expect for heat pump repair costs:</p>
             <p class="svc-subhead">Average cost for heat pump repairs:</p>
-            <div class="svc-list">
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>$275</strong> for simple repairs</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>$1,617</strong> on average</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>$5,400</strong> for complex repairs</span></div>
+            <div class="svc-cardgrid cols3">
+              <div class="svc-card2 price"><div class="svc-card2-ico"><span class="material-icons">build</span></div><div class="svc-card2-price">$275</div><h3>Simple repairs</h3></div>
+              <div class="svc-card2 price"><div class="svc-card2-ico"><span class="material-icons">receipt_long</span></div><div class="svc-card2-price">$1,617</div><h3>On average</h3></div>
+              <div class="svc-card2 price"><div class="svc-card2-ico"><span class="material-icons">engineering</span></div><div class="svc-card2-price">$5,400</div><h3>Complex repairs</h3></div>
             </div>
             <p class="svc-note">Note: These figures give you a general idea of what to expect, but each repair is unique. The final cost depends on the specific issue, the age and model of your heat pump, and the parts required. For a precise estimate, call us at 602-247-6151.</p>
           </div>
@@ -1072,14 +1107,14 @@
 
           <div class="reveal">
             <h2 class="svc-h2">Benefits of replacing your heat pump</h2>
-            <div class="svc-list">
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Up to 20% lower energy bills with newer, more efficient models</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Improved temperature control and comfort</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Better humidity management</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Quieter operation</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>More reliable performance in both heating and cooling modes</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Enhanced warranty coverage</span></div>
-              <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Potential tax credits and rebates for energy-efficient models</span></div>
+            <div class="svc-cardgrid">
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">savings</span></div><h3>Up to 20% lower energy bills</h3><p>Newer, more efficient models cut your monthly costs.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">thermostat</span></div><h3>Improved comfort</h3><p>Better, more even temperature control across your home.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">water_drop</span></div><h3>Better humidity management</h3><p>Keeps your indoor air balanced and comfortable.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">volume_off</span></div><h3>Quieter operation</h3><p>Modern units run noticeably quieter than older systems.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">verified</span></div><h3>Reliable year-round</h3><p>Dependable performance in both heating and cooling modes.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">shield</span></div><h3>Enhanced warranty coverage</h3><p>Peace of mind with stronger manufacturer protection.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">redeem</span></div><h3>Tax credits &amp; rebates</h3><p>Potential incentives for energy-efficient models.</p></div>
             </div>
             <p class="svc-cta-strong">Not sure whether to repair or replace? Call us at <a href="tel:+16022476151" style="color:var(--brand-red);">602-247-6151</a> for expert advice tailored to your situation, home, budget and needs.</p>
             <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>

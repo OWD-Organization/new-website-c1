@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Air Conditioning Installation in Scottsdale, AZ — Comfort One Air Conditioning</title>
+  <title>Trusted HVAC Contractor in Anthem, AZ — Comfort One Air Conditioning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -733,6 +733,21 @@
     .svc-feature-ico .material-icons { font-size: 24px; }
     .svc-feature h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); }
     .svc-feature p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-cardgrid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-lg); }
+    @media (min-width: 560px) { .svc-cardgrid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1000px) { .svc-cardgrid.cols3 { grid-template-columns: 1fr 1fr 1fr; } }
+    .svc-card2 { position: relative; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); transition: transform .25s var(--ease-out), box-shadow .25s; }
+    .svc-card2:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .svc-card2-ico { width: 48px; height: 48px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; margin-bottom: 12px; }
+    .svc-card2-ico .material-icons { font-size: 26px; }
+    .svc-card2.warn .svc-card2-ico { background: rgba(255,179,0,0.14); color: var(--gold-600); }
+    .svc-card2 h3 { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.02rem; line-height: 1.25; }
+    .svc-card2 p { margin-top: 6px; color: var(--gray-700); font-size: 0.94rem; }
+    .svc-card2 ul { margin-top: 10px; padding: 0; list-style: none; }
+    .svc-card2 ul li { position: relative; padding-left: 18px; color: var(--gray-700); font-size: 0.9rem; margin-top: 7px; line-height: 1.4; }
+    .svc-card2 ul li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-red); }
+    .svc-card2.price .svc-card2-price { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: 1.9rem; line-height: 1; }
+    .svc-card2.price h3 { font-size: 0.95rem; color: var(--gray-700); font-weight: 600; margin-top: 8px; }
     .svc-cta-line { text-align: center; color: var(--gray-700); margin-top: var(--space-lg); }
     .svc-cta-line a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
 
@@ -786,11 +801,20 @@
     .svc-onum-badge { flex-shrink: 0; width: 34px; height: 34px; border-radius: var(--radius-full); background: var(--brand-red); color: var(--white); display: grid; place-items: center; font-family: var(--font-heading); font-weight: 700; }
     .svc-onum-item h3 { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.02rem; }
     .svc-onum-item p { margin-top: 4px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-onum-item ul { margin-top: 8px; padding: 0; list-style: none; }
+    .svc-onum-item ul li { position: relative; padding-left: 18px; color: var(--gray-700); font-size: 0.94rem; margin-top: 6px; line-height: 1.45; }
+    .svc-onum-item ul li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-red); }
     .svc-subhead { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); margin-top: var(--space-lg); margin-bottom: 4px; }
     .svc-cta-strong { margin-top: var(--space-md); font-weight: 600; color: var(--navy-500); }
-    .svc-sub-title { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.15rem; margin-top: var(--space-xl); margin-bottom: 6px; }
     .svc-notice { background: rgba(255,179,0,0.10); border-left: 3px solid var(--brand-gold); padding: 14px 16px; border-radius: var(--radius-sm); margin-top: var(--space-lg); color: var(--gray-700); font-size: 0.95rem; }
     .svc-notice strong { color: var(--navy-500); }
+    .cc-map { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); margin-top: var(--space-lg); background: var(--gray-100); }
+    .cc-map iframe { width: 100%; height: 420px; border: 0; display: block; }
+    .svc-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: var(--space-md); }
+    .svc-chip { display: inline-flex; align-items: center; gap: 6px; padding: 9px 15px; border-radius: var(--radius-full); background: rgba(102,166,191,0.12); border: 1px solid var(--gray-200); color: var(--navy-500); font-weight: 600; font-size: 0.9rem; font-family: var(--font-heading); text-decoration: none; transition: transform .2s var(--ease-out), box-shadow .2s, background .2s; }
+    a.svc-chip:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); background: rgba(102,166,191,0.2); }
+    .svc-chip .material-icons { font-size: 17px; color: var(--brand-red); }
+    .cc-zip .svc-chip { background: var(--red-050); }
   </style>
 </head>
 <body>
@@ -937,10 +961,9 @@
     <div class="container">
       <div class="page-hero-grid">
         <div class="page-hero-text reveal">
-          <div class="section-label gold">Cooling · AC Installation</div>
-          <h1 class="page-hero-title">AC installation in Scottsdale, AZ — done right the first time</h1>
-          <p class="page-hero-desc">When Scottsdale temps push past 110 degrees, a poorly installed AC system is not just uncomfortable, it is a real problem. We believe the most important day in the life of your system is the day it is installed. Get it right the first time, and you stay cool for years.</p>
-          <p class="page-hero-desc" style="font-weight: 700; margin-top: var(--space-sm);">Call Comfort One Air Conditioning at <a href="tel:+16022476151" class="page-hero-phone">602-247-6151</a> for a free estimate today!</p>
+          <div class="section-label gold">Service Area · Anthem, AZ</div>
+          <h1 class="page-hero-title">Trusted HVAC contractor in Anthem, AZ</h1>
+          <p class="page-hero-desc">Same-day service. Commission-free technicians. A 10-year warranty on every installation. Over 550 five-star reviews from homeowners across Anthem and the North Valley.</p>
           <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
         </div>
         <div class="page-hero-right reveal reveal-delay-1">
@@ -956,26 +979,26 @@
     </div>
   </section>
 
-  <!-- ===================== SERVICE LAYOUT ===================== -->
+  <!-- ===================== CAVE CREEK CONTENT ===================== -->
   <section class="section-padding" style="background: var(--white);">
     <div class="container">
       <div class="svc-layout">
 
         <!-- SIDEBAR -->
         <aside class="svc-sidebar">
-          <nav class="svc-cat" aria-label="Cooling services">
-            <div class="svc-cat-head">Cooling Services</div>
+          <nav class="svc-cat" aria-label="Service areas">
+            <div class="svc-cat-head">Service Areas</div>
             <div class="svc-cat-list">
-              <a href="air-conditioning-repair.html" class="svc-cat-link">Air Conditioning Repair <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-              <a href="air-conditioning-installation.html" class="svc-cat-link active" aria-current="page">Air Conditioning Installation <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-              <a href="air-conditioning-replacement.html" class="svc-cat-link">Air Conditioning Replacement <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-              <a href="air-conditioning-maintenance.html" class="svc-cat-link">Air Conditioning Maintenance <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="hvac-contractor-cave-creek-az.html" class="svc-cat-link">Cave Creek, AZ <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="hvac-contractor-anthem-az.html" class="svc-cat-link active" aria-current="page">Anthem, AZ <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="hvac-contractor-carefree-az.html" class="svc-cat-link">Carefree, AZ <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="hvac-contractor-desert-mountain-az.html" class="svc-cat-link">Desert Mountain, AZ <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
             </div>
           </nav>
           <div class="svc-help">
             <p class="svc-help-title">Help is just a call away — 24/7, rain or shine.</p>
             <div class="svc-help-links">
-              <a href="#contact" class="svc-help-link"><span class="material-icons">build</span> Request a Service</a>
+              <a href="index.html#contact" class="svc-help-link"><span class="material-icons">build</span> Request a Service</a>
               <a href="index.html#financing" class="svc-help-link"><span class="material-icons">payments</span> Financing Options</a>
               <a href="comfort-club.html" class="svc-help-link"><span class="material-icons">workspace_premium</span> Comfort Club</a>
             </div>
@@ -990,9 +1013,37 @@
         <!-- CONTENT -->
         <div class="svc-content">
           <div class="reveal">
-            <h2 class="svc-h2">Scottsdale's summer heat demands more than an average AC installation</h2>
-            <p class="svc-sub">A 4,000-square-foot home in Tatum Ranch or Dove Valley has very different cooling needs than a standard Phoenix build. High ceilings, open floor plans, large windows, and desert sun exposure all affect how your system needs to be sized and positioned. Most HVAC companies use a generic formula and call it a day.</p>
-            <p class="svc-sub">Comfort One takes a different approach. Every installation starts with a full assessment of your home's layout, insulation, and sun exposure. We size the system to match your home — not the other way around. That is what proper air conditioning installation looks like.</p>
+            <h2 class="svc-h2">HVAC services in Anthem, Arizona</h2>
+            <p class="svc-sub">Anthem's unique desert location north of Phoenix presents distinct HVAC challenges for homeowners. With temperatures soaring during intense Arizona summers and dropping during cool desert nights, your HVAC system needs to perform reliably year-round.</p>
+            <p class="svc-sub">At Comfort One Air Conditioning, we bring four decades of experience to every one of our HVAC services in Anthem, AZ — tailored to meeting the specific climate demands and providing fast, dependable service to keep your home comfortable in any season.</p>
+            <p class="svc-sub">Don't wait until your system fails — call us at 602-247-6151 for expert HVAC service from a team that understands your local needs.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+            <div class="cc-map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53017.603302433614!2d-112.15931793342084!3d33.84841948434694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b626ae189fcfd%3A0x98737b56b52b6836!2sAnthem%2C%20Phoenix%2C%20AZ!5e0!3m2!1sen!2sus!4v1736977555231!5m2!1sen!2sus" loading="lazy" title="Anthem, AZ service area map" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </div>
+            <p class="svc-subhead">ZIP codes we service:</p>
+            <div class="svc-chips cc-zip">
+              <span class="svc-chip"><span class="material-icons">location_on</span> 85086</span>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Need HVAC services in Anthem, Arizona?</h2>
+            <p class="svc-sub">When you need reliable HVAC services in Anthem, trust Comfort One Air Conditioning, your dedicated HVAC contractor in Anthem, AZ. We're a family-owned and operated business led by industry veteran Jon Holstrom, a skilled Comfort Specialist with thousands of completed jobs under his belt. Our commission-free technicians deliver exceptional service on every call.</p>
+            <div class="svc-chips">
+              <a href="air-conditioning-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Repair</a>
+              <a href="air-conditioning-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Replacement</a>
+              <a href="air-conditioning-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Installation</a>
+              <a href="air-conditioning-maintenance.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Maintenance</a>
+              <a href="heat-pump-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Repair</a>
+              <a href="heat-pump-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Replacement</a>
+              <a href="ductless-mini-split-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Installation</a>
+              <a href="ductless-mini-split-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Replacement</a>
+              <a href="furnace-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Furnace Repair</a>
+              <a href="furnace-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Furnace Replacement</a>
+              <a href="comfort-club.html" class="svc-chip"><span class="material-icons">chevron_right</span> HVAC Maintenance Plan</a>
+              <a href="index.html#contact" class="svc-chip"><span class="material-icons">chevron_right</span> Smart Thermostat</a>
+            </div>
           </div>
 
           <div class="reveal">
@@ -1000,87 +1051,121 @@
             <div class="svc-checklist">
               <div class="svc-check"><span class="material-icons">check_circle</span><span>Highly rated by our customers with 550+ 5-Star reviews</span></div>
               <div class="svc-check"><span class="material-icons">check_circle</span><span>Fair pricing with affordable financing options available</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>Free and fixed price estimates for AC installations</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>10 year parts &amp; labor warranties</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Fully stocked trucks to ensure timely repairs</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Complimentary estimates for system replacement or installation</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Industry leading warranties and guarantees</span></div>
             </div>
-            <div class="svc-stats">
-              <div><div class="svc-stat-num">+600</div><div class="svc-stat-label">AC installations</div></div>
-              <div><div class="svc-stat-num">+40 Years</div><div class="svc-stat-label">Of experience</div></div>
-              <div><div class="svc-stat-num">+2,750</div><div class="svc-stat-label">Happy customers</div></div>
-            </div>
-            <p class="svc-note">Don't let the Arizona heat catch you off guard. Call us at 602-247-6151 for a free estimate on your new AC installation.</p>
+            <p class="svc-note">Don't let HVAC issues disrupt your life in Anthem. Call Comfort One Air Conditioning at 602-247-6151 for expert service tailored to Anthem's needs. We're here to ensure your home stays comfortable all year round with our 100% satisfaction guarantee.</p>
             <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
           </div>
 
           <div class="reveal">
-            <h2 class="svc-h2">Our AC installation services</h2>
-            <p class="svc-sub">We install all major types of air conditioning systems for residential homes across the North Scottsdale area. Here is what we offer:</p>
-            <h3 class="svc-sub-title">Central Air Conditioning Installation</h3>
-            <p class="svc-sub">Central air is the most common and effective solution for large Scottsdale homes. It delivers consistent, whole-home cooling through your existing ductwork. We install premium, energy-efficient central AC systems sized specifically for your home's square footage and layout. Proper sizing is critical — an oversized unit short-cycles, wastes energy, and fails early. An undersized unit runs constantly and still can't keep up on the hottest days.</p>
-            <h3 class="svc-sub-title">Ductless Mini Split Installation in Scottsdale</h3>
-            <p class="svc-sub">Ductless mini split systems are the best solution for casitas, home additions, garage conversions, and rooms that your central system just does not reach. They are also perfect for older homes in Carefree or Cave Creek that do not have existing ductwork. We install ductless systems that let you control each zone independently, so no one is arguing over the thermostat.</p>
-            <h3 class="svc-sub-title">Heat Pump Installation</h3>
-            <p class="svc-sub">Heat pumps are an increasingly popular choice in Scottsdale because they handle both cooling and heating in a single system. They are highly-efficient and a great fit for homeowners who want to reduce utility bills without sacrificing comfort. We help you determine whether a heat pump is the right choice for your home and install it to manufacturer specs.</p>
-            <h3 class="svc-sub-title">Smart Thermostat &amp; System Add-Ons</h3>
-            <p class="svc-sub">Every new installation can be paired with a smart thermostat for better control and lower energy bills. We also offer whole-home air purifiers and dehumidifiers that connect to your new system. Ask us about available add-ons when you book your free estimate.</p>
+            <h2 class="svc-h2">Best HVAC company in Anthem, Arizona</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we've established ourselves as Anthem's premier HVAC service provider through our commitment to excellence and customer satisfaction.</p>
+            <p class="svc-subhead">Our track record speaks for itself:</p>
+            <div class="svc-checklist">
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>2,750+ satisfied customers throughout the Valley</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>2,300+ successful HVAC repairs completed</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>500+ emergency HVAC situations resolved</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>550+ 5-star reviews from happy homeowners</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>600+ HVAC systems professionally installed</span></div>
+            </div>
+            <p class="svc-subhead">What sets us apart:</p>
+            <div class="svc-cardgrid">
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">bolt</span></div><h3>Same or next-day repairs</h3><p>With fully stocked service trucks.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">handshake</span></div><h3>Commission-free technicians</h3><p>Focused on solutions, not sales.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">shield</span></div><h3>Industry-leading warranty</h3><p>10-year parts and 2-year labor on installs.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">tune</span></div><h3>Custom-tailored solutions</h3><p>Based on your home's specific needs.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">verified</span></div><h3>100% satisfaction guarantee</h3><p>On all services, every time.</p></div>
+            </div>
+            <p class="svc-note">Don't settle for anything less than the best when it comes to your home's comfort. Let our family-owned business show you why we're Anthem's most trusted HVAC provider. Ready to experience superior HVAC service? Call us at 602-247-6151 today.</p>
             <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
           </div>
 
           <div class="reveal">
-            <h2 class="svc-h2">What makes installation day different at Comfort One</h2>
-            <p class="svc-sub">Most HVAC companies send a crew, swap out the equipment, and leave. We do things differently. Here is what to expect when Comfort One handles your air conditioning installation in Scottsdale:</p>
-            <div class="svc-onum">
-              <div class="svc-onum-item"><div class="svc-onum-badge">1</div><div><h3>Step 1: Custom Load Calculation for Your Home</h3><p>Before we recommend any system, we calculate the cooling load your home actually requires. We look at square footage, ceiling height, insulation quality, window placement, and sun exposure. This step is what separates a proper installation from a guess.</p></div></div>
-              <div class="svc-onum-item"><div class="svc-onum-badge">2</div><div><h3>Step 2: Right-Sized System, Installed by Commission-Free Technicians</h3><p>Our technicians do not earn a commission on the equipment they install. That means they are focused on one thing: installing the right system for your home. No upsells, no pressure, no unnecessary add-ons. Just quality work by experienced professionals who take pride in getting it right.</p></div></div>
-              <div class="svc-onum-item"><div class="svc-onum-badge">3</div><div><h3>Step 3: Full System Test &amp; Homeowner Walkthrough Before We Leave</h3><p>When the installation is complete, we run a full startup test to confirm the system is working properly. We check airflow, thermostat calibration, refrigerant levels, and electrical connections. Then we walk you through how to operate your new system, what to expect in the first few weeks, and how to get the most out of your warranty.</p></div></div>
+            <h2 class="svc-h2">Our HVAC services in Anthem, AZ</h2>
+            <p class="svc-sub">We offer comprehensive HVAC services tailored to Anthem's unique desert climate, from emergency repairs to complete system installations. Our commission-free technicians arrive in fully stocked trucks for same-day or next-day service, ensuring minimal disruption to your comfort. We stand out with transparent pricing, commission-free service, industry-leading warranties, and a 100% satisfaction guarantee.</p>
+            <p class="svc-subhead">Air conditioning installations &amp; replacements in Anthem, AZ</p>
+            <div class="svc-chips">
+              <a href="air-conditioning-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Replacement</a>
+              <a href="air-conditioning-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Installation</a>
+              <a href="heat-pump-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Replacement</a>
+              <a href="heat-pump-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Installation</a>
+              <a href="ductless-mini-split-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Installation</a>
+              <a href="ductless-mini-split-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Replacement</a>
+              <a href="index.html#contact" class="svc-chip"><span class="material-icons">chevron_right</span> Air Purifier Installation</a>
+              <a href="index.html#contact" class="svc-chip"><span class="material-icons">chevron_right</span> Smart Thermostat Installation</a>
+              <a href="index.html#contact" class="svc-chip"><span class="material-icons">chevron_right</span> Dehumidifier Installation</a>
             </div>
-            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+            <p class="svc-subhead">Air conditioning repairs in Anthem, AZ</p>
+            <div class="svc-chips">
+              <a href="air-conditioning-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Repair</a>
+              <a href="heat-pump-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Repair</a>
+              <a href="ductless-mini-split-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Repair</a>
+            </div>
+            <p class="svc-subhead">Heating installations in Anthem, AZ</p>
+            <div class="svc-chips">
+              <a href="furnace-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Furnace Replacement</a>
+              <a href="furnace-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> Furnace Installation</a>
+              <a href="heat-pump-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Replacement</a>
+              <a href="heat-pump-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Installation</a>
+              <a href="ductless-mini-split-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Replacement</a>
+              <a href="ductless-mini-split-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Installation</a>
+            </div>
+            <p class="svc-subhead">Heating repairs in Anthem, AZ</p>
+            <div class="svc-chips">
+              <a href="furnace-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Furnace Repair</a>
+              <a href="heat-pump-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Repair</a>
+              <a href="ductless-mini-split-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Repair</a>
+            </div>
+            <p class="svc-subhead">AC, furnace &amp; heat pump tune-ups in Anthem, AZ</p>
+            <div class="svc-chips">
+              <a href="air-conditioning-maintenance.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Maintenance</a>
+              <a href="furnace-maintenance.html" class="svc-chip"><span class="material-icons">chevron_right</span> Furnace Maintenance</a>
+              <a href="heat-pump-maintenance.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Maintenance</a>
+            </div>
           </div>
 
           <div class="reveal">
-            <h2 class="svc-h2">How much does AC installation cost in Scottsdale, AZ?</h2>
-            <p class="svc-sub">Based on our experience installing over 600 AC systems in Scottsdale, Arizona, average costs are:</p>
-            <div class="svc-list">
-            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Lowest:</strong> $3,000</span></div>
-            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Average:</strong> $12,000</span></div>
-            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Highest:</strong> $24,000</span></div>
+            <h2 class="svc-h2">Comfort Club — HVAC maintenance plan in Anthem, Arizona</h2>
+            <p class="svc-sub">Keep your HVAC system running smoothly year-round with our Comfort Club maintenance plan, designed specifically for Anthem's demanding climate. Our proactive approach helps prevent costly breakdowns and ensures your system operates at peak efficiency, saving you money and headaches in the long run.</p>
+            <p class="svc-subhead">Benefits of joining the Comfort Club:</p>
+            <div class="svc-checklist">
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Priority service – jump to the front of the line during peak seasons</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Twice-yearly comprehensive tune-ups and inspections</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>10% discounts on repairs and new equipment</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>$105 of yearly estimated savings</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Extended equipment life and improved energy efficiency</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Peace of mind knowing your system is always in top condition</span></div>
             </div>
-            <p class="svc-subhead">Typical price ranges for different AC types:</p>
-            <div class="svc-list">
-            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>New AC Split units:</strong> $7,000 – $20,000</span></div>
-            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>New Ductless mini split units:</strong> $3,000 – $16,000</span></div>
-            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>New Packaged AC units:</strong> $6,000 – $18,000</span></div>
-            </div>
-            <p class="svc-note">For a precise estimate tailored to your home's specific needs, call Comfort One Air Conditioning at 602-247-6151. We offer transparent, fixed-price estimates with no hidden fees.</p>
+            <p class="svc-note" style="border-left: 4px solid var(--brand-gold); background: rgba(255,179,0,0.10); padding: var(--space-md) var(--space-lg); border-radius: var(--radius-md);">All these benefits and more for just <strong>$19.90/month</strong>.</p>
+            <p class="svc-note">Don't wait for your HVAC system to fail in Anthem's extreme heat. Join our Comfort Club today and enjoy worry-free comfort all year long. Call us at 602-247-6151 to sign up and start experiencing the benefits of proactive HVAC maintenance.</p>
+            <a href="comfort-club.html" class="btn-primary" style="margin-top: var(--space-lg);">Join the Comfort Club</a>
           </div>
 
           <div class="reveal">
-            <h2 class="svc-h2">What affects the cost of air conditioning installation?</h2>
-            <p class="svc-sub">When considering a new AC installation in Scottsdale, several factors influence the overall cost:</p>
-            <div class="svc-onum">
-              <div class="svc-onum-item"><div class="svc-onum-badge">1</div><div><h3>System Size and Capacity</h3>
-                <div class="svc-list" style="margin-top:8px;">
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Larger homes require more powerful units, increasing costs</span></div>
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>We'll help you choose the right size to avoid over or under-cooling</span></div>
-                </div></div></div>
-              <div class="svc-onum-item"><div class="svc-onum-badge">2</div><div><h3>Energy Efficiency Rating (SEER)</h3>
-                <div class="svc-list" style="margin-top:8px;">
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Higher SEER ratings mean better efficiency but higher upfront costs</span></div>
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>We will guide you to the best balance of efficiency and budget, making sure your system refinances itself</span></div>
-                </div></div></div>
-              <div class="svc-onum-item"><div class="svc-onum-badge">3</div><div><h3>Brand and Quality</h3>
-                <div class="svc-list" style="margin-top:8px;">
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>We install trusted brands like Rheem, Trane, Midea, Bosch, Grandaire and other manufactures</span></div>
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Premium brands often offer better reliability, features and warranties</span></div>
-                </div></div></div>
-              <div class="svc-onum-item"><div class="svc-onum-badge">4</div><div><h3>Compressor Technology</h3>
-                <div class="svc-list" style="margin-top:8px;">
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Single-stage:</strong> Most affordable, basic operation</span></div>
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Two-stage:</strong> Better efficiency and comfort, mid-range price</span></div>
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Variable-speed:</strong> Highest efficiency and comfort, premium price</span></div>
-                </div></div></div>
+            <h2 class="svc-h2">Our guarantees &amp; warranties</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we stand firmly behind our work. Our promise to you is simple: Your comfort, or we will make it right!</p>
+            <p class="svc-subhead">Our guarantees:</p>
+            <div class="svc-cardgrid">
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">verified</span></div><h3>100% Satisfaction Guarantee</h3><ul><li>Your satisfaction is our top priority</li><li>If anything doesn't meet your expectations, we're committed to fixing it – no questions asked</li></ul></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">cleaning_services</span></div><h3>Cleanliness Guarantee</h3><ul><li>We'll leave your home as clean as we found it</li><li>Our technicians treat your space with respect</li></ul></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">price_check</span></div><h3>Upfront Pricing</h3><ul><li>No surprise fees</li><li>We provide clear, upfront pricing before any work begins</li></ul></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">thumb_up</span></div><h3>No Upsells You Don't Need</h3><ul><li>We believe in honest service</li><li>Commission-free technicians won't sell you services or parts you don't actually need</li><li>We recommend only what's necessary for your system's performance and comfort</li></ul></div>
             </div>
-            <p class="svc-note">At Comfort One Air Conditioning, we'll help you navigate these options to find the perfect balance of performance and value. Call 602-247-6151 for a personalized consultation.</p>
+            <p class="svc-subhead">Our warranties:</p>
+            <div class="svc-cardgrid">
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">build</span></div><h3>90-Day Labor Warranty</h3><ul><li>All our HVAC repair work is backed by a 90-day labor warranty</li><li>If the same issue recurs within 90 days, we'll fix it at no additional cost</li></ul></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">inventory_2</span></div><h3>1–2 Year Parts Warranty</h3><ul><li>We stand behind the quality of our parts</li><li>All parts we install come with a 1–2 year parts warranty</li></ul></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">shield</span></div><h3>10-Year Parts &amp; 2-Year Labor Warranty</h3><ul><li>If you were to need an air conditioning replacement, we offer an industry-leading 10-year parts and 2-year labor warranty (upgradeable to 10 years)</li></ul></div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">The Comfort One difference</h2>
+            <p class="svc-sub">Our goal is to exceed your expectations with every interaction, ensuring you always feel valued and cared for. And let's not forget our Chief Happiness Officer, Loki! This lovable canine takes customer satisfaction very seriously. He treats our customers like family and keeps a watchful eye on our team.</p>
+            <p class="svc-sub">If we ever fall short of 100% satisfaction, Loki might just have to give us a stern talking-to (or a playful nip to keep us in line)! Rest assured, with Comfort One and Loki on the job, your complete satisfaction isn't just a goal – it's a guarantee.</p>
+            <p class="svc-note">Ready to experience the Comfort One difference? Call us at 602-247-6151 to schedule your service today!</p>
             <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
           </div>
 

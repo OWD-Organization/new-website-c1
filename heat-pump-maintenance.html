@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Air Conditioning Installation in Scottsdale, AZ — Comfort One Air Conditioning</title>
+  <title>Heat Pump Maintenance & Tune-Up in Scottsdale, AZ — Comfort One Air Conditioning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -733,6 +733,21 @@
     .svc-feature-ico .material-icons { font-size: 24px; }
     .svc-feature h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); }
     .svc-feature p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-cardgrid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-lg); }
+    @media (min-width: 560px) { .svc-cardgrid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1000px) { .svc-cardgrid.cols3 { grid-template-columns: 1fr 1fr 1fr; } }
+    .svc-card2 { position: relative; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); transition: transform .25s var(--ease-out), box-shadow .25s; }
+    .svc-card2:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .svc-card2-ico { width: 48px; height: 48px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; margin-bottom: 12px; }
+    .svc-card2-ico .material-icons { font-size: 26px; }
+    .svc-card2.warn .svc-card2-ico { background: rgba(255,179,0,0.14); color: var(--gold-600); }
+    .svc-card2 h3 { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.02rem; line-height: 1.25; }
+    .svc-card2 p { margin-top: 6px; color: var(--gray-700); font-size: 0.94rem; }
+    .svc-card2 ul { margin-top: 10px; padding: 0; list-style: none; }
+    .svc-card2 ul li { position: relative; padding-left: 18px; color: var(--gray-700); font-size: 0.9rem; margin-top: 7px; line-height: 1.4; }
+    .svc-card2 ul li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-red); }
+    .svc-card2.price .svc-card2-price { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: 1.9rem; line-height: 1; }
+    .svc-card2.price h3 { font-size: 0.95rem; color: var(--gray-700); font-weight: 600; margin-top: 8px; }
     .svc-cta-line { text-align: center; color: var(--gray-700); margin-top: var(--space-lg); }
     .svc-cta-line a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
 
@@ -786,9 +801,11 @@
     .svc-onum-badge { flex-shrink: 0; width: 34px; height: 34px; border-radius: var(--radius-full); background: var(--brand-red); color: var(--white); display: grid; place-items: center; font-family: var(--font-heading); font-weight: 700; }
     .svc-onum-item h3 { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.02rem; }
     .svc-onum-item p { margin-top: 4px; color: var(--gray-700); font-size: 0.95rem; }
+    .svc-onum-item ul { margin-top: 8px; padding: 0; list-style: none; }
+    .svc-onum-item ul li { position: relative; padding-left: 18px; color: var(--gray-700); font-size: 0.94rem; margin-top: 6px; line-height: 1.45; }
+    .svc-onum-item ul li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-red); }
     .svc-subhead { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); margin-top: var(--space-lg); margin-bottom: 4px; }
     .svc-cta-strong { margin-top: var(--space-md); font-weight: 600; color: var(--navy-500); }
-    .svc-sub-title { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.15rem; margin-top: var(--space-xl); margin-bottom: 6px; }
     .svc-notice { background: rgba(255,179,0,0.10); border-left: 3px solid var(--brand-gold); padding: 14px 16px; border-radius: var(--radius-sm); margin-top: var(--space-lg); color: var(--gray-700); font-size: 0.95rem; }
     .svc-notice strong { color: var(--navy-500); }
   </style>
@@ -937,10 +954,10 @@
     <div class="container">
       <div class="page-hero-grid">
         <div class="page-hero-text reveal">
-          <div class="section-label gold">Cooling · AC Installation</div>
-          <h1 class="page-hero-title">AC installation in Scottsdale, AZ — done right the first time</h1>
-          <p class="page-hero-desc">When Scottsdale temps push past 110 degrees, a poorly installed AC system is not just uncomfortable, it is a real problem. We believe the most important day in the life of your system is the day it is installed. Get it right the first time, and you stay cool for years.</p>
-          <p class="page-hero-desc" style="font-weight: 700; margin-top: var(--space-sm);">Call Comfort One Air Conditioning at <a href="tel:+16022476151" class="page-hero-phone">602-247-6151</a> for a free estimate today!</p>
+          <div class="section-label gold">Heating · Heat Pump Maintenance</div>
+          <h1 class="page-hero-title">Expert heat pump maintenance &amp; tune-up in Scottsdale, AZ</h1>
+          <p class="page-hero-desc">Keep your home comfortable year-round while reducing energy costs with our professional heat pump maintenance services.</p>
+          <p class="page-hero-desc" style="font-weight: 700; margin-top: var(--space-sm);">Call us now at <a href="tel:+16022476151" class="page-hero-phone">602-247-6151</a> to schedule your heat pump tune-up and maintenance.</p>
           <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
         </div>
         <div class="page-hero-right reveal reveal-delay-1">
@@ -963,13 +980,17 @@
 
         <!-- SIDEBAR -->
         <aside class="svc-sidebar">
-          <nav class="svc-cat" aria-label="Cooling services">
-            <div class="svc-cat-head">Cooling Services</div>
+          <nav class="svc-cat" aria-label="Heating services">
+            <div class="svc-cat-head">Heating Services</div>
             <div class="svc-cat-list">
-              <a href="air-conditioning-repair.html" class="svc-cat-link">Air Conditioning Repair <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-              <a href="air-conditioning-installation.html" class="svc-cat-link active" aria-current="page">Air Conditioning Installation <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-              <a href="air-conditioning-replacement.html" class="svc-cat-link">Air Conditioning Replacement <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-              <a href="air-conditioning-maintenance.html" class="svc-cat-link">Air Conditioning Maintenance <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="furnace-repair.html" class="svc-cat-link">Furnace Repair <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="furnace-installation.html" class="svc-cat-link">Furnace Installation <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="furnace-replacement.html" class="svc-cat-link">Furnace Replacement <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="furnace-maintenance.html" class="svc-cat-link">Furnace Maintenance <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="heat-pump-repair.html" class="svc-cat-link">Heat Pump Repair <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="heat-pump-installation.html" class="svc-cat-link">Heat Pump Installation <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="heat-pump-replacement.html" class="svc-cat-link">Heat Pump Replacement <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
+              <a href="heat-pump-maintenance.html" class="svc-cat-link active" aria-current="page">Heat Pump Maintenance <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
             </div>
           </nav>
           <div class="svc-help">
@@ -990,100 +1011,169 @@
         <!-- CONTENT -->
         <div class="svc-content">
           <div class="reveal">
-            <h2 class="svc-h2">Scottsdale's summer heat demands more than an average AC installation</h2>
-            <p class="svc-sub">A 4,000-square-foot home in Tatum Ranch or Dove Valley has very different cooling needs than a standard Phoenix build. High ceilings, open floor plans, large windows, and desert sun exposure all affect how your system needs to be sized and positioned. Most HVAC companies use a generic formula and call it a day.</p>
-            <p class="svc-sub">Comfort One takes a different approach. Every installation starts with a full assessment of your home's layout, insulation, and sun exposure. We size the system to match your home — not the other way around. That is what proper air conditioning installation looks like.</p>
+            <h2 class="svc-h2">Reliable heat pump maintenance &amp; tune-up in Scottsdale, AZ</h2>
+            <p class="svc-sub">We're your local heat pump experts at Comfort One Air Conditioning, serving Scottsdale, AZ and surrounding communities. With over 2,750 happy customers and four decades of HVAC experience, we understand the unique demands that Arizona's climate places on your heat pump system. As a family-owned business, we take pride in delivering exceptional service that keeps your home comfortable through scorching summers and chilly winter nights.</p>
+            <p class="svc-sub">Our team of certified technicians specializes in comprehensive heat pump maintenance &amp; tune-ups in Scottsdale, ensuring your system performs efficiently in both heating and cooling modes. Led by industry veteran Jon Holstrom, we've successfully maintained thousands of heat pump systems across the Valley. We focus on maximizing your system's efficiency while preventing costly breakdowns, helping you save on energy bills year-round.</p>
           </div>
 
           <div class="reveal">
             <h2 class="svc-h2">Reasons to choose Comfort One</h2>
             <div class="svc-checklist">
               <div class="svc-check"><span class="material-icons">check_circle</span><span>Highly rated by our customers with 550+ 5-Star reviews</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>Fair pricing with affordable financing options available</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>Free and fixed price estimates for AC installations</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>10 year parts &amp; labor warranties</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Transparent pricing with affordable financing options</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Fully equipped service vehicles for efficient repairs</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Complimentary estimates for system replacement or installation</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Industry-leading warranties and guarantees</span></div>
             </div>
             <div class="svc-stats">
-              <div><div class="svc-stat-num">+600</div><div class="svc-stat-label">AC installations</div></div>
+              <div><div class="svc-stat-num">+3,500</div><div class="svc-stat-label">Tune-ups</div></div>
               <div><div class="svc-stat-num">+40 Years</div><div class="svc-stat-label">Of experience</div></div>
               <div><div class="svc-stat-num">+2,750</div><div class="svc-stat-label">Happy customers</div></div>
             </div>
-            <p class="svc-note">Don't let the Arizona heat catch you off guard. Call us at 602-247-6151 for a free estimate on your new AC installation.</p>
+            <p class="svc-note">Don't wait for your heat pump to fail when you need it most. Call us at 602-247-6151 to schedule expert maintenance that protects your comfort and your wallet.</p>
             <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
           </div>
 
           <div class="reveal">
-            <h2 class="svc-h2">Our AC installation services</h2>
-            <p class="svc-sub">We install all major types of air conditioning systems for residential homes across the North Scottsdale area. Here is what we offer:</p>
-            <h3 class="svc-sub-title">Central Air Conditioning Installation</h3>
-            <p class="svc-sub">Central air is the most common and effective solution for large Scottsdale homes. It delivers consistent, whole-home cooling through your existing ductwork. We install premium, energy-efficient central AC systems sized specifically for your home's square footage and layout. Proper sizing is critical — an oversized unit short-cycles, wastes energy, and fails early. An undersized unit runs constantly and still can't keep up on the hottest days.</p>
-            <h3 class="svc-sub-title">Ductless Mini Split Installation in Scottsdale</h3>
-            <p class="svc-sub">Ductless mini split systems are the best solution for casitas, home additions, garage conversions, and rooms that your central system just does not reach. They are also perfect for older homes in Carefree or Cave Creek that do not have existing ductwork. We install ductless systems that let you control each zone independently, so no one is arguing over the thermostat.</p>
-            <h3 class="svc-sub-title">Heat Pump Installation</h3>
-            <p class="svc-sub">Heat pumps are an increasingly popular choice in Scottsdale because they handle both cooling and heating in a single system. They are highly-efficient and a great fit for homeowners who want to reduce utility bills without sacrificing comfort. We help you determine whether a heat pump is the right choice for your home and install it to manufacturer specs.</p>
-            <h3 class="svc-sub-title">Smart Thermostat &amp; System Add-Ons</h3>
-            <p class="svc-sub">Every new installation can be paired with a smart thermostat for better control and lower energy bills. We also offer whole-home air purifiers and dehumidifiers that connect to your new system. Ask us about available add-ons when you book your free estimate.</p>
-            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
-          </div>
-
-          <div class="reveal">
-            <h2 class="svc-h2">What makes installation day different at Comfort One</h2>
-            <p class="svc-sub">Most HVAC companies send a crew, swap out the equipment, and leave. We do things differently. Here is what to expect when Comfort One handles your air conditioning installation in Scottsdale:</p>
-            <div class="svc-onum">
-              <div class="svc-onum-item"><div class="svc-onum-badge">1</div><div><h3>Step 1: Custom Load Calculation for Your Home</h3><p>Before we recommend any system, we calculate the cooling load your home actually requires. We look at square footage, ceiling height, insulation quality, window placement, and sun exposure. This step is what separates a proper installation from a guess.</p></div></div>
-              <div class="svc-onum-item"><div class="svc-onum-badge">2</div><div><h3>Step 2: Right-Sized System, Installed by Commission-Free Technicians</h3><p>Our technicians do not earn a commission on the equipment they install. That means they are focused on one thing: installing the right system for your home. No upsells, no pressure, no unnecessary add-ons. Just quality work by experienced professionals who take pride in getting it right.</p></div></div>
-              <div class="svc-onum-item"><div class="svc-onum-badge">3</div><div><h3>Step 3: Full System Test &amp; Homeowner Walkthrough Before We Leave</h3><p>When the installation is complete, we run a full startup test to confirm the system is working properly. We check airflow, thermostat calibration, refrigerant levels, and electrical connections. Then we walk you through how to operate your new system, what to expect in the first few weeks, and how to get the most out of your warranty.</p></div></div>
+            <h2 class="svc-h2">Signs you need a heat pump tune-up in Scottsdale, AZ</h2>
+            <p class="svc-sub">Your heat pump works hard year-round to keep your home comfortable in our extreme desert climate. Here are clear signs it's time for professional maintenance:</p>
+            <div class="svc-cardgrid cols3">
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">trending_up</span></div><h3>Higher electric bills</h3><p>Utility costs climbing higher than usual.</p></div>
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">device_thermostat</span></div><h3>Inconsistent temperatures</h3><p>Noticeable differences between rooms.</p></div>
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">sync_problem</span></div><h3>Constant running / short cycling</h3><p>System runs non-stop or cycles on and off.</p></div>
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">graphic_eq</span></div><h3>Unusual sounds</h3><p>Grinding, squealing, or rattling noises.</p></div>
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">air</span></div><h3>Weak airflow</h3><p>Reduced air coming from your vents.</p></div>
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">severe_cold</span></div><h3>Ice on the outdoor unit</h3><p>Excessive ice buildup outside.</p></div>
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">cached</span></div><h3>Trouble switching modes</h3><p>Struggles to switch between heating and cooling.</p></div>
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">sensors</span></div><h3>Strange odors</h3><p>Unusual smells when the system runs.</p></div>
+              <div class="svc-card2 warn"><div class="svc-card2-ico"><span class="material-icons">water_drop</span></div><h3>Humidity issues</h3><p>Excess moisture or poor humidity control at home.</p></div>
             </div>
+            <p class="svc-note">These warning signs shouldn't be ignored – they often signal your heat pump needs professional attention. Regular maintenance &amp; tune-ups help prevent these issues while protecting your comfort and energy bills. Early intervention can save you hundreds in repairs and prevent system failure during extreme weather. Don't wait until your heat pump stops working during an Arizona heat wave or cold snap. Call us at 602-247-6151 to schedule your professional maintenance check today.</p>
             <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
           </div>
 
           <div class="reveal">
-            <h2 class="svc-h2">How much does AC installation cost in Scottsdale, AZ?</h2>
-            <p class="svc-sub">Based on our experience installing over 600 AC systems in Scottsdale, Arizona, average costs are:</p>
+            <h2 class="svc-h2">The importance of regular heat pump maintenance &amp; tune-ups</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we know that prevention beats repair every time. Here's why regular heat pump maintenance is crucial for Scottsdale homeowners:</p>
+            <div class="svc-cardgrid">
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">savings</span></div><h3>Year-round energy savings</h3><p>Regular tune-ups can cut monthly utility costs by up to 30%, in both cooling and heating seasons.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">update</span></div><h3>Extended system life</h3><p>Your heat pump runs 365 days a year here — maintenance adds years to its lifespan.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">build_circle</span></div><h3>Fewer emergency repairs</h3><p>We catch and fix small issues before they become expensive breakdowns.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">home</span></div><h3>Enhanced home comfort</h3><p>Consistent temperatures and better humidity control throughout your home.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">air</span></div><h3>Better air quality</h3><p>Cleaner air circulation, reducing dust, allergens, and airborne particles.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">speed</span></div><h3>Peak performance</h3><p>Efficient operation in both heating and cooling modes, no matter the season.</p></div>
+            </div>
+            <p class="svc-note">With over 3,500 HVAC systems serviced across the Valley, we understand what it takes to keep your heat pump running at its best. Don't let poor maintenance compromise your comfort or increase your energy bills. Call us today at 602-247-6151 to schedule your professional heat pump tune-up. Our experienced technicians will ensure your system is ready to handle Arizona's temperature extremes.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">The value of professional heat pump maintenance</h2>
+            <p class="svc-sub">While basic heat pump care like filter changes can be done by homeowners, professional maintenance is essential for optimal performance. Here's why trusting Comfort One Air Conditioning makes a difference:</p>
             <div class="svc-list">
-            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Lowest:</strong> $3,000</span></div>
-            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Average:</strong> $12,000</span></div>
-            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Highest:</strong> $24,000</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Expert Knowledge:</strong> Our EPA-certified technicians understand the complexities of heat pump systems. With four decades of experience, we've mastered the unique maintenance requirements of both heating and cooling functions.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Bi-Annual Service:</strong> Unlike traditional HVAC systems, heat pumps benefit from twice-yearly maintenance – typically in spring and fall. These check-ups protect your investment and ensure reliable performance in every season.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Advanced Diagnostics:</strong> We use professional-grade tools to test refrigerant levels, electrical components, and system pressures – measurements that DIY maintenance can't cover.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Energy Optimization:</strong> Our comprehensive tune-ups get your system to achieve maximum efficiency, potentially reducing energy consumption by up to 30%.</span></div>
+              <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Safety First:</strong> As a licensed, bonded, and insured business, our maintenance ensures all work meets strict safety standards. We protect your family and your investment.</span></div>
             </div>
-            <p class="svc-subhead">Typical price ranges for different AC types:</p>
-            <div class="svc-list">
-            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>New AC Split units:</strong> $7,000 – $20,000</span></div>
-            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>New Ductless mini split units:</strong> $3,000 – $16,000</span></div>
-            <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>New Packaged AC units:</strong> $6,000 – $18,000</span></div>
-            </div>
-            <p class="svc-note">For a precise estimate tailored to your home's specific needs, call Comfort One Air Conditioning at 602-247-6151. We offer transparent, fixed-price estimates with no hidden fees.</p>
-          </div>
-
-          <div class="reveal">
-            <h2 class="svc-h2">What affects the cost of air conditioning installation?</h2>
-            <p class="svc-sub">When considering a new AC installation in Scottsdale, several factors influence the overall cost:</p>
-            <div class="svc-onum">
-              <div class="svc-onum-item"><div class="svc-onum-badge">1</div><div><h3>System Size and Capacity</h3>
-                <div class="svc-list" style="margin-top:8px;">
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Larger homes require more powerful units, increasing costs</span></div>
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>We'll help you choose the right size to avoid over or under-cooling</span></div>
-                </div></div></div>
-              <div class="svc-onum-item"><div class="svc-onum-badge">2</div><div><h3>Energy Efficiency Rating (SEER)</h3>
-                <div class="svc-list" style="margin-top:8px;">
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Higher SEER ratings mean better efficiency but higher upfront costs</span></div>
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>We will guide you to the best balance of efficiency and budget, making sure your system refinances itself</span></div>
-                </div></div></div>
-              <div class="svc-onum-item"><div class="svc-onum-badge">3</div><div><h3>Brand and Quality</h3>
-                <div class="svc-list" style="margin-top:8px;">
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>We install trusted brands like Rheem, Trane, Midea, Bosch, Grandaire and other manufactures</span></div>
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span>Premium brands often offer better reliability, features and warranties</span></div>
-                </div></div></div>
-              <div class="svc-onum-item"><div class="svc-onum-badge">4</div><div><h3>Compressor Technology</h3>
-                <div class="svc-list" style="margin-top:8px;">
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Single-stage:</strong> Most affordable, basic operation</span></div>
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Two-stage:</strong> Better efficiency and comfort, mid-range price</span></div>
-                <div class="svc-list-item"><span class="material-icons">check_circle</span><span><strong>Variable-speed:</strong> Highest efficiency and comfort, premium price</span></div>
-                </div></div></div>
-            </div>
-            <p class="svc-note">At Comfort One Air Conditioning, we'll help you navigate these options to find the perfect balance of performance and value. Call 602-247-6151 for a personalized consultation.</p>
+            <p class="svc-note">Don't risk your comfort with DIY solutions. Trust your heat pump to Scottsdale's most reliable HVAC team. With over 2,750 satisfied customers in the Valley, we know what it takes to keep your system running efficiently year-round. Ready for expert heat pump maintenance? Call us at 602-247-6151 to schedule your professional tune-up today.</p>
             <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
           </div>
 
+          <div class="reveal">
+            <h2 class="svc-h2">What our heat pump maintenance &amp; tune-ups include</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we deliver a thorough heat pump maintenance service designed for Arizona's unique climate. Our comprehensive process ensures both the heating and cooling functions of your system operate at peak efficiency year-round.</p>
+            <div class="svc-cardgrid">
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">assessment</span></div><h3>System performance check</h3><ul><li>Test heating and cooling modes</li><li>Measure temperature differentials</li><li>Verify proper defrost operation</li><li>Check reversing valve function</li><li>Monitor startup and shutdown cycles</li></ul></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">electrical_services</span></div><h3>Electrical system</h3><ul><li>Inspect and tighten all electrical connections</li><li>Test voltage and amperage readings</li><li>Check capacitor performance</li><li>Verify thermostat operation</li><li>Examine control board function</li></ul></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">opacity</span></div><h3>Refrigerant service</h3><ul><li>Check refrigerant levels</li><li>Test for leaks</li><li>Inspect refrigerant lines</li><li>Clean coils and fins</li><li>Verify proper pressures</li></ul></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">settings</span></div><h3>Mechanical components</h3><ul><li>Clean or replace air filters</li><li>Lubricate moving parts</li><li>Check belt condition</li><li>Clean condensate drain</li><li>Inspect blower assembly</li><li>Clear debris from outdoor unit</li></ul></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">verified_user</span></div><h3>Safety &amp; efficiency</h3><ul><li>Test safety controls</li><li>Measure airflow</li><li>Check ductwork connection</li><li>Verify proper drainage</li><li>Inspect heat strips operation</li></ul></div>
+            </div>
+            <p class="svc-note">With over 3,500 HVAC systems serviced, our experienced team knows exactly what your heat pump needs to perform its best in both summer and winter. We take pride in our detailed approach that helps prevent unexpected breakdowns and extends system life. Don't wait for extreme weather to test your system's reliability. Call Comfort One Air Conditioning at 602-247-6151 to schedule your comprehensive heat pump maintenance today.</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Maximize your heat pump's performance with our Comfort Club</h2>
+            <p class="svc-sub">Keep your heat pump operating at peak efficiency through Arizona's extreme temperatures with our Comfort Club maintenance plan. Based on four decades of HVAC experience and 3,500+ systems serviced, we've designed our membership to address the year-round demands placed on heat pump systems in our desert climate.</p>
+            <p class="svc-subhead">Comfort Club benefits:</p>
+            <div class="svc-checklist">
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Two professional tune-ups per year (spring and fall)</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Priority service during peak season</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>10% savings on ALL repairs</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Extended system lifespan</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Improved energy efficiency</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Better indoor air quality</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Consistent home comfort</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Lower utility bills</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>No overtime charges</span></div>
+              <div class="svc-check"><span class="material-icons">check_circle</span><span>Inflation protection</span></div>
+            </div>
+            <p class="svc-note" style="border-left: 4px solid var(--brand-gold); background: rgba(255,179,0,0.10); padding: var(--space-md) var(--space-lg); border-radius: var(--radius-md);">All these benefits for just <strong>$19.90/month</strong> — about the cost of a Netflix subscription.</p>
+            <p class="svc-subhead">Why tune-ups matter:</p>
+            <div class="svc-cardgrid">
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">wb_sunny</span></div><h3>Spring service</h3><p>Prepares your system for intense summer cooling demands.</p></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">ac_unit</span></div><h3>Fall service</h3><p>Ensures reliable heating when temperatures drop.</p></div>
+            </div>
+            <p class="svc-note">Both visits help prevent costly breakdowns and maintain optimal performance. Don't risk a system failure during extreme weather. Our Comfort Club members enjoy peace of mind knowing their heat pump is professionally maintained and ready for Arizona's temperature swings. Lock in your protection today. Call us at 602-247-6151 to join the Comfort Club.</p>
+            <a href="comfort-club.html" class="btn-primary" style="margin-top: var(--space-lg);">Join the Comfort Club</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Our guarantees &amp; warranties</h2>
+            <p class="svc-sub">At Comfort One Air Conditioning, we stand behind our heat pump maintenance service with rock-solid guarantees. Our promise is simple: Your comfort, or we will make it right!</p>
+            <p class="svc-subhead">Our iron-clad guarantees:</p>
+            <div class="svc-cardgrid">
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">verified</span></div><h3>100% Satisfaction Guarantee</h3><ul><li>If you're not completely satisfied, we'll make it right</li><li>No questions asked</li><li>No fine print</li></ul></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">handshake</span></div><h3>Honest Service Promise</h3><ul><li>Commission-free technicians</li><li>No upselling or unnecessary services</li><li>Transparent, upfront pricing</li><li>No surprise fees or hidden costs</li></ul></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">cleaning_services</span></div><h3>Clean Home Guarantee</h3><ul><li>Shoe covers worn at all times</li><li>Drop cloths where needed</li><li>Your home left as clean as we found it</li></ul></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">workspace_premium</span></div><h3>Professional Excellence</h3><ul><li>Background-checked technicians</li><li>Drug-free workplace</li><li>Ongoing training and certification</li><li>Fully licensed, bonded, and insured</li></ul></div>
+            </div>
+            <p class="svc-subhead">Our warranties:</p>
+            <div class="svc-cardgrid">
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">build</span></div><h3>Repair Warranty</h3><ul><li>90-day labor guarantee</li><li>1–2 year parts warranty</li><li>Same issue? We'll fix it at no additional cost</li></ul></div>
+              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">shield</span></div><h3>System Replacement Warranty</h3><ul><li>10-year parts coverage</li><li>2-year labor warranty</li><li>Option to upgrade labor warranty to 10 years</li></ul></div>
+            </div>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">The Comfort One difference</h2>
+            <p class="svc-sub">Family owned and operated, we treat every customer like part of our family. Even our Chief Happiness Officer, Loki (yes, our lovable canine mascot), takes customer satisfaction seriously!</p>
+            <p class="svc-note">Experience worry-free heat pump maintenance. Call us at 602-247-6151 to schedule your service today!</p>
+            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          </div>
+
+          <div class="reveal">
+            <h2 class="svc-h2">Frequently asked questions</h2>
+            <div class="faq-list" style="margin-top: var(--space-lg);">
+          <div class="faq-item open">
+            <button class="faq-q" type="button">How often should I schedule heat pump maintenance in Scottsdale? <span class="faq-icon">−</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Unlike traditional HVAC systems, heat pumps need maintenance twice yearly – typically in spring and fall. Spring maintenance prepares your system for intense summer cooling, while fall service ensures reliable heating during colder months.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">What's the average lifespan of a heat pump in Arizona? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner">With regular bi-annual maintenance, a quality heat pump typically lasts 12–15 years in our climate. Because heat pumps run year-round in Arizona, consistent tune-ups are the single best way to protect your investment and reach — or exceed — that lifespan.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How much does heat pump maintenance cost in Scottsdale? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner">A single professional tune-up is affordable, but the best value comes with our Comfort Club membership at just $19.90/month, which includes two tune-ups a year, 10% off all repairs, priority service, and no overtime charges. Call 602-247-6151 for current pricing.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">Why does my heat pump need more maintenance than a traditional AC? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner">A heat pump both heats and cools, so it runs year-round instead of just during summer. That extra workload means twice-yearly service is recommended — once before the cooling season and once before the heating season — to keep it efficient and reliable.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">What happens during a heat pump maintenance visit? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Our technicians perform a full system performance check, inspect and tighten electrical connections, test refrigerant levels and check for leaks, clean coils and drains, lubricate moving parts, replace or clean filters, and verify safety controls and airflow — in both heating and cooling modes.</div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button">How can I maintain my heat pump between professional services? <span class="faq-icon">+</span></button>
+            <div class="faq-a"><div class="faq-a-inner">Replace or clean your air filters every 1–3 months, keep the outdoor unit clear of leaves and debris, maintain a couple of feet of clearance around it, and keep your thermostat settings steady. Call us right away if you notice unusual noises, weak airflow, or rising energy bills.</div></div>
+          </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
