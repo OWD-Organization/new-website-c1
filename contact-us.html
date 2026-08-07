@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Top-Rated HVAC Contractor in Desert Mountain, AZ — Comfort One Air Conditioning</title>
+  <title>Contact Us — Comfort One Air Conditioning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -511,7 +511,6 @@
     @media (min-width: 900px) { .page-hero-grid { grid-template-columns: 1.05fr 0.95fr; gap: var(--space-3xl); } }
     .page-hero-text .section-label { justify-content: flex-start; }
     .page-hero-text .page-hero-desc { margin-left: 0; margin-right: 0; }
-    .page-hero-text .page-hero-crumb { justify-content: flex-start; }
     .page-hero-media { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
     .page-hero-media img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
     .page-hero-right { display: flex; flex-direction: column; }
@@ -629,194 +628,61 @@
     .abt-guar-body strong { color: var(--white); }
     .abt-guar-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
     .abt-guar-img img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3/4; }
-
-    /* ============================================================
-       REVIEWS PAGE
-       ============================================================ */
-    .rv-intro-head { text-align: center; max-width: 840px; margin: 0 auto; }
-    .rv-intro-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
-    .rv-intro-lead { margin-top: var(--space-md); color: var(--gray-700); }
-    .rv-cards { margin: var(--space-2xl) auto 0; display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
-    @media (min-width: 560px) { .rv-cards { grid-template-columns: 1fr 1fr; } }
-    @media (min-width: 1000px) { .rv-cards { grid-template-columns: repeat(5, 1fr); } }
-    .rv-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-lg) var(--space-md); box-shadow: var(--shadow-sm); text-align: center; display: flex; flex-direction: column; align-items: center; }
-    .rv-card-ico { width: 60px; height: 60px; border-radius: var(--radius-full); display: grid; place-items: center; margin-bottom: var(--space-md); background: var(--red-050); color: var(--brand-red); }
-    .rv-card-ico .material-icons { font-size: 30px; }
-    .rv-card p { color: var(--gray-700); font-size: 0.95rem; line-height: 1.5; }
-    .rv-card strong { color: var(--navy-500); font-weight: 700; }
-    .rv-closing { max-width: 820px; margin: 0 auto; text-align: center; }
-    .rv-closing p { color: var(--gray-700); }
-    .rv-closing .btn-primary { margin-top: var(--space-lg); }
-
-    .rv-reasons-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
-    @media (min-width: 900px) { .rv-reasons-grid { grid-template-columns: 1.1fr 0.9fr; gap: var(--space-3xl); } }
-    .rv-reasons-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
-    .rv-reason-list { margin-top: var(--space-lg); display: flex; flex-direction: column; gap: var(--space-md); }
-    .rv-reason { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); font-weight: 500; }
-    .rv-reason .material-icons { color: #1FA35B; font-size: 22px; flex-shrink: 0; }
-    .rv-story-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
-    @media (min-width: 900px) { .rv-story-grid { grid-template-columns: 0.9fr 1.1fr; gap: var(--space-3xl); } }
-    .rv-story-img { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
-    .rv-story-img img { display: block; width: 100%; height: 500px; object-fit: cover; }
-    .rv-story-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
-    .rv-story-grid p { margin-top: var(--space-md); color: var(--gray-700); }
-    .rv-ontime { margin-top: var(--space-lg); color: var(--gray-700); }
-    .rv-ontime a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
-    .rv-archer { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
-    .rv-archer img { display: block; width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/5; }
-
-    /* ============================================================
-       FAQ ACCORDION
-       ============================================================ */
-    .faq-wrap { max-width: 980px; }
-    .faq-block { margin-bottom: var(--space-3xl); }
-    .faq-block:last-child { margin-bottom: 0; }
-    .faq-block-title { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: clamp(1.25rem, 2.2vw, 1.6rem); text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: var(--space-lg); }
-    .faq-list { display: flex; flex-direction: column; gap: 12px; }
-    .faq-item { background: rgba(255, 179, 0, 0.07); border: 1px solid rgba(255, 179, 0, 0.35); border-radius: var(--radius-md); overflow: hidden; transition: border-color 0.3s, background 0.3s; }
-    .faq-item.open { background: rgba(255, 179, 0, 0.12); border-color: var(--brand-gold); }
-    .faq-q { width: 100%; text-align: left; background: none; border: none; cursor: pointer; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px; font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); line-height: 1.35; }
-    .faq-q:hover { color: var(--brand-red); }
-    .faq-icon { flex-shrink: 0; width: 28px; height: 28px; display: grid; place-items: center; color: var(--brand-red); font-size: 1.6rem; font-weight: 400; line-height: 1; }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-    .faq-item.open .faq-a { max-height: 640px; }
-    .faq-a-inner { padding: 0 22px 20px; color: var(--gray-700); }
-
-    /* ============================================================
-       SERVICE PAGE
-       ============================================================ */
-    .page-hero-crumb { margin-top: var(--space-md); display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; font-weight: 600; color: rgba(255,255,255,0.75); }
-    .page-hero-crumb a { color: var(--brand-gold); text-decoration: none; }
-    .page-hero-crumb a:hover { text-decoration: underline; }
-    .page-hero-crumb .current { color: var(--white); }
-
-    .svc-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); }
-    @media (min-width: 992px) { .svc-layout { grid-template-columns: 330px 1fr; gap: var(--space-3xl); align-items: start; } }
-
-    .svc-sidebar { display: flex; flex-direction: column; gap: var(--space-xl); }
-    @media (min-width: 992px) { .svc-sidebar { position: sticky; top: 150px; } }
-    .svc-cat { border: 1px solid var(--gray-200); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--white); }
-    .svc-cat-head { background: var(--gradient-red); color: var(--white); font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; padding: 18px 22px; }
-    .svc-cat-list { display: flex; flex-direction: column; }
-    .svc-cat-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 15px 22px; color: var(--navy-500); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gray-100); transition: background 0.25s, color 0.25s; }
-    .svc-cat-link:last-child { border-bottom: none; }
-    .svc-cat-ico { width: 30px; height: 30px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; flex-shrink: 0; transition: background 0.25s, color 0.25s; }
-    .svc-cat-ico .material-icons { font-size: 18px; }
-    .svc-cat-link:hover, .svc-cat-link.active { background: var(--gray-100); color: var(--brand-red); }
-    .svc-cat-link.active .svc-cat-ico, .svc-cat-link:hover .svc-cat-ico { background: var(--brand-red); color: var(--white); transform: translateX(3px); }
-    .svc-cat-ico { transition: background 0.25s, color 0.25s, transform 0.25s; }
-
-    .svc-help { background: var(--gradient-hero); color: var(--white); border-radius: var(--radius-lg); padding: var(--space-xl); box-shadow: var(--shadow-md); }
-    .svc-help-brand { display: flex; align-items: center; gap: 10px; }
-    .svc-help-brand img { height: 46px; width: auto; }
-    .svc-help-title { font-family: var(--font-heading); font-weight: 600; font-size: 1.05rem; line-height: 1.4; }
-    .svc-help-links { margin-top: var(--space-lg); display: flex; flex-direction: column; gap: 10px; }
-    .svc-help-link { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: var(--radius-md); color: var(--white); text-decoration: none; font-weight: 600; transition: background 0.25s; }
-    .svc-help-link:hover { background: rgba(255,255,255,0.18); }
-    .svc-help-link .material-icons { color: var(--brand-gold); font-size: 20px; }
-    .svc-help-contact { margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid rgba(255,255,255,0.18); }
-    .svc-help-eyebrow { color: var(--brand-gold); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
-    .svc-help-phone { display: block; margin-top: 6px; font-family: var(--font-heading); font-weight: 700; font-size: 1.5rem; color: var(--white); text-decoration: none; }
-    .svc-help-email { display: block; margin-top: 8px; color: rgba(255,255,255,0.85); text-decoration: none; }
-    .svc-help-email:hover { color: var(--white); }
-
-    .svc-content { display: flex; flex-direction: column; gap: var(--space-2xl); }
-    .svc-hero-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); }
-    .svc-hero-img img { display: block; width: 100%; height: 560px; object-fit: cover; object-position: center; }
-    .svc-lead p { color: var(--gray-700); }
-    .svc-lead p + p { margin-top: var(--space-md); }
-    .svc-h2 { font: var(--font-section); color: var(--navy-500); }
-    .svc-sub { margin-top: var(--space-sm); color: var(--gray-700); }
-
-    .svc-features { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-lg); }
-    @media (min-width: 600px) { .svc-features { grid-template-columns: 1fr 1fr; } }
-    .svc-feature { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-md); padding: var(--space-lg); box-shadow: var(--shadow-sm); }
-    .svc-feature-ico { width: 46px; height: 46px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; margin-bottom: 12px; }
-    .svc-feature-ico .material-icons { font-size: 24px; }
-    .svc-feature h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.05rem; color: var(--navy-500); }
-    .svc-feature p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
-    .svc-cardgrid { display: grid; grid-template-columns: 1fr; gap: var(--space-md); margin-top: var(--space-lg); }
-    @media (min-width: 560px) { .svc-cardgrid { grid-template-columns: 1fr 1fr; } }
-    @media (min-width: 1000px) { .svc-cardgrid.cols3 { grid-template-columns: 1fr 1fr 1fr; } }
-    .svc-card2 { position: relative; background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); transition: transform .25s var(--ease-out), box-shadow .25s; }
-    .svc-card2:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
-    .svc-card2-ico { width: 48px; height: 48px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; margin-bottom: 12px; }
-    .svc-card2-ico .material-icons { font-size: 26px; }
-    .svc-card2.warn .svc-card2-ico { background: rgba(255,179,0,0.14); color: var(--gold-600); }
-    .svc-card2 h3 { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.02rem; line-height: 1.25; }
-    .svc-card2 p { margin-top: 6px; color: var(--gray-700); font-size: 0.94rem; }
-    .svc-card2 ul { margin-top: 10px; padding: 0; list-style: none; }
-    .svc-card2 ul li { position: relative; padding-left: 18px; color: var(--gray-700); font-size: 0.9rem; margin-top: 7px; line-height: 1.4; }
-    .svc-card2 ul li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-red); }
-    .svc-card2.price .svc-card2-price { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: 1.9rem; line-height: 1; }
-    .svc-card2.price h3 { font-size: 0.95rem; color: var(--gray-700); font-weight: 600; margin-top: 8px; }
-    .svc-cta-line { text-align: center; color: var(--gray-700); margin-top: var(--space-lg); }
-    .svc-cta-line a { color: var(--brand-red); font-weight: 700; text-decoration: none; }
-
-    .svc-checklist { display: flex; flex-direction: column; gap: 12px; margin-top: var(--space-lg); }
-    .svc-check { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); }
-    .svc-check .material-icons { color: #1FA35B; flex-shrink: 0; }
-
-    .svc-imgcards { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); }
-    @media (min-width: 600px) { .svc-imgcards { grid-template-columns: 1fr 1fr; } }
-    .svc-imgcard { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 260px; box-shadow: var(--shadow-md); }
-    .svc-imgcard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .svc-imgcard-overlay { position: relative; z-index: 1; height: 100%; min-height: 260px; display: flex; flex-direction: column; justify-content: flex-end; padding: var(--space-lg); background: linear-gradient(to top, rgba(21,27,63,0.92) 0%, rgba(21,27,63,0.15) 70%); color: var(--white); }
-    .svc-imgcard-ico { color: var(--brand-gold); margin-bottom: 8px; }
-    .svc-imgcard h3 { font-family: var(--font-heading); font-weight: 700; font-size: 1.15rem; color: var(--white); }
-    .svc-imgcard p { margin-top: 6px; font-size: 0.92rem; color: rgba(255,255,255,0.85); }
-
-    .svc-steps-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: stretch; margin-top: var(--space-lg); }
-    @media (min-width: 900px) { .svc-steps-grid { grid-template-columns: 1fr 1fr; } }
-    .svc-steps-list { display: flex; flex-direction: column; }
-    .svc-step { padding: var(--space-lg) 0; border-bottom: 1px solid var(--gray-200); }
-    .svc-step:first-child { padding-top: 0; }
-    .svc-step:last-child { border-bottom: none; }
-    .svc-step-head { display: flex; align-items: center; gap: 12px; }
-    .svc-step-ico { width: 40px; height: 40px; border-radius: var(--radius-full); background: var(--red-050); color: var(--brand-red); display: grid; place-items: center; }
-    .svc-step-num { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); }
-    .svc-step h3 { margin-top: 10px; font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); }
-    .svc-step p { margin-top: 6px; color: var(--gray-700); font-size: 0.95rem; }
-    .svc-steps-img { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 380px; box-shadow: var(--shadow-md); }
-    .svc-steps-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .svc-callus { position: absolute; left: var(--space-lg); bottom: var(--space-lg); z-index: 1; display: flex; align-items: center; gap: 12px; background: rgba(21,27,63,0.85); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); border-radius: var(--radius-md); padding: 12px 18px; color: var(--white); }
-    .svc-callus .material-icons { color: var(--brand-gold); }
-    .svc-callus .lbl { font-size: 0.8rem; color: rgba(255,255,255,0.8); }
-    .svc-callus .num { font-family: var(--font-heading); font-weight: 700; }
-    .svc-stats { display: flex; flex-wrap: wrap; gap: var(--space-2xl); margin-top: var(--space-lg); }
-    .svc-stat-num { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); font-size: 1.9rem; line-height: 1; }
-    .svc-stat-label { margin-top: 6px; color: var(--gray-500); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
-    .svc-todo { color: var(--gray-500); font-style: italic; background: rgba(255,179,0,0.08); border-left: 3px solid var(--brand-gold); padding: 10px 14px; border-radius: var(--radius-sm); margin-top: var(--space-sm); }
-    .svc-list { margin-top: var(--space-md); display: flex; flex-direction: column; gap: 10px; }
-    .svc-list-item { display: flex; align-items: flex-start; gap: 12px; color: var(--gray-700); }
-    .svc-list-item .material-icons { color: var(--brand-red); flex-shrink: 0; font-size: 20px; margin-top: 2px; }
-    .svc-list-item.warn .material-icons { color: var(--brand-gold); }
-    .svc-list-item strong { color: var(--navy-500); }
-    .svc-note { margin-top: var(--space-md); color: var(--gray-500); font-size: 0.92rem; }
-    .svc-table-wrap { overflow-x: auto; margin-top: var(--space-lg); border: 1px solid var(--gray-200); border-radius: var(--radius-md); }
-    .svc-table { width: 100%; border-collapse: collapse; min-width: 460px; }
-    .svc-table th { background: var(--gradient-red); color: var(--white); text-align: left; padding: 14px 18px; font-family: var(--font-heading); font-weight: 700; }
-    .svc-table td { padding: 14px 18px; border-top: 1px solid var(--gray-200); color: var(--gray-700); }
-    .svc-table tr:nth-child(even) td { background: var(--gray-100); }
-    .svc-onum { margin-top: var(--space-md); display: flex; flex-direction: column; gap: var(--space-md); }
-    .svc-onum-item { display: flex; gap: 14px; }
-    .svc-onum-badge { flex-shrink: 0; width: 34px; height: 34px; border-radius: var(--radius-full); background: var(--brand-red); color: var(--white); display: grid; place-items: center; font-family: var(--font-heading); font-weight: 700; }
-    .svc-onum-item h3 { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: 1.02rem; }
-    .svc-onum-item p { margin-top: 4px; color: var(--gray-700); font-size: 0.95rem; }
-    .svc-onum-item ul { margin-top: 8px; padding: 0; list-style: none; }
-    .svc-onum-item ul li { position: relative; padding-left: 18px; color: var(--gray-700); font-size: 0.94rem; margin-top: 6px; line-height: 1.45; }
-    .svc-onum-item ul li::before { content: ''; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: var(--brand-red); }
-    .svc-subhead { font-family: var(--font-heading); font-weight: 700; color: var(--brand-red); margin-top: var(--space-lg); margin-bottom: 4px; }
-    .svc-cta-strong { margin-top: var(--space-md); font-weight: 600; color: var(--navy-500); }
-    .svc-notice { background: rgba(255,179,0,0.10); border-left: 3px solid var(--brand-gold); padding: 14px 16px; border-radius: var(--radius-sm); margin-top: var(--space-lg); color: var(--gray-700); font-size: 0.95rem; }
-    .svc-notice strong { color: var(--navy-500); }
-    .cc-map { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); margin-top: var(--space-lg); background: var(--gray-100); }
-    .cc-map iframe { width: 100%; height: 420px; border: 0; display: block; }
-    .svc-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: var(--space-md); }
-    .svc-chip { display: inline-flex; align-items: center; gap: 6px; padding: 9px 15px; border-radius: var(--radius-full); background: rgba(102,166,191,0.12); border: 1px solid var(--gray-200); color: var(--navy-500); font-weight: 600; font-size: 0.9rem; font-family: var(--font-heading); text-decoration: none; transition: transform .2s var(--ease-out), box-shadow .2s, background .2s; }
-    a.svc-chip:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); background: rgba(102,166,191,0.2); }
-    .svc-chip .material-icons { font-size: 17px; color: var(--brand-red); }
-    .cc-zip .svc-chip { background: var(--red-050); }
+    .btn-gold { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); padding: 14px 28px; border-radius: var(--radius-full); font: var(--font-btn); color: var(--navy-700); background: var(--gradient-gold); transition: all 0.3s ease; white-space: nowrap; }
+    .btn-gold:hover { filter: brightness(1.05); box-shadow: var(--shadow-glow-gold); }
+    .area { background: var(--white); }
+    .area-card { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 900px) { .area-card { grid-template-columns: 1fr 1fr; gap: 72px; } }
+    .area-map { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); min-height: 520px; background: var(--gray-100); }
+    .area-map iframe { width: 100%; height: 100%; min-height: 520px; border: 0; display: block; }
+    .area-title { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .area-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--gradient-gold); margin: var(--space-lg) 0 var(--space-xl); }
+    .area-list { display: grid; grid-template-columns: 1fr; gap: 14px 24px; }
+    @media (min-width: 560px) { .area-list { grid-template-columns: 1fr 1fr; } }
+    .area-item { display: flex; align-items: center; gap: 8px; color: var(--navy-500); font-weight: 600; font-family: var(--font-heading); }
+    .area-item .material-icons { color: var(--brand-red); font-size: 20px; }
+    .area-cta { margin-top: var(--space-xl); }
+    .ct-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: start; }
+    @media (min-width: 900px) { .ct-grid { grid-template-columns: 1fr 1fr; gap: var(--space-3xl); } }
+    .ct-form { background: #ffffff; border: 1px solid var(--gray-200); border-radius: var(--radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-lg); }
+    .ct-form-title { font-family: var(--font-heading); font-weight: 800; font-size: 1.9rem; color: var(--navy-500); text-transform: uppercase; text-align: center; }
+    .ct-accent { width: 60px; height: 3px; border-radius: 99px; background: var(--gradient-gold); margin: 12px auto 8px; }
+    .ct-req { text-align: center; color: var(--gray-500); font-size: 0.85rem; margin-bottom: var(--space-lg); }
+    .ct-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .ct-fieldwrap { margin-bottom: 14px; }
+    .ct-label { display: block; font-family: var(--font-heading); font-weight: 600; font-size: 0.8rem; color: var(--navy-500); margin-bottom: 6px; }
+    .ct-ig { position: relative; }
+    .ct-ig > .material-icons { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--brand-red); font-size: 20px; pointer-events: none; }
+    .ct-field { width: 100%; padding: 12px 14px 12px 42px; border-radius: var(--radius-md); border: 1px solid var(--gray-200); background: #f6f7f9; color: var(--ink); font-family: var(--font-family); font-size: 0.98rem; transition: border-color .2s, box-shadow .2s, background .2s; }
+    .ct-field::placeholder { color: var(--gray-500); }
+    .ct-field:focus { outline: none; border-color: var(--brand-gold); box-shadow: 0 0 0 3px rgba(255,179,0,0.25); background: #fff; }
+    select.ct-field { cursor: pointer; padding-right: 14px; }
+    .ct-submit { width: 100%; border: 0; cursor: pointer; margin-top: 6px; }
+    .ct-info { text-align: center; }
+    .ct-info-title { font: var(--font-section); color: var(--navy-500); text-transform: uppercase; }
+    .ct-info p { color: var(--gray-700); margin-top: 10px; font-size: 1.05rem; }
+    .ct-info a { color: var(--brand-red); text-decoration: none; }
+    .ct-info a:hover { text-decoration: underline; }
+    .ct-map { margin-top: var(--space-lg); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); background: var(--gray-100); }
+    .ct-map iframe { width: 100%; height: 440px; border: 0; display: block; }
+    .svcs { background: var(--gradient-hero-home); }
+    .svcs .section-label { color: var(--brand-gold); }
+    .svcs-title { font: var(--font-section); color: #fff; text-transform: uppercase; margin-top: var(--space-xs); }
+    .svcs-divider { width: 88px; height: 4px; border-radius: var(--radius-full); background: var(--light-blue); margin: var(--space-lg) 0; }
+    .svcs-sub { color: rgba(255,255,255,0.85); max-width: 720px; margin-bottom: var(--space-xl); }
+    .svcs-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; }
+    @media (min-width: 1000px) { .svcs-layout { grid-template-columns: 1fr 420px; align-items: end; } }
+    .svcs-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+    @media (min-width: 560px) { .svcs-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1000px) { .svcs-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .svcbtn { display: flex; align-items: center; gap: 12px; padding: 15px 16px; border-radius: var(--radius-md); background: var(--gradient-gold); color: var(--navy-700); text-decoration: none; font-family: var(--font-heading); font-weight: 700; font-size: 0.85rem; line-height: 1.2; text-transform: uppercase; transition: transform .2s var(--ease-out), box-shadow .2s; }
+    .svcbtn:hover { transform: translateY(-3px); box-shadow: var(--shadow-glow-gold); }
+    .svcbtn-ico { flex-shrink: 0; width: 38px; height: 38px; border-radius: 8px; background: var(--navy-500); color: var(--brand-gold); display: grid; place-items: center; }
+    .svcbtn-ico .material-icons { font-size: 20px; }
+    .svcs-loki { border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); }
+    .svcs-loki img { display: block; width: 100%; height: auto; }
+    a.area-item { text-decoration: none; transition: color .2s; }
+    a.area-item:hover { color: var(--brand-red); }
   </style>
 </head>
 <body>
@@ -844,7 +710,7 @@
             <a href="comfort-club.html">Comfort Club</a>
             <a href="reviews.html">Reviews</a>
             <a href="blog.html">Blog</a>
-            <a href="hvac-faq-scottsdale-az.html">FAQ</a>
+            <a href="hvac-faq-scottsdale-az.html">HVAC FAQ</a>
           </div>
         </div>
         <div class="nav-dd">
@@ -971,11 +837,10 @@
     <div class="container">
       <div class="page-hero-grid">
         <div class="page-hero-text reveal">
-          <div class="section-label gold">Service Area · Desert Mountain, AZ</div>
-          <h1 class="page-hero-title">Top-rated HVAC contractor near me in Desert Mountain, AZ</h1>
-          <p class="page-hero-desc">Experience fast, dependable HVAC services with same or next-day repairs, custom-tailored solutions, and a 100% satisfaction guarantee.</p>
-          <p class="page-hero-desc" style="font-weight: 700; margin-top: var(--space-sm);">Call Comfort One Air Conditioning at <a href="tel:+16022476151" class="page-hero-phone">602-247-6151</a> to schedule your service.</p>
-          <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
+          <div class="section-label gold">Get In Touch</div>
+          <h1 class="page-hero-title">Contact us</h1>
+          <p class="page-hero-desc">Request an appointment using the form below. Our dedicated team strives to personally reach out within 1 hour to confirm your booking.</p>
+          <p class="page-hero-desc" style="font-weight: 700; margin-top: var(--space-sm);">For immediate assistance, call us directly at <a href="tel:+16022476151" class="page-hero-phone">602-247-6151</a>.</p>
         </div>
         <div class="page-hero-right reveal reveal-delay-1">
           <a href="https://www.google.com/search?q=comfort+opne+air+conditioning+arizxona&amp;ie=UTF-8#lrd=0x872b6e5270c22e51:0xe5ffad82f971dc9f,1,,,," class="page-hero-reviews" target="_blank" rel="noopener" aria-label="Over 550 5-star reviews on Google">
@@ -990,203 +855,142 @@
     </div>
   </section>
 
-  <!-- ===================== CAVE CREEK CONTENT ===================== -->
-  <section class="section-padding" style="background: var(--white);">
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section-padding" style="background: linear-gradient(180deg, #e8ecf1 0%, #f1f4f7 50%, #ffffff 100%);">
     <div class="container">
-      <div class="svc-layout">
-
-        <!-- SIDEBAR -->
-        <aside class="svc-sidebar">
-          <nav class="svc-cat" aria-label="Service areas">
-            <div class="svc-cat-head">Service Areas</div>
-            <div class="svc-cat-list">
-              <a href="hvac-contractor-cave-creek-az.html" class="svc-cat-link">Cave Creek, AZ <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-              <a href="hvac-contractor-anthem-az.html" class="svc-cat-link">Anthem, AZ <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-              <a href="hvac-contractor-carefree-az.html" class="svc-cat-link">Carefree, AZ <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-              <a href="hvac-contractor-desert-mountain-az.html" class="svc-cat-link active" aria-current="page">Desert Mountain, AZ <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-              <a href="hvac-contractor-new-river-az.html" class="svc-cat-link">New River, AZ <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-              <a href="hvac-contractor-paradise-valley-az.html" class="svc-cat-link">Paradise Valley, AZ <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-              <a href="hvac-contractor-phoenix-az.html" class="svc-cat-link">Phoenix, AZ <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-              <a href="hvac-contractor-scottsdale-az.html" class="svc-cat-link">Scottsdale, AZ <span class="svc-cat-ico"><span class="material-icons">arrow_forward</span></span></a>
-            </div>
-          </nav>
-          <div class="svc-help">
-            <p class="svc-help-title">Help is just a call away — 24/7, rain or shine.</p>
-            <div class="svc-help-links">
-              <a href="index.html#contact" class="svc-help-link"><span class="material-icons">build</span> Request a Service</a>
-              <a href="index.html#financing" class="svc-help-link"><span class="material-icons">payments</span> Financing Options</a>
-              <a href="comfort-club.html" class="svc-help-link"><span class="material-icons">workspace_premium</span> Comfort Club</a>
-            </div>
-            <div class="svc-help-contact">
-              <div class="svc-help-eyebrow">Need Help? Give Us a Call</div>
-              <a href="tel:+16022476151" class="svc-help-phone">(602) 247-6151</a>
-              <a href="mailto:office@comfort1ac.com" class="svc-help-email">office@comfort1ac.com</a>
-            </div>
+      <div class="ct-grid">
+        <form class="ct-form reveal" onsubmit="return false;">
+          <div class="ct-form-title">Contact Us</div>
+          <div class="ct-accent"></div>
+          <p class="ct-req">"*" indicates required fields</p>
+          <div class="ct-row">
+            <div class="ct-fieldwrap"><label class="ct-label">First name*</label><div class="ct-ig"><span class="material-icons">person</span><input class="ct-field" type="text" placeholder="First name" aria-label="First name" required /></div></div>
+            <div class="ct-fieldwrap"><label class="ct-label">Last name*</label><div class="ct-ig"><span class="material-icons">person</span><input class="ct-field" type="text" placeholder="Last name" aria-label="Last name" required /></div></div>
           </div>
-        </aside>
-
-        <!-- CONTENT -->
-        <div class="svc-content">
-          <div class="reveal">
-            <h2 class="svc-h2">Reliable HVAC services in Desert Mountain, Arizona</h2>
-            <p class="svc-sub">Desert Mountain's exclusive community demands exceptional HVAC systems to maintain comfort in Arizona's extreme climate. With scorching summers and cool winter nights, your air conditioning and heating units are essential year-round.</p>
-            <p class="svc-sub">At Comfort One Air Conditioning, we understand the unique needs of Desert Mountain residents. We offer prompt, expert HVAC services to ensure your luxury home stays cool during hot days and warm on chilly evenings. Our custom-tailored solutions and industry-leading warranties guarantee your comfort, no matter the season.</p>
-            <p class="svc-sub">Don't let a malfunctioning HVAC system disrupt your comfort. Call us today at 602-247-6151 for fast &amp; reliable HVAC service in Desert Mountain, AZ that homeowners trust.</p>
-            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
-            <div class="cc-map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110422.42151644023!2d-111.9030552884731!3d33.835719641842374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b7f7ee97a4ef7%3A0x3179ce9a10e4b62!2sDesert%20Mountain%2C%20Scottsdale%2C%20AZ%2085262!5e0!3m2!1sen!2sus!4v1727393092442!5m2!1sen!2sus" loading="lazy" title="Desert Mountain, AZ service area map" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-            </div>
-            <p class="svc-subhead">ZIP codes we service:</p>
-            <div class="svc-chips cc-zip">
-              <span class="svc-chip"><span class="material-icons">location_on</span> 85262</span>
-            </div>
+          <div class="ct-row">
+            <div class="ct-fieldwrap"><label class="ct-label">Email address*</label><div class="ct-ig"><span class="material-icons">mail</span><input class="ct-field" type="email" placeholder="you@email.com" aria-label="Email address" required /></div></div>
+            <div class="ct-fieldwrap"><label class="ct-label">ZIP code</label><div class="ct-ig"><span class="material-icons">location_on</span><input class="ct-field" type="text" placeholder="85255" aria-label="ZIP code" /></div></div>
           </div>
-
-          <div class="reveal">
-            <h2 class="svc-h2">Need HVAC services in Desert Mountain, Arizona?</h2>
-            <p class="svc-sub">When you need dependable HVAC services in Desert Mountain, look no further than Comfort One Air Conditioning, your trusted HVAC contractor in Desert Mountain, Arizona. We're a family-owned and operated business serving the Valley of the Sun with pride. For years, we've been keeping Desert Mountain homes comfortable through intense desert heat and cool winter nights.</p>
-            <p class="svc-sub">Our team, led by Tapani Ojalehto — an RSI Top Tech &amp; Comfort Specialist with over 15 years of HVAC experience — understands the unique challenges Desert Mountain's climate poses to your home comfort systems. We've successfully repaired over 2,250 HVAC systems and solved more than 500 HVAC emergencies across the region. Our dedication to excellence and custom-tailored solutions has earned us over 550 5-star reviews from satisfied customers in Desert Mountain and surrounding areas.</p>
-            <div class="svc-chips">
-              <a href="air-conditioning-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Repair</a>
-              <a href="air-conditioning-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Replacement</a>
-              <a href="air-conditioning-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Installation</a>
-              <a href="air-conditioning-maintenance.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Maintenance</a>
-              <a href="heat-pump-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Repair</a>
-              <a href="heat-pump-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Replacement</a>
-              <a href="ductless-mini-split-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Installation</a>
-              <a href="ductless-mini-split-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Replacement</a>
-              <a href="furnace-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Furnace Repair</a>
-              <a href="furnace-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Furnace Replacement</a>
-              <a href="comfort-club.html" class="svc-chip"><span class="material-icons">chevron_right</span> HVAC Maintenance Plan</a>
-              <a href="index.html#contact" class="svc-chip"><span class="material-icons">chevron_right</span> Smart Thermostat</a>
-            </div>
+          <div class="ct-fieldwrap"><label class="ct-label">Phone number*</label><div class="ct-ig"><span class="material-icons">call</span><input class="ct-field" type="tel" placeholder="(602) 247-6151" aria-label="Phone number" required /></div></div>
+          <div class="ct-fieldwrap"><label class="ct-label">What service do you request?*</label><div class="ct-ig"><span class="material-icons">build</span>
+            <select class="ct-field" aria-label="What service do you request?" required>
+              <option value="" selected disabled>Select a service</option>
+              <option>Repair</option>
+              <option>Replacement estimate</option>
+              <option>New construction estimate</option>
+              <option>Maintenance / tune-up</option>
+              <option>0% financing promo</option>
+            </select></div></div>
+          <div class="ct-fieldwrap"><label class="ct-label">How do you prefer to schedule?*</label><div class="ct-ig"><span class="material-icons">schedule</span>
+            <select class="ct-field" aria-label="How do you prefer to schedule?" required>
+              <option value="" selected disabled>Select a preference</option>
+              <option>Receive a call</option>
+              <option>Receive an email</option>
+              <option>Text message</option>
+              <option>I don't have a preference</option>
+            </select></div></div>
+          <button type="submit" class="btn-primary ct-submit">Request a Service</button>
+        </form>
+        <div class="ct-info reveal reveal-delay-1">
+          <h2 class="ct-info-title">Comfort One Air Conditioning</h2>
+          <p>Scottsdale, Arizona 85255</p>
+          <p>Tel: <a href="tel:+16022476151">602-247-6151</a></p>
+          <p>Email: <a href="mailto:office@comfort1ac.com">office@comfort1ac.com</a></p>
+          <div class="ct-map">
+            <iframe loading="lazy" src="https://maps.google.com/maps?q=Comfort%20One%20Air%20Conditioning%20Phoenix%20Arizona&t=m&z=10&output=embed&iwloc=near" title="Comfort One Air Conditioning Phoenix Arizona" aria-label="Comfort One Air Conditioning Phoenix Arizona" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
-
-          <div class="reveal">
-            <h2 class="svc-h2">Reasons to choose Comfort One</h2>
-            <div class="svc-checklist">
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>Highly rated by our customers with 550+ 5-Star reviews</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>Fair pricing with affordable financing options available</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>Fully stocked trucks to ensure timely repairs</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>Complimentary estimates for system replacement or installation</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>Industry leading warranties and guarantees</span></div>
-            </div>
-            <p class="svc-note">Don't let HVAC issues disrupt your comfort in Desert Mountain's exclusive community. Call Comfort One Air Conditioning at 602-247-6151 for prompt, expert service that respects your time and your home.</p>
-            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
-          </div>
-
-          <div class="reveal">
-            <h2 class="svc-h2">Best HVAC company in Desert Mountain, Arizona</h2>
-            <p class="svc-sub">At Comfort One Air Conditioning, we've built our reputation on exceptional service and results tailored to Desert Mountain's unique needs. Here's why we're considered the top choice for HVAC services in this exclusive community:</p>
-            <div class="svc-checklist">
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>Over 2,500 satisfied customers in the Valley</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>550+ 5-star reviews from happy Desert Mountain residents</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>600+ HVAC systems expertly installed</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>4+ decades of combined HVAC experience</span></div>
-            </div>
-            <p class="svc-subhead">We're not just another HVAC company. Here's what sets us apart in Desert Mountain:</p>
-            <div class="svc-cardgrid">
-              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">bolt</span></div><h3>Same or next-day repairs</h3><p>Fast scheduling to keep you comfortable.</p></div>
-              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">price_check</span></div><h3>Transparent, fixed-price estimates</h3><p>No surprises and no hidden fees.</p></div>
-              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">verified</span></div><h3>100% satisfaction guarantee</h3><p>We make it right or we make it right.</p></div>
-              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">handshake</span></div><h3>Commission-free technicians</h3><p>Focused on your needs, not sales quotas.</p></div>
-              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">diversity_3</span></div><h3>Family-owned &amp; operated</h3><p>Care that understands Desert Mountain's climate.</p></div>
-            </div>
-            <p class="svc-note">When you choose Comfort One Air Conditioning, you're not just getting an HVAC service – you're getting a partner committed to your home comfort. Experience the difference of working with the area's best HVAC company. Ready to solve your HVAC issues in Desert Mountain? Schedule your service by calling us at 602-247-6151.</p>
-            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
-          </div>
-
-          <div class="reveal">
-            <h2 class="svc-h2">Our HVAC services in Desert Mountain, AZ</h2>
-            <p class="svc-sub">We offer comprehensive HVAC services tailored to Desert Mountain's climate, from fast &amp; reliable AC repairs to efficient system installations. Our experienced technicians provide same-day or next-day service, ensuring your comfort. We stand out with transparent pricing, commission-free service, and industry-leading warranties. Whether it's a noisy AC or high energy bills, we're committed to delivering lasting solutions for a comfortable, efficient home.</p>
-            <p class="svc-subhead">Air conditioning installations &amp; replacements in Desert Mountain, AZ</p>
-            <div class="svc-chips">
-              <a href="air-conditioning-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Replacement</a>
-              <a href="air-conditioning-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Installation</a>
-              <a href="heat-pump-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Replacement</a>
-              <a href="heat-pump-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Installation</a>
-              <a href="ductless-mini-split-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Installation</a>
-              <a href="ductless-mini-split-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Replacement</a>
-              <a href="index.html#contact" class="svc-chip"><span class="material-icons">chevron_right</span> Air Purifier Installation</a>
-              <a href="index.html#contact" class="svc-chip"><span class="material-icons">chevron_right</span> Smart Thermostat Installation</a>
-              <a href="index.html#contact" class="svc-chip"><span class="material-icons">chevron_right</span> Dehumidifier Installation</a>
-            </div>
-            <p class="svc-subhead">Air conditioning repairs in Desert Mountain, AZ</p>
-            <div class="svc-chips">
-              <a href="air-conditioning-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Repair</a>
-              <a href="heat-pump-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Repair</a>
-              <a href="ductless-mini-split-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Repair</a>
-            </div>
-            <p class="svc-subhead">Heating installations in Desert Mountain, AZ</p>
-            <div class="svc-chips">
-              <a href="furnace-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Furnace Replacement</a>
-              <a href="furnace-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> Furnace Installation</a>
-              <a href="heat-pump-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Replacement</a>
-              <a href="heat-pump-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Installation</a>
-              <a href="ductless-mini-split-replacement.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Replacement</a>
-              <a href="ductless-mini-split-installation.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Installation</a>
-            </div>
-            <p class="svc-subhead">Heating repairs in Desert Mountain, AZ</p>
-            <div class="svc-chips">
-              <a href="furnace-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Furnace Repair</a>
-              <a href="heat-pump-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Repair</a>
-              <a href="ductless-mini-split-repair.html" class="svc-chip"><span class="material-icons">chevron_right</span> Ductless Mini Split Repair</a>
-            </div>
-            <p class="svc-subhead">AC, furnace &amp; heat pump tune-ups in Desert Mountain, AZ</p>
-            <div class="svc-chips">
-              <a href="air-conditioning-maintenance.html" class="svc-chip"><span class="material-icons">chevron_right</span> AC Maintenance</a>
-              <a href="furnace-maintenance.html" class="svc-chip"><span class="material-icons">chevron_right</span> Furnace Maintenance</a>
-              <a href="heat-pump-maintenance.html" class="svc-chip"><span class="material-icons">chevron_right</span> Heat Pump Maintenance</a>
-            </div>
-          </div>
-
-          <div class="reveal">
-            <h2 class="svc-h2">Comfort Club — HVAC maintenance plan in Desert Mountain, Arizona</h2>
-            <p class="svc-sub">Keep your HVAC system running smoothly year-round with our Comfort Club maintenance plan, designed specifically for Desert Mountain's demanding climate. Our proactive approach helps prevent costly breakdowns and ensures your system operates at peak efficiency, saving you money and headaches in the long run.</p>
-            <p class="svc-subhead">Benefits of joining the Comfort Club:</p>
-            <div class="svc-checklist">
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>Priority service – jump to the front of the line during peak seasons</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>Twice-yearly comprehensive tune-ups and inspections</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>10% discounts on repairs and new equipment</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>$105 of yearly estimated savings</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>Extended equipment life and improved energy efficiency</span></div>
-              <div class="svc-check"><span class="material-icons">check_circle</span><span>Peace of mind knowing your system is always in top condition</span></div>
-            </div>
-            <p class="svc-note" style="border-left: 4px solid var(--brand-gold); background: rgba(255,179,0,0.10); padding: var(--space-md) var(--space-lg); border-radius: var(--radius-md);">All these benefits and more for just <strong>$19.90/month</strong>.</p>
-            <p class="svc-note">Don't wait for your HVAC system to fail in Desert Mountain's extreme heat. Join our Comfort Club today and enjoy worry-free comfort all year long. Call us at 602-247-6151 to sign up and start experiencing the benefits of proactive HVAC maintenance.</p>
-            <a href="comfort-club.html" class="btn-primary" style="margin-top: var(--space-lg);">Join the Comfort Club</a>
-          </div>
-
-          <div class="reveal">
-            <h2 class="svc-h2">Our guarantees &amp; warranties</h2>
-            <p class="svc-sub">At Comfort One Air Conditioning, we stand firmly behind our work. Our promise to you is simple: Your comfort, or we will make it right!</p>
-            <p class="svc-subhead">Our guarantees:</p>
-            <div class="svc-cardgrid">
-              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">verified</span></div><h3>100% Satisfaction Guarantee</h3><ul><li>Your satisfaction is our top priority</li><li>If anything doesn't meet your expectations, we're committed to fixing it – no questions asked</li></ul></div>
-              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">cleaning_services</span></div><h3>Cleanliness Guarantee</h3><ul><li>We'll leave your home as clean as we found it</li><li>Our technicians treat your space with respect</li></ul></div>
-              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">price_check</span></div><h3>Upfront Pricing</h3><ul><li>No surprise fees</li><li>We provide clear, upfront pricing before any work begins</li></ul></div>
-              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">thumb_up</span></div><h3>No Upsells You Don't Need</h3><ul><li>We believe in honest service</li><li>Commission-free technicians won't sell you services or parts you don't actually need</li><li>We recommend only what's necessary for your system's performance and comfort</li></ul></div>
-            </div>
-            <p class="svc-subhead">Our warranties:</p>
-            <div class="svc-cardgrid">
-              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">build</span></div><h3>90-Day Labor Warranty</h3><ul><li>All our HVAC repair work is backed by a 90-day labor warranty</li><li>If the same issue recurs within 90 days, we'll fix it at no additional cost</li></ul></div>
-              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">inventory_2</span></div><h3>1–2 Year Parts Warranty</h3><ul><li>We stand behind the quality of our parts</li><li>All parts we install come with a 1–2 year parts warranty</li></ul></div>
-              <div class="svc-card2"><div class="svc-card2-ico"><span class="material-icons">shield</span></div><h3>10-Year Parts &amp; 2-Year Labor Warranty</h3><ul><li>If you were to need an air conditioning replacement, we offer an industry-leading 10-year parts and 2-year labor warranty (upgradeable to 10 years)</li></ul></div>
-            </div>
-          </div>
-
-          <div class="reveal">
-            <h2 class="svc-h2">The Comfort One difference</h2>
-            <p class="svc-sub">Our goal is to exceed your expectations with every interaction, ensuring you always feel valued and cared for. And let's not forget our Chief Happiness Officer, Loki! This lovable canine takes customer satisfaction very seriously. He treats our customers like family and keeps a watchful eye on our team.</p>
-            <p class="svc-sub">If we ever fall short of 100% satisfaction, Loki might just have to give us a stern talking-to (or a playful nip to keep us in line)! Rest assured, with Comfort One and Loki on the job, your complete satisfaction isn't just a goal – it's a guarantee.</p>
-            <p class="svc-note">Ready to experience the Comfort One difference? Call us at 602-247-6151 to schedule your HVAC service today!</p>
-            <a href="index.html#contact" class="btn-primary" style="margin-top: var(--space-lg);">Request a Service</a>
-          </div>
-
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ===================== HVAC SERVICES ===================== -->
+  <section class="section-padding svcs">
+    <div class="container">
+      <div class="svcs-layout reveal">
+        <div>
+          <div class="section-label gold">Our HVAC Services</div>
+          <h2 class="svcs-title">Heating and air conditioning services in Scottsdale, Arizona</h2>
+          <div class="svcs-divider"></div>
+          <p class="svcs-sub">Whether you need air conditioning installation or repairs, you can count on Comfort One Air Conditioning for the job! Call 602-247-6151 to schedule your service.</p>
+          <div class="svcs-grid">
+            <a class="svcbtn" href="air-conditioning-repair.html"><span class="svcbtn-ico"><span class="material-icons">ac_unit</span></span> Air Conditioning Repair</a>
+            <a class="svcbtn" href="air-conditioning-installation.html"><span class="svcbtn-ico"><span class="material-icons">ac_unit</span></span> Air Conditioning Installation</a>
+            <a class="svcbtn" href="air-conditioning-maintenance.html"><span class="svcbtn-ico"><span class="material-icons">ac_unit</span></span> Air Conditioning Maintenance</a>
+            <a class="svcbtn" href="furnace-installation.html"><span class="svcbtn-ico"><span class="material-icons">local_fire_department</span></span> Furnace Installation</a>
+            <a class="svcbtn" href="furnace-repair.html"><span class="svcbtn-ico"><span class="material-icons">local_fire_department</span></span> Furnace Repair</a>
+            <a class="svcbtn" href="furnace-maintenance.html"><span class="svcbtn-ico"><span class="material-icons">local_fire_department</span></span> Furnace Maintenance</a>
+            <a class="svcbtn" href="ductless-mini-split-repair.html"><span class="svcbtn-ico"><span class="material-icons">air</span></span> Ductless Mini Split Repair</a>
+            <a class="svcbtn" href="ductless-mini-split-installation.html"><span class="svcbtn-ico"><span class="material-icons">air</span></span> Ductless Mini Split Installation</a>
+            <a class="svcbtn" href="ductless-mini-split-maintenance.html"><span class="svcbtn-ico"><span class="material-icons">air</span></span> Ductless Mini Split Maintenance</a>
+            <a class="svcbtn" href="heat-pump-repair.html"><span class="svcbtn-ico"><span class="material-icons">thermostat</span></span> Heat Pump Repair</a>
+            <a class="svcbtn" href="heat-pump-installation.html"><span class="svcbtn-ico"><span class="material-icons">thermostat</span></span> Heat Pump Installation</a>
+            <a class="svcbtn" href="comfort-club.html"><span class="svcbtn-ico"><span class="material-icons">build</span></span> HVAC Maintenance Plan</a>
+          </div>
+        </div>
+        <div class="svcs-loki"><img src="https://www.comfort1ac.com/wp-content/uploads/2026/03/loki.webp" alt="Loki, Chief Happiness Officer" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REVIEWS ===================== -->
+  <section class="section-padding reviews reviews-light" id="reviews">
+    <div class="container">
+      <div class="reviews-header reveal">
+        <div class="section-label gold" style="justify-content:center;">Customer Testimonials</div>
+        <h2 class="reviews-title">What your neighbors in Scottsdale, Arizona are saying!</h2>
+        <div class="reviews-divider"></div>
+      </div>
+
+            <div class="reviews-masonry">
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130904.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130905.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130906.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130907.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130908.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130909.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130910.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130911.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130912.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130913.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130915.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+        <div class="reviews-masonry-item reveal"><img src="imag/1000130918.webp" alt="Google review for Comfort One Air Conditioning" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICE AREA ===================== -->
+  <section class="section-padding area" id="service-area">
+    <div class="container">
+      <div class="area-card reveal">
+        <div class="area-map">
+          <iframe src="https://www.google.com/maps?q=Comfort%20One%20Air%20Conditioning%2C%20Scottsdale%2C%20AZ&z=10&output=embed" loading="lazy" title="Comfort One service area map" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="area-content">
+          <div class="section-label">Areas We Serve</div>
+          <h2 class="area-title">Providing service to the Scottsdale, Arizona and surrounding areas</h2>
+          <div class="area-divider"></div>
+          <div class="area-list">
+            <a class="area-item" href="hvac-contractor-anthem-az.html"><span class="material-icons">location_on</span> Anthem, AZ</a>
+            <a class="area-item" href="hvac-contractor-paradise-valley-az.html"><span class="material-icons">location_on</span> Paradise Valley, AZ</a>
+            <a class="area-item" href="hvac-contractor-carefree-az.html"><span class="material-icons">location_on</span> Carefree, AZ</a>
+            <a class="area-item" href="hvac-contractor-phoenix-az.html"><span class="material-icons">location_on</span> Phoenix, AZ</a>
+            <a class="area-item" href="hvac-contractor-cave-creek-az.html"><span class="material-icons">location_on</span> Cave Creek, AZ</a>
+            <a class="area-item" href="hvac-contractor-new-river-az.html"><span class="material-icons">location_on</span> New River, AZ</a>
+            <a class="area-item" href="hvac-contractor-desert-mountain-az.html"><span class="material-icons">location_on</span> Desert Mountain, AZ</a>
+            <a class="area-item" href="hvac-contractor-scottsdale-az.html"><span class="material-icons">location_on</span> Scottsdale, AZ</a>
+          </div>
+          <a href="service-area.html" class="btn-gold area-cta">Our Service Area</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+  </div>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer framed">
@@ -1291,14 +1095,24 @@
   </script>
 
   <script>
-    document.querySelectorAll('.faq-q').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var item = btn.closest('.faq-item');
-        var open = item.classList.toggle('open');
-        var icon = btn.querySelector('.faq-icon');
-        if (icon) icon.textContent = open ? '\u2212' : '+';
-      });
-    });
+    (function () {
+      var items = document.querySelectorAll('.reviews-masonry-item');
+      if (!items.length) return;
+      var lb = document.getElementById('lightbox');
+      if (!lb) {
+        lb = document.createElement('div');
+        lb.className = 'lightbox'; lb.id = 'lightbox';
+        lb.innerHTML = '<button class="lightbox-close" aria-label="Close">&times;</button><img class="lightbox-img" src="" alt="" />';
+        document.body.appendChild(lb);
+      }
+      var img = lb.querySelector('.lightbox-img');
+      function openLb(el) { img.src = el.src; img.alt = el.alt; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+      function closeLb() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+      items.forEach(function (it) { it.addEventListener('click', function () { var i = it.querySelector('img'); if (i) openLb(i); }); });
+      var c = lb.querySelector('.lightbox-close'); if (c) c.addEventListener('click', closeLb);
+      lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+    })();
   </script>
 </body>
 </html>
