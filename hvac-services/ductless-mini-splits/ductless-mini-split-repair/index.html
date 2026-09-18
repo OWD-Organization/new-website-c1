@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -420,7 +420,7 @@
     @media (min-width: 560px) { .reviews-masonry { column-count: 2; } }
     @media (min-width: 900px) { .reviews-masonry { column-count: 3; } }
     @media (min-width: 1200px) { .reviews-masonry { column-count: 4; } }
-    .reviews-masonry-item { break-inside: avoid; margin-bottom: var(--space-md); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); cursor: zoom-in; transition: transform 0.25s var(--ease-out), box-shadow 0.25s; }
+    .reviews-masonry-item { display: block; break-inside: avoid; margin-bottom: var(--space-md); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); cursor: pointer; transition: transform 0.25s var(--ease-out), box-shadow 0.25s; }
     .reviews-masonry-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
     .reviews-masonry-item img { display: block; width: 100%; height: auto; }
 
@@ -794,13 +794,36 @@
     .svc-notice { background: rgba(255,179,0,0.10); border-left: 3px solid var(--brand-gold); padding: 14px 16px; border-radius: var(--radius-sm); margin-top: var(--space-lg); color: var(--gray-700); font-size: 0.95rem; }
     .svc-notice strong { color: var(--navy-500); }
   </style>
-  <script type="text/javascript">
-    (function(k) {
-        let s=document.createElement('script');s.defer=true;
-        s.src="https://cdn.feedbucket.app/assets/feedbucket.js";
-        s.dataset.feedbucket=k;document.head.appendChild(s);
-    })('A7PGoGTNVmmpwdRQdF3D')
-  </script>
+  <style id="rs-modal-css">
+    #rsModal { position: fixed; inset: 0; z-index: 3000; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(10,14,30,.65); }
+    #rsModal.open { display: flex; }
+    .rs-card { position: relative; width: 100%; max-width: 900px; max-height: 92vh; overflow: hidden; background: var(--brand-navy, #27316F); border: 3px solid var(--brand-gold, #FFB300); border-radius: 20px; box-shadow: 0 30px 80px rgba(0,0,0,.5); display: grid; grid-template-columns: 380px 1fr; }
+    .rs-photo { position: relative; min-height: 100%; background-image: url('/imag/request-service-dogs.webp'); background-size: cover; background-position: center 26%; }
+    .rs-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(21,27,63,.15) 0%, rgba(39,49,111,.05) 78%, rgba(39,49,111,.4) 100%); }
+    .rs-inner { position: relative; z-index: 1; padding: 26px 34px 30px; overflow-y: auto; max-height: 92vh; }
+    .rs-close { position: absolute; top: 14px; right: 14px; z-index: 3; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; background: transparent; border: 2px solid var(--brand-gold, #FFB300); border-radius: 8px; color: var(--brand-gold, #FFB300); font-size: 1.7rem; line-height: 1; cursor: pointer; transition: background .2s, color .2s; }
+    .rs-close:hover { background: var(--brand-gold, #FFB300); color: var(--brand-navy, #27316F); }
+    .rs-title { font-family: 'Lexend', sans-serif; text-align: center; color: #fff; font-weight: 700; font-size: 1.9rem; letter-spacing: .02em; margin: 4px 0 6px; }
+    .rs-req { color: #fff; font-size: .9rem; margin: 0 0 18px; }
+    .rs-req span { color: var(--brand-gold, #FFB300); }
+    .rs-form { display: flex; flex-direction: column; gap: 14px; }
+    .rs-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .rs-row.email { grid-template-columns: 1.6fr 1fr; }
+    .rs-form input, .rs-form select, .rs-form textarea { width: 100%; padding: 13px 14px; border: none; border-radius: 8px; background: #fff; color: #1a2340; font-family: 'Atkinson Hyperlegible', sans-serif; font-size: .98rem; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
+    .rs-form textarea { min-height: 118px; resize: vertical; }
+    .rs-form input::placeholder, .rs-form textarea::placeholder { color: #5a6785; }
+    .rs-form select { color: #5a6785; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2327316F' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+    .rs-form select.filled { color: #1a2340; }
+    .rs-hp { position: absolute !important; left: -9999px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; }
+    .rs-submit { margin-top: 4px; padding: 15px; border: none; border-radius: 8px; background: var(--brand-gold, #FFB300); color: var(--brand-navy, #27316F); font-family: 'Lexend', sans-serif; font-weight: 700; font-size: 1.05rem; cursor: pointer; transition: filter .2s; }
+    .rs-submit:hover { filter: brightness(1.06); }
+    .rs-submit:disabled { opacity: .7; cursor: default; }
+    .rs-thankyou { color: #fff; text-align: center; padding: 40px 14px; font-size: 1.1rem; line-height: 1.6; }
+    .rs-thankyou strong { color: var(--brand-gold, #FFB300); font-size: 1.35rem; display: block; margin-bottom: 8px; }
+    body.rs-open { overflow: hidden; }
+    @media (max-width: 760px) { .rs-card { grid-template-columns: 1fr; } .rs-photo { min-height: 265px; background-position: center 8%; } .rs-inner { max-height: calc(92vh - 271px); } .rs-title { font-size: 1.5rem; } }
+    @media (max-width: 560px) { .rs-row, .rs-row.email { grid-template-columns: 1fr; } .rs-title { font-size: 1.35rem; } .rs-inner { padding: 22px 20px 26px; } }
+  </style>
 </head>
 <body>
 
@@ -989,8 +1012,8 @@
           <div class="svc-help">
             <p class="svc-help-title">Help is just a call away, 24/7, rain or shine.</p>
             <div class="svc-help-links">
-              <a href="#contact" class="svc-help-link"><span class="material-icons">build</span> Request a Service</a>
-              <a href="/#financing" class="svc-help-link"><span class="material-icons">payments</span> Financing Options</a>
+              <a href="/contact-us/" class="svc-help-link"><span class="material-icons">build</span> Request a Service</a>
+              <a href="/about-us/financing/" class="svc-help-link"><span class="material-icons">payments</span> Financing Options</a>
               <a href="/comfort-club-hvac-maintenance-plan/" class="svc-help-link"><span class="material-icons">workspace_premium</span> Comfort Club</a>
             </div>
             <div class="svc-help-contact">
@@ -1216,10 +1239,10 @@
         <img class="footer-logo-img" src="https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp" alt="Comfort One Air Conditioning" />
         <p class="footer-desc">Comfort One Air Conditioning is a premiere HVAC company in Scottsdale, Arizona.</p>
         <div class="footer-socials">
-          <a class="footer-social" href="/#" aria-label="Google"><svg viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></a>
-          <a class="footer-social" href="/#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
-          <a class="footer-social" href="/#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-          <a class="footer-social" href="/#" aria-label="Yelp"><svg viewBox="0 0 384 512"><path d="M42.9 240.32l99.62 48.61c19.2 9.4 16.2 37.51-4.5 42.71L30.5 358.45a22.79 22.79 0 0 1-28.21-19.6 197.16 197.16 0 0 1 9.29-85.37 22.87 22.87 0 0 1 31.39-13.16zm44 239.25l64.42-90.03c12.44-17.38 39.5-3 31.79 16.89l-42.51 97.68a22.79 22.79 0 0 1-33.71 8.4 197.4 197.4 0 0 1-24.62-24.62 22.87 22.87 0 0 1 4.63-8.32zM147.63 32.53l45.42 78.14c11.44 19.75-9.06 42.83-29.79 33.53L62.34 98.83a22.79 22.79 0 0 1-11.66-31.24A197.32 197.32 0 0 1 116.39 8.53a22.87 22.87 0 0 1 31.24 24zM384 251.24a197.16 197.16 0 0 1-11.42 85.37 22.79 22.79 0 0 1-28.21 19.6l-107.52-26.8c-20.7-5.2-23.7-33.31-4.5-42.71l99.62-48.61a22.87 22.87 0 0 1 31.39 13.16zm-124.79 90.68l45.52 78.34a22.85 22.85 0 0 1-8.11 31.74 197.31 197.31 0 0 1-51.09 21.29 22.85 22.85 0 0 1-28.17-19.85l-11.9-107.52c-2.3-20.86 25.11-30.66 36.65-13.1z"/></svg></a>
+          <a class="footer-social" href="https://www.google.com/maps/place/Comfort+One+Air+Conditioning/@33.6739369,-112.2659457,10z/data=!3m1!4b1!4m6!3m5!1s0x872b6e5270c22e51:0xe5ffad82f971dc9f!8m2!3d33.6743745!4d-111.936296!16s%2Fg%2F11f4lr0tdq" aria-label="Google" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></a>
+          <a class="footer-social" href="https://www.facebook.com/ComfortOneAC" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a class="footer-social" href="https://www.instagram.com/comfortoneac/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+          <a class="footer-social" href="https://www.yelp.com/biz/comfort-one-air-conditioning-phoenix" aria-label="Yelp" target="_blank" rel="noopener"><svg viewBox="0 0 384 512"><path d="M42.9 240.32l99.62 48.61c19.2 9.4 16.2 37.51-4.5 42.71L30.5 358.45a22.79 22.79 0 0 1-28.21-19.6 197.16 197.16 0 0 1 9.29-85.37 22.87 22.87 0 0 1 31.39-13.16zm44 239.25l64.42-90.03c12.44-17.38 39.5-3 31.79 16.89l-42.51 97.68a22.79 22.79 0 0 1-33.71 8.4 197.4 197.4 0 0 1-24.62-24.62 22.87 22.87 0 0 1 4.63-8.32zM147.63 32.53l45.42 78.14c11.44 19.75-9.06 42.83-29.79 33.53L62.34 98.83a22.79 22.79 0 0 1-11.66-31.24A197.32 197.32 0 0 1 116.39 8.53a22.87 22.87 0 0 1 31.24 24zM384 251.24a197.16 197.16 0 0 1-11.42 85.37 22.79 22.79 0 0 1-28.21 19.6l-107.52-26.8c-20.7-5.2-23.7-33.31-4.5-42.71l99.62-48.61a22.87 22.87 0 0 1 31.39 13.16zm-124.79 90.68l45.52 78.34a22.85 22.85 0 0 1-8.11 31.74 197.31 197.31 0 0 1-51.09 21.29 22.85 22.85 0 0 1-28.17-19.85l-11.9-107.52c-2.3-20.86 25.11-30.66 36.65-13.1z"/></svg></a>
         </div>
       </div>
 
@@ -1240,7 +1263,7 @@
         <span class="footer-heading">Helpful Links</span>
         <div class="footer-links">
           <a href="/#contact"><span class="material-icons">chevron_right</span> Request a Service</a>
-          <a href="/#financing"><span class="material-icons">chevron_right</span> Financing Options</a>
+          <a href="/about-us/financing/"><span class="material-icons">chevron_right</span> Financing Options</a>
           <a href="/comfort-club-hvac-maintenance-plan/"><span class="material-icons">chevron_right</span> Comfort Club</a>
         </div>
       </div>
@@ -1320,6 +1343,77 @@
         if (icon) icon.textContent = open ? '\u2212' : '+';
       });
     });
+  </script>
+  <div id="rsModal" aria-hidden="true">
+    <div class="rs-card" role="dialog" aria-modal="true" aria-labelledby="rsTitle">
+      <div class="rs-photo" role="img" aria-label="Comfort One Air Conditioning dogs in a service truck"></div>
+      <button type="button" class="rs-close" aria-label="Close">&times;</button>
+      <div class="rs-inner">
+        <h2 class="rs-title" id="rsTitle">REQUEST SERVICE</h2>
+        <p class="rs-req">"<span>*</span>" indicates required fields</p>
+        <form class="rs-form" novalidate>
+          <div class="rs-row">
+            <input type="text" name="first_name" placeholder="First Name*" required autocomplete="given-name" />
+            <input type="text" name="last_name" placeholder="Last Name*" required autocomplete="family-name" />
+          </div>
+          <div class="rs-row email">
+            <input type="email" name="email" placeholder="Your Email Address*" required autocomplete="email" />
+            <input type="text" name="zip" placeholder="Your ZIP Code" autocomplete="postal-code" inputmode="numeric" />
+          </div>
+          <input type="tel" name="phone" placeholder="Your Phone Number*" required autocomplete="tel" />
+          <select name="service" required>
+            <option value="" selected disabled>What service do you request?*</option>
+            <option>repair</option>
+            <option>replacement estimate</option>
+            <option>new construction estimate</option>
+            <option>maintenance / tune-up</option>
+            <option>0% financing promo</option>
+          </select>
+          <select name="schedule" required>
+            <option value="" selected disabled>How do you prefer to schedule?*</option>
+            <option>Receive a call</option>
+            <option>Receive an email</option>
+            <option>Text message</option>
+            <option>I don't have a preference</option>
+          </select>
+          <textarea name="message" placeholder="How can we help?*" required></textarea>
+          <input type="text" name="company" class="rs-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button type="submit" class="rs-submit">Request Service</button>
+        </form>
+        <div class="rs-thankyou" hidden><strong>Thank you!</strong>Your request has been received. Our team will reach out shortly to confirm your appointment.</div>
+      </div>
+    </div>
+  </div>
+  <script id="rs-modal-js">
+  (function(){
+    /* Paste the GoHighLevel Inbound Webhook URL between the quotes to go live. */
+    var RS_WEBHOOK_URL = "";
+    var modal = document.getElementById('rsModal'); if(!modal) return;
+    var form = modal.querySelector('.rs-form');
+    var ty = modal.querySelector('.rs-thankyou');
+    var lastFocus = null;
+    function openModal(e){ if(e) e.preventDefault(); lastFocus = document.activeElement; form.hidden = false; ty.hidden = true; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('rs-open'); var f = form.querySelector('input,select,textarea'); if(f) setTimeout(function(){ f.focus(); }, 60); }
+    function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('rs-open'); if(lastFocus && lastFocus.focus) lastFocus.focus(); }
+    var trigs = document.querySelectorAll('a, button');
+    for(var i=0;i<trigs.length;i++){ var t=trigs[i]; if(t.closest && t.closest('#rsModal')) continue; var txt=(t.textContent||'').replace(/\s+/g,' ').trim().toLowerCase(); if(txt==='request a service'){ t.addEventListener('click', openModal); } }
+    modal.querySelector('.rs-close').addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal.classList.contains('open')) closeModal(); });
+    var sels = form.querySelectorAll('select');
+    for(var j=0;j<sels.length;j++){ (function(s){ s.addEventListener('change', function(){ if(s.value) s.classList.add('filled'); else s.classList.remove('filled'); }); })(sels[j]); }
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(form.company && form.company.value){ return; }
+      if(!form.checkValidity()){ form.reportValidity(); return; }
+      var data = { first_name: form.first_name.value, last_name: form.last_name.value, email: form.email.value, zip: form.zip.value, phone: form.phone.value, service: form.service.value, schedule: form.schedule.value, message: form.message.value, source_page: location.href };
+      var btn = form.querySelector('.rs-submit'); btn.disabled = true; btn.textContent = 'Sending...';
+      function restore(){ btn.disabled = false; btn.textContent = 'Request Service'; }
+      function finish(){ form.hidden = true; ty.hidden = false; form.reset(); restore(); }
+      if(RS_WEBHOOK_URL){
+        fetch(RS_WEBHOOK_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) }).then(function(){ finish(); }).catch(function(){ finish(); });
+      } else { setTimeout(finish, 400); }
+    });
+  })();
   </script>
 </body>
 </html>
