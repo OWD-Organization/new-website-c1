@@ -157,13 +157,16 @@
     .section-label.light { color: var(--white); }
 
     /* --- Reveal animations --- */
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
+    .reveal { opacity: 1; transform: none; transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out); }
+    .js .reveal { opacity: 0; transform: translateY(24px); }
+    .js .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { .reveal, .js .reveal, .js .reveal.visible { opacity: 1 !important; transform: none !important; transition: none !important; } }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-1 { transition-delay: 0.06s; }
+    .reveal-delay-2 { transition-delay: 0.12s; }
+    .reveal-delay-3 { transition-delay: 0.18s; }
+    .reveal-delay-4 { transition-delay: 0.24s; }
+    .reveal-delay-5 { transition-delay: 0.30s; }
 
     /* ============================================================
        NAVBAR
@@ -856,6 +859,7 @@
     @media (max-width: 760px) { .rs-card { grid-template-columns: 1fr; } .rs-photo { min-height: 265px; background-position: center 8%; } .rs-inner { max-height: calc(92vh - 271px); } .rs-title { font-size: 1.5rem; } }
     @media (max-width: 560px) { .rs-row, .rs-row.email { grid-template-columns: 1fr; } .rs-title { font-size: 1.35rem; } .rs-inner { padding: 22px 20px 26px; } }
   </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -1368,7 +1372,7 @@
     </div>
 
     <div class="container">
-      <div class="footer-bottom"><span>© 2024 Comfort One Air Conditioning | All Rights Reserved. License: #308978</span><span><a href="/privacy-policy/">Privacy Policy</a> | Marketing Powered by <a href="https://outworkemdigital.com/" target="_blank" rel="noopener">Outworkem Digital</a></span></div>
+      <div class="footer-bottom"><span>© <span class="cpy-year">2026</span> Comfort One Air Conditioning | All Rights Reserved. License: #308978</span><span><a href="/privacy-policy/">Privacy Policy</a> | Marketing Powered by <a href="https://outworkemdigital.com/" target="_blank" rel="noopener">Outworkem Digital</a></span></div>
     </div>
   </footer>
 
@@ -1508,5 +1512,6 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HVACBusiness", "@id": "https://www.comfort1ac.com/#business", "name": "Comfort One Air Conditioning", "url": "https://www.comfort1ac.com/", "image": "https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "logo": "https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "telephone": "+1-602-247-6151", "email": "office@comfort1ac.com", "priceRange": "$$", "address": {"@type": "PostalAddress", "addressLocality": "Scottsdale", "addressRegion": "AZ", "postalCode": "85255", "addressCountry": "US"}, "geo": {"@type": "GeoCoordinates", "latitude": 33.6743745, "longitude": -111.936296}, "areaServed": [{"@type": "City", "name": "Scottsdale"}, {"@type": "City", "name": "North Phoenix"}, {"@type": "City", "name": "Cave Creek"}, {"@type": "City", "name": "Carefree"}, {"@type": "City", "name": "Anthem"}, {"@type": "City", "name": "Paradise Valley"}, {"@type": "City", "name": "New River"}, {"@type": "City", "name": "Desert Mountain"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "09:00", "closes": "17:00"}], "sameAs": ["https://www.facebook.com/ComfortOneAC", "https://www.instagram.com/comfortoneac/", "https://www.yelp.com/biz/comfort-one-air-conditioning-phoenix", "https://www.google.com/maps/place/Comfort+One+Air+Conditioning/@33.6739369,-112.2659457,10z/data=!3m1!4b1!4m6!3m5!1s0x872b6e5270c22e51:0xe5ffad82f971dc9f!8m2!3d33.6743745!4d-111.936296!16s%2Fg%2F11f4lr0tdq"], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "550"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.comfort1ac.com/"}, {"@type": "ListItem", "position": 2, "name": "Ductless Mini Splits", "item": "https://www.comfort1ac.com/hvac-services/ductless-mini-splits/"}, {"@type": "ListItem", "position": 3, "name": "Ductless Mini Split Replacement", "item": "https://www.comfort1ac.com/hvac-services/ductless-mini-splits/ductless-mini-split-replacement/"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I know if I need a new ductless mini split system or if my current one can be repaired?", "acceptedAnswer": {"@type": "Answer", "text": "Key indicators that suggest it's time for replacement include: System is over 8-12 years old Multiple indoor units showing performance issues Frequent repairs needed Rising energy bills Inconsistent temperatures in different zones Unusual noises from indoor or outdoor units Refrigerant leaks in multiple locations Our technicians will perform a thorough assessment to help you make the most cost-effective decision."}}, {"@type": "Question", "name": "How much can I save on energy bills with a new ductless system?", "acceptedAnswer": {"@type": "Answer", "text": "Modern ductless mini splits typically offer a 20–30% reduction in cooling costs, significant heating savings in winter, zone control to avoid conditioning unused rooms, enhanced efficiency through inverter technology, and smart features for optimal energy management."}}, {"@type": "Question", "name": "How long does a ductless mini split replacement typically take?", "acceptedAnswer": {"@type": "Answer", "text": "Installation time varies based on the number of indoor units being replaced, complexity of line set routing, whether existing mounting locations can be reused, and electrical system requirements. Most replacements are completed in 1–2 days."}}, {"@type": "Question", "name": "What size ductless system do I need for my Scottsdale home?", "acceptedAnswer": {"@type": "Answer", "text": "Proper sizing depends on several factors: square footage of each zone, room usage patterns, window locations and sizes, ceiling height, local climate conditions, and insulation levels. Our comfort specialists calculate exact requirements for each zone."}}, {"@type": "Question", "name": "What maintenance will my new ductless system need?", "acceptedAnswer": {"@type": "Answer", "text": "Regular maintenance includes monthly filter cleaning, quarterly indoor unit inspection, semi-annual professional maintenance, annual outdoor unit service, and periodic line set checks. Comfort Club members receive priority scheduled maintenance."}}, {"@type": "Question", "name": "What brands of ductless systems do you install?", "acceptedAnswer": {"@type": "Answer", "text": "We install trusted brands known for reliability in Arizona’s climate. During your consultation, we’ll discuss options that best match your comfort needs and budget."}}, {"@type": "Question", "name": "Can a ductless system really heat my home in winter?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Modern ductless heat pumps provide efficient heating in Arizona’s mild winters, individual temperature control per zone, quick temperature adjustments, energy-efficient operation, and typically no supplemental heating needed in our climate."}}, {"@type": "Question", "name": "What makes ductless systems different from traditional HVAC?", "acceptedAnswer": {"@type": "Answer", "text": "Key differences include: no ductwork required, individual zone control, more efficient operation, flexible installation options, quieter performance, better air filtration, and lower maintenance costs."}}, {"@type": "Question", "name": "How long will my new ductless system last in Arizona's climate?", "acceptedAnswer": {"@type": "Answer", "text": "With proper maintenance, expect 10–15 years of reliable service, consistent performance throughout its lifespan, maintained efficiency levels, dependable zone control, and a long-term comfort solution."}}, {"@type": "Question", "name": "Do you offer emergency replacement services?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we provide same-day evaluation, next-day installation when needed, priority scheduling for no-cooling situations, an emergency response team, and quick turnaround on common systems."}}]}</script>
+<script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
 </body>
 </html>

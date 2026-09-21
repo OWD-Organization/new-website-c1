@@ -157,13 +157,16 @@
     .section-label.light { color: var(--white); }
 
     /* --- Reveal animations --- */
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
+    .reveal { opacity: 1; transform: none; transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out); }
+    .js .reveal { opacity: 0; transform: translateY(24px); }
+    .js .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { .reveal, .js .reveal, .js .reveal.visible { opacity: 1 !important; transform: none !important; transition: none !important; } }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-1 { transition-delay: 0.06s; }
+    .reveal-delay-2 { transition-delay: 0.12s; }
+    .reveal-delay-3 { transition-delay: 0.18s; }
+    .reveal-delay-4 { transition-delay: 0.24s; }
+    .reveal-delay-5 { transition-delay: 0.30s; }
 
     /* ============================================================
        NAVBAR
@@ -856,6 +859,7 @@
     @media (max-width: 760px) { .rs-card { grid-template-columns: 1fr; } .rs-photo { min-height: 265px; background-position: center 8%; } .rs-inner { max-height: calc(92vh - 271px); } .rs-title { font-size: 1.5rem; } }
     @media (max-width: 560px) { .rs-row, .rs-row.email { grid-template-columns: 1fr; } .rs-title { font-size: 1.35rem; } .rs-inner { padding: 22px 20px 26px; } }
   </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -1381,7 +1385,7 @@
     </div>
 
     <div class="container">
-      <div class="footer-bottom"><span>© 2024 Comfort One Air Conditioning | All Rights Reserved. License: #308978</span><span><a href="/privacy-policy/">Privacy Policy</a> | Marketing Powered by <a href="https://outworkemdigital.com/" target="_blank" rel="noopener">Outworkem Digital</a></span></div>
+      <div class="footer-bottom"><span>© <span class="cpy-year">2026</span> Comfort One Air Conditioning | All Rights Reserved. License: #308978</span><span><a href="/privacy-policy/">Privacy Policy</a> | Marketing Powered by <a href="https://outworkemdigital.com/" target="_blank" rel="noopener">Outworkem Digital</a></span></div>
     </div>
   </footer>
 
@@ -1521,5 +1525,6 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HVACBusiness", "@id": "https://www.comfort1ac.com/#business", "name": "Comfort One Air Conditioning", "url": "https://www.comfort1ac.com/", "image": "https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "logo": "https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "telephone": "+1-602-247-6151", "email": "office@comfort1ac.com", "priceRange": "$$", "address": {"@type": "PostalAddress", "addressLocality": "Scottsdale", "addressRegion": "AZ", "postalCode": "85255", "addressCountry": "US"}, "geo": {"@type": "GeoCoordinates", "latitude": 33.6743745, "longitude": -111.936296}, "areaServed": [{"@type": "City", "name": "Scottsdale"}, {"@type": "City", "name": "North Phoenix"}, {"@type": "City", "name": "Cave Creek"}, {"@type": "City", "name": "Carefree"}, {"@type": "City", "name": "Anthem"}, {"@type": "City", "name": "Paradise Valley"}, {"@type": "City", "name": "New River"}, {"@type": "City", "name": "Desert Mountain"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "09:00", "closes": "17:00"}], "sameAs": ["https://www.facebook.com/ComfortOneAC", "https://www.instagram.com/comfortoneac/", "https://www.yelp.com/biz/comfort-one-air-conditioning-phoenix", "https://www.google.com/maps/place/Comfort+One+Air+Conditioning/@33.6739369,-112.2659457,10z/data=!3m1!4b1!4m6!3m5!1s0x872b6e5270c22e51:0xe5ffad82f971dc9f!8m2!3d33.6743745!4d-111.936296!16s%2Fg%2F11f4lr0tdq"], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "550"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.comfort1ac.com/"}, {"@type": "ListItem", "position": 2, "name": "Heating", "item": "https://www.comfort1ac.com/hvac-services/heating/"}, {"@type": "ListItem", "position": 3, "name": "Furnace Replacement", "item": "https://www.comfort1ac.com/hvac-services/heating/furnace-replacement/"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I know if I need a new furnace or if my current one can be repaired?", "acceptedAnswer": {"@type": "Answer", "text": "Several indicators suggest it might be time for a furnace replacement: Your furnace is over 15-20 years old Frequent breakdowns and escalating repair costs Inconsistent heating or inadequate performance during cold spells Significantly higher energy bills Unusual noises or odors emanating from the unit Our technicians will conduct a thorough assessment of your current system and provide honest recommendations based on cost-effectiveness and long-term reliability."}}, {"@type": "Question", "name": "Will a new furnace significantly reduce my energy bills?", "acceptedAnswer": {"@type": "Answer", "text": "Modern furnaces are considerably more efficient than older models. Depending on the age and condition of your current furnace, a new high-efficiency model can potentially reduce your heating costs by 15–30%. The exact savings will depend on factors such as your home’s insulation, usage patterns, and the specific model chosen."}}, {"@type": "Question", "name": "How long does a furnace replacement typically take?", "acceptedAnswer": {"@type": "Answer", "text": "Most furnace replacements can be completed within a day. The exact duration depends on the complexity of the installation, whether any modifications to ductwork or gas lines are necessary, and the removal process of the old unit. We strive to minimize disruption to your daily routine and will provide a more accurate timeframe during our initial assessment."}}, {"@type": "Question", "name": "How do I choose the right size furnace for my Scottsdale home?", "acceptedAnswer": {"@type": "Answer", "text": "Selecting the appropriate furnace size is crucial for optimal performance and efficiency. Factors we consider include your home’s square footage, insulation quality, window efficiency, ceiling height, and local climate conditions. Our experts will perform a detailed load calculation to determine the ideal furnace size for your specific needs, ensuring efficient heating without unnecessary energy consumption."}}, {"@type": "Question", "name": "Do you offer financing options for furnace replacement?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we understand that furnace replacement is a significant investment. We offer flexible financing options through our partnership with Synchrony, including low-interest payment plans, deferred interest promotions, and extended payment terms. During your consultation, we’ll discuss available financing options to find a solution that fits your budget."}}, {"@type": "Question", "name": "How often should I schedule maintenance for my new furnace?", "acceptedAnswer": {"@type": "Answer", "text": "We recommend annual maintenance for your new furnace to ensure optimal performance and longevity. Regular maintenance helps maintain energy efficiency, prevent unexpected breakdowns, extend the lifespan of your system, and maintain warranty validity. Our Comfort Club membership offers priority scheduling for annual maintenance."}}, {"@type": "Question", "name": "Are there any rebates or tax credits available for installing a high-efficiency furnace?", "acceptedAnswer": {"@type": "Answer", "text": "Rebates and tax credits for high-efficiency furnaces can vary based on current government and utility company programs. During your consultation, we’ll inform you of any applicable incentives that could offset your investment in a new, energy-efficient heating system."}}]}</script>
+<script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
 </body>
 </html>

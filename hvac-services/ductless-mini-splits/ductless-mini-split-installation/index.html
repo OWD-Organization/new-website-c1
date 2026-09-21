@@ -157,13 +157,16 @@
     .section-label.light { color: var(--white); }
 
     /* --- Reveal animations --- */
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
+    .reveal { opacity: 1; transform: none; transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out); }
+    .js .reveal { opacity: 0; transform: translateY(24px); }
+    .js .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { .reveal, .js .reveal, .js .reveal.visible { opacity: 1 !important; transform: none !important; transition: none !important; } }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-1 { transition-delay: 0.06s; }
+    .reveal-delay-2 { transition-delay: 0.12s; }
+    .reveal-delay-3 { transition-delay: 0.18s; }
+    .reveal-delay-4 { transition-delay: 0.24s; }
+    .reveal-delay-5 { transition-delay: 0.30s; }
 
     /* ============================================================
        NAVBAR
@@ -856,6 +859,7 @@
     @media (max-width: 760px) { .rs-card { grid-template-columns: 1fr; } .rs-photo { min-height: 265px; background-position: center 8%; } .rs-inner { max-height: calc(92vh - 271px); } .rs-title { font-size: 1.5rem; } }
     @media (max-width: 560px) { .rs-row, .rs-row.email { grid-template-columns: 1fr; } .rs-title { font-size: 1.35rem; } .rs-inner { padding: 22px 20px 26px; } }
   </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -1322,7 +1326,7 @@
     </div>
 
     <div class="container">
-      <div class="footer-bottom"><span>© 2024 Comfort One Air Conditioning | All Rights Reserved. License: #308978</span><span><a href="/privacy-policy/">Privacy Policy</a> | Marketing Powered by <a href="https://outworkemdigital.com/" target="_blank" rel="noopener">Outworkem Digital</a></span></div>
+      <div class="footer-bottom"><span>© <span class="cpy-year">2026</span> Comfort One Air Conditioning | All Rights Reserved. License: #308978</span><span><a href="/privacy-policy/">Privacy Policy</a> | Marketing Powered by <a href="https://outworkemdigital.com/" target="_blank" rel="noopener">Outworkem Digital</a></span></div>
     </div>
   </footer>
 
@@ -1462,5 +1466,6 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HVACBusiness", "@id": "https://www.comfort1ac.com/#business", "name": "Comfort One Air Conditioning", "url": "https://www.comfort1ac.com/", "image": "https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "logo": "https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "telephone": "+1-602-247-6151", "email": "office@comfort1ac.com", "priceRange": "$$", "address": {"@type": "PostalAddress", "addressLocality": "Scottsdale", "addressRegion": "AZ", "postalCode": "85255", "addressCountry": "US"}, "geo": {"@type": "GeoCoordinates", "latitude": 33.6743745, "longitude": -111.936296}, "areaServed": [{"@type": "City", "name": "Scottsdale"}, {"@type": "City", "name": "North Phoenix"}, {"@type": "City", "name": "Cave Creek"}, {"@type": "City", "name": "Carefree"}, {"@type": "City", "name": "Anthem"}, {"@type": "City", "name": "Paradise Valley"}, {"@type": "City", "name": "New River"}, {"@type": "City", "name": "Desert Mountain"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "09:00", "closes": "17:00"}], "sameAs": ["https://www.facebook.com/ComfortOneAC", "https://www.instagram.com/comfortoneac/", "https://www.yelp.com/biz/comfort-one-air-conditioning-phoenix", "https://www.google.com/maps/place/Comfort+One+Air+Conditioning/@33.6739369,-112.2659457,10z/data=!3m1!4b1!4m6!3m5!1s0x872b6e5270c22e51:0xe5ffad82f971dc9f!8m2!3d33.6743745!4d-111.936296!16s%2Fg%2F11f4lr0tdq"], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "550"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.comfort1ac.com/"}, {"@type": "ListItem", "position": 2, "name": "Ductless Mini Splits", "item": "https://www.comfort1ac.com/hvac-services/ductless-mini-splits/"}, {"@type": "ListItem", "position": 3, "name": "Ductless Mini Split Installation", "item": "https://www.comfort1ac.com/hvac-services/ductless-mini-splits/ductless-mini-split-installation/"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who can benefit most from a ductless mini split system?", "acceptedAnswer": {"@type": "Answer", "text": "Ductless systems are perfect for: Homes without existing ductwork Room additions or renovations Spaces with inconsistent temperatures Sunrooms and converted garages Home offices needing independent temperature control Homes where running ductwork would be costly or impossible Multi-generational homes needing personalized comfort zones"}}, {"@type": "Question", "name": "How do ductless mini splits compare to traditional AC systems?", "acceptedAnswer": {"@type": "Answer", "text": "Ductless systems offer several unique advantages: no ductwork required (saving space and installation costs), zone-by-zone temperature control, up to 30% more energy efficiency, quieter operation (as low as 19 decibels), built-in heating and cooling capabilities, faster installation time, and better air filtration with washable filters."}}, {"@type": "Question", "name": "How long does a ductless mini split installation take?", "acceptedAnswer": {"@type": "Answer", "text": "Most single-zone installations can be completed in one day. Multi-zone systems typically take 1–2 days depending on the number of indoor units, complexity of the installation location, electrical work required, and access to installation areas."}}, {"@type": "Question", "name": "What maintenance does a ductless system need?", "acceptedAnswer": {"@type": "Answer", "text": "Regular maintenance is simple but essential: clean or replace air filters monthly, keep the outdoor unit clear of debris, schedule professional maintenance twice yearly, and check drain lines seasonally. Our Comfort Club membership includes all necessary maintenance visits."}}, {"@type": "Question", "name": "How much space can a ductless mini split cool or heat?", "acceptedAnswer": {"@type": "Answer", "text": "Coverage depends on the system size. A single indoor unit typically covers 150–750 square feet, while a multi-zone system can cover up to 3,000 square feet. During your free consultation, we’ll determine the perfect size for your space."}}, {"@type": "Question", "name": "Where can the indoor units be installed?", "acceptedAnswer": {"@type": "Answer", "text": "Indoor units can be mounted high on walls, near the floor, on ceilings, or recessed in drop ceilings. We’ll recommend optimal locations for both performance and aesthetics."}}, {"@type": "Question", "name": "How long will my ductless mini split system last?", "acceptedAnswer": {"@type": "Answer", "text": "With proper maintenance, you can expect 15–20 years of reliable operation, consistent performance throughout its lifespan, long-term energy savings, and lasting comfort in every zone."}}, {"@type": "Question", "name": "What about winter performance?", "acceptedAnswer": {"@type": "Answer", "text": "Modern ductless systems provide efficient heating down to 5°F, making them perfect for Scottsdale winters. They offer quick and efficient heating, lower operating costs than electric heat, even temperature distribution, and no cold spots or drafts."}}]}</script>
+<script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
 </body>
 </html>

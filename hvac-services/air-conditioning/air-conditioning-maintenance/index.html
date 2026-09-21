@@ -157,13 +157,16 @@
     .section-label.light { color: var(--white); }
 
     /* --- Reveal animations --- */
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
+    .reveal { opacity: 1; transform: none; transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out); }
+    .js .reveal { opacity: 0; transform: translateY(24px); }
+    .js .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { .reveal, .js .reveal, .js .reveal.visible { opacity: 1 !important; transform: none !important; transition: none !important; } }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-1 { transition-delay: 0.06s; }
+    .reveal-delay-2 { transition-delay: 0.12s; }
+    .reveal-delay-3 { transition-delay: 0.18s; }
+    .reveal-delay-4 { transition-delay: 0.24s; }
+    .reveal-delay-5 { transition-delay: 0.30s; }
 
     /* ============================================================
        NAVBAR
@@ -828,6 +831,7 @@
     @media (max-width: 760px) { .rs-card { grid-template-columns: 1fr; } .rs-photo { min-height: 265px; background-position: center 8%; } .rs-inner { max-height: calc(92vh - 271px); } .rs-title { font-size: 1.5rem; } }
     @media (max-width: 560px) { .rs-row, .rs-row.email { grid-template-columns: 1fr; } .rs-title { font-size: 1.35rem; } .rs-inner { padding: 22px 20px 26px; } }
   </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -1207,7 +1211,7 @@
     </div>
 
     <div class="container">
-      <div class="footer-bottom"><span>© 2024 Comfort One Air Conditioning | All Rights Reserved. License: #308978</span><span><a href="/privacy-policy/">Privacy Policy</a> | Marketing Powered by <a href="https://outworkemdigital.com/" target="_blank" rel="noopener">Outworkem Digital</a></span></div>
+      <div class="footer-bottom"><span>© <span class="cpy-year">2026</span> Comfort One Air Conditioning | All Rights Reserved. License: #308978</span><span><a href="/privacy-policy/">Privacy Policy</a> | Marketing Powered by <a href="https://outworkemdigital.com/" target="_blank" rel="noopener">Outworkem Digital</a></span></div>
     </div>
   </footer>
 
@@ -1347,5 +1351,6 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HVACBusiness", "@id": "https://www.comfort1ac.com/#business", "name": "Comfort One Air Conditioning", "url": "https://www.comfort1ac.com/", "image": "https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "logo": "https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "telephone": "+1-602-247-6151", "email": "office@comfort1ac.com", "priceRange": "$$", "address": {"@type": "PostalAddress", "addressLocality": "Scottsdale", "addressRegion": "AZ", "postalCode": "85255", "addressCountry": "US"}, "geo": {"@type": "GeoCoordinates", "latitude": 33.6743745, "longitude": -111.936296}, "areaServed": [{"@type": "City", "name": "Scottsdale"}, {"@type": "City", "name": "North Phoenix"}, {"@type": "City", "name": "Cave Creek"}, {"@type": "City", "name": "Carefree"}, {"@type": "City", "name": "Anthem"}, {"@type": "City", "name": "Paradise Valley"}, {"@type": "City", "name": "New River"}, {"@type": "City", "name": "Desert Mountain"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "09:00", "closes": "17:00"}], "sameAs": ["https://www.facebook.com/ComfortOneAC", "https://www.instagram.com/comfortoneac/", "https://www.yelp.com/biz/comfort-one-air-conditioning-phoenix", "https://www.google.com/maps/place/Comfort+One+Air+Conditioning/@33.6739369,-112.2659457,10z/data=!3m1!4b1!4m6!3m5!1s0x872b6e5270c22e51:0xe5ffad82f971dc9f!8m2!3d33.6743745!4d-111.936296!16s%2Fg%2F11f4lr0tdq"], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "550"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.comfort1ac.com/"}, {"@type": "ListItem", "position": 2, "name": "Air Conditioning", "item": "https://www.comfort1ac.com/hvac-services/air-conditioning/"}, {"@type": "ListItem", "position": 3, "name": "Air Conditioning Maintenance", "item": "https://www.comfort1ac.com/hvac-services/air-conditioning/air-conditioning-maintenance/"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How often should I service my AC in Scottsdale?", "acceptedAnswer": {"@type": "Answer", "text": "In Scottsdale's extreme climate, we recommend servicing your AC at least twice a year. Schedule a maintenance check in early spring before the intense heat arrives, and another in fall after the summer stress on your system. For optimal performance, some Scottsdale homeowners opt for quarterly checks during the hottest months (May-September)."}}, {"@type": "Question", "name": "What is the average life of an AC unit in Arizona?", "acceptedAnswer": {"@type": "Answer", "text": "While the average lifespan of air conditioners in most parts of the U.S. is about 15–20 years, Scottsdale’s extreme desert climate can be particularly demanding on HVAC systems. In Arizona, and especially in hot areas like Scottsdale, you can typically expect your AC unit to last about 12–15 years, depending on its size, quality, and how well it’s maintained. Several factors can impact your AC’s lifespan in Scottsdale: intense heat (our long, hot summers mean your AC works harder for more months of the year), dust and debris that can clog filters and coils more quickly, maintenance history, and day-to-day usage. With our team’s expert maintenance and your proper care, we aim to help your AC reach (and potentially exceed) that 12–15 year mark."}}, {"@type": "Question", "name": "How much is AC maintenance in Scottsdale?", "acceptedAnswer": {"@type": "Answer", "text": "While AC maintenance costs can vary, at Comfort One Air Conditioning we strive to offer competitive and transparent pricing. Our standard one-time maintenance service typically ranges from $80–$200 per visit, depending on the complexity of your system. If you opt for our recommended twice-yearly maintenance, your annual cost could range from $160–$400. For the best value, we offer our Comfort Club membership at $19.90 per month per system, which includes bi-annual maintenance visits, priority service, discounts on repairs, and peace of mind knowing your system is regularly cared for."}}]}</script>
+<script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
 </body>
 </html>

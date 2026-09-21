@@ -157,13 +157,16 @@
     .section-label.light { color: var(--white); }
 
     /* --- Reveal animations --- */
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out); }
+    .reveal { opacity: 1; transform: none; transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out); }
+    .js .reveal { opacity: 0; transform: translateY(24px); }
+    .js .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) { .reveal, .js .reveal, .js .reveal.visible { opacity: 1 !important; transform: none !important; transition: none !important; } }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
+    .reveal-delay-1 { transition-delay: 0.06s; }
+    .reveal-delay-2 { transition-delay: 0.12s; }
+    .reveal-delay-3 { transition-delay: 0.18s; }
+    .reveal-delay-4 { transition-delay: 0.24s; }
+    .reveal-delay-5 { transition-delay: 0.30s; }
 
     /* ============================================================
        NAVBAR
@@ -827,6 +830,7 @@
     @media (max-width: 760px) { .rs-card { grid-template-columns: 1fr; } .rs-photo { min-height: 265px; background-position: center 8%; } .rs-inner { max-height: calc(92vh - 271px); } .rs-title { font-size: 1.5rem; } }
     @media (max-width: 560px) { .rs-row, .rs-row.email { grid-template-columns: 1fr; } .rs-title { font-size: 1.35rem; } .rs-inner { padding: 22px 20px 26px; } }
   </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -1288,7 +1292,7 @@
     </div>
 
     <div class="container">
-      <div class="footer-bottom"><span>© 2024 Comfort One Air Conditioning | All Rights Reserved. License: #308978</span><span><a href="/privacy-policy/">Privacy Policy</a> | Marketing Powered by <a href="https://outworkemdigital.com/" target="_blank" rel="noopener">Outworkem Digital</a></span></div>
+      <div class="footer-bottom"><span>© <span class="cpy-year">2026</span> Comfort One Air Conditioning | All Rights Reserved. License: #308978</span><span><a href="/privacy-policy/">Privacy Policy</a> | Marketing Powered by <a href="https://outworkemdigital.com/" target="_blank" rel="noopener">Outworkem Digital</a></span></div>
     </div>
   </footer>
 
@@ -1428,5 +1432,6 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HVACBusiness", "@id": "https://www.comfort1ac.com/#business", "name": "Comfort One Air Conditioning", "url": "https://www.comfort1ac.com/", "image": "https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "logo": "https://www.comfort1ac.com/wp-content/uploads/2024/08/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "telephone": "+1-602-247-6151", "email": "office@comfort1ac.com", "priceRange": "$$", "address": {"@type": "PostalAddress", "addressLocality": "Scottsdale", "addressRegion": "AZ", "postalCode": "85255", "addressCountry": "US"}, "geo": {"@type": "GeoCoordinates", "latitude": 33.6743745, "longitude": -111.936296}, "areaServed": [{"@type": "City", "name": "Scottsdale"}, {"@type": "City", "name": "North Phoenix"}, {"@type": "City", "name": "Cave Creek"}, {"@type": "City", "name": "Carefree"}, {"@type": "City", "name": "Anthem"}, {"@type": "City", "name": "Paradise Valley"}, {"@type": "City", "name": "New River"}, {"@type": "City", "name": "Desert Mountain"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "09:00", "closes": "17:00"}], "sameAs": ["https://www.facebook.com/ComfortOneAC", "https://www.instagram.com/comfortoneac/", "https://www.yelp.com/biz/comfort-one-air-conditioning-phoenix", "https://www.google.com/maps/place/Comfort+One+Air+Conditioning/@33.6739369,-112.2659457,10z/data=!3m1!4b1!4m6!3m5!1s0x872b6e5270c22e51:0xe5ffad82f971dc9f!8m2!3d33.6743745!4d-111.936296!16s%2Fg%2F11f4lr0tdq"], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "550"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.comfort1ac.com/"}, {"@type": "ListItem", "position": 2, "name": "Air Conditioning", "item": "https://www.comfort1ac.com/hvac-services/air-conditioning/"}, {"@type": "ListItem", "position": 3, "name": "Air Conditioning Repair", "item": "https://www.comfort1ac.com/hvac-services/air-conditioning/air-conditioning-repair/"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long does a typical AC repair last?", "acceptedAnswer": {"@type": "Answer", "text": "The longevity of an AC repair depends on various factors, including the type of repair, the quality of parts used, and how well the system is maintained afterward. On average, a well-executed repair should last several years. However, for older units, repairs might not last as long. We always provide honest assessments and recommendations to ensure you get the most value from your AC repair."}}, {"@type": "Question", "name": "What are some signs that my AC needs repair?", "acceptedAnswer": {"@type": "Answer", "text": "Watch for weak airflow, warm air coming from your vents, strange noises or odors, frequent cycling on and off, an unexplained increase in your energy bills, or water leaks around the unit. If you notice any of these signs, give us a call for a professional inspection before a small problem becomes a major breakdown."}}, {"@type": "Question", "name": "How long does an AC repair typically take?", "acceptedAnswer": {"@type": "Answer", "text": "Most repairs can be completed in a single visit, often within a few hours. The exact time depends on the specific issue and the availability of parts. Our trucks are well-stocked with common components, so in most cases we can diagnose and resolve the problem the same day."}}, {"@type": "Question", "name": "Is it better to repair or replace my old AC unit?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the unit's age, how often it has needed repairs, and the current repair cost. As a rule of thumb, if your AC is over 10 years old and the repair cost is more than 10% of a new unit's cost, replacement may be more cost-effective in the long run. We provide honest, thorough assessments so you can make the best decision for your home and budget. The True Cool Cost Calculator Deciding whether to repair your current AC or invest in a new one is one of the biggest comfort decisions you'll make for your home. Our True Cool Cost Calculator gives you a clear, honest picture so you can make the right call, not a rushed one. Here's the reality most homeowners miss: the cost of keeping an aging system isn't just today's repair bill. It's everything that repair bill is hiding. Here's how we break it down with you. Say your system has about 3 years of life left, and it needs $748 in repairs right now. We'll walk through the full picture together: Today's repair cost: $748 to keep your current system running. What you're overpaying in energy: Systems built even 12 years ago run far less efficiently than today's models. Most homeowners in our area overpay the utility company around $350 a year. Over 3 years, that's $1,050 going straight to the power company. Repairs and maintenance still ahead: We'll list the likely repairs your system will need over its remaining life. In this example, that comes to about $915. Rising replacement costs: Waiting doesn't make a new system cheaper. If prices climb about $75 a year, that's another $225 over 3 years. Add it up, and keeping your current system for 3 more years really costs about $2,938, not $748. Once you see the true number, the decision gets a lot clearer. That $2,938 could go toward a brand-new system that runs more efficiently, needs fewer repairs, and protects your family's comfort for years, instead of propping up a system that's already on its way out. No pressure, no upselling. Just the honest math, so you can decide what's right for your home. Ready to see your real numbers? Call us at (602) 806-9485 or request service online , and we'll run your True Cool Cost together."}}, {"@type": "Question", "name": "Do you offer emergency AC repair services?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We understand that AC issues don't always happen during business hours, which is why we offer 24/7 emergency repair services for our Comfort Club HVAC Maintenance Plan members. Call us at 602-247-6151 and we'll work to restore your comfort as quickly as possible."}}]}</script>
+<script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
 </body>
 </html>
