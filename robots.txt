@@ -1,0 +1,5 @@
+# robots.txt — Comfort One Air Conditioning
+User-agent: *
+Allow: /
+
+Sitemap: https://www.comfort1ac.com/sitemap.xml
