@@ -1215,7 +1215,7 @@
   <script id="rs-modal-js">
   (function(){
     /* Paste the GoHighLevel Inbound Webhook URL between the quotes to go live. */
-    var RS_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/9vsm93CZ03U3sAiA7RDF/webhook-trigger/02ku1eEIhea34MjHaPQi";
+    var RS_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/9vsm93CZ03U3sAiA7RDF/webhook-trigger/01e97be4-7ee6-49c4-ad08-ef6155f1732b";
     var modal = document.getElementById('rsModal'); if(!modal) return;
     var form = modal.querySelector('.rs-form');
     var ty = modal.querySelector('.rs-thankyou');
@@ -1238,7 +1238,7 @@
       function restore(){ btn.disabled = false; btn.textContent = 'Request Service'; }
       function finish(){ form.hidden = true; ty.hidden = false; form.reset(); restore(); }
       if(RS_WEBHOOK_URL){
-        fetch(RS_WEBHOOK_URL, { method:'POST', headers:{'Content-Type':'text/plain;charset=UTF-8'}, body: JSON.stringify(data) }).then(function(){ finish(); }).catch(function(){ finish(); });
+        fetch(RS_WEBHOOK_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) }).then(function(){ finish(); }).catch(function(){ finish(); });
       } else { setTimeout(finish, 400); }
     });
   })();
