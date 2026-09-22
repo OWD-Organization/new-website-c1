@@ -59,6 +59,21 @@
       "source": "/author/taps/",
       "destination": "/about-us/meet-the-team/",
       "statusCode": 301
+    },
+    {
+      "source": "/hvac-services/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hvac-installation/maximizing-comfort-and-efficiency-is-a-multi-zone-hvac-system-right-for-scottsdale-homeowners-2/",
+      "destination": "/hvac-services/ductless-mini-splits/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hvac-installation-phoenix/",
+      "destination": "/service-area/hvac-contractor-phoenix-az/",
+      "statusCode": 301
     }
   ],
   "headers": [
