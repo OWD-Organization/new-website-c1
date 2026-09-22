@@ -9,16 +9,72 @@
       ],
       "destination": "https://www.comfort1ac.com/$1",
       "permanent": true
+    },
+    {
+      "source": "/about-us/service-area/:path*",
+      "destination": "/service-area/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/ac-installation/maximizing-lifespan-how-long-do-ac-units-last-in-arizona/",
+      "destination": "/ac-installation/how-long-do-ac-units-last-in-arizona/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hvac-repair-phoenix/ac-repair-phoenix/",
+      "destination": "/hvac-services/air-conditioning/air-conditioning-repair/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hvac-repair-phoenix/furnace-repair-phoenix/",
+      "destination": "/hvac-services/heating/furnace-repair/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hvac-repair-phoenix/heat-pump-repair-phoenix/",
+      "destination": "/hvac-services/heat-pumps/heat-pump-repair/",
+      "statusCode": 301
+    },
+    {
+      "source": "/hvac-installation-phoenix/furnace-installation-phoenix-az/",
+      "destination": "/hvac-services/heating/furnace-installation/",
+      "statusCode": 301
+    },
+    {
+      "source": "/ac-installation-scottsdale/",
+      "destination": "/hvac-services/air-conditioning/air-conditioning-installation/",
+      "statusCode": 301
+    },
+    {
+      "source": "/service-areas/ac-repair-scottsdale-az/",
+      "destination": "/service-area/hvac-contractor-scottsdale-az/",
+      "statusCode": 301
+    },
+    {
+      "source": "/service-areas/hvac-service-cave-creek-az/ac-installation-cave-creek-az/",
+      "destination": "/service-area/hvac-contractor-cave-creek-az/",
+      "statusCode": 301
+    },
+    {
+      "source": "/author/taps/",
+      "destination": "/about-us/meet-the-team/",
+      "statusCode": 301
     }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "has": [
-        { "type": "host", "value": ".*\\.vercel\\.app" }
+        {
+          "type": "host",
+          "value": ".*\\.vercel\\.app"
+        }
       ],
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex, nofollow" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
       ]
     }
   ]
