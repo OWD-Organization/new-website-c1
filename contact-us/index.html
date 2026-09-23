@@ -1235,7 +1235,7 @@
         source_page: location.href
       };
       var btn=form.querySelector('.ct-submit'); var old=btn.textContent; btn.disabled=true; btn.textContent='Sending...';
-      function done(){ form.hidden=true; if(ty) ty.hidden=false; form.reset(); btn.disabled=false; btn.textContent=old; }
+      function done(){ form.hidden=true; if(window.showSuccessModal){ window.showSuccessModal('Your request has been received. Our team will reach out shortly to confirm your appointment.'); } else if(ty){ ty.hidden=false; } form.reset(); btn.disabled=false; btn.textContent=old; }
       fetch(URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done);
     });
   })();
@@ -1276,5 +1276,44 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HVACBusiness", "@id": "https://www.comfort1ac.com/#business", "name": "Comfort One Air Conditioning", "url": "https://www.comfort1ac.com/", "image": "https://www.comfort1ac.com/imag/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "logo": "https://www.comfort1ac.com/imag/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "telephone": "+1-602-247-6151", "email": "office@comfort1ac.com", "priceRange": "$$", "address": {"@type": "PostalAddress", "addressLocality": "Scottsdale", "addressRegion": "AZ", "postalCode": "85255", "addressCountry": "US"}, "geo": {"@type": "GeoCoordinates", "latitude": 33.6743745, "longitude": -111.936296}, "areaServed": [{"@type": "City", "name": "Scottsdale"}, {"@type": "City", "name": "North Phoenix"}, {"@type": "City", "name": "Cave Creek"}, {"@type": "City", "name": "Carefree"}, {"@type": "City", "name": "Anthem"}, {"@type": "City", "name": "Paradise Valley"}, {"@type": "City", "name": "New River"}, {"@type": "City", "name": "Desert Mountain"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "09:00", "closes": "17:00"}], "sameAs": ["https://www.facebook.com/ComfortOneAC", "https://www.instagram.com/comfortoneac/", "https://www.yelp.com/biz/comfort-one-air-conditioning-phoenix", "https://www.google.com/maps/place/Comfort+One+Air+Conditioning/@33.6739369,-112.2659457,10z/data=!3m1!4b1!4m6!3m5!1s0x872b6e5270c22e51:0xe5ffad82f971dc9f!8m2!3d33.6743745!4d-111.936296!16s%2Fg%2F11f4lr0tdq"], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "550"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.comfort1ac.com/"}, {"@type": "ListItem", "position": 2, "name": "Contact Us", "item": "https://www.comfort1ac.com/contact-us/"}]}</script>
 <script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
+  <style id="sm-css">
+    .sm-overlay { position: fixed; inset: 0; z-index: 4000; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(10,14,30,.6); }
+    .sm-overlay.open { display: flex; }
+    .sm-card { background: #fff; border-radius: 18px; max-width: 420px; width: 100%; padding: 40px 28px 32px; text-align: center; position: relative; box-shadow: 0 30px 80px rgba(0,0,0,.4); animation: sm-pop .28s ease; }
+    @keyframes sm-pop { from { transform: scale(.92); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .sm-close { position: absolute; top: 12px; right: 14px; background: none; border: none; font-size: 1.7rem; line-height: 1; color: #8b92a8; cursor: pointer; }
+    .sm-close:hover { color: #27316f; }
+    .sm-check { width: 92px; height: 92px; margin: 0 auto 18px; display: block; }
+    .sm-check-circle { stroke: #1a7f4b; stroke-width: 2.5; fill: rgba(26,127,75,.08); stroke-dasharray: 151; stroke-dashoffset: 151; }
+    .sm-check-mark { stroke: #1a7f4b; stroke-width: 3.5; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 40; stroke-dashoffset: 40; }
+    .sm-overlay.open .sm-check-circle { animation: sm-circle .5s cubic-bezier(.65,0,.45,1) forwards; }
+    .sm-overlay.open .sm-check-mark { animation: sm-mark .3s .45s cubic-bezier(.65,0,.45,1) forwards; }
+    @keyframes sm-circle { to { stroke-dashoffset: 0; } }
+    @keyframes sm-mark { to { stroke-dashoffset: 0; } }
+    .sm-title { font-family: 'Lexend', sans-serif; color: #27316f; font-size: 1.45rem; margin: 0 0 8px; font-weight: 700; }
+    .sm-msg { color: #5a627e; font-size: 1rem; line-height: 1.6; margin: 0; }
+    .sm-btn { margin-top: 22px; display: inline-block; background: var(--brand-red, #951F21); color: #fff; border: none; border-radius: 999px; padding: 12px 28px; font-family: 'Lexend', sans-serif; font-weight: 700; cursor: pointer; }
+  </style>
+  <div id="successModal" class="sm-overlay" aria-hidden="true">
+    <div class="sm-card" role="dialog" aria-modal="true" aria-labelledby="smTitle">
+      <button type="button" class="sm-close" aria-label="Close">&times;</button>
+      <svg class="sm-check" viewBox="0 0 52 52" aria-hidden="true"><circle class="sm-check-circle" cx="26" cy="26" r="24"/><path class="sm-check-mark" d="M15 27 L23 35 L38 18"/></svg>
+      <h3 class="sm-title" id="smTitle">Thank you!</h3>
+      <p class="sm-msg" id="smMsg"></p>
+      <button type="button" class="sm-btn" data-sm-close>Done</button>
+    </div>
+  </div>
+  <script id="sm-js">
+  (function(){
+    var m=document.getElementById('successModal'); if(!m) return;
+    var msgEl=document.getElementById('smMsg');
+    window.showSuccessModal=function(msg){ msgEl.textContent=msg||'Your request has been received. Our team will reach out shortly.'; m.classList.remove('open'); void m.offsetWidth; m.classList.add('open'); m.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; };
+    function close(){ m.classList.remove('open'); m.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    m.querySelector('.sm-close').addEventListener('click',close);
+    var db=m.querySelector('[data-sm-close]'); if(db) db.addEventListener('click',close);
+    m.addEventListener('click',function(e){ if(e.target===m) close(); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&m.classList.contains('open')) close(); });
+  })();
+  </script>
 </body>
 </html>
