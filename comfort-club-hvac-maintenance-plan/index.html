@@ -689,6 +689,11 @@
     .cc-input:focus { border-color: var(--brand-red); }
     .cc-sublabel { font-size: 0.8rem; color: var(--gray-500); margin-bottom: 4px; display: block; }
     .cc-form .btn-gold { width: 100%; margin-top: var(--space-sm); }
+    .cc-step[hidden] { display: none; }
+    .cc-btnrow { display: flex; gap: 12px; align-items: stretch; margin-top: var(--space-sm); }
+    .cc-btnrow .btn-gold { width: auto; flex: 1 1 auto; margin-top: 0; }
+    .cc-prev { flex: 0 0 auto; background: transparent; border: 1px solid var(--gray-300); color: var(--navy-500); border-radius: var(--radius-md); padding: 12px 22px; font-family: var(--font-heading); font-weight: 700; cursor: pointer; transition: background 0.2s; }
+    .cc-prev:hover { background: var(--gray-100, #f1f1f1); }
   </style>
   <style id="rs-modal-css">
     #rsModal { position: fixed; inset: 0; z-index: 3000; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(10,14,30,.65); }
@@ -977,27 +982,63 @@
         <h2 class="cc-head-title">Sign up today</h2>
       </div>
       <form class="cc-form reveal" onsubmit="return false;">
-        <p class="cc-form-step">Contact Information</p>
-        <div class="cc-field">
-          <label>Name <em>(Required)</em></label>
+        <p class="cc-form-step" data-steplabel>Step 1 of 3 - Contact Information</p>
+        <div class="cc-progress"><span></span></div>
+
+        <div class="cc-step" data-step="1">
+          <div class="cc-field">
+            <label>Name <em>(Required)</em></label>
+            <div class="cc-row">
+              <input class="cc-input" type="text" placeholder="First" aria-label="First name" data-k="first_name" />
+              <input class="cc-input" type="text" placeholder="Last" aria-label="Last name" data-k="last_name" />
+            </div>
+          </div>
           <div class="cc-row">
-            <input class="cc-input" type="text" placeholder="First" aria-label="First name" />
-            <input class="cc-input" type="text" placeholder="Last" aria-label="Last name" />
+            <div class="cc-field"><label>Email <em>(Required)</em></label><input class="cc-input" type="email" placeholder="example@gmail.com" aria-label="Email" data-k="email" /></div>
+            <div class="cc-field"><label>Phone <em>(Required)</em></label><input class="cc-input" type="tel" placeholder="(602) 555-1234" aria-label="Phone" data-k="phone" /></div>
+          </div>
+          <div class="cc-field">
+            <label>Address <em>(Required)</em></label>
+            <div class="cc-row">
+              <div><span class="cc-sublabel">City</span><input class="cc-input" type="text" placeholder="Cave Creek" aria-label="City" data-k="city" /></div>
+              <div><span class="cc-sublabel">ZIP Code</span><input class="cc-input" type="text" placeholder="85327" aria-label="ZIP" data-k="zip" /></div>
+            </div>
+          </div>
+          <button type="button" class="btn-gold cc-next" data-next="2">Next Step</button>
+        </div>
+
+        <div class="cc-step" data-step="2" hidden>
+          <div class="cc-field">
+            <label>Choose your Comfort Club subscription <em>(Required)</em></label>
+            <select class="cc-input" aria-label="Subscription" data-k="subscription">
+              <option value="" selected disabled>Select a subscription</option>
+              <option>Monthly subscription - $19.90 per month per system</option>
+              <option>Yearly subscription - $225 per year per system</option>
+            </select>
+          </div>
+          <div class="cc-btnrow">
+            <button type="button" class="cc-prev" data-prev="1">Previous</button>
+            <button type="button" class="btn-gold cc-next" data-next="3">Next Step</button>
           </div>
         </div>
-        <div class="cc-row">
-          <div class="cc-field"><label>Email <em>(Required)</em></label><input class="cc-input" type="email" placeholder="example@gmail.com" /></div>
-          <div class="cc-field"><label>Phone <em>(Required)</em></label><input class="cc-input" type="tel" placeholder="123-456-7891" /></div>
-        </div>
-        <div class="cc-field">
-          <label>Address <em>(Required)</em></label>
+
+        <div class="cc-step" data-step="3" hidden>
+          <div class="cc-field">
+            <label>Service Address <em>(Required)</em></label>
+            <input class="cc-input" type="text" placeholder="Street Address" aria-label="Street address" data-k="service_street" />
+          </div>
+          <div class="cc-field"><span class="cc-sublabel">Address Line 2</span><input class="cc-input" type="text" placeholder="Apt, suite, unit (optional)" aria-label="Address line 2" data-k="service_address2" /></div>
           <div class="cc-row">
-            <div><span class="cc-sublabel">City</span><input class="cc-input" type="text" placeholder="Cave Creek" /></div>
-            <div><span class="cc-sublabel">ZIP Code</span><input class="cc-input" type="text" placeholder="85327" /></div>
+            <div class="cc-field"><span class="cc-sublabel">City</span><input class="cc-input" type="text" placeholder="Scottsdale" aria-label="Service city" data-k="service_city" /></div>
+            <div class="cc-field"><span class="cc-sublabel">State</span><input class="cc-input" type="text" value="Arizona" aria-label="State" data-k="service_state" /></div>
+          </div>
+          <div class="cc-field"><span class="cc-sublabel">ZIP Code</span><input class="cc-input" type="text" placeholder="85255" aria-label="Service ZIP" data-k="service_zip" /></div>
+          <input type="text" name="company" class="cc-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+          <div class="cc-btnrow">
+            <button type="button" class="cc-prev" data-prev="2">Previous</button>
+            <button type="submit" class="btn-gold cc-final">Start Secure Checkout</button>
           </div>
         </div>
-        <input type="text" name="company" class="cc-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
-        <button type="submit" class="btn-gold">Join the Comfort Club</button>
       </form>
       <div class="cc-thankyou" hidden style="margin-top:16px;padding:18px 20px;border-radius:12px;background:#e4f5ea;color:#1a7f4b;font-weight:700;">Thank you! Your Comfort Club request has been received. Our team will reach out shortly.</div>
     </div>
@@ -1176,23 +1217,31 @@
   (function(){
     var URL="https://services.leadconnectorhq.com/hooks/9vsm93CZ03U3sAiA7RDF/webhook-trigger/329152f3-b6b9-4cf1-87cf-09c0b81fbb11";
     var form=document.querySelector('.cc-form'); if(!form) return;
-    var ty=document.querySelector('.cc-thankyou');
-    var inp=form.querySelectorAll('.cc-input');
-    if(inp[0]) inp[0].required=true;
-    if(inp[2]) inp[2].required=true;
-    if(inp[3]) inp[3].required=true;
+    var steps=form.querySelectorAll('.cc-step');
+    var label=form.querySelector('[data-steplabel]');
+    var fill=form.querySelector('.cc-progress span');
+    var LABELS={1:'Step 1 of 3 - Contact Information',2:'Step 2 of 3 - Membership',3:'Step 3 of 3 - Checkout'};
+    var REQ={1:['first_name','last_name','email','phone','city','zip'],2:['subscription'],3:['service_street','service_city','service_state','service_zip']};
+    function el(k){ return form.querySelector('[data-k="'+k+'"]'); }
+    function val(k){ var e=el(k); return e?e.value.trim():''; }
+    function show(n){ for(var i=0;i<steps.length;i++){ steps[i].hidden=(steps[i].getAttribute('data-step')!=String(n)); } if(label) label.textContent=LABELS[n]; if(fill) fill.style.width=Math.round(n/3*100)+'%'; }
+    function validate(n){ var ok=true, first=null; REQ[n].forEach(function(k){ var e=el(k); if(!e) return; var v=e.value.trim(); var bad=!v||(k==='email'&&v.indexOf('@')<1); e.style.borderColor=bad?'#c02626':''; if(bad){ ok=false; if(!first) first=e; } }); if(first) first.focus(); return ok; }
+    form.querySelectorAll('.cc-next').forEach(function(b){ b.addEventListener('click',function(){ var cur=Number(b.closest('.cc-step').getAttribute('data-step')); if(!validate(cur)) return; show(Number(b.getAttribute('data-next'))); }); });
+    form.querySelectorAll('.cc-prev').forEach(function(b){ b.addEventListener('click',function(){ show(Number(b.getAttribute('data-prev'))); }); });
     form.addEventListener('submit',function(e){
       e.preventDefault();
       var hp=form.querySelector('.cc-hp'); if(hp&&hp.value){ return; }
-      if(!form.checkValidity()){ form.reportValidity(); return; }
-      var g=function(i){return inp[i]?inp[i].value.trim():'';};
-      var data={ first_name:g(0), last_name:g(1), email:g(2), phone:g(3), city:g(4), zip:g(5),
-        service:'Comfort Club membership', schedule:'', message:'',
-        form_source:'comfort-club', source_page:location.href };
-      var btn=form.querySelector('button[type="submit"]'); var old=btn.textContent; btn.disabled=true; btn.textContent='Sending...';
-      function done(){ form.hidden=true; if(window.showSuccessModal){ window.showSuccessModal('Your Comfort Club request has been received. Our team will reach out shortly.'); } else if(ty){ ty.hidden=false; } form.reset(); btn.disabled=false; btn.textContent=old; }
+      if(!validate(3)){ return; }
+      var data={ first_name:val('first_name'), last_name:val('last_name'), email:val('email'), phone:val('phone'),
+        city:val('city'), zip:val('zip'), subscription:val('subscription'),
+        service_street:val('service_street'), service_address2:val('service_address2'),
+        service_city:val('service_city'), service_state:val('service_state'), service_zip:val('service_zip'),
+        service:'Comfort Club membership', form_source:'comfort-club', source_page:location.href };
+      var btn=form.querySelector('.cc-final'); var old=btn.textContent; btn.disabled=true; btn.textContent='Sending...';
+      function done(){ form.hidden=true; if(window.showSuccessModal){ window.showSuccessModal('Your Comfort Club request has been received. Our team will reach out shortly.'); } form.reset(); show(1); btn.disabled=false; btn.textContent=old; }
       fetch(URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done);
     });
+    show(1);
   })();
   </script>
   <div id="rsModal" aria-hidden="true">
