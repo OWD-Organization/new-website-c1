@@ -1306,6 +1306,7 @@
         <p class="footer-news-desc">Join the Comfort One family for important PSAs, HVAC maintenance tips, and exclusive offers to keep your home cool and your energy bills low.</p>
         <form class="footer-news-form" onsubmit="return false;">
           <input class="footer-news-input" type="email" placeholder="Your Email" aria-label="Your Email" />
+          <input type="text" name="company" class="fn-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
           <button type="submit" class="btn-primary">Sign Up</button>
         </form>
       </div>
@@ -1453,5 +1454,21 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.comfort1ac.com/"}, {"@type": "ListItem", "position": 2, "name": "Heat Pumps", "item": "https://www.comfort1ac.com/hvac-services/heat-pumps/"}, {"@type": "ListItem", "position": 3, "name": "Heat Pump Repair", "item": "https://www.comfort1ac.com/hvac-services/heat-pumps/heat-pump-repair/"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How often should I have my heat pump serviced?", "acceptedAnswer": {"@type": "Answer", "text": "We recommend bi-annual maintenance for your heat pump – once before summer and once before winter. Since your heat pump works year-round for both cooling and heating, regular maintenance is crucial for optimal performance and efficiency."}}, {"@type": "Question", "name": "What are the most common heat pump problems?", "acceptedAnswer": {"@type": "Answer", "text": "Common issues include: Freezing up in winter or summer Failure to switch between heating and cooling modes Unusual noises or vibrations Inconsistent temperatures Short cycling Reduced airflow Higher than normal energy bills"}}, {"@type": "Question", "name": "How long does a typical heat pump repair take?", "acceptedAnswer": {"@type": "Answer", "text": "Most repairs can be completed within 1–3 hours, depending on the issue. Simple repairs like replacing a capacitor might take 30 minutes, while more complex repairs like replacing a compressor could take several hours. We’ll provide you with a time estimate before starting the work."}}, {"@type": "Question", "name": "How long do heat pumps typically last?", "acceptedAnswer": {"@type": "Answer", "text": "In Arizona’s climate, a well-maintained heat pump typically lasts 10–15 years. However, factors like usage patterns, maintenance history, and installation quality can affect its lifespan."}}, {"@type": "Question", "name": "Why is my heat pump running constantly?", "acceptedAnswer": {"@type": "Answer", "text": "During extreme temperatures, it’s normal for heat pumps to run longer cycles. However, constant running could indicate issues like incorrect thermostat settings, an undersized system, refrigerant leaks, dirty filters, or failing components."}}, {"@type": "Question", "name": "Do you offer emergency heat pump repair services?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! We understand that comfort emergencies don’t follow business hours. For our Comfort Club members we offer 24/7 emergency repair services to our Scottsdale customers and surrounding areas."}}, {"@type": "Question", "name": "Should my heat pump be making noise?", "acceptedAnswer": {"@type": "Answer", "text": "While heat pumps naturally make some noise during operation, sudden loud or unusual sounds like banging, squealing, or grinding indicate a problem that needs immediate attention."}}]}</script>
 <script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
+  <script id="news-js">
+  (function(){
+    var URL="https://services.leadconnectorhq.com/hooks/9vsm93CZ03U3sAiA7RDF/webhook-trigger/9erw8HrFsgDlYJUFSscp";
+    var form=document.querySelector('.footer-news-form'); if(!form) return;
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var hp=form.querySelector('.fn-hp'); if(hp&&hp.value){ return; }
+      var em=form.querySelector('.footer-news-input'); var email=em?em.value.trim():'';
+      if(!email||email.indexOf('@')<1){ if(em){ em.style.borderColor='#c02626'; em.focus(); } return; }
+      var btn=form.querySelector('button[type="submit"]'); btn.disabled=true; btn.textContent='...';
+      var data={ email: email, form_source:'newsletter', source_page: location.href };
+      function done(){ form.innerHTML='<p style="color:var(--brand-gold,#FFB300);font-weight:700;margin:0;font-family:var(--font-heading,sans-serif);">Thanks for subscribing!</p>'; }
+      fetch(URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done);
+    });
+  })();
+  </script>
 </body>
 </html>

@@ -1295,6 +1295,7 @@
         <p class="footer-news-desc">Join the Comfort One family for important PSAs, HVAC maintenance tips, and exclusive offers to keep your home cool and your energy bills low.</p>
         <form class="footer-news-form" onsubmit="return false;">
           <input class="footer-news-input" type="email" placeholder="Your Email" aria-label="Your Email" />
+          <input type="text" name="company" class="fn-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
           <button type="submit" class="btn-primary">Sign Up</button>
         </form>
       </div>
@@ -1442,5 +1443,21 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.comfort1ac.com/"}, {"@type": "ListItem", "position": 2, "name": "Ductless Mini Splits", "item": "https://www.comfort1ac.com/hvac-services/ductless-mini-splits/"}, {"@type": "ListItem", "position": 3, "name": "Ductless Mini Split Repair", "item": "https://www.comfort1ac.com/hvac-services/ductless-mini-splits/ductless-mini-split-repair/"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How often should I have my ductless mini split serviced?", "acceptedAnswer": {"@type": "Answer", "text": "We recommend bi-annual maintenance for your ductless system – once before summer and once before winter. Regular maintenance is crucial because these systems work year-round for both cooling and heating. Professional maintenance helps prevent issues with indoor units, keeps drainage systems clear, and ensures optimal performance."}}, {"@type": "Question", "name": "What are the most common ductless mini split problems?", "acceptedAnswer": {"@type": "Answer", "text": "Common issues include: Refrigerant leaks Clogged condensate lines Dirty filters affecting airflow Communication errors between units Frozen indoor coils Fan motor malfunctions Remote control/thermostat issues Compressor problems"}}, {"@type": "Question", "name": "How long does a typical ductless mini split repair take?", "acceptedAnswer": {"@type": "Answer", "text": "Most repairs can be completed within 2–4 hours. Simple issues like filter replacements or condensate line cleaning might take less than an hour, while more complex repairs like compressor replacement could take 4–6 hours. We’ll provide a time estimate before starting any work."}}, {"@type": "Question", "name": "How long do ductless mini splits typically last?", "acceptedAnswer": {"@type": "Answer", "text": "With proper maintenance, ductless systems typically last 15–20 years. However, indoor units may need attention sooner, especially in areas with heavy use. Regular maintenance can significantly extend your system’s lifespan."}}, {"@type": "Question", "name": "Why is my ductless unit dripping water inside?", "acceptedAnswer": {"@type": "Answer", "text": "While some condensation is normal, visible dripping usually indicates a clogged drain line, improper installation slope, or damaged condensate pump. These issues require professional attention to prevent water damage to your home."}}, {"@type": "Question", "name": "Do you offer emergency ductless mini split repair services?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! We understand that comfort can’t wait. We offer 24/7 emergency repair services for our Comfort Club members for urgent issues like complete system failures or water leaks. Our technicians are ready to respond quickly to restore your comfort."}}, {"@type": "Question", "name": "Should my ductless mini split be making noise?", "acceptedAnswer": {"@type": "Answer", "text": "While ductless systems are generally quiet, they do make some operational sounds. However, loud buzzing, rattling, or clicking noises aren’t normal and should be professionally evaluated. Different sounds can indicate specific problems that need attention."}}]}</script>
 <script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
+  <script id="news-js">
+  (function(){
+    var URL="https://services.leadconnectorhq.com/hooks/9vsm93CZ03U3sAiA7RDF/webhook-trigger/9erw8HrFsgDlYJUFSscp";
+    var form=document.querySelector('.footer-news-form'); if(!form) return;
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var hp=form.querySelector('.fn-hp'); if(hp&&hp.value){ return; }
+      var em=form.querySelector('.footer-news-input'); var email=em?em.value.trim():'';
+      if(!email||email.indexOf('@')<1){ if(em){ em.style.borderColor='#c02626'; em.focus(); } return; }
+      var btn=form.querySelector('button[type="submit"]'); btn.disabled=true; btn.textContent='...';
+      var data={ email: email, form_source:'newsletter', source_page: location.href };
+      function done(){ form.innerHTML='<p style="color:var(--brand-gold,#FFB300);font-weight:700;margin:0;font-family:var(--font-heading,sans-serif);">Thanks for subscribing!</p>'; }
+      fetch(URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done);
+    });
+  })();
+  </script>
 </body>
 </html>

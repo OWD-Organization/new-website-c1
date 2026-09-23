@@ -1310,6 +1310,7 @@
         <p class="footer-news-desc">Join the Comfort One family for important PSAs, HVAC maintenance tips, and exclusive offers to keep your home cool and your energy bills low.</p>
         <form class="footer-news-form" onsubmit="return false;">
           <input class="footer-news-input" type="email" placeholder="Your Email" aria-label="Your Email" />
+          <input type="text" name="company" class="fn-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
           <button type="submit" class="btn-primary">Sign Up</button>
         </form>
       </div>
@@ -1457,5 +1458,21 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.comfort1ac.com/"}, {"@type": "ListItem", "position": 2, "name": "Heating", "item": "https://www.comfort1ac.com/hvac-services/heating/"}, {"@type": "ListItem", "position": 3, "name": "Furnace Installation", "item": "https://www.comfort1ac.com/hvac-services/heating/furnace-installation/"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I know if I need a new furnace or if my old one can be repaired?", "acceptedAnswer": {"@type": "Answer", "text": "It's a common concern. Generally, if your furnace is over 15 years old, requires frequent repairs, or your energy bills are rising, it might be time for a new furnace. During our free in-home assessment, our expert technicians will evaluate your current system and honestly advise whether a repair or replacement is the best option for your home and budget."}}, {"@type": "Question", "name": "Will a new furnace really save me money on my energy bills?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, it can! Modern furnaces are significantly more efficient than older models. For example, upgrading from an 80% AFUE furnace to a 95% AFUE model could save you up to 15% on your heating bills. We’ll help you choose an energy-efficient model that balances upfront costs with long-term savings."}}, {"@type": "Question", "name": "How long does a furnace installation take?", "acceptedAnswer": {"@type": "Answer", "text": "Most furnace installations can be completed in a single day, often within 4–8 hours. We plan meticulously to minimize downtime, and in many cases, we can schedule your installation for a time that’s least disruptive to your routine so your home isn’t without heat for long."}}, {"@type": "Question", "name": "How do I choose the right size furnace for my home?", "acceptedAnswer": {"@type": "Answer", "text": "Choosing the right size is crucial for efficiency and comfort, and it’s not just about square footage. Our experts consider factors like your home’s insulation, window efficiency, and your comfort preferences. We use industry-standard calculations to ensure you get a furnace that’s perfectly sized for your home, not too big (which wastes energy) or too small (which won’t heat effectively)."}}, {"@type": "Question", "name": "What if I can't afford a new furnace right now? Do you offer financing?", "acceptedAnswer": {"@type": "Answer", "text": "We understand that a new furnace is a significant investment. That’s why we offer flexible financing options to fit various budgets. With our financing plans, you can enjoy the comfort and efficiency of a new furnace with manageable monthly payments. During our consultation, we’ll discuss all your options to find a solution that works for your financial situation."}}]}</script>
 <script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
+  <script id="news-js">
+  (function(){
+    var URL="https://services.leadconnectorhq.com/hooks/9vsm93CZ03U3sAiA7RDF/webhook-trigger/9erw8HrFsgDlYJUFSscp";
+    var form=document.querySelector('.footer-news-form'); if(!form) return;
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var hp=form.querySelector('.fn-hp'); if(hp&&hp.value){ return; }
+      var em=form.querySelector('.footer-news-input'); var email=em?em.value.trim():'';
+      if(!email||email.indexOf('@')<1){ if(em){ em.style.borderColor='#c02626'; em.focus(); } return; }
+      var btn=form.querySelector('button[type="submit"]'); btn.disabled=true; btn.textContent='...';
+      var data={ email: email, form_source:'newsletter', source_page: location.href };
+      function done(){ form.innerHTML='<p style="color:var(--brand-gold,#FFB300);font-weight:700;margin:0;font-family:var(--font-heading,sans-serif);">Thanks for subscribing!</p>'; }
+      fetch(URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done);
+    });
+  })();
+  </script>
 </body>
 </html>

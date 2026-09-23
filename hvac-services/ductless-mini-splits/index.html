@@ -1382,6 +1382,7 @@
         <p class="footer-news-desc">Join the Comfort One family for important PSAs, HVAC maintenance tips, and exclusive offers to keep your home cool and your energy bills low.</p>
         <form class="footer-news-form" onsubmit="return false;">
           <input class="footer-news-input" type="email" placeholder="Your Email" aria-label="Your Email" />
+          <input type="text" name="company" class="fn-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
           <button type="submit" class="btn-primary">Sign Up</button>
         </form>
       </div>
@@ -1530,5 +1531,21 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.comfort1ac.com/"}, {"@type": "ListItem", "position": 2, "name": "Ductless Mini Splits", "item": "https://www.comfort1ac.com/hvac-services/ductless-mini-splits/"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How much does a ductless mini split system cost?", "acceptedAnswer": {"@type": "Answer", "text": "Cost depends on the number of zones, system capacity, efficiency rating, and installation complexity. A single-zone system is the most affordable, while multi-zone whole-home systems cost more. We provide clear, fixed-price estimates so you know exactly what to expect."}}, {"@type": "Question", "name": "How long do ductless mini splits last?", "acceptedAnswer": {"@type": "Answer", "text": "With regular maintenance, a quality ductless mini split typically lasts 15–20 years, often longer than traditional systems thanks to their efficient, low-stress operation."}}, {"@type": "Question", "name": "Can a ductless mini split heat and cool my entire home?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A multi-zone system with several indoor units can comfortably heat and cool an entire home, giving you independent temperature control in each zone. We'll design a system sized to your home's layout."}}, {"@type": "Question", "name": "Why is my ductless mini split not cooling properly?", "acceptedAnswer": {"@type": "Answer", "text": "Common causes include dirty filters, blocked coils, low refrigerant, or an electrical/sensor issue. Start by cleaning the filters; if the problem persists, our technicians can quickly diagnose and fix it."}}, {"@type": "Question", "name": "Are ductless mini splits energy efficient?", "acceptedAnswer": {"@type": "Answer", "text": "Very. Because they avoid duct losses and let you condition only the zones you're using, ductless systems can significantly reduce energy use compared to traditional central systems."}}]}</script>
 <script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
+  <script id="news-js">
+  (function(){
+    var URL="https://services.leadconnectorhq.com/hooks/9vsm93CZ03U3sAiA7RDF/webhook-trigger/9erw8HrFsgDlYJUFSscp";
+    var form=document.querySelector('.footer-news-form'); if(!form) return;
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var hp=form.querySelector('.fn-hp'); if(hp&&hp.value){ return; }
+      var em=form.querySelector('.footer-news-input'); var email=em?em.value.trim():'';
+      if(!email||email.indexOf('@')<1){ if(em){ em.style.borderColor='#c02626'; em.focus(); } return; }
+      var btn=form.querySelector('button[type="submit"]'); btn.disabled=true; btn.textContent='...';
+      var data={ email: email, form_source:'newsletter', source_page: location.href };
+      function done(){ form.innerHTML='<p style="color:var(--brand-gold,#FFB300);font-weight:700;margin:0;font-family:var(--font-heading,sans-serif);">Thanks for subscribing!</p>'; }
+      fetch(URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done);
+    });
+  })();
+  </script>
 </body>
 </html>

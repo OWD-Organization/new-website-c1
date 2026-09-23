@@ -1152,6 +1152,7 @@
         <p class="footer-news-desc">Join the Comfort One family for important PSAs, HVAC maintenance tips, and exclusive offers to keep your home cool and your energy bills low.</p>
         <form class="footer-news-form" onsubmit="return false;">
           <input class="footer-news-input" type="email" placeholder="Your Email" aria-label="Your Email" />
+          <input type="text" name="company" class="fn-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
           <button type="submit" class="btn-primary">Sign Up</button>
         </form>
       </div>
@@ -1294,5 +1295,21 @@
   })();
   </script>
 <script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
+  <script id="news-js">
+  (function(){
+    var URL="https://services.leadconnectorhq.com/hooks/9vsm93CZ03U3sAiA7RDF/webhook-trigger/9erw8HrFsgDlYJUFSscp";
+    var form=document.querySelector('.footer-news-form'); if(!form) return;
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var hp=form.querySelector('.fn-hp'); if(hp&&hp.value){ return; }
+      var em=form.querySelector('.footer-news-input'); var email=em?em.value.trim():'';
+      if(!email||email.indexOf('@')<1){ if(em){ em.style.borderColor='#c02626'; em.focus(); } return; }
+      var btn=form.querySelector('button[type="submit"]'); btn.disabled=true; btn.textContent='...';
+      var data={ email: email, form_source:'newsletter', source_page: location.href };
+      function done(){ form.innerHTML='<p style="color:var(--brand-gold,#FFB300);font-weight:700;margin:0;font-family:var(--font-heading,sans-serif);">Thanks for subscribing!</p>'; }
+      fetch(URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done);
+    });
+  })();
+  </script>
 </body>
 </html>

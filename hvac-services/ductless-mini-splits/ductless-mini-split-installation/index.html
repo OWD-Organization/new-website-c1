@@ -1334,6 +1334,7 @@
         <p class="footer-news-desc">Join the Comfort One family for important PSAs, HVAC maintenance tips, and exclusive offers to keep your home cool and your energy bills low.</p>
         <form class="footer-news-form" onsubmit="return false;">
           <input class="footer-news-input" type="email" placeholder="Your Email" aria-label="Your Email" />
+          <input type="text" name="company" class="fn-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
           <button type="submit" class="btn-primary">Sign Up</button>
         </form>
       </div>
@@ -1481,5 +1482,21 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.comfort1ac.com/"}, {"@type": "ListItem", "position": 2, "name": "Ductless Mini Splits", "item": "https://www.comfort1ac.com/hvac-services/ductless-mini-splits/"}, {"@type": "ListItem", "position": 3, "name": "Ductless Mini Split Installation", "item": "https://www.comfort1ac.com/hvac-services/ductless-mini-splits/ductless-mini-split-installation/"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Who can benefit most from a ductless mini split system?", "acceptedAnswer": {"@type": "Answer", "text": "Ductless systems are perfect for: Homes without existing ductwork Room additions or renovations Spaces with inconsistent temperatures Sunrooms and converted garages Home offices needing independent temperature control Homes where running ductwork would be costly or impossible Multi-generational homes needing personalized comfort zones"}}, {"@type": "Question", "name": "How do ductless mini splits compare to traditional AC systems?", "acceptedAnswer": {"@type": "Answer", "text": "Ductless systems offer several unique advantages: no ductwork required (saving space and installation costs), zone-by-zone temperature control, up to 30% more energy efficiency, quieter operation (as low as 19 decibels), built-in heating and cooling capabilities, faster installation time, and better air filtration with washable filters."}}, {"@type": "Question", "name": "How long does a ductless mini split installation take?", "acceptedAnswer": {"@type": "Answer", "text": "Most single-zone installations can be completed in one day. Multi-zone systems typically take 1–2 days depending on the number of indoor units, complexity of the installation location, electrical work required, and access to installation areas."}}, {"@type": "Question", "name": "What maintenance does a ductless system need?", "acceptedAnswer": {"@type": "Answer", "text": "Regular maintenance is simple but essential: clean or replace air filters monthly, keep the outdoor unit clear of debris, schedule professional maintenance twice yearly, and check drain lines seasonally. Our Comfort Club membership includes all necessary maintenance visits."}}, {"@type": "Question", "name": "How much space can a ductless mini split cool or heat?", "acceptedAnswer": {"@type": "Answer", "text": "Coverage depends on the system size. A single indoor unit typically covers 150–750 square feet, while a multi-zone system can cover up to 3,000 square feet. During your free consultation, we’ll determine the perfect size for your space."}}, {"@type": "Question", "name": "Where can the indoor units be installed?", "acceptedAnswer": {"@type": "Answer", "text": "Indoor units can be mounted high on walls, near the floor, on ceilings, or recessed in drop ceilings. We’ll recommend optimal locations for both performance and aesthetics."}}, {"@type": "Question", "name": "How long will my ductless mini split system last?", "acceptedAnswer": {"@type": "Answer", "text": "With proper maintenance, you can expect 15–20 years of reliable operation, consistent performance throughout its lifespan, long-term energy savings, and lasting comfort in every zone."}}, {"@type": "Question", "name": "What about winter performance?", "acceptedAnswer": {"@type": "Answer", "text": "Modern ductless systems provide efficient heating down to 5°F, making them perfect for Scottsdale winters. They offer quick and efficient heating, lower operating costs than electric heat, even temperature distribution, and no cold spots or drafts."}}]}</script>
 <script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
+  <script id="news-js">
+  (function(){
+    var URL="https://services.leadconnectorhq.com/hooks/9vsm93CZ03U3sAiA7RDF/webhook-trigger/9erw8HrFsgDlYJUFSscp";
+    var form=document.querySelector('.footer-news-form'); if(!form) return;
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var hp=form.querySelector('.fn-hp'); if(hp&&hp.value){ return; }
+      var em=form.querySelector('.footer-news-input'); var email=em?em.value.trim():'';
+      if(!email||email.indexOf('@')<1){ if(em){ em.style.borderColor='#c02626'; em.focus(); } return; }
+      var btn=form.querySelector('button[type="submit"]'); btn.disabled=true; btn.textContent='...';
+      var data={ email: email, form_source:'newsletter', source_page: location.href };
+      function done(){ form.innerHTML='<p style="color:var(--brand-gold,#FFB300);font-weight:700;margin:0;font-family:var(--font-heading,sans-serif);">Thanks for subscribing!</p>'; }
+      fetch(URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done);
+    });
+  })();
+  </script>
 </body>
 </html>

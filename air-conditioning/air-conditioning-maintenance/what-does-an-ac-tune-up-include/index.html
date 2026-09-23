@@ -1158,6 +1158,7 @@
         <p class="footer-news-desc">Join the Comfort One family for important PSAs, HVAC maintenance tips, and exclusive offers to keep your home cool and your energy bills low.</p>
         <form class="footer-news-form" onsubmit="return false;">
           <input class="footer-news-input" type="email" placeholder="Your Email" aria-label="Your Email" />
+          <input type="text" name="company" class="fn-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
           <button type="submit" class="btn-primary">Sign Up</button>
         </form>
       </div>
@@ -1294,5 +1295,21 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HVACBusiness", "@id": "https://www.comfort1ac.com/#business", "name": "Comfort One Air Conditioning", "url": "https://www.comfort1ac.com/", "image": "https://www.comfort1ac.com/imag/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "logo": "https://www.comfort1ac.com/imag/Comfort-One-Air-Conditioning-HVAC-Company-Scottsdale.webp", "telephone": "+1-602-247-6151", "email": "office@comfort1ac.com", "priceRange": "$$", "address": {"@type": "PostalAddress", "addressLocality": "Scottsdale", "addressRegion": "AZ", "postalCode": "85255", "addressCountry": "US"}, "geo": {"@type": "GeoCoordinates", "latitude": 33.6743745, "longitude": -111.936296}, "areaServed": [{"@type": "City", "name": "Scottsdale"}, {"@type": "City", "name": "North Phoenix"}, {"@type": "City", "name": "Cave Creek"}, {"@type": "City", "name": "Carefree"}, {"@type": "City", "name": "Anthem"}, {"@type": "City", "name": "Paradise Valley"}, {"@type": "City", "name": "New River"}, {"@type": "City", "name": "Desert Mountain"}], "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "08:00", "closes": "17:00"}, {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday", "Sunday"], "opens": "09:00", "closes": "17:00"}], "sameAs": ["https://www.facebook.com/ComfortOneAC", "https://www.instagram.com/comfortoneac/", "https://www.yelp.com/biz/comfort-one-air-conditioning-phoenix", "https://www.google.com/maps/place/Comfort+One+Air+Conditioning/@33.6739369,-112.2659457,10z/data=!3m1!4b1!4m6!3m5!1s0x872b6e5270c22e51:0xe5ffad82f971dc9f!8m2!3d33.6743745!4d-111.936296!16s%2Fg%2F11f4lr0tdq"], "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "550"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.comfort1ac.com/"}, {"@type": "ListItem", "position": 2, "name": "What Does An AC Tune Up Include", "item": "https://www.comfort1ac.com/air-conditioning/air-conditioning-maintenance/what-does-an-ac-tune-up-include/"}]}</script>
 <script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
+  <script id="news-js">
+  (function(){
+    var URL="https://services.leadconnectorhq.com/hooks/9vsm93CZ03U3sAiA7RDF/webhook-trigger/9erw8HrFsgDlYJUFSscp";
+    var form=document.querySelector('.footer-news-form'); if(!form) return;
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      var hp=form.querySelector('.fn-hp'); if(hp&&hp.value){ return; }
+      var em=form.querySelector('.footer-news-input'); var email=em?em.value.trim():'';
+      if(!email||email.indexOf('@')<1){ if(em){ em.style.borderColor='#c02626'; em.focus(); } return; }
+      var btn=form.querySelector('button[type="submit"]'); btn.disabled=true; btn.textContent='...';
+      var data={ email: email, form_source:'newsletter', source_page: location.href };
+      function done(){ form.innerHTML='<p style="color:var(--brand-gold,#FFB300);font-weight:700;margin:0;font-family:var(--font-heading,sans-serif);">Thanks for subscribing!</p>'; }
+      fetch(URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done);
+    });
+  })();
+  </script>
 </body>
 </html>
