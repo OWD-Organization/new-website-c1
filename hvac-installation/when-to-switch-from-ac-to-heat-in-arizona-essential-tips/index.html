@@ -757,6 +757,9 @@
     .rs-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .rs-row.email { grid-template-columns: 1.6fr 1fr; }
     .rs-form input, .rs-form select, .rs-form textarea { width: 100%; padding: 13px 14px; border: none; border-radius: 8px; background: #fff; color: #1a2340; font-family: 'Atkinson Hyperlegible', sans-serif; font-size: .98rem; box-shadow: 0 2px 8px rgba(0,0,0,.18); }
+    .rs-ig { display: block; position: relative; }
+    .rs-ig > .material-icons { position: absolute; left: 12px; top: 15px; color: var(--brand-red, #951F21); font-size: 20px; pointer-events: none; z-index: 1; }
+    .rs-ig input, .rs-ig select, .rs-ig textarea { padding-left: 42px; }
     .rs-form textarea { min-height: 118px; resize: vertical; }
     .rs-form input::placeholder, .rs-form textarea::placeholder { color: #5a6785; }
     .rs-form select { color: #5a6785; appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2327316F' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
@@ -1223,30 +1226,30 @@
         <p class="rs-req">"<span>*</span>" indicates required fields</p>
         <form class="rs-form" novalidate>
           <div class="rs-row">
-            <input type="text" name="first_name" placeholder="First Name*" required autocomplete="given-name" />
-            <input type="text" name="last_name" placeholder="Last Name*" required autocomplete="family-name" />
+            <span class="rs-ig"><span class="material-icons">person</span><input type="text" name="first_name" placeholder="First Name*" required autocomplete="given-name" /></span>
+            <span class="rs-ig"><span class="material-icons">person</span><input type="text" name="last_name" placeholder="Last Name*" required autocomplete="family-name" /></span>
           </div>
           <div class="rs-row email">
-            <input type="email" name="email" placeholder="Your Email Address*" required autocomplete="email" />
-            <input type="text" name="zip" placeholder="Your ZIP Code" autocomplete="postal-code" inputmode="numeric" />
+            <span class="rs-ig"><span class="material-icons">mail</span><input type="email" name="email" placeholder="Your Email Address*" required autocomplete="email" /></span>
+            <span class="rs-ig"><span class="material-icons">location_on</span><input type="text" name="zip" placeholder="Your ZIP Code" autocomplete="postal-code" inputmode="numeric" /></span>
           </div>
-          <input type="tel" name="phone" placeholder="Your Phone Number*" required autocomplete="tel" />
-          <select name="service" required>
+          <span class="rs-ig"><span class="material-icons">call</span><input type="tel" name="phone" placeholder="Your Phone Number*" required autocomplete="tel" /></span>
+          <span class="rs-ig"><span class="material-icons">build</span><select name="service" required>
             <option value="" selected disabled>What service do you request?*</option>
             <option>repair</option>
             <option>replacement estimate</option>
             <option>new construction estimate</option>
             <option>maintenance / tune-up</option>
             <option>0% financing promo</option>
-          </select>
-          <select name="schedule" required>
+          </select></span>
+          <span class="rs-ig"><span class="material-icons">schedule</span><select name="schedule" required>
             <option value="" selected disabled>How do you prefer to schedule?*</option>
             <option>Receive a call</option>
             <option>Receive an email</option>
             <option>Text message</option>
             <option>I don't have a preference</option>
-          </select>
-          <textarea name="message" placeholder="How can we help?*" required></textarea>
+          </select></span>
+          <span class="rs-ig"><span class="material-icons">chat</span><textarea name="message" placeholder="How can we help?*" required></textarea></span>
           <input type="text" name="company" class="rs-hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button type="submit" class="rs-submit">Request Service</button>
         </form>
