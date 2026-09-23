@@ -938,6 +938,7 @@
               <option>Text message</option>
               <option>I don't have a preference</option>
             </select></div></div>
+          <div class="ct-fieldwrap"><label class="ct-label">How can we help?*</label><div class="ct-ig" style="align-items:flex-start;"><span class="material-icons" style="margin-top:12px;">chat</span><textarea class="ct-field" rows="4" placeholder="Tell us how we can help" aria-label="How can we help?" required style="resize:vertical;min-height:110px;"></textarea></div></div>
           <input type="text" name="company" class="ct-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
           <button type="submit" class="btn-primary ct-submit">Request a Service</button>
         </form>
@@ -1226,7 +1227,7 @@
         phone: fv('[aria-label="Phone number"]'),
         service: fv('[aria-label="What service do you request?"]'),
         schedule: fv('[aria-label="How do you prefer to schedule?"]'),
-        message: '',
+        message: fv('[aria-label="How can we help?"]'),
         form_source: 'contact',
         source_page: location.href
       };
@@ -1247,7 +1248,7 @@
     function openModal(e){ if(e) e.preventDefault(); lastFocus = document.activeElement; form.hidden = false; ty.hidden = true; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('rs-open'); var f = form.querySelector('input,select,textarea'); if(f) setTimeout(function(){ f.focus(); }, 60); }
     function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('rs-open'); if(lastFocus && lastFocus.focus) lastFocus.focus(); }
     var trigs = document.querySelectorAll('a, button');
-    for(var i=0;i<trigs.length;i++){ var t=trigs[i]; if(t.closest && t.closest('#rsModal')) continue; var txt=(t.textContent||'').replace(/\s+/g,' ').trim().toLowerCase(); if(txt==='request a service'){ t.addEventListener('click', openModal); } }
+    for(var i=0;i<trigs.length;i++){ var t=trigs[i]; if(t.closest && (t.closest('#rsModal') || t.closest('form'))) continue; var txt=(t.textContent||'').replace(/\s+/g,' ').trim().toLowerCase(); if(txt==='request a service'){ t.addEventListener('click', openModal); } }
     modal.querySelector('.rs-close').addEventListener('click', closeModal);
     modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
     document.addEventListener('keydown', function(e){ if(e.key==='Escape' && modal.classList.contains('open')) closeModal(); });
