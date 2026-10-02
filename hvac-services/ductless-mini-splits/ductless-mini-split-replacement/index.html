@@ -1495,7 +1495,7 @@
   <script id="rs-modal-js">
   (function(){
     /* Paste the GoHighLevel Inbound Webhook URL between the quotes to go live. */
-    var RS_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/9vsm93CZ03U3sAiA7RDF/webhook-trigger/329152f3-b6b9-4cf1-87cf-09c0b81fbb11";
+    var RS_WEBHOOK_URL = "/api/lead"; var _t0 = Date.now();
     var modal = document.getElementById('rsModal'); if(!modal) return;
     var form = modal.querySelector('.rs-form');
     var ty = modal.querySelector('.rs-thankyou');
@@ -1513,7 +1513,7 @@
       e.preventDefault();
       if(form.company && form.company.value){ return; }
       if(!form.checkValidity()){ form.reportValidity(); return; }
-      var data = { first_name: form.first_name.value, last_name: form.last_name.value, email: form.email.value, zip: form.zip.value, phone: form.phone.value, service: form.service.value, schedule: form.schedule.value, message: form.message.value, form_source: "rs-popup", source_page: location.href };
+      var data = { first_name: form.first_name.value, last_name: form.last_name.value, email: form.email.value, zip: form.zip.value, phone: form.phone.value, service: form.service.value, schedule: form.schedule.value, message: form.message.value, form_source: "rs-popup", elapsed_ms: (typeof _t0!=='undefined'?Date.now()-_t0:0), source_page: location.href };
       var btn = form.querySelector('.rs-submit'); btn.disabled = true; btn.textContent = 'Sending...';
       function restore(){ btn.disabled = false; btn.textContent = 'Request Service'; }
       function finish(){ form.hidden = true; ty.hidden = false; form.reset(); restore(); }
@@ -1531,7 +1531,7 @@
 <script>(function(){var y=new Date().getFullYear();var n=document.querySelectorAll(".cpy-year");for(var i=0;i<n.length;i++){n[i].textContent=y;}})();</script>
   <script id="news-js">
   (function(){
-    var URL="https://services.leadconnectorhq.com/hooks/9vsm93CZ03U3sAiA7RDF/webhook-trigger/9erw8HrFsgDlYJUFSscp";
+    var URL="/api/lead"; var _t0 = Date.now();
     var form=document.querySelector('.footer-news-form'); if(!form) return;
     form.addEventListener('submit',function(e){
       e.preventDefault();
@@ -1539,7 +1539,7 @@
       var em=form.querySelector('.footer-news-input'); var email=em?em.value.trim():'';
       if(!email||email.indexOf('@')<1){ if(em){ em.style.borderColor='#c02626'; em.focus(); } return; }
       var btn=form.querySelector('button[type="submit"]'); btn.disabled=true; btn.textContent='...';
-      var data={ email: email, form_source:'newsletter', source_page: location.href };
+      var data={ email: email, form_source:'newsletter', elapsed_ms: (typeof _t0!=='undefined'?Date.now()-_t0:0), source_page: location.href };
       function done(){ form.innerHTML='<p style="color:var(--brand-gold,#FFB300);font-weight:700;margin:0;font-family:var(--font-heading,sans-serif);">Thanks for subscribing!</p>'; }
       fetch(URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done);
     });
