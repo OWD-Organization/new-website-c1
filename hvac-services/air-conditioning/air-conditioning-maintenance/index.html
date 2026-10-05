@@ -1342,7 +1342,7 @@
     var lastFocus = null;
     function openModal(e){ if(e) e.preventDefault(); lastFocus = document.activeElement; form.hidden = false; ty.hidden = true; modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.classList.add('rs-open'); var f = form.querySelector('input,select,textarea'); if(f) setTimeout(function(){ f.focus(); }, 60); }
     function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.body.classList.remove('rs-open'); if(lastFocus && lastFocus.focus) lastFocus.focus(); }
-    var trigs = document.querySelectorAll('a, button');
+    window.__openRS = openModal; var trigs = document.querySelectorAll('a, button');
     for(var i=0;i<trigs.length;i++){ var t=trigs[i]; if(t.closest && (t.closest('#rsModal') || t.closest('form'))) continue; var txt=(t.textContent||'').replace(/\s+/g,' ').trim().toLowerCase(); if(txt==='request a service'){ t.addEventListener('click', openModal); } }
     modal.querySelector('.rs-close').addEventListener('click', closeModal);
     modal.addEventListener('click', function(e){ if(e.target===modal) closeModal(); });
@@ -1385,5 +1385,26 @@
     });
   })();
   </script>
+  <style id="mbar-css">
+    .mbar{display:none}
+    @media (max-width:768px){
+      .mbar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:2500;background:var(--brand-navy,#27316F);padding:8px 10px;padding-bottom:calc(8px + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 16px rgba(0,0,0,.28)}
+      .mbar-btns{display:flex;gap:8px}
+      .mbar-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;background:#fff;color:var(--navy-500,#27316F);border:none;border-radius:10px;padding:11px 6px;font-family:var(--font-heading,sans-serif);font-weight:700;font-size:.92rem;line-height:1;text-decoration:none;cursor:pointer}
+      .mbar-btn .material-icons{font-size:18px}
+      .mbar-book{background:var(--brand-red,#951F21);color:#fff}
+      .mbar-info{text-align:center;color:rgba(255,255,255,.82);font-size:.72rem;margin-top:6px;font-family:var(--font-heading,sans-serif);letter-spacing:.02em}
+      .mbar-info a{color:inherit;text-decoration:none;font-weight:700}
+      body{padding-bottom:92px}
+    }
+  </style>
+  <div class="mbar" role="region" aria-label="Quick contact">
+    <div class="mbar-btns">
+      <a class="mbar-btn" href="tel:+16022476151"><span class="material-icons" aria-hidden="true">call</span>Call</a>
+      <a class="mbar-btn" href="sms:+16022476151"><span class="material-icons" aria-hidden="true">chat_bubble</span>Text us</a>
+      <button type="button" class="mbar-btn mbar-book" onclick="window.__openRS&&window.__openRS(event);return false;"><span class="material-icons" aria-hidden="true">event_available</span>Book</button>
+    </div>
+    <div class="mbar-info"><a href="tel:+16022476151">(602) 247-6151</a> &middot; Open 7 days</div>
+  </div>
 </body>
 </html>
