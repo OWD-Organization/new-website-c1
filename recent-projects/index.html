@@ -704,6 +704,83 @@
   <meta name="twitter:title" content="Recent Projects | Comfort One Air Conditioning" />
   <meta name="twitter:description" content="Explore recent HVAC installations and replacements completed by Comfort One Air Conditioning across Scottsdale, Phoenix, and the surrounding Arizona communities." />
   <meta name="twitter:image" content="https://www.comfort1ac.com/imag/ComfortOneAC_BusinessBranding2026-9709.webp" />
+<!-- RP-HEAD:START -->
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <style id="rp-css">
+    .rp-hero { padding: 190px 0 80px; text-align: center; }
+    .rp-hero .section-label { justify-content: center; }
+    .rp-hero-btns { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: var(--space-lg); }
+    .rp-hero-btns a { font-size: 1.0625rem; padding: 16px 30px; min-width: 230px; }
+    .rp-hero-btns .material-icons { font-size: 1.25rem; }
+    .rp-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; margin-top: var(--space-lg); color: rgba(255,255,255,.85); font-family: var(--font-heading); font-weight: 500; }
+    .rp-stats strong { color: var(--brand-gold); font-weight: 700; }
+    .rp-mapwrap { background: var(--gray-100); padding: var(--space-2xl) 0; }
+    .rp-head { text-align: center; max-width: 860px; margin: 0 auto var(--space-xl); }
+    .rp-head h2 { font: var(--font-section); color: var(--navy-500); margin-top: var(--space-xs); }
+    .rp-head p { margin-top: var(--space-sm); color: var(--gray-600, #5b6275); }
+    #rpMap { height: 480px; border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md); border: 2px solid var(--white); background: #dfe6ee; }
+    @media (max-width: 640px) { #rpMap { height: 360px; } .rp-hero { padding: 150px 0 60px; } .rp-hero-btns a { min-width: 0; flex: 1 1 100%; } }
+    .rp-mapnote { margin-top: 12px; font-size: .9rem; color: var(--gray-600, #5b6275); text-align: center; }
+    .rp-pin { width: 30px; height: 30px; border-radius: 50% 50% 50% 0; transform: rotate(-45deg); background: var(--brand-red); border: 3px solid #fff; box-shadow: 0 3px 10px rgba(21,27,63,.35); }
+    .rp-pin.rv { background: var(--brand-navy); }
+    .rp-pin::after { content: ''; position: absolute; inset: 7px; border-radius: 50%; background: var(--brand-gold); }
+    .leaflet-popup-content { font-family: var(--font-family, sans-serif); margin: 14px 16px; }
+    .rp-pop strong { display: block; font-family: var(--font-heading); color: var(--navy-500); font-size: 1rem; }
+    .rp-pop span { display: block; color: #5b6275; font-size: .85rem; margin: 2px 0 8px; }
+    .rp-pop a { color: var(--brand-red); font-weight: 700; }
+    .rp-filters { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: flex-end; margin-bottom: var(--space-xl); }
+    .rp-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; border: 0; padding: 0; margin: 0; }
+    .rp-chips legend, .rp-city label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .rp-chip { padding: 12px 22px; border-radius: var(--radius-full); font-family: var(--font-heading); font-weight: 600; font-size: .95rem; color: var(--navy-500); background: var(--white); border: 1.5px solid var(--gray-200); cursor: pointer; transition: background .25s, color .25s, border-color .25s; }
+    .rp-chip:hover { border-color: var(--brand-gold); }
+    .rp-chip[aria-pressed="true"] { background: var(--brand-red); border-color: var(--brand-red); color: var(--white); }
+    .rp-city select { padding: 12px 40px 12px 18px; border-radius: var(--radius-full); border: 1.5px solid var(--gray-200); font-family: var(--font-heading); font-weight: 600; font-size: .95rem; color: var(--navy-500); background: var(--white); }
+    .rp-chip:focus-visible, .rp-city select:focus-visible, .rp-card a:focus-visible, .rp-card button:focus-visible, .rp-hero-btns a:focus-visible { outline: 3px solid var(--brand-gold); outline-offset: 3px; }
+    .rp-count { text-align: center; color: var(--gray-600, #5b6275); margin: -16px 0 var(--space-lg); font-weight: 600; }
+    .rp-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-lg); list-style: none; padding: 0; margin: 0; }
+    @media (min-width: 700px) { .rp-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1100px) { .rp-grid { grid-template-columns: repeat(3, 1fr); } }
+    .rp-card { background: var(--white); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); display: flex; flex-direction: column; border: 1px solid var(--gray-200); }
+    .rp-card[hidden] { display: none; }
+    .rp-photos { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: 1fr 1fr; gap: 3px; aspect-ratio: 4 / 3; background: var(--gray-100); }
+    .rp-photos.n1 { grid-template-columns: 1fr; grid-template-rows: 1fr; }
+    .rp-photos.n2 { grid-template-rows: 1fr; grid-template-columns: 1fr 1fr; }
+    .rp-photos button { padding: 0; border: 0; background: none; cursor: zoom-in; overflow: hidden; min-height: 0; }
+    .rp-photos button:first-child { grid-row: span 2; }
+    .rp-photos.n2 button:first-child, .rp-photos.n1 button:first-child { grid-row: auto; }
+    .rp-photos img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+    .rp-photos button:hover img { transform: scale(1.04); }
+    .rp-nophoto { aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center; background: var(--gradient-hero-home); color: var(--brand-gold); }
+    .rp-nophoto .material-icons { font-size: 64px; }
+    .rp-body { padding: 22px 22px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+    .rp-tag { align-self: flex-start; background: var(--red-050); color: var(--brand-red); font-family: var(--font-heading); font-weight: 600; font-size: .8rem; letter-spacing: .04em; text-transform: uppercase; padding: 5px 12px; border-radius: var(--radius-full); }
+    .rp-title { font-family: var(--font-heading); font-weight: 700; font-size: 1.25rem; line-height: 1.25; color: var(--navy-500); }
+    .rp-meta { display: flex; flex-wrap: wrap; gap: 6px 16px; color: #5b6275; font-size: .95rem; }
+    .rp-meta span { display: inline-flex; align-items: center; gap: 4px; }
+    .rp-meta .material-icons { font-size: 1.1rem; color: var(--brand-red); }
+    .rp-review { margin: 6px 0 0; padding: 16px 18px; background: var(--gray-100); border-left: 4px solid var(--brand-gold); border-radius: 0 var(--radius-md) var(--radius-md) 0; }
+    .rp-stars { color: var(--brand-gold); letter-spacing: 2px; font-size: 1.05rem; }
+    .rp-review p { margin: 6px 0 8px; color: var(--navy-700); font-size: 1rem; line-height: 1.6; }
+    .rp-review footer { font-size: .88rem; color: #5b6275; display: flex; align-items: center; gap: 6px; }
+    .rp-review footer img { width: 16px; height: 16px; }
+    .rp-reply { margin-top: 12px; background: var(--gray-200); border-radius: var(--radius-md); padding: 14px 16px; }
+    .rp-reply-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+    .rp-reply-head strong { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: .92rem; }
+    .rp-reply-head time { font-size: .82rem; color: #5b6275; }
+    .rp-reply p { margin: 6px 0 0; font-size: .95rem; color: #3d4457; line-height: 1.6; }
+    .rp-showmap { margin-top: auto; align-self: flex-start; background: none; border: 0; padding: 6px 0 0; color: var(--brand-red); font-family: var(--font-heading); font-weight: 700; font-size: .95rem; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; }
+    .rp-showmap:hover { text-decoration: underline; }
+    .rp-cta { margin-top: var(--space-2xl); text-align: center; background: var(--gradient-hero-home); color: #fff; border-radius: var(--radius-xl); padding: var(--space-xl) var(--space-lg); }
+    .rp-cta h2 { font: var(--font-section); font-size: clamp(1.6rem, 3vw, 2.25rem); }
+    .rp-cta p { color: rgba(255,255,255,.85); margin-top: 10px; }
+    #rpZoom { border: 0; padding: 0; background: transparent; max-width: 94vw; max-height: 92vh; }
+    #rpZoom::backdrop { background: rgba(10,14,30,.82); }
+    #rpZoom img { max-width: 94vw; max-height: 84vh; border-radius: var(--radius-lg); display: block; }
+    #rpZoom .rp-zclose { position: absolute; top: 10px; right: 10px; width: 48px; height: 48px; border-radius: 50%; border: 0; background: rgba(21,27,63,.8); color: #fff; font-size: 1.8rem; cursor: pointer; }
+    .rp-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  </style>
+<!-- RP-HEAD:END -->
 </head>
 <body>
 
@@ -852,10 +929,305 @@
     </div>
   </div>
 
-  <!-- ===================== PLACEHOLDER ===================== -->
-  <main style="padding-top: 140px;">
-    <div style="height: 500px; background: #ffffff;"></div>
+<!-- RP:START -->
+  <main id="main">
+  <section class="rp-hero gradient-hero" style="background: var(--gradient-hero-home);">
+    <div class="container">
+      <div class="section-label gold">Real Jobs From Our Technicians</div>
+      <h1 class="page-hero-title">Recent HVAC Projects Near You</h1>
+      <p class="page-hero-desc">Photos straight from our crews' latest installations, replacements and repairs across Scottsdale, Phoenix and the North Valley, paired with what homeowners said about the work on Google.</p>
+      <div class="rp-hero-btns">
+        <a href="tel:+16022476151" class="btn-gold"><span class="material-icons" aria-hidden="true">call</span>Call (602) 247-6151</a>
+        <a href="/#contact" class="btn-primary">Request a Service</a>
+      </div>
+      <div class="rp-stats"><span><strong>27</strong> recent projects</span><span><strong>7</strong> communities</span><span><strong>6</strong> matched Google reviews</span></div>
+    </div>
+  </section>
+
+  <section class="rp-mapwrap" aria-labelledby="rpMapTitle">
+    <div class="container">
+      <div class="rp-head">
+        <div class="section-label" style="justify-content:center;">Project Map</div>
+        <h2 id="rpMapTitle">Where we've been working lately</h2>
+      </div>
+      <div id="rpMap" role="region" aria-label="Map of recent Comfort One projects. The project list below contains the same information."></div>
+      <p class="rp-mapnote">Pins show the approximate area of each job, not the home's address, to protect our customers' privacy.</p>
+    </div>
+  </section>
+
+  <section class="section-padding" style="background: var(--white);" aria-labelledby="rpListTitle">
+    <div class="container">
+      <div class="rp-head">
+        <div class="section-label" style="justify-content:center;">Project Feed</div>
+        <h2 id="rpListTitle">Our latest installs, replacements and repairs</h2>
+      </div>
+      <div class="rp-filters">
+        <fieldset class="rp-chips"><legend>Filter by service</legend><button type="button" class="rp-chip" data-cat="all" aria-pressed="true">All projects</button><button type="button" class="rp-chip" data-cat="install" aria-pressed="false">Installation &amp; Replacement</button><button type="button" class="rp-chip" data-cat="repair" aria-pressed="false">Repair</button><button type="button" class="rp-chip" data-cat="maintenance" aria-pressed="false">Maintenance</button></fieldset>
+        <div class="rp-city"><label for="rpCity">Filter by city</label><select id="rpCity"><option value="all">All cities</option><option value="Anthem">Anthem</option><option value="Carefree">Carefree</option><option value="Glendale">Glendale</option><option value="Phoenix">Phoenix</option><option value="Scottsdale">Scottsdale</option><option value="Surprise">Surprise</option><option value="Tempe">Tempe</option></select></div>
+      </div>
+      <p class="rp-count" id="rpCount" role="status" aria-live="polite">Showing 27 projects</p>
+      <ul class="rp-grid" id="rpGrid">
+      <li class="rp-card" id="p-ac629ece72" data-cat="install" data-city="Glendale">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/b51ac9455d85.webp" aria-label="Enlarge photo 1 of 3: Heat Pump System Installation by Comfort One in Glendale, AZ"><img src="/imag/projects/b51ac9455d85.webp" alt="Heat Pump System Installation by Comfort One in Glendale, AZ, photo 1" width="901" height="1200" loading="eager" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/50faa44cca9d.webp" aria-label="Enlarge photo 2 of 3: Heat Pump System Installation by Comfort One in Glendale, AZ"><img src="/imag/projects/50faa44cca9d.webp" alt="Heat Pump System Installation by Comfort One in Glendale, AZ, photo 2" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/faff2d1f730a.webp" aria-label="Enlarge photo 3 of 3: Heat Pump System Installation by Comfort One in Glendale, AZ"><img src="/imag/projects/faff2d1f730a.webp" alt="Heat Pump System Installation by Comfort One in Glendale, AZ, photo 3" width="900" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">Heat Pump System Installation in Glendale, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Glendale, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-10-12">October 12, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="ac629ece72"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-d6317a3c72" data-cat="install" data-city="Scottsdale">
+        <div class="rp-photos n1"><button type="button" class="rp-zoom" data-src="/imag/projects/2c21217a8cdc.webp" aria-label="Enlarge photo 1 of 1: Heat Pump System Installation by Comfort One in Scottsdale, AZ"><img src="/imag/projects/2c21217a8cdc.webp" alt="Heat Pump System Installation by Comfort One in Scottsdale, AZ, photo 1" width="900" height="1200" loading="eager" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">Heat Pump System Installation in Scottsdale, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Scottsdale, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-10-10">October 10, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="d6317a3c72"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-e3d9114ff4" data-cat="install" data-city="Tempe">
+        <div class="rp-photos n1"><button type="button" class="rp-zoom" data-src="/imag/projects/b2f70e285e8c.webp" aria-label="Enlarge photo 1 of 1: AC System Replacement by Comfort One in Tempe, AZ"><img src="/imag/projects/b2f70e285e8c.webp" alt="AC System Replacement by Comfort One in Tempe, AZ, photo 1" width="900" height="1200" loading="eager" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Tempe, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Tempe, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-10-06">October 6, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="e3d9114ff4"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-ea4fe5a398" data-cat="install" data-city="Phoenix">
+        <div class="rp-photos n2"><button type="button" class="rp-zoom" data-src="/imag/projects/0b1c49ca3c3f.webp" aria-label="Enlarge photo 1 of 2: Heat Pump System Installation by Comfort One in Phoenix, AZ"><img src="/imag/projects/0b1c49ca3c3f.webp" alt="Heat Pump System Installation by Comfort One in Phoenix, AZ, photo 1" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/61078ff18caf.webp" aria-label="Enlarge photo 2 of 2: Heat Pump System Installation by Comfort One in Phoenix, AZ"><img src="/imag/projects/61078ff18caf.webp" alt="Heat Pump System Installation by Comfort One in Phoenix, AZ, photo 2" width="900" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">Heat Pump System Installation in Phoenix, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Phoenix, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-10-02">October 2, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="ea4fe5a398"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-39c6a9f122" data-cat="install" data-city="Carefree">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/0c465067fd2f.webp" aria-label="Enlarge photo 1 of 3: Ductless Mini Split by Comfort One in Carefree, AZ"><img src="/imag/projects/0c465067fd2f.webp" alt="Ductless Mini Split by Comfort One in Carefree, AZ, photo 1" width="1200" height="675" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/8e07e66c8143.webp" aria-label="Enlarge photo 2 of 3: Ductless Mini Split by Comfort One in Carefree, AZ"><img src="/imag/projects/8e07e66c8143.webp" alt="Ductless Mini Split by Comfort One in Carefree, AZ, photo 2" width="675" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/a7d76e120066.webp" aria-label="Enlarge photo 3 of 3: Ductless Mini Split by Comfort One in Carefree, AZ"><img src="/imag/projects/a7d76e120066.webp" alt="Ductless Mini Split by Comfort One in Carefree, AZ, photo 3" width="900" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">Ductless Mini Split in Carefree, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Carefree, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-10-01">October 1, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="39c6a9f122"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-0b26fec005" data-cat="install" data-city="Carefree">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/05082bfbf85e.webp" aria-label="Enlarge photo 1 of 3: Heat Pump System Installation by Comfort One in Carefree, AZ"><img src="/imag/projects/05082bfbf85e.webp" alt="Heat Pump System Installation by Comfort One in Carefree, AZ, photo 1" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/29f93b41160c.webp" aria-label="Enlarge photo 2 of 3: Heat Pump System Installation by Comfort One in Carefree, AZ"><img src="/imag/projects/29f93b41160c.webp" alt="Heat Pump System Installation by Comfort One in Carefree, AZ, photo 2" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/b39919e92abf.webp" aria-label="Enlarge photo 3 of 3: Heat Pump System Installation by Comfort One in Carefree, AZ"><img src="/imag/projects/b39919e92abf.webp" alt="Heat Pump System Installation by Comfort One in Carefree, AZ, photo 3" width="900" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">Heat Pump System Installation in Carefree, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Carefree, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-09-25">September 25, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="0b26fec005"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-3c4782e3b4" data-cat="maintenance" data-city="Phoenix">
+        <div class="rp-nophoto" aria-hidden="true"><span class="material-icons">event_available</span></div>
+        <div class="rp-body">
+          <span class="rp-tag">Maintenance</span>
+          <h3 class="rp-title">AC Tune-Up &amp; Maintenance in Phoenix, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Phoenix, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-09-24">September 24, 2026</time></span></div>
+          <blockquote class="rp-review"><div class="rp-stars" aria-label="5 out of 5 stars">★★★★★</div><p>Always on time and respectful of mine. Extremely knowledgeable and helpful everytime</p><footer><img src="/imag/google-g.svg" alt="" width="16" height="16" />C. W., Google review, September 24, 2026</footer><div class="rp-reply"><div class="rp-reply-head"><strong>Response from Comfort One</strong><time datetime="2026-09-24">September 24, 2026</time></div><p>Chris, we truly appreciate you highlighting our punctuality and expertise. Providing reliable and knowledgeable service is always our top priority, and we look forward to assisting you again!</p></div></blockquote>
+          <button type="button" class="rp-showmap" data-id="3c4782e3b4"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-537a662f1c" data-cat="install" data-city="Surprise">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/e1e94a687234.webp" aria-label="Enlarge photo 1 of 3: AC System Replacement by Comfort One in Surprise, AZ"><img src="/imag/projects/e1e94a687234.webp" alt="AC System Replacement by Comfort One in Surprise, AZ, photo 1" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/73c347d1f21d.webp" aria-label="Enlarge photo 2 of 3: AC System Replacement by Comfort One in Surprise, AZ"><img src="/imag/projects/73c347d1f21d.webp" alt="AC System Replacement by Comfort One in Surprise, AZ, photo 2" width="1200" height="900" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/362dff675a63.webp" aria-label="Enlarge photo 3 of 3: AC System Replacement by Comfort One in Surprise, AZ"><img src="/imag/projects/362dff675a63.webp" alt="AC System Replacement by Comfort One in Surprise, AZ, photo 3" width="1200" height="900" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Surprise, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Surprise, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-09-24">September 24, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="537a662f1c"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-8f40fb28ff" data-cat="repair" data-city="Scottsdale">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/7df59facc8ed.webp" aria-label="Enlarge photo 1 of 3: AC Repair by Comfort One in Scottsdale, AZ"><img src="/imag/projects/7df59facc8ed.webp" alt="AC Repair by Comfort One in Scottsdale, AZ, photo 1" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/eefa61543e33.webp" aria-label="Enlarge photo 2 of 3: AC Repair by Comfort One in Scottsdale, AZ"><img src="/imag/projects/eefa61543e33.webp" alt="AC Repair by Comfort One in Scottsdale, AZ, photo 2" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/e3f8391a8434.webp" aria-label="Enlarge photo 3 of 3: AC Repair by Comfort One in Scottsdale, AZ"><img src="/imag/projects/e3f8391a8434.webp" alt="AC Repair by Comfort One in Scottsdale, AZ, photo 3" width="900" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Repair</span>
+          <h3 class="rp-title">AC Repair in Scottsdale, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Scottsdale, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-09-22">September 22, 2026</time></span></div>
+          <blockquote class="rp-review"><div class="rp-stars" aria-label="5 out of 5 stars">★★★★★</div><p>Our AC stopped working and it is still very hot here in AZ.   The team was thorough and identities the root cause, explained it and make the repair all in one visit.   Great service all around.</p><footer><img src="/imag/google-g.svg" alt="" width="16" height="16" />M. E., Google review, September 22, 2026</footer><div class="rp-reply"><div class="rp-reply-head"><strong>Response from Comfort One</strong><time datetime="2026-09-23">September 23, 2026</time></div><p>It&#x27;s great to hear we could restore your AC so quickly during the heat. We&#x27;re glad our team thoroughly identified and fixed the issue in one visit for you.</p></div></blockquote>
+          <button type="button" class="rp-showmap" data-id="8f40fb28ff"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-3e268c5ed0" data-cat="repair" data-city="Phoenix">
+        <div class="rp-nophoto" aria-hidden="true"><span class="material-icons">build</span></div>
+        <div class="rp-body">
+          <span class="rp-tag">Repair</span>
+          <h3 class="rp-title">AC Repair in Phoenix, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Phoenix, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-09-19">September 19, 2026</time></span></div>
+          <blockquote class="rp-review"><div class="rp-stars" aria-label="5 out of 5 stars">★★★★★</div><p>Jon Holmstrom is terrific!</p><footer><img src="/imag/google-g.svg" alt="" width="16" height="16" />F. S., Google review, September 19, 2026</footer><div class="rp-reply"><div class="rp-reply-head"><strong>Response from Comfort One</strong><time datetime="2026-09-25">September 25, 2026</time></div><p>Frank, we&#x27;re so glad to hear Jon Holmstrom provided you with terrific service. We appreciate you sharing your positive experience.</p></div></blockquote>
+          <button type="button" class="rp-showmap" data-id="3e268c5ed0"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-f80c26a443" data-cat="install" data-city="Scottsdale">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/74678381c093.webp" aria-label="Enlarge photo 1 of 3: AC System Replacement by Comfort One in Scottsdale, AZ"><img src="/imag/projects/74678381c093.webp" alt="AC System Replacement by Comfort One in Scottsdale, AZ, photo 1" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/9c50e8482a2c.webp" aria-label="Enlarge photo 2 of 3: AC System Replacement by Comfort One in Scottsdale, AZ"><img src="/imag/projects/9c50e8482a2c.webp" alt="AC System Replacement by Comfort One in Scottsdale, AZ, photo 2" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/f43ecd64e507.webp" aria-label="Enlarge photo 3 of 3: AC System Replacement by Comfort One in Scottsdale, AZ"><img src="/imag/projects/f43ecd64e507.webp" alt="AC System Replacement by Comfort One in Scottsdale, AZ, photo 3" width="901" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Scottsdale, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Scottsdale, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-09-16">September 16, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="f80c26a443"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-307b039abc" data-cat="install" data-city="Phoenix">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/f0257b5d127e.webp" aria-label="Enlarge photo 1 of 3: AC System Replacement by Comfort One in Phoenix, AZ"><img src="/imag/projects/f0257b5d127e.webp" alt="AC System Replacement by Comfort One in Phoenix, AZ, photo 1" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/a4f6c69ba7ac.webp" aria-label="Enlarge photo 2 of 3: AC System Replacement by Comfort One in Phoenix, AZ"><img src="/imag/projects/a4f6c69ba7ac.webp" alt="AC System Replacement by Comfort One in Phoenix, AZ, photo 2" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/b0abe223b6a7.webp" aria-label="Enlarge photo 3 of 3: AC System Replacement by Comfort One in Phoenix, AZ"><img src="/imag/projects/b0abe223b6a7.webp" alt="AC System Replacement by Comfort One in Phoenix, AZ, photo 3" width="901" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Phoenix, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Phoenix, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-09-15">September 15, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="307b039abc"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-5169b20597" data-cat="install" data-city="Glendale">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/3fc6f389c134.webp" aria-label="Enlarge photo 1 of 3: AC System Replacement by Comfort One in Glendale, AZ"><img src="/imag/projects/3fc6f389c134.webp" alt="AC System Replacement by Comfort One in Glendale, AZ, photo 1" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/71bb2307b429.webp" aria-label="Enlarge photo 2 of 3: AC System Replacement by Comfort One in Glendale, AZ"><img src="/imag/projects/71bb2307b429.webp" alt="AC System Replacement by Comfort One in Glendale, AZ, photo 2" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/85b24408aa9d.webp" aria-label="Enlarge photo 3 of 3: AC System Replacement by Comfort One in Glendale, AZ"><img src="/imag/projects/85b24408aa9d.webp" alt="AC System Replacement by Comfort One in Glendale, AZ, photo 3" width="900" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Glendale, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Glendale, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-09-08">September 8, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="5169b20597"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-a420eb8859" data-cat="install" data-city="Glendale">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/1d065f1a6ed5.webp" aria-label="Enlarge photo 1 of 3: AC System Replacement by Comfort One in Glendale, AZ"><img src="/imag/projects/1d065f1a6ed5.webp" alt="AC System Replacement by Comfort One in Glendale, AZ, photo 1" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/be7cccba634c.webp" aria-label="Enlarge photo 2 of 3: AC System Replacement by Comfort One in Glendale, AZ"><img src="/imag/projects/be7cccba634c.webp" alt="AC System Replacement by Comfort One in Glendale, AZ, photo 2" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/eb6ee5c3ac30.webp" aria-label="Enlarge photo 3 of 3: AC System Replacement by Comfort One in Glendale, AZ"><img src="/imag/projects/eb6ee5c3ac30.webp" alt="AC System Replacement by Comfort One in Glendale, AZ, photo 3" width="901" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Glendale, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Glendale, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-09-08">September 8, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="a420eb8859"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-a6cab7e58f" data-cat="install" data-city="Phoenix">
+        <div class="rp-photos n2"><button type="button" class="rp-zoom" data-src="/imag/projects/0975658d848c.webp" aria-label="Enlarge photo 1 of 2: Ductless Mini Split by Comfort One in Phoenix, AZ"><img src="/imag/projects/0975658d848c.webp" alt="Ductless Mini Split by Comfort One in Phoenix, AZ, photo 1" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/790081bb6d77.webp" aria-label="Enlarge photo 2 of 2: Ductless Mini Split by Comfort One in Phoenix, AZ"><img src="/imag/projects/790081bb6d77.webp" alt="Ductless Mini Split by Comfort One in Phoenix, AZ, photo 2" width="901" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">Ductless Mini Split in Phoenix, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Phoenix, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-09-03">September 3, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="a6cab7e58f"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-2fda082029" data-cat="install" data-city="Scottsdale">
+        <div class="rp-photos n2"><button type="button" class="rp-zoom" data-src="/imag/projects/f707c19481f5.webp" aria-label="Enlarge photo 1 of 2: AC System Replacement by Comfort One in Scottsdale, AZ"><img src="/imag/projects/f707c19481f5.webp" alt="AC System Replacement by Comfort One in Scottsdale, AZ, photo 1" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/858f575da8fa.webp" aria-label="Enlarge photo 2 of 2: AC System Replacement by Comfort One in Scottsdale, AZ"><img src="/imag/projects/858f575da8fa.webp" alt="AC System Replacement by Comfort One in Scottsdale, AZ, photo 2" width="900" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Scottsdale, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Scottsdale, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-09-03">September 3, 2026</time></span></div>
+          <blockquote class="rp-review"><div class="rp-stars" aria-label="5 out of 5 stars">★★★★★</div><p>Very efficient installation team.  Pleasant and honest salesman.</p><footer><img src="/imag/google-g.svg" alt="" width="16" height="16" />K. G., Google review, September 3, 2026</footer><div class="rp-reply"><div class="rp-reply-head"><strong>Response from Comfort One</strong><time datetime="2026-09-04">September 4, 2026</time></div><p>Kathleen Griffin, it is fantastic to hear that our team provided such an efficient installation. We pride ourselves on honest, professional service and truly appreciate you sharing your positive experience.</p></div></blockquote>
+          <button type="button" class="rp-showmap" data-id="2fda082029"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-79c2a88110" data-cat="install" data-city="Tempe">
+        <div class="rp-photos n2"><button type="button" class="rp-zoom" data-src="/imag/projects/a2052e5a94f7.webp" aria-label="Enlarge photo 1 of 2: AC System Replacement by Comfort One in Tempe, AZ"><img src="/imag/projects/a2052e5a94f7.webp" alt="AC System Replacement by Comfort One in Tempe, AZ, photo 1" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/ab00640f1b97.webp" aria-label="Enlarge photo 2 of 2: AC System Replacement by Comfort One in Tempe, AZ"><img src="/imag/projects/ab00640f1b97.webp" alt="AC System Replacement by Comfort One in Tempe, AZ, photo 2" width="901" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Tempe, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Tempe, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-08-27">August 27, 2026</time></span></div>
+          <blockquote class="rp-review"><div class="rp-stars" aria-label="5 out of 5 stars">★★★★★</div><p>They arrived on time. They were professional and courteous and did a great job removing the old unit and installing the new one.</p><footer><img src="/imag/google-g.svg" alt="" width="16" height="16" />J. D., Google review, August 27, 2026</footer><div class="rp-reply"><div class="rp-reply-head"><strong>Response from Comfort One</strong><time datetime="2026-08-27">August 27, 2026</time></div><p>Joyce Dreyer, it is great to hear that our team was punctual and handled your new unit installation with the professionalism and care we strive to provide every single day.</p></div></blockquote>
+          <button type="button" class="rp-showmap" data-id="79c2a88110"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-25d64dcfa2" data-cat="install" data-city="Phoenix">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/c3bb2f4ea45e.webp" aria-label="Enlarge photo 1 of 3: AC System Replacement by Comfort One in Phoenix, AZ"><img src="/imag/projects/c3bb2f4ea45e.webp" alt="AC System Replacement by Comfort One in Phoenix, AZ, photo 1" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/bc946cb22efe.webp" aria-label="Enlarge photo 2 of 3: AC System Replacement by Comfort One in Phoenix, AZ"><img src="/imag/projects/bc946cb22efe.webp" alt="AC System Replacement by Comfort One in Phoenix, AZ, photo 2" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/513ed844aaa6.webp" aria-label="Enlarge photo 3 of 3: AC System Replacement by Comfort One in Phoenix, AZ"><img src="/imag/projects/513ed844aaa6.webp" alt="AC System Replacement by Comfort One in Phoenix, AZ, photo 3" width="900" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Phoenix, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Phoenix, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-08-20">August 20, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="25d64dcfa2"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-b89ea8b71d" data-cat="install" data-city="Phoenix">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/74d9bf7697f0.webp" aria-label="Enlarge photo 1 of 3: AC System Replacement by Comfort One in Phoenix, AZ"><img src="/imag/projects/74d9bf7697f0.webp" alt="AC System Replacement by Comfort One in Phoenix, AZ, photo 1" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/6a33b7191154.webp" aria-label="Enlarge photo 2 of 3: AC System Replacement by Comfort One in Phoenix, AZ"><img src="/imag/projects/6a33b7191154.webp" alt="AC System Replacement by Comfort One in Phoenix, AZ, photo 2" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/ddbe1ee98c61.webp" aria-label="Enlarge photo 3 of 3: AC System Replacement by Comfort One in Phoenix, AZ"><img src="/imag/projects/ddbe1ee98c61.webp" alt="AC System Replacement by Comfort One in Phoenix, AZ, photo 3" width="901" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Phoenix, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Phoenix, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-08-19">August 19, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="b89ea8b71d"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-c7d4668811" data-cat="install" data-city="Scottsdale">
+        <div class="rp-photos n2"><button type="button" class="rp-zoom" data-src="/imag/projects/1fa5b1958449.webp" aria-label="Enlarge photo 1 of 2: AC System Replacement by Comfort One in Scottsdale, AZ"><img src="/imag/projects/1fa5b1958449.webp" alt="AC System Replacement by Comfort One in Scottsdale, AZ, photo 1" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/7c35543a211b.webp" aria-label="Enlarge photo 2 of 2: AC System Replacement by Comfort One in Scottsdale, AZ"><img src="/imag/projects/7c35543a211b.webp" alt="AC System Replacement by Comfort One in Scottsdale, AZ, photo 2" width="901" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Scottsdale, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Scottsdale, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-08-14">August 14, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="c7d4668811"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-3b7b6a4803" data-cat="install" data-city="Phoenix">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/e10180b10e32.webp" aria-label="Enlarge photo 1 of 3: Heat Pump System Installation by Comfort One in Phoenix, AZ"><img src="/imag/projects/e10180b10e32.webp" alt="Heat Pump System Installation by Comfort One in Phoenix, AZ, photo 1" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/f0e9d075787d.webp" aria-label="Enlarge photo 2 of 3: Heat Pump System Installation by Comfort One in Phoenix, AZ"><img src="/imag/projects/f0e9d075787d.webp" alt="Heat Pump System Installation by Comfort One in Phoenix, AZ, photo 2" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/fdf00e2efd88.webp" aria-label="Enlarge photo 3 of 3: Heat Pump System Installation by Comfort One in Phoenix, AZ"><img src="/imag/projects/fdf00e2efd88.webp" alt="Heat Pump System Installation by Comfort One in Phoenix, AZ, photo 3" width="900" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">Heat Pump System Installation in Phoenix, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Phoenix, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-08-12">August 12, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="3b7b6a4803"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-e5089ffd92" data-cat="install" data-city="Scottsdale">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/3d37cc44ae32.webp" aria-label="Enlarge photo 1 of 3: Heat Pump System Installation by Comfort One in Scottsdale, AZ"><img src="/imag/projects/3d37cc44ae32.webp" alt="Heat Pump System Installation by Comfort One in Scottsdale, AZ, photo 1" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/ffb07716c4cc.webp" aria-label="Enlarge photo 2 of 3: Heat Pump System Installation by Comfort One in Scottsdale, AZ"><img src="/imag/projects/ffb07716c4cc.webp" alt="Heat Pump System Installation by Comfort One in Scottsdale, AZ, photo 2" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/ede772d8b702.webp" aria-label="Enlarge photo 3 of 3: Heat Pump System Installation by Comfort One in Scottsdale, AZ"><img src="/imag/projects/ede772d8b702.webp" alt="Heat Pump System Installation by Comfort One in Scottsdale, AZ, photo 3" width="901" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">Heat Pump System Installation in Scottsdale, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Scottsdale, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-08-11">August 11, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="e5089ffd92"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-9922f9111c" data-cat="install" data-city="Scottsdale">
+        <div class="rp-photos n3"><button type="button" class="rp-zoom" data-src="/imag/projects/6129a4c570cb.webp" aria-label="Enlarge photo 1 of 3: Ductless Mini Split by Comfort One in Scottsdale, AZ"><img src="/imag/projects/6129a4c570cb.webp" alt="Ductless Mini Split by Comfort One in Scottsdale, AZ, photo 1" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/6a85628d4beb.webp" aria-label="Enlarge photo 2 of 3: Ductless Mini Split by Comfort One in Scottsdale, AZ"><img src="/imag/projects/6a85628d4beb.webp" alt="Ductless Mini Split by Comfort One in Scottsdale, AZ, photo 2" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/4b1d8a3eb2b0.webp" aria-label="Enlarge photo 3 of 3: Ductless Mini Split by Comfort One in Scottsdale, AZ"><img src="/imag/projects/4b1d8a3eb2b0.webp" alt="Ductless Mini Split by Comfort One in Scottsdale, AZ, photo 3" width="901" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">Ductless Mini Split in Scottsdale, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Scottsdale, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-08-11">August 11, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="9922f9111c"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-482d9ae0d0" data-cat="install" data-city="Phoenix">
+        <div class="rp-photos n2"><button type="button" class="rp-zoom" data-src="/imag/projects/72d8755327e3.webp" aria-label="Enlarge photo 1 of 2: AC System Replacement by Comfort One in Phoenix, AZ"><img src="/imag/projects/72d8755327e3.webp" alt="AC System Replacement by Comfort One in Phoenix, AZ, photo 1" width="675" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/9caa55322509.webp" aria-label="Enlarge photo 2 of 2: AC System Replacement by Comfort One in Phoenix, AZ"><img src="/imag/projects/9caa55322509.webp" alt="AC System Replacement by Comfort One in Phoenix, AZ, photo 2" width="1200" height="675" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Phoenix, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Phoenix, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-07-29">July 29, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="482d9ae0d0"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-a0978fe8e5" data-cat="install" data-city="Scottsdale">
+        <div class="rp-photos n2"><button type="button" class="rp-zoom" data-src="/imag/projects/c89bed2a3e62.webp" aria-label="Enlarge photo 1 of 2: AC System Replacement by Comfort One in Scottsdale, AZ"><img src="/imag/projects/c89bed2a3e62.webp" alt="AC System Replacement by Comfort One in Scottsdale, AZ, photo 1" width="901" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/dcc4a775c739.webp" aria-label="Enlarge photo 2 of 2: AC System Replacement by Comfort One in Scottsdale, AZ"><img src="/imag/projects/dcc4a775c739.webp" alt="AC System Replacement by Comfort One in Scottsdale, AZ, photo 2" width="901" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Scottsdale, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Scottsdale, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-07-16">July 16, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="a0978fe8e5"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-ae5ec85d33" data-cat="install" data-city="Glendale">
+        <div class="rp-photos n2"><button type="button" class="rp-zoom" data-src="/imag/projects/93d1eb4162da.webp" aria-label="Enlarge photo 1 of 2: AC System Replacement by Comfort One in Glendale, AZ"><img src="/imag/projects/93d1eb4162da.webp" alt="AC System Replacement by Comfort One in Glendale, AZ, photo 1" width="900" height="1200" loading="lazy" decoding="async" /></button><button type="button" class="rp-zoom" data-src="/imag/projects/277e459762e2.webp" aria-label="Enlarge photo 2 of 2: AC System Replacement by Comfort One in Glendale, AZ"><img src="/imag/projects/277e459762e2.webp" alt="AC System Replacement by Comfort One in Glendale, AZ, photo 2" width="900" height="1200" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Installation &amp; Replacement</span>
+          <h3 class="rp-title">AC System Replacement in Glendale, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Glendale, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-07-13">July 13, 2026</time></span></div>
+          
+          <button type="button" class="rp-showmap" data-id="ae5ec85d33"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li><li class="rp-card" id="p-d444da84da" data-cat="maintenance" data-city="Anthem">
+        <div class="rp-photos n1"><button type="button" class="rp-zoom" data-src="/imag/projects/246961bbf83e.webp" aria-label="Enlarge photo 1 of 1: AC Tune-Up &amp; Maintenance by Comfort One in Anthem, AZ"><img src="/imag/projects/246961bbf83e.webp" alt="AC Tune-Up &amp; Maintenance by Comfort One in Anthem, AZ, photo 1" width="1200" height="675" loading="lazy" decoding="async" /></button></div>
+        <div class="rp-body">
+          <span class="rp-tag">Maintenance</span>
+          <h3 class="rp-title">AC Tune-Up &amp; Maintenance in Anthem, AZ</h3>
+          <div class="rp-meta"><span><span class="material-icons" aria-hidden="true">place</span>Anthem, AZ</span><span><span class="material-icons" aria-hidden="true">event</span><time datetime="2026-06-24">June 24, 2026</time></span></div>
+          <blockquote class="rp-review"><div class="rp-stars" aria-label="5 out of 5 stars">★★★★★</div><p>Timely, friendly, and a good price. They are my new AC company!</p><footer><img src="/imag/google-g.svg" alt="" width="16" height="16" />P. C., Google review, June 24, 2026</footer><div class="rp-reply"><div class="rp-reply-head"><strong>Response from Comfort One</strong><time datetime="2026-06-24">June 24, 2026</time></div><p>Thank you, Paul Colandreo, for your wonderful feedback! We&#x27;re thrilled to be your new AC company and appreciate your recognition of our timely, friendly service and competitive pricing. Looking forward to serving you again!</p></div></blockquote>
+          <button type="button" class="rp-showmap" data-id="d444da84da"><span class="material-icons" aria-hidden="true">map</span>Show on map</button>
+        </div>
+      </li>
+      </ul>
+      <div class="rp-cta">
+        <h2>Want your home on this map?</h2>
+        <p>Talk to a Comfort One comfort specialist about a repair, replacement or tune-up.</p>
+        <div class="rp-hero-btns">
+          <a href="tel:+16022476151" class="btn-gold"><span class="material-icons" aria-hidden="true">call</span>Call (602) 247-6151</a>
+          <a href="/#contact" class="btn-primary">Request a Service</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <dialog id="rpZoom" aria-label="Enlarged project photo"><button type="button" class="rp-zclose" aria-label="Close photo">&times;</button><img alt="" /></dialog>
   </main>
+  <script type="application/json" id="rpPins">[{"id": "ac629ece72", "lat": 33.7, "lng": -112.16, "t": "Heat Pump System Installation", "c": "Glendale, AZ", "d": "October 12, 2026", "cat": "install", "city": "Glendale", "rv": false}, {"id": "d6317a3c72", "lat": 33.67, "lng": -111.91, "t": "Heat Pump System Installation", "c": "Scottsdale, AZ", "d": "October 10, 2026", "cat": "install", "city": "Scottsdale", "rv": false}, {"id": "e3d9114ff4", "lat": 33.38, "lng": -111.91, "t": "AC System Replacement", "c": "Tempe, AZ", "d": "October 6, 2026", "cat": "install", "city": "Tempe", "rv": false}, {"id": "ea4fe5a398", "lat": 33.67, "lng": -112.0, "t": "Heat Pump System Installation", "c": "Phoenix, AZ", "d": "October 2, 2026", "cat": "install", "city": "Phoenix", "rv": false}, {"id": "39c6a9f122", "lat": 33.82, "lng": -111.92, "t": "Ductless Mini Split", "c": "Carefree, AZ", "d": "October 1, 2026", "cat": "install", "city": "Carefree", "rv": false}, {"id": "0b26fec005", "lat": 33.82, "lng": -111.88, "t": "Heat Pump System Installation", "c": "Carefree, AZ", "d": "September 25, 2026", "cat": "install", "city": "Carefree", "rv": false}, {"id": "3c4782e3b4", "lat": 33.82, "lng": -112.1, "t": "AC Tune-Up & Maintenance", "c": "Phoenix, AZ", "d": "September 24, 2026", "cat": "maintenance", "city": "Phoenix", "rv": true}, {"id": "537a662f1c", "lat": 33.64, "lng": -112.45, "t": "AC System Replacement", "c": "Surprise, AZ", "d": "September 24, 2026", "cat": "install", "city": "Surprise", "rv": false}, {"id": "8f40fb28ff", "lat": 33.59, "lng": -111.95, "t": "AC Repair", "c": "Scottsdale, AZ", "d": "September 22, 2026", "cat": "repair", "city": "Scottsdale", "rv": true}, {"id": "3e268c5ed0", "lat": 33.69, "lng": -112.02, "t": "AC Repair", "c": "Phoenix, AZ", "d": "September 19, 2026", "cat": "repair", "city": "Phoenix", "rv": true}, {"id": "f80c26a443", "lat": 33.58, "lng": -111.87, "t": "AC System Replacement", "c": "Scottsdale, AZ", "d": "September 16, 2026", "cat": "install", "city": "Scottsdale", "rv": false}, {"id": "307b039abc", "lat": 33.46, "lng": -112.08, "t": "AC System Replacement", "c": "Phoenix, AZ", "d": "September 15, 2026", "cat": "install", "city": "Phoenix", "rv": false}, {"id": "5169b20597", "lat": 33.66, "lng": -112.23, "t": "AC System Replacement", "c": "Glendale, AZ", "d": "September 8, 2026", "cat": "install", "city": "Glendale", "rv": false}, {"id": "a420eb8859", "lat": 33.65, "lng": -112.18, "t": "AC System Replacement", "c": "Glendale, AZ", "d": "September 8, 2026", "cat": "install", "city": "Glendale", "rv": false}, {"id": "a6cab7e58f", "lat": 33.48, "lng": -112.05, "t": "Ductless Mini Split", "c": "Phoenix, AZ", "d": "September 3, 2026", "cat": "install", "city": "Phoenix", "rv": false}, {"id": "2fda082029", "lat": 33.64, "lng": -111.91, "t": "AC System Replacement", "c": "Scottsdale, AZ", "d": "September 3, 2026", "cat": "install", "city": "Scottsdale", "rv": true}, {"id": "79c2a88110", "lat": 33.45, "lng": -111.94, "t": "AC System Replacement", "c": "Tempe, AZ", "d": "August 27, 2026", "cat": "install", "city": "Tempe", "rv": true}, {"id": "25d64dcfa2", "lat": 33.57, "lng": -112.08, "t": "AC System Replacement", "c": "Phoenix, AZ", "d": "August 20, 2026", "cat": "install", "city": "Phoenix", "rv": false}, {"id": "b89ea8b71d", "lat": 33.6, "lng": -112.07, "t": "AC System Replacement", "c": "Phoenix, AZ", "d": "August 19, 2026", "cat": "install", "city": "Phoenix", "rv": false}, {"id": "c7d4668811", "lat": 33.59, "lng": -111.87, "t": "AC System Replacement", "c": "Scottsdale, AZ", "d": "August 14, 2026", "cat": "install", "city": "Scottsdale", "rv": false}, {"id": "3b7b6a4803", "lat": 33.67, "lng": -112.0, "t": "Heat Pump System Installation", "c": "Phoenix, AZ", "d": "August 12, 2026", "cat": "install", "city": "Phoenix", "rv": false}, {"id": "e5089ffd92", "lat": 33.52, "lng": -111.93, "t": "Heat Pump System Installation", "c": "Scottsdale, AZ", "d": "August 11, 2026", "cat": "install", "city": "Scottsdale", "rv": false}, {"id": "9922f9111c", "lat": 33.6, "lng": -111.83, "t": "Ductless Mini Split", "c": "Scottsdale, AZ", "d": "August 11, 2026", "cat": "install", "city": "Scottsdale", "rv": false}, {"id": "482d9ae0d0", "lat": 33.65, "lng": -112.1, "t": "AC System Replacement", "c": "Phoenix, AZ", "d": "July 29, 2026", "cat": "install", "city": "Phoenix", "rv": false}, {"id": "a0978fe8e5", "lat": 33.5, "lng": -111.92, "t": "AC System Replacement", "c": "Scottsdale, AZ", "d": "July 16, 2026", "cat": "install", "city": "Scottsdale", "rv": false}, {"id": "ae5ec85d33", "lat": 33.54, "lng": -112.15, "t": "AC System Replacement", "c": "Glendale, AZ", "d": "July 13, 2026", "cat": "install", "city": "Glendale", "rv": false}, {"id": "d444da84da", "lat": 33.85, "lng": -112.1, "t": "AC Tune-Up & Maintenance", "c": "Anthem, AZ", "d": "June 24, 2026", "cat": "maintenance", "city": "Anthem", "rv": true}]</script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script defer src="/recent-projects/recent-projects.js"></script>
+<!-- RP:END -->
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer framed">
