@@ -1,0 +1,724 @@
+{
+  "generated": "2026-10-13T04:25:55+00:00",
+  "source": "housecallpro",
+  "reviewSource": "seed",
+  "projects": [
+    {
+      "id": "ac629ece72",
+      "service": "Heat Pump System Installation",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Glendale",
+      "state": "AZ",
+      "date": "2026-10-12",
+      "lat": 33.7,
+      "lng": -112.16,
+      "photos": [
+        {
+          "src": "/imag/projects/b51ac9455d85.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/50faa44cca9d.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/faff2d1f730a.webp",
+          "w": 900,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "d6317a3c72",
+      "service": "Heat Pump System Installation",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "date": "2026-10-10",
+      "lat": 33.67,
+      "lng": -111.91,
+      "photos": [
+        {
+          "src": "/imag/projects/2c21217a8cdc.webp",
+          "w": 900,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "e3d9114ff4",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Tempe",
+      "state": "AZ",
+      "date": "2026-10-06",
+      "lat": 33.38,
+      "lng": -111.91,
+      "photos": [
+        {
+          "src": "/imag/projects/b2f70e285e8c.webp",
+          "w": 900,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "ea4fe5a398",
+      "service": "Heat Pump System Installation",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Phoenix",
+      "state": "AZ",
+      "date": "2026-10-02",
+      "lat": 33.67,
+      "lng": -112.0,
+      "photos": [
+        {
+          "src": "/imag/projects/0b1c49ca3c3f.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/61078ff18caf.webp",
+          "w": 900,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "39c6a9f122",
+      "service": "Ductless Mini Split",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Carefree",
+      "state": "AZ",
+      "date": "2026-10-01",
+      "lat": 33.82,
+      "lng": -111.92,
+      "photos": [
+        {
+          "src": "/imag/projects/0c465067fd2f.webp",
+          "w": 1200,
+          "h": 675
+        },
+        {
+          "src": "/imag/projects/8e07e66c8143.webp",
+          "w": 675,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/a7d76e120066.webp",
+          "w": 900,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "0b26fec005",
+      "service": "Heat Pump System Installation",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Carefree",
+      "state": "AZ",
+      "date": "2026-09-25",
+      "lat": 33.82,
+      "lng": -111.88,
+      "photos": [
+        {
+          "src": "/imag/projects/05082bfbf85e.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/29f93b41160c.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/b39919e92abf.webp",
+          "w": 900,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "3c4782e3b4",
+      "service": "AC Tune-Up & Maintenance",
+      "category": "maintenance",
+      "categoryLabel": "Maintenance",
+      "city": "Phoenix",
+      "state": "AZ",
+      "date": "2026-09-24",
+      "lat": 33.82,
+      "lng": -112.1,
+      "photos": [],
+      "review": {
+        "author": "C. W.",
+        "rating": 5,
+        "text": "Always on time and respectful of mine. Extremely knowledgeable and helpful everytime",
+        "date": "2026-09-24",
+        "source": "google"
+      }
+    },
+    {
+      "id": "537a662f1c",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Surprise",
+      "state": "AZ",
+      "date": "2026-09-24",
+      "lat": 33.64,
+      "lng": -112.45,
+      "photos": [
+        {
+          "src": "/imag/projects/e1e94a687234.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/73c347d1f21d.webp",
+          "w": 1200,
+          "h": 900
+        },
+        {
+          "src": "/imag/projects/362dff675a63.webp",
+          "w": 1200,
+          "h": 900
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "8f40fb28ff",
+      "service": "AC Repair",
+      "category": "repair",
+      "categoryLabel": "Repair",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "date": "2026-09-22",
+      "lat": 33.59,
+      "lng": -111.95,
+      "photos": [
+        {
+          "src": "/imag/projects/7df59facc8ed.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/eefa61543e33.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/e3f8391a8434.webp",
+          "w": 900,
+          "h": 1200
+        }
+      ],
+      "review": {
+        "author": "M. E.",
+        "rating": 5,
+        "text": "Our AC stopped working and it is still very hot here in AZ.   The team was thorough and identities the root cause, explained it and make the repair all in one visit.   Great service all around.",
+        "date": "2026-09-22",
+        "source": "google"
+      }
+    },
+    {
+      "id": "3e268c5ed0",
+      "service": "AC Repair",
+      "category": "repair",
+      "categoryLabel": "Repair",
+      "city": "Phoenix",
+      "state": "AZ",
+      "date": "2026-09-19",
+      "lat": 33.69,
+      "lng": -112.02,
+      "photos": [],
+      "review": {
+        "author": "F. S.",
+        "rating": 5,
+        "text": "Jon Holmstrom is terrific!",
+        "date": "2026-09-19",
+        "source": "google"
+      }
+    },
+    {
+      "id": "f80c26a443",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "date": "2026-09-16",
+      "lat": 33.58,
+      "lng": -111.87,
+      "photos": [
+        {
+          "src": "/imag/projects/74678381c093.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/9c50e8482a2c.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/f43ecd64e507.webp",
+          "w": 901,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "307b039abc",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Phoenix",
+      "state": "AZ",
+      "date": "2026-09-15",
+      "lat": 33.46,
+      "lng": -112.08,
+      "photos": [
+        {
+          "src": "/imag/projects/f0257b5d127e.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/a4f6c69ba7ac.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/b0abe223b6a7.webp",
+          "w": 901,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "5169b20597",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Glendale",
+      "state": "AZ",
+      "date": "2026-09-08",
+      "lat": 33.66,
+      "lng": -112.23,
+      "photos": [
+        {
+          "src": "/imag/projects/3fc6f389c134.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/71bb2307b429.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/85b24408aa9d.webp",
+          "w": 900,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "a420eb8859",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Glendale",
+      "state": "AZ",
+      "date": "2026-09-08",
+      "lat": 33.65,
+      "lng": -112.18,
+      "photos": [
+        {
+          "src": "/imag/projects/1d065f1a6ed5.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/be7cccba634c.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/eb6ee5c3ac30.webp",
+          "w": 901,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "a6cab7e58f",
+      "service": "Ductless Mini Split",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Phoenix",
+      "state": "AZ",
+      "date": "2026-09-03",
+      "lat": 33.48,
+      "lng": -112.05,
+      "photos": [
+        {
+          "src": "/imag/projects/0975658d848c.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/790081bb6d77.webp",
+          "w": 901,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "2fda082029",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "date": "2026-09-03",
+      "lat": 33.64,
+      "lng": -111.91,
+      "photos": [
+        {
+          "src": "/imag/projects/f707c19481f5.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/858f575da8fa.webp",
+          "w": 900,
+          "h": 1200
+        }
+      ],
+      "review": {
+        "author": "K. G.",
+        "rating": 5,
+        "text": "Very efficient installation team.  Pleasant and honest salesman.",
+        "date": "2026-09-03",
+        "source": "google"
+      }
+    },
+    {
+      "id": "79c2a88110",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Tempe",
+      "state": "AZ",
+      "date": "2026-08-27",
+      "lat": 33.45,
+      "lng": -111.94,
+      "photos": [
+        {
+          "src": "/imag/projects/a2052e5a94f7.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/ab00640f1b97.webp",
+          "w": 901,
+          "h": 1200
+        }
+      ],
+      "review": {
+        "author": "J. D.",
+        "rating": 5,
+        "text": "They arrived on time. They were professional and courteous and did a great job removing the old unit and installing the new one.",
+        "date": "2026-08-27",
+        "source": "google"
+      }
+    },
+    {
+      "id": "25d64dcfa2",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Phoenix",
+      "state": "AZ",
+      "date": "2026-08-20",
+      "lat": 33.57,
+      "lng": -112.08,
+      "photos": [
+        {
+          "src": "/imag/projects/c3bb2f4ea45e.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/bc946cb22efe.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/513ed844aaa6.webp",
+          "w": 900,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "b89ea8b71d",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Phoenix",
+      "state": "AZ",
+      "date": "2026-08-19",
+      "lat": 33.6,
+      "lng": -112.07,
+      "photos": [
+        {
+          "src": "/imag/projects/74d9bf7697f0.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/6a33b7191154.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/ddbe1ee98c61.webp",
+          "w": 901,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "c7d4668811",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "date": "2026-08-14",
+      "lat": 33.59,
+      "lng": -111.87,
+      "photos": [
+        {
+          "src": "/imag/projects/1fa5b1958449.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/7c35543a211b.webp",
+          "w": 901,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "3b7b6a4803",
+      "service": "Heat Pump System Installation",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Phoenix",
+      "state": "AZ",
+      "date": "2026-08-12",
+      "lat": 33.67,
+      "lng": -112.0,
+      "photos": [
+        {
+          "src": "/imag/projects/e10180b10e32.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/f0e9d075787d.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/fdf00e2efd88.webp",
+          "w": 900,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "e5089ffd92",
+      "service": "Heat Pump System Installation",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "date": "2026-08-11",
+      "lat": 33.52,
+      "lng": -111.93,
+      "photos": [
+        {
+          "src": "/imag/projects/3d37cc44ae32.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/ffb07716c4cc.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/ede772d8b702.webp",
+          "w": 901,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "9922f9111c",
+      "service": "Ductless Mini Split",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "date": "2026-08-11",
+      "lat": 33.6,
+      "lng": -111.83,
+      "photos": [
+        {
+          "src": "/imag/projects/6129a4c570cb.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/6a85628d4beb.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/4b1d8a3eb2b0.webp",
+          "w": 901,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "482d9ae0d0",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Phoenix",
+      "state": "AZ",
+      "date": "2026-07-29",
+      "lat": 33.65,
+      "lng": -112.1,
+      "photos": [
+        {
+          "src": "/imag/projects/72d8755327e3.webp",
+          "w": 675,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/9caa55322509.webp",
+          "w": 1200,
+          "h": 675
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "a0978fe8e5",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Scottsdale",
+      "state": "AZ",
+      "date": "2026-07-16",
+      "lat": 33.5,
+      "lng": -111.92,
+      "photos": [
+        {
+          "src": "/imag/projects/c89bed2a3e62.webp",
+          "w": 901,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/dcc4a775c739.webp",
+          "w": 901,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "ae5ec85d33",
+      "service": "AC System Replacement",
+      "category": "install",
+      "categoryLabel": "Installation & Replacement",
+      "city": "Glendale",
+      "state": "AZ",
+      "date": "2026-07-13",
+      "lat": 33.54,
+      "lng": -112.15,
+      "photos": [
+        {
+          "src": "/imag/projects/93d1eb4162da.webp",
+          "w": 900,
+          "h": 1200
+        },
+        {
+          "src": "/imag/projects/277e459762e2.webp",
+          "w": 900,
+          "h": 1200
+        }
+      ],
+      "review": null
+    },
+    {
+      "id": "d444da84da",
+      "service": "AC Tune-Up & Maintenance",
+      "category": "maintenance",
+      "categoryLabel": "Maintenance",
+      "city": "Anthem",
+      "state": "AZ",
+      "date": "2026-06-24",
+      "lat": 33.85,
+      "lng": -112.1,
+      "photos": [
+        {
+          "src": "/imag/projects/246961bbf83e.webp",
+          "w": 1200,
+          "h": 675
+        }
+      ],
+      "review": {
+        "author": "P. C.",
+        "rating": 5,
+        "text": "Timely, friendly, and a good price. They are my new AC company!",
+        "date": "2026-06-24",
+        "source": "google"
+      }
+    }
+  ]
+}
