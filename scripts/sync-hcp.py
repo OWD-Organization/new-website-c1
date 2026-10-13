@@ -260,7 +260,7 @@ def main():
             "date": j["_completed"].date().isoformat(),
             "lat": round(float(addr["latitude"]), 2), "lng": round(float(addr["longitude"]), 2),
             "photos": photos,
-            "review": ({k: rv.get(k) for k in ("author", "rating", "text", "date", "source")} if rv else None),
+            "review": ({k: rv.get(k) for k in ("author", "rating", "text", "date", "source", "reply", "replyDate")} if rv else None),
         })
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps({"generated": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),

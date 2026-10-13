@@ -71,6 +71,11 @@ HEAD = """<!-- RP-HEAD:START -->
     .rp-review p { margin: 6px 0 8px; color: var(--navy-700); font-size: 1rem; line-height: 1.6; }
     .rp-review footer { font-size: .88rem; color: #5b6275; display: flex; align-items: center; gap: 6px; }
     .rp-review footer img { width: 16px; height: 16px; }
+    .rp-reply { margin-top: 12px; background: var(--gray-200); border-radius: var(--radius-md); padding: 14px 16px; }
+    .rp-reply-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+    .rp-reply-head strong { font-family: var(--font-heading); font-weight: 700; color: var(--navy-500); font-size: .92rem; }
+    .rp-reply-head time { font-size: .82rem; color: #5b6275; }
+    .rp-reply p { margin: 6px 0 0; font-size: .95rem; color: #3d4457; line-height: 1.6; }
     .rp-showmap { margin-top: auto; align-self: flex-start; background: none; border: 0; padding: 6px 0 0; color: var(--brand-red); font-family: var(--font-heading); font-weight: 700; font-size: .95rem; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; }
     .rp-showmap:hover { text-decoration: underline; }
     .rp-cta { margin-top: var(--space-2xl); text-align: center; background: var(--gradient-hero-home); color: #fff; border-radius: var(--radius-xl); padding: var(--space-xl) var(--space-lg); }
@@ -107,7 +112,11 @@ def card(p, i):
         r = p["review"]; stars = "★" * int(r.get("rating") or 5)
         rv = (f'<blockquote class="rp-review"><div class="rp-stars" aria-label="{int(r.get("rating") or 5)} out of 5 stars">{stars}</div>'
               f'<p>{E(r["text"])}</p><footer><img src="/imag/google-g.svg" alt="" width="16" height="16" />'
-              f'{E(r["author"])}, Google review, {E(fdate(r["date"]))}</footer></blockquote>')
+              f'{E(r["author"])}, Google review, {E(fdate(r["date"]))}</footer>'
+              + (f'<div class="rp-reply"><div class="rp-reply-head"><strong>Response from Comfort One</strong>'
+                 + (f'<time datetime="{r["replyDate"]}">{E(fdate(r["replyDate"]))}</time>' if r.get("replyDate") else "")
+                 + f'</div><p>{E(r["reply"])}</p></div>' if r.get("reply") else "")
+              + '</blockquote>')
     return f'''<li class="rp-card" id="p-{p["id"]}" data-cat="{p["category"]}" data-city="{E(p["city"])}">
         {media}
         <div class="rp-body">
